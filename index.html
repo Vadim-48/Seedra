@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="./src/style.scss">
+    <title>Seedra</title>
+</head>
+<body class="body">
+<header
+  class="header"
+  id="header">
+    <div class="header__wrap">
+        <div class="header__container container">
+            {{> base/header}}
+        </div>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <div class="container">
+            {{> main/hero}}
+        </div>
+    </section>
+</main>
+<footer
+  class="footer"
+  id="footer">
+    <div class="container">
+
+    </div>
+</footer>
+<script
+  type="module"
+  src="/src/main.js"
+  defer></script>
+</body>
+</html>

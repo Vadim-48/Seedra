@@ -1,0 +1,195 @@
+@use "@/scss/base/mixins.scss" as mixins;
+.hero {
+    margin-top: 32px;
+
+    &__wrap {
+        width: 100%;
+        position: relative;
+        aspect-ratio: 222/91;
+    }
+    &__bg{
+        border-radius: 24px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //display: flex;
+        //gap: 2%;
+    }
+
+    &__content{
+        //padding-left: 7%;
+        //margin-top: 4.3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        height: 100%;
+        margin-left: 7%;
+        //margin-inline: auto;
+    }
+
+    &__title {
+        font-weight: 600;
+        //font-size: 48px;
+        line-height: 1.13;
+        letter-spacing: -0.05em;
+        //width: 95%;
+        order: 3;
+
+        @include mixins.adaptiv-value(font-size, 48, 28);
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        margin-top: 2%;
+        width: 90%;
+        order: 3;
+    }
+
+    &__price-row {
+        display: flex;
+        align-items: center;
+        margin-top: 3%;
+        order: 3;
+    }
+
+    &__price-img {
+        width: 46px;
+        height: 46px;
+        //margin-left: -2px;
+        //margin-bottom: 5px;
+        margin: 0 0 3px -2px;
+    }
+
+    &__price {
+        margin-left: 16px;
+        font-weight: 600;
+        //font-size: 42px;
+        @include mixins.adaptiv-value(font-size, 42, 32);
+        line-height: 1.29;
+    }
+
+    &__price-old {
+        margin-left: 22px;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 2.45;
+        color: var(--text-secondary);
+        text-decoration: line-through;
+    }
+
+    &__btn-row {
+        display: flex;
+        margin-top: 3.3%;
+        order: 3;
+    }
+
+    &__btn {
+
+        &_add {
+            width: 153px;
+        }
+
+        &_discover {
+            width: 131px;
+        }
+    }
+    &__img{
+        //border-radius: 12px;
+        //margin: 4% -5.8% 0 0;
+        //width: 349px;
+        width: 36%;
+        aspect-ratio: 1/1;
+        //height: 349px;
+        //flex: 0 0 auto;
+        //flex-shrink: 0;
+        //align-self: flex-start;
+        //align-self: center;
+
+        position: absolute;
+        right: -5.8%;
+        //right: -0.3%;
+        top: 10%;
+    }
+}
+.button {
+
+    &_green {
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero{
+        &__br{
+            display: none;
+        }
+        &__content{
+            margin-left: 3%;
+            width: 72%;
+        }
+        &__text {
+            margin-top: 1%;
+        }
+        &__price-row {
+            margin-top: 1%;
+        }
+        &__btn-row {
+            margin-top: 2%;
+        }
+    }
+}
+@media (max-width: 850px) {
+    .hero {
+        &__wrap {
+            margin-inline: auto;
+            //max-width: 400px;
+            aspect-ratio: 115/110;
+            //aspect-ratio: 115/80;
+        }
+        &__inner {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        &__content{
+            width: 95%;
+            //margin-top: -20px;
+            //margin-top: -19%;
+        }
+        &__img{
+            position: static;
+            width: 40%;
+            margin: 15px auto 0 auto;
+        }
+        &__price-row {
+            order: 1;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .hero {
+        &__wrap {
+            margin-inline: auto;
+            //max-width: 400px;
+            aspect-ratio: 115/221;
+        }
+        &__content{
+            margin-top: -19%;
+        }
+        &__img{
+            position: static;
+            width: 69%;
+            margin: 15px auto 0 auto;
+        }
+    }
+}

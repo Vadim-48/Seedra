@@ -1,51 +1,184 @@
-.burger{
-    &__wrapper{
-        position: fixed;
-        top: 0;
-        z-index: 40;
-        background: #fff;
-        width: 100vw;
-        height: 100vh;
-        left: -100vw;
-        transition: all 0.5s ease 0s;
-
-        &.active {
-            left: 0;
-        }
-    }
-}
-
 .burger {
-    &__menu {
-        overflow: auto;
-        width: 100%;
-        height: 100%;
-        padding-top: 124px;
+    position: fixed;
+    z-index: 40;
+    //width: 100%;
+    height: calc(100vh - 72px);
+    top: 72px;
+    right: 0;
+    transform: translateX(120%);
+    transition: transform .3s ease;
 
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 133%;
-        text-align: center;
-        color: #333;
+    width: 280px;
+    box-shadow: -6px 4px 41px 0 rgba(0, 0, 0, 0.25);
+    background: var(--white);
+    padding: 15px 0;
+    overflow: auto;
+
+    &.active{
+        //right: 0;
+        transform: translateX(0);
+    }
+    &__bg{
+        //transition: all .3s ease;
+        position: fixed;
+        z-index: 39;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        &.active{
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 
-    &__menu-item {
-        width: 100%;
-        border-bottom: 1px solid #e2e2e2;
-        padding-bottom: 13px;
-        margin-top: 24px;
-        &:first-child{
-            margin-top: 0;
+    &__container{
+        padding: 0 16px 0 23px;
+    }
+    &__search-form {
+        display: none;
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 71px;
+        width: 241px;
+    }
+
+    &__category {
+        margin-top: 21px;
+        width: 235px;
+    }
+
+    &__category-item {
+
+        &:not(:last-child)::after{
+            content: "";
+            display: block;
+            height: 1px;
+            width: 96%;
+            margin-block: 11px;
+            background: var(--light-grey-stroke);
         }
-        &:last-child{
-            border-bottom: none;
+    }
+
+    &__category-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        &.active .burger__category-icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__category-text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+
+    &__category-icon {
+        width: 12px;
+        height: 7px;
+
+    }
+
+    &__subcategory {
+        padding-left: 30px;
+        //margin-top: 17px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    &__subcategory-item{
+        &:first-child{
+            margin-top: 17px;
+        }
+        &:not(:first-child) {
+            margin-top: 14px;
+        }
+    }
+
+    &__subcategory-btn {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-secondary);
+    }
+    &__line{
+        background: #cfcfcf;;
+        height: 1px;
+        width: 100%;
+        margin-top: 23px;
+    }
+
+    &__menu {
+        margin-top: 20px;
+        width: 238px;
+    }
+
+    &__menu-item{
+        //width: 238px;
+        &:not(:first-child) {
+            margin-top: 14px;
+        }
+    }
+
+    &__menu-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__menu-text{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+    &__menu-wrap{
+        width: 18px;
+        height: 18px;
+        background: var(--green-brand);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__menu-icon{
+        width: 5px;
+        margin-right: -2px;
+    }
+
+    &__social {
+        margin-top: 14px;
+        display: none;
+        gap: 13px;
+    }
+
+    &__social-icon {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+@media (max-width: 850px) {
+    .burger {
+        &__social {
+            display: flex;
         }
     }
 }
 
-@media (max-width: 650px){
-    .burger__menu {
-        padding-top: 154px;
+@media (max-width: 650px) {
+    .burger {
+        &__search-form {
+            display: flex;
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-$maxWidth: 1440;
+$maxWidth: 1200;
 
 @mixin adaptiv-value($property, $pcSize, $mobSize) {
     #{$property}: clamp(

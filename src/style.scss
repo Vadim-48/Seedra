@@ -1,9 +1,17 @@
-@use "@/scss/base/null.scss";
-@use "@/scss/base/base.scss";
-@use "@/scss/base/header.scss";
+@use "./scss/base/null.scss";
+@use "./scss/base/base.scss";
+@use "./scss/base/header.scss";
+@use "./scss/base/burger.scss";
 
+
+
+//@use "@/scss/base/null.scss";
+//@use "@/scss/base/base.scss";
+//@use "@/scss/base/header.scss";
 //@use "@/scss/base/burger.scss";
 
-@use "@/scss/partials/btn.scss";
+@use "scss/components/btn.scss";
+@use "scss/components/typography.scss";
 
-@use "@/scss/main/hero.scss";
+@use "./scss/main/hero.scss";
+@use "./scss/main/info.scss";

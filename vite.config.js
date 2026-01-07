@@ -15,7 +15,7 @@ const pages = {
 }
 
 export default defineConfig({
-  base: '/Seedra-vite/',  // name project in github
+  base: '/Seedra/',  // name project in github
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

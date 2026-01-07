@@ -9,20 +9,19 @@
     }}
     <div class="hero__inner">
         <div class="hero__content">
-            <h1 class="hero__title">SEEDRA Basil Seeds for
-                <br class="hero__br"> Indoor and Outdoor Planting
+            <h1 class="hero__title" id="hero-title">SEEDRA Basil Seeds
             </h1>
             <p class="hero__text">Be sure of our quality - the freshest batches of this
-                season. Non-GMO,<br class="hero__br"> Heirloom - our seeds were tested and have the best
-                germination ratings.<br class="hero__br"> Your easy growing experience is our guarantee
+                season. Non-GMO, Heirloom - our seeds were tested and have the best
+                germination ratings. Your easy growing experience is our guarantee
             </p>
             <div class="hero__price-row">
                 <img
                   src="./src/image/main/hero/fire.svg"
                   alt="img"
                   class="hero__price-img">
-                <span class="hero__price">$12.56</span>
-                <span class="hero__price-old">$15.56</span>
+                <span class="hero__price" id="hero-price">$1</span>
+                <span class="hero__price-old" id="hero-old-price">$15</span>
             </div>
             <div class="hero__btn-row">
                 <button class="hero__btn hero__btn_add button button_green">
@@ -33,13 +32,10 @@
                   class="hero__btn hero__btn_discover button">Discover</a>
             </div>
         </div>
-        {{> partials/picture
-            className="hero__img"
-            alt="img"
-            desktop="./src/image/main/hero/seedra.jpg"
-            desktopWebp="./src/image/main/hero/seedra.webp"
-            mobile="./src/image/main/hero/seedra_2.jpg"
-            mobileWebp="./src/image/main/hero/seedra_2.webp"
-        }}
+        <img
+          src=""
+          alt="Seedra"
+          class="hero__img"
+          id="hero-image">
     </div>
 </div>

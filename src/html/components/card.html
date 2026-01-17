@@ -1,0 +1,57 @@
+<div class="products__card card">
+    <div class="card__wrap" id="card-1">
+        <div class="card__favorite">
+            {{> components/svg
+            className="card__favorite-icon"
+            id="card-favorite"
+            }}
+        </div>
+        <img
+          src=""
+          alt=""
+          class="card__photo"
+          id="card-photo-1">
+        <div class="card__content">
+            <div class="card__star-row">
+                {{> components/svg
+                className="card__star-icon"
+                id="star"
+                }}
+                {{> components/svg
+                className="card__star-icon"
+                id="star"
+                }}
+                {{> components/svg
+                className="card__star-icon"
+                id="star"
+                }}
+                {{> components/svg
+                className="card__star-icon"
+                id="star"
+                }}
+                {{> components/svg
+                className="card__star-icon"
+                id="half-star"
+                }}
+                <span class="card__star-coments">(123)</span>
+            </div>
+            <p class="card__title">sdgfdhtgj</p>
+            <div class="card__footer">
+                <div class="card__price-row">
+                    {{> components/svg
+                    className="card__fire-price"
+                    id="fire"
+                    }}
+                    <span class="card__price">22</span>
+                    <span class="card__old-price">33</span>
+                </div>
+                <button class="card__button">
+                    {{> components/svg
+                    className="card__button-icon"
+                    id="cart"
+                    }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

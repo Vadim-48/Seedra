@@ -1,8 +1,0 @@
-{{> partial/picture
-    className="photo"
-    alt="img"
-    desktop="./src/image/main/services/img1.jpg"
-    desktopWebp="./src/image/main/services/img1.webp"
-    mobile="./src/image/main/services/img1_2.jpg"
-    mobileWebp="./src/image/main/services/img1_2.webp"
-}}

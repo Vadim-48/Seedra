@@ -1,0 +1,132 @@
+.card {
+
+        border: 2px solid var(--light-grey-stroke);
+        border-radius: 8px;
+        max-width: 350px;
+        position: relative;
+        padding: 26px 26px 23px 26px ;
+        aspect-ratio: 175 / 256;
+
+    &__favorite {
+        position: absolute;
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 10px;
+        top: 10px;
+    }
+    &__favorite-icon{
+        width: 20px;
+        height: 17px;
+    }
+    //&__photo-wrap {
+    //    width: 294px;
+    //    height: 294px;
+    //    margin-inline: auto;
+    //}
+
+    &__photo {
+        //width: 294px;
+        //height: 294px;
+        width: 100%;
+        aspect-ratio: 1;
+        //margin: 26px auto 0 auto;
+        display: block;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    &__content {
+    }
+
+    &__star-row{
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        margin-top: 25px;
+    }
+    &__star-icon{
+        width: 14px;
+        height: 13px;
+    }
+    &__star-comments{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 178%;
+        color: var(--text-secondary);
+        margin-left: 11px;
+    }
+
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.56;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+        margin-top: 4px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 7px;
+    }
+
+    &__price-row {
+        display: flex;
+        align-items: center;
+    }
+    &__fire-price{
+        width: 24px;
+        height: 24px;
+        display: none;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.93;
+        color: var(--text-primary);
+        &::before{
+            content: '$';
+        }
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__old-price {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--text-secondary);
+        text-decoration: line-through;
+        &::before{
+            content: '$';
+        }
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__button {
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 8px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button-icon{
+        width: 24px;
+        height: 24px;
+    }
+}

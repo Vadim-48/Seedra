@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase.js";
 
 export async function loadHeroProduct() {
-    const docRef = doc(db, "products", "product-1");
+    const docRef = doc(db, "products", "main");
     const docSnap = await getDoc(docRef);
 
     if (!docSnap.exists()) return;
@@ -10,7 +10,7 @@ export async function loadHeroProduct() {
     const product = docSnap.data();
 
     // title
-    document.getElementById("hero-title").innerHTML = product.title;
+    document.getElementById("hero-title").innerHTML = product.name;
 
     // prices
     document.getElementById("hero-price").textContent =
@@ -25,5 +25,5 @@ export async function loadHeroProduct() {
     }
 
     // image
-    document.getElementById("hero-image").src = product.image;
+    document.getElementById("hero-image").src = product.photo;
 }

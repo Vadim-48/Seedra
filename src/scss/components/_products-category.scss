@@ -1,9 +1,8 @@
-@use "media" as media;
+@use "@/scss/mixins/media" as media;
 
 .category{
     overflow-x: auto;
     width: 100%;
-    //overflow-x: auto;
     &__wrap{
         width: 1109px;
         display: grid;
@@ -14,7 +13,6 @@
     &__btn{
         border: 2px solid var(--light-grey-stroke);
         border-radius: 8px;
-        //width: 110px;
         height: 72px;
         flex: 1 1 auto;
 

@@ -1,4 +1,5 @@
 //@use "@/scss/components/variables" as vars;
+@use "sass:map";
 
 $breakpoints: (
         xxs: 375px,
@@ -12,16 +13,9 @@ $breakpoints: (
 );
 
 @mixin max-width($breakpoint) {
-    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+    @media (max-width: #{map.get($breakpoints, $breakpoint)}) {
         @content;
     }
 }
 
 
-
-
-//@mixin respond($breakpoint) {
-//    @media (max-width: #{map-get(vars.$breakpoints, $breakpoint)}) {
-//        @content;
-//    }
-//}

@@ -29,6 +29,7 @@
     "sharp": "^0.34.5",
     "vite": "^7.1.7",
     "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-hulak-tools": "^3.0.0",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-static-copy": "^3.1.4"
   },
@@ -37,6 +38,7 @@
     "firebase": "^12.7.0",
     "imask": "^7.6.1",
     "inputmask": "^5.0.9",
-    "libphonenumber-js": "^1.12.31"
+    "libphonenumber-js": "^1.12.31",
+    "scroll-lock": "^2.1.5"
   }
 }

@@ -1,14 +1,22 @@
+@use "@/scss/mixins/media" as media;
 .title{
     font-weight: 600;
     font-size: 36px;
     line-height: 1.50;
     letter-spacing: -0.05em;
-    color: var(--text-primary);
+    width: 124px;
+    @include media.max-width(sm) {
+        font-size: 22px;
+        line-height: 1.55;
+    }
 }
 .sub-title{
     font-weight: 600;
     font-size: 24px;
     line-height: 1.31;
     letter-spacing: -0.02em;
-    color: var(--text-primary);
+    @include media.max-width(sm) {
+        font-size: 18px;
+        line-height: 1.56;
+    }
 }

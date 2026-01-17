@@ -11,10 +11,11 @@
     line-height: 1.78;
     letter-spacing: -0.04em;
     color: var(--green-brand);
-}
 
-.button_green{
-    color: var(--white);
-    background: var(--green-brand);
+
+    &_green{
+        color: var(--white);
+        background: var(--green-brand);
+    }
 }
 // focus (focus-visible), hover, active

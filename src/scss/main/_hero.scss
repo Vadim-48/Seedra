@@ -1,12 +1,18 @@
-@use "@/scss/base/mixins.scss" as mixins;
+@use "@/scss/mixins/adaptive-value" as adaptive;
+@use "@/scss/mixins/media" as media;
+
 .hero {
     margin-top: 32px;
+    @include media.max-width(sm) {
+        margin-top: 29px;
+    }
 
     &__wrap {
         width: 100%;
         position: relative;
     }
-    &__bg{
+
+    &__bg {
         position: absolute;
         border-radius: 24px;
         overflow: hidden;
@@ -20,25 +26,50 @@
         position: relative;
         display: grid;
         grid-template-columns: 3fr 1fr;
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
     }
 
-    &__content{
-        padding: 0 0.5% 6.4% 0;
+    &__content {
+        padding: 0 0 6.4% 0;
         width: 82%;
+        //padding-right: 10%;
 
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+        @include media.max-width(md) {
+            width: 90%;
+            padding: 0 0.5% 6.4% 4%;
+        }
+        @include media.max-width(sm) {
+            width: 100%;
+            justify-content: normal;
+            padding: 2% 4% 6.4% 4%;
+        }
+        @include media.max-width(xs) {
+            margin-top: -6%;
+            padding: 2% 0.5% 14.4% 4%;
+        }
     }
 
     &__title {
         margin-top: 7%;
         font-weight: 600;
         //font-size: 48px;
-        @include mixins.adaptiv-value(font-size, 48, 28);
+        @include adaptive.value(font-size, 48, 28);
         line-height: 1.13;
         letter-spacing: -0.05em;
         order: 3;
+        @include media.max-width(sm) {
+            margin-top: 0;
+            line-height: 1.29;
+        }
+        @include media.max-width(xs) {
+            margin-top: 2%;
+        }
     }
 
     &__text {
@@ -48,6 +79,15 @@
         margin-top: 2%;
         width: 85%;
         order: 3;
+        @include media.max-width(sm) {
+            width: 90%;
+        }
+        @include media.max-width(sm) {
+            margin-top: 1.3%;
+            width: 96%;
+            font-size: 14px;
+            line-height: 2;
+        }
     }
 
     &__price-row {
@@ -55,20 +95,33 @@
         align-items: center;
         margin-top: 3%;
         order: 3;
+        @include media.max-width(sm) {
+            order: 1;
+        }
     }
 
     &__price-img {
         width: 46px;
         height: 46px;
         margin: 0 0 3px 0;
+        @include media.max-width(sm) {
+            width: 35px;
+            height: 35px;
+        }
     }
 
     &__price {
         margin-left: 16px;
         font-weight: 600;
         //font-size: 42px;
-        @include mixins.adaptiv-value(font-size, 42, 32);
+        @include adaptive.value(font-size, 42, 32);
         line-height: 1.29;
+        @include media.max-width(sm) {
+            margin-left: 5px;
+            line-height: 1.06;
+            letter-spacing: -0.05em;
+            color: var(--danger);
+        }
     }
 
     &__price-old {
@@ -78,6 +131,9 @@
         line-height: 2.45;
         color: var(--text-secondary);
         text-decoration: line-through;
+        @include media.max-width(sm) {
+            margin-left: 14px;
+        }
     }
 
     &__btn-row {
@@ -85,137 +141,58 @@
         margin-top: 3.3%;
         order: 3;
         gap: 12px;
+        @include media.max-width(sm) {
+            margin-top: 5.5%;
+        }
     }
 
     &__btn {
 
         &_add {
             width: 153px;
+            @include media.max-width(xs) {
+                width: 142px;
+                height: 47px;
+            }
         }
 
         &_discover {
             width: 131px;
+            @include media.max-width(xs) {
+                width: 123px;
+                height: 47px;
+            }
         }
     }
-    &__img{
+
+    &__img {
         margin: 16% 0 0 3%;
-        //width: 96%;
         height: 88%;
         aspect-ratio: 53 / 80;
-    }
-}
-
-@media (max-width: 1100px) {
-    .hero {
-
-        &__content {
-            width: 90%;
-            padding: 0 0.5% 6.4% 4%;
-        }
-    }
-}
-
-
-@media (max-width: 850px) {
-    .hero{
-
-        &__text {
-            width: 90%;
-        }
-    }
-}
-
-@media (max-width: 650px) {
-    .hero {
-        margin-top: 29px;
-        &__inner {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto 1fr;
-        }
-        &__content{
-            width: 100%;
-            justify-content: normal;
-            padding: 2% 0.5% 6.4% 4%;
-        }
-        &__title {
-            margin-top: 0;
-            line-height: 1.29;
-        }
-        &__text {
-            margin-top: 1.3%;
-            width: 96%;
-            font-size: 14px;
-            line-height: 2;
-        }
-
-        &__price-row {
-            order: 1;
-        }
-        &__price-img{
-            width: 35px;
-            height: 35px;
-        }
-        &__price {
-            margin-left: 5px;
-            line-height: 1.06;
-            letter-spacing: -0.05em;
-            color: var(--danger);
-        }
-        &__price-old {
-            margin-left: 14px;
-        }
-        &__btn-row {
-            margin-top: 5.5%;
-        }
-        &__img{
+        @include media.max-width(sm) {
             width: 32%;
             height: auto;
             margin: 1% auto 0 auto;
             grid-row-start: 1;
         }
-    }
-}
-
-@media (max-width: 450px) {
-    .hero {
-
-        &__content{
-            margin-top: -6%;
-            padding: 2% 0.5% 14.4% 4%;
-        }
-        &__text {
-            margin-top: 2%;
-        }
-
-        &__btn {
-            &_add {
-                width: 142px;
-                height: 47px;
-            }
-
-            &_discover {
-                width: 123px;
-                height: 47px;
-            }
-        }
-        &__img{
+        @include media.max-width(xs) {
             width: 41%;
             margin: 8.8% auto 0 auto;
         }
     }
 }
 
-@media (max-width: 330px) {
-    .hero {
-        &__btn {
-            &_add {
-                width: 122px;
-                height: 47px;
-            }
-            &_discover {
-                width: 103px;
-                height: 47px;
-            }
-        }
-    }
-}
+//@media (max-width: 330px) {
+//    .hero {
+//        &__btn {
+//            &_add {
+//                width: 122px;
+//                height: 47px;
+//            }
+//            &_discover {
+//                width: 103px;
+//                height: 47px;
+//            }
+//        }
+//    }
+//}

@@ -1,17 +1,14 @@
-@use "./scss/base/null.scss";
-@use "./scss/base/base.scss";
-@use "./scss/base/header.scss";
-@use "./scss/base/burger.scss";
+@use "./scss/base/reset";
+@use "./scss/base/base";
+@use "./scss/base/header";
+@use "./scss/base/burger";
 
+@use "./scss/components/btn";
+@use "./scss/components/typography";
 
+@use "./scss/main/hero";
+@use "./scss/main/info";
+@use "./scss/main/products";
 
-//@use "@/scss/base/null.scss";
-//@use "@/scss/base/base.scss";
-//@use "@/scss/base/header.scss";
-//@use "@/scss/base/burger.scss";
-
-@use "scss/components/btn.scss";
-@use "scss/components/typography.scss";
-
-@use "./scss/main/hero.scss";
-@use "./scss/main/info.scss";
+@use "./scss/components/products-category";
+@use "./scss/components/card";

@@ -1,5 +1,5 @@
 <div class="hero__wrap">
-    {{> partials/picture
+    {{> components/picture
         className="hero__bg"
         alt="img"
         desktop="./src/image/main/hero/bg.jpg"
@@ -9,19 +9,26 @@
     }}
     <div class="hero__inner">
         <div class="hero__content">
-            <h1 class="hero__title" id="hero-title">SEEDRA Basil Seeds
+            <h1
+              class="hero__title"
+              id="hero-title">SEEDRA Basil Seeds
             </h1>
-            <p class="hero__text">Be sure of our quality - the freshest batches of this
-                season. Non-GMO, Heirloom - our seeds were tested and have the best
-                germination ratings. Your easy growing experience is our guarantee
+            <p class="hero__text">Be sure of our quality - the freshest batches
+                of this season. Non-GMO, Heirloom - our seeds were tested and
+                have the best germination ratings. Your easy growing experience
+                is our guarantee
             </p>
             <div class="hero__price-row">
-                <img
-                  src="./src/image/main/hero/fire.svg"
-                  alt="img"
-                  class="hero__price-img">
-                <span class="hero__price" id="hero-price">$1</span>
-                <span class="hero__price-old" id="hero-old-price">$15</span>
+                {{> components/svg
+                    className="hero__price-img"
+                    id="fire"
+                }}
+                <span
+                  class="hero__price"
+                  id="hero-price">$1</span>
+                <span
+                  class="hero__price-old"
+                  id="hero-old-price">$15</span>
             </div>
             <div class="hero__btn-row">
                 <button class="hero__btn hero__btn_add button button_green">

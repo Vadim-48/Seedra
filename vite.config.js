@@ -1,75 +1,82 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import path from 'path'
-import { resolve } from 'path'
+import {resolve} from 'path'
 import handlebars from 'vite-plugin-handlebars'
 import autoprefixer from 'autoprefixer'
 import viteImagemin from 'vite-plugin-imagemin'
 import sortMediaQueries from 'postcss-sort-media-queries';
+import {hulakPlugins} from 'vite-plugin-hulak-tools'
 
 const pages = {
-  index:  resolve(__dirname, 'index.html'),
-  // about:  resolve(__dirname, 'about.html'),
-  // solutions:  resolve(__dirname, 'solutions.html'),
-  // stc:  resolve(__dirname, 'stc.html'),
-  // contacts:  resolve(__dirname, 'contacts.html'),
+    index: resolve(__dirname, 'index.html'),
+    // about:  resolve(__dirname, 'about.html'),
+    // solutions:  resolve(__dirname, 'solutions.html'),
+    // stc:  resolve(__dirname, 'stc.html'),
+    // contacts:  resolve(__dirname, 'contacts.html'),
 }
 
 export default defineConfig({
-  base: '/Seedra/',  // name project in github
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
+    base: '/Seedra/',  // name project in github
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
     },
-  },
 
-  css: {
-    postcss: {
-      plugins:
-        [
-            autoprefixer(),
-            sortMediaQueries({ sort: 'desktop-first' }),
-        ],
+    css: {
+        postcss: {
+            plugins:
+                [
+                    autoprefixer(),
+                    sortMediaQueries({sort: 'desktop-first'}),
+                ],
+        },
     },
-  },
 
-  plugins: [
+    plugins: [
+        hulakPlugins({
+            enableHandlebars: true,
+            handlebarsOptions: {
+                partialDirectory: './src/html'
+            }
+        }),
 
-    handlebars({
-      partialDirectory: path.resolve(__dirname, 'src/html'),
-    }),
+        handlebars({
+            partialDirectory: path.resolve(__dirname, 'src/html'),
+        }),
 
-    viteImagemin({ //  WebP
-      gifsicle: {},
-      optipng: { optimizationLevel: 5 },
-      mozjpeg: { quality: 90 },
-    }),
+        viteImagemin({ //  WebP
+            gifsicle: {},
+            optipng: {optimizationLevel: 5},
+            mozjpeg: {quality: 90},
+        }),
 
-    {
-      name: 'handlebars-full-reload',
-      handleHotUpdate({ file, server }) {
-        if (file.endsWith('.html')) {
-          server.ws.send({
-            type: 'full-reload',
-            path: '*',
-          })
-        }
-      },
+        {
+            name: 'handlebars-full-reload',
+            handleHotUpdate({file, server}) {
+                if (file.endsWith('.html')) {
+                    server.ws.send({
+                        type: 'full-reload',
+                        path: '*',
+                    })
+                }
+            },
+        },
+    ],
+
+    server: {
+        watch: {
+            // include: ['src/html/**/*.html', 'src/**/*.html'],
+            ignored: ['**/*.webp']
+        },
     },
-  ],
 
-  server: {
-    watch: {
-      // include: ['src/html/**/*.html', 'src/**/*.html'],
-      ignored: ['**/*.webp']
+    build: {
+        sourcemap: false,
+        rollupOptions: {
+            input: {
+                ...pages,
+            },
+        },
     },
-  },
-
-  build: {
-    sourcemap: false,
-    rollupOptions: {
-      input: {
-        ...pages,
-      },
-    },
-  },
 })

@@ -1,0 +1,67 @@
+@use "@/scss/mixins/media" as media;
+.products{
+    margin-top: 57px;
+    @include media.max-width(xs) {
+        margin-top: 32px;
+    }
+    &__head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title{
+        flex: 1 0 auto;
+    }
+    &__btn-all{
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 8px;
+        width: 155px;
+        height: 51px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--green-brand);
+        @include media.max-width(sm) {
+            font-size: 14px;
+            width: 124px;
+            height: 47px;
+        }
+    }
+    &__text{
+    }
+    &__category{
+        margin-top: 39px;
+        padding-bottom: 5px;
+        @include media.max-width(xs) {
+            margin-top: 20px;
+        }
+    }
+    &__list{
+        margin-top: 27px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 30px;
+        //display: flex;
+        //flex-wrap: wrap;
+        @include media.max-width(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media.max-width(xs) {
+            margin-top: 23px;
+            display: flex;
+            overflow: auto;
+        }
+    }
+    &__card{
+        @include media.max-width(xs) {
+            width: 319px;
+            aspect-ratio: 319 / 512;
+            flex: 0 0 auto;
+        }
+    }
+}

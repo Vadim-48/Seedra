@@ -1,11 +1,9 @@
+$minWidth: 375;
 $maxWidth: 1200;
-
 @mixin adaptiv-value($property, $pcSize, $mobSize) {
     #{$property}: clamp(
             #{$mobSize}px,
-            calc(
-                    #{$mobSize}px + (#{$pcSize - $mobSize}) * ((100vw - 375px) / #{1440 - 375})
-            ),
+            calc(#{$mobSize}px + (#{$pcSize - $mobSize}) * ((100vw - #{$minWidth}px) / #{$maxWidth - $minWidth})),
             #{$pcSize}px
     );
 }

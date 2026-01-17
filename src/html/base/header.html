@@ -20,24 +20,27 @@
     </nav>
     <div class="header__right-wrap">
         <div class="header__social">
-            <a href="#!" >
-                <svg class="header__social-icon">
-                    <use xlink:href="/sprite.svg#icon-instagram"></use>
-                </svg>
+            <a href="#!">
+                {{> components/svg
+                    className="header__social-icon"
+                    id="instagram"
+                }}
             </a>
             <a href="#!">
-                <svg class="header__social-icon">
-                    <use xlink:href="/sprite.svg#icon-facebook"></use>
-                </svg>
+                {{> components/svg
+                    className="header__social-icon"
+                    id="facebook"
+                }}
             </a>
         </div>
         <form
           action="#!"
           class="header__search-form search-form">
             <button class="search-form__btn ">
-                <svg class="search-form__btn-icon">
-                    <use xlink:href="/sprite.svg#icon-search"></use>
-                </svg>
+                {{> components/svg
+                    className="search-form__btn-icon"
+                    id="search"
+                }}
             </button>
             <input
               type="search"
@@ -48,16 +51,18 @@
             <button
               class="header__actions-btn favorite-btn"
               aria-label="Add to favorites">
-                <svg class="header__actions-icon">
-                    <use xlink:href="/sprite.svg#icon-favorite"></use>
-                </svg>
+                {{> components/svg
+                    className="header__actions-icon"
+                    id="favorite"
+                }}
             </button>
             <button
               class="header__actions-btn card-btn"
               aria-label="Open cart">
-                <svg class="header__actions-icon">
-                    <use xlink:href="/sprite.svg#icon-cart"></use>
-                </svg>
+                {{> components/svg
+                    className="header__actions-icon"
+                    id="cart"
+                }}
             </button>
         </div>
         <button

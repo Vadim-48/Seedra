@@ -54,7 +54,8 @@
         @include media.max-width(xs) {
             margin-top: 23px;
             display: flex;
-            overflow: auto;
+            gap: 0;
+            //overflow: auto;
         }
     }
     &__card{
@@ -62,6 +63,8 @@
             width: 319px;
             aspect-ratio: 319 / 512;
             flex: 0 0 auto;
+            padding: 26px 11px 23px 11px;
         }
     }
 }
+

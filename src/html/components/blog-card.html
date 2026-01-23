@@ -1,0 +1,24 @@
+<div class="{{className}} news-card">
+    <div class="news-card__content">
+        <div class="news-card__date-row">
+            {{> components/svg
+                className="news-card__icon"
+                id="clock"
+            }}
+            <span class="news-card__date-text">{{date}}</span>
+        </div>
+        <h3 class="news-card__title sub-title">
+            {{title}}
+        </h3>
+        <p class="news-card__text">
+            {{text}}
+        </p>
+        <a
+          href=""
+          class="news-card__btn button">Read</a>
+    </div>
+    <picture class="{{classNamePicture}} news-card__photo">
+        <source srcset="{{desktopWebp}}" type="image/webp">
+        <img src="{{desktop}}" alt="{{alt}}" loading="lazy">
+    </picture>
+</div>

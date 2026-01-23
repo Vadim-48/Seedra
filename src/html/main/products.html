@@ -7,29 +7,31 @@
 {{> components/products-category
     className="products__category"
 }}
-<div class="products__list">
-    {{> components/card
-        className="products__card"
-        id="card-1"
-    }}
-    {{> components/card
-        className="products__card"
-        id="card-2"
-    }}
-    {{> components/card
-        className="products__card"
-        id="card-3"
-    }}
-    {{> components/card
-        className="products__card"
-        id="card-4"
-    }}
-    {{> components/card
-        className="products__card"
-        id="card-5"
-    }}
-    {{> components/card
-        className="products__card"
-        id="card-6"
-    }}
+<div class="swiper">
+    <div class="products__list swiper-wrapper">
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-1"
+        }}
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-2"
+        }}
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-3"
+        }}
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-4"
+        }}
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-5"
+        }}
+        {{> components/card
+            className="products__card swiper-slide"
+            id="card-6"
+        }}
+    </div>
 </div>

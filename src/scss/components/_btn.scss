@@ -1,3 +1,4 @@
+@use "@/scss/mixins/media" as media;
 .button{
     background: var(--white);
     height: 51px;
@@ -11,7 +12,9 @@
     line-height: 1.78;
     letter-spacing: -0.04em;
     color: var(--green-brand);
-
+    @include media.max-width(sm) {
+        font-size: 14px;
+    }
 
     &_green{
         color: var(--white);

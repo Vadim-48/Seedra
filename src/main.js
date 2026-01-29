@@ -35,26 +35,24 @@ console.log("main", mainProduct);
 
 
 const loadCard = (idCard,idProduct) =>{
-    const cardList = document.getElementById(idCard);
-    console.log(cardList);
+    const cardList = document.querySelector(`[data-card-id="${idCard}"]`);
+    // console.log("cardList: ", cardList);
     const product = productsMap[idProduct];
     console.log("productsMap: ",product);
 
+    const innerNumberReviews = cardList.querySelector(".card__star-comments");
     const innerTitle = cardList.querySelector(".card__title");
     const innerPhoto = cardList.querySelector(".card__photo");
     const innerPrice = cardList.querySelector(".card__price");
     const innerOldPrice = cardList.querySelector(".card__old-price");
     const innerFirePrice = cardList.querySelector(".card__fire-price");
 
-
-    console.log("hello");
-    console.log("product.img: ",product.photo);
-
+    if (product.reviewsNumber != null) innerNumberReviews.textContent = "(" + product.reviewsNumber + ")";
     if (product.name) innerTitle.textContent = product.name;
-    if (product.price) innerPrice.textContent = product.price;
+    if (product.price != null) innerPrice.textContent = product.price;
     if (product.photo) innerPhoto.src = product.photo;
     if (product.firePrice) innerFirePrice.style.display = "block";
-    if (product.oldPrice) innerOldPrice.textContent = product.oldPrice;
+    if (product.oldPrice != null) innerOldPrice.textContent = product.oldPrice;
 
 }
 

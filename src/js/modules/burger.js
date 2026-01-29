@@ -19,6 +19,7 @@ export function burger() {
             disablePageScroll();
         } else {
             enablePageScroll();
+            document.dispatchEvent(new Event('burger:close'));
         }
     };
 
@@ -29,6 +30,8 @@ export function burger() {
         // body.classList.remove("lock")
 
         enablePageScroll();
+
+        document.dispatchEvent(new Event('burger:close'));
     }
 
     burgerBtn.addEventListener("click", toggleMenu);

@@ -46,8 +46,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px 30px;
-        //display: flex;
-        //flex-wrap: wrap;
         @include media.max-width(md) {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -55,16 +53,17 @@
             margin-top: 23px;
             display: flex;
             gap: 0;
-            //overflow: auto;
+            align-items: stretch;
         }
     }
     &__card{
         @include media.max-width(xs) {
             width: 319px;
-            aspect-ratio: 319 / 512;
-            flex: 0 0 auto;
-            padding: 26px 11px 23px 11px;
+            //aspect-ratio: 319 / 512;
+            //flex: 1 0 auto;
+            padding: 26px 11px 11px 11px;
         }
     }
 }
+
 

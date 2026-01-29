@@ -28,5 +28,15 @@ export function burgerAccordion() {
             }
         });
     });
+
+    document.addEventListener('burger:close', () => {
+        document.querySelectorAll('.burger__subcategory.open').forEach((ul) => {
+            ul.classList.remove('open');
+            ul.style.maxHeight = null;
+            ul.closest('.burger__category-item')
+                ?.querySelector('.burger__category-btn')
+                ?.classList.remove('active');
+        });
+    });
 }
 

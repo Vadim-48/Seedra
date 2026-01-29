@@ -1,5 +1,5 @@
 let productsSwiper = null;
-let reviewsSwiper = null;
+let blogSwiper = null;
 
 const breakpoint = window.matchMedia('(max-width: 576px)');
 
@@ -8,22 +8,41 @@ const initProductsSwiper = () => {
         slidesPerView: 1.1,
         spaceBetween: 20,
         loop: true,
+        observer: true,
+        observeParents: true,
+        watchOverflow: true,
+        breakpoints: {
+            400: {
+                slidesPerView: 1.3,
+            },
+            470: {
+                slidesPerView: 1.5,
+            },
+        }
     });
 };
 
-// const initReviewsSwiper = () => {
-//     reviewsSwiper = new Swiper('.reviews .swiper', {
-//         slidesPerView: 1.15,
-//         spaceBetween: 12,
-//         loop: true,
-//     });
-// };
+const initBlogSwiper = () => {
+    blogSwiper = new Swiper('.blog .swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        loop: true,
+        observer: true,
+        observeParents: true,
+        watchOverflow: true,
+        breakpoints: {
+            450: {
+                slidesPerView: 1.3,
+            },
+        }
+    });
+};
 
 const destroyAll = () => {
     productsSwiper?.destroy(true, true);
-    reviewsSwiper?.destroy(true, true);
+    blogSwiper?.destroy(true, true);
     productsSwiper = null;
-    reviewsSwiper = null;
+    blogSwiper = null;
 };
 
 const check = () => {
@@ -33,8 +52,8 @@ const check = () => {
         if (!productsSwiper && document.querySelector('.products .swiper')) {
             initProductsSwiper();
         }
-        if (!reviewsSwiper && document.querySelector('.reviews .swiper')) {
-            initReviewsSwiper();
+        if (!blogSwiper && document.querySelector('.blog .swiper')) {
+            initBlogSwiper();
         }
     } else {
         destroyAll();

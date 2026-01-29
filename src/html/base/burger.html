@@ -5,9 +5,10 @@
           action="#"
           class="burger__search-form search-form">
             <button class="search-form__btn">
-                <svg class="search-form__btn-icon">
-                    <use xlink:href="/sprite.svg#icon-search"></use>
-                </svg>
+                {{> components/svg
+                    className="search-form__btn-icon"
+                    id="search"
+                }}
             </button>
             <input
               type="search"
@@ -18,7 +19,7 @@
     <div class="burger__container">
         <ul class="burger__category">
             <li class="burger__category-item">
-                <button class="burger__category-btn">
+                <button class="burger__category-btn js-close-burger">
                     <span class="burger__category-text">All vegetables</span>
                 </button>
             </li>
@@ -26,21 +27,21 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Bundles</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Bundles-1
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a  href="#!" class="burger__subcategory-btn js-close-burger">
                             Bundles-2
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -48,21 +49,21 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Herbs</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Herb-1
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Herb-2
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -70,26 +71,26 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Vegetables</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Cucumber
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Onion
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Garlic
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -97,26 +98,26 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Fruits</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Fruit-1
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Fruit-2
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             fruit-3
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -124,21 +125,21 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Supplies</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Supply-1
-                        </button>
+                        </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Supply-2
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -146,16 +147,16 @@
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Flowers</span>
-                    <img
-                      src="./src/image/btn-arrow.svg"
-                      alt=""
-                      class="burger__category-icon">
+                    {{> components/svg
+                        className="burger__category-icon"
+                        id="burger-category-arrow"
+                    }}
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <button class="burger__subcategory-btn">
+                        <a href="#!" class="burger__subcategory-btn js-close-burger">
                             Flower-1
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -169,12 +170,12 @@
                   href="#!"
                   class="burger__menu-link">
                     <span class="burger__menu-text">All products</span>
-                    <span class="burger__menu-wrap">
-                        <img
-                          src="./src/image/menu-arrow.svg"
-                          alt=""
-                          class="burger__menu-icon">
-                    </span>
+                    <div class="burger__menu-wrap">
+                        {{> components/svg
+                            className="burger__menu-icon"
+                            id="burger-menu-arrow"
+                        }}
+                    </div>
                 </a>
             </li>
             <li class="burger__menu-item js-close-burger">
@@ -182,12 +183,12 @@
                   href="#!"
                   class="burger__menu-link">
                     <span class="burger__menu-text">About Seedra</span>
-                    <span class="burger__menu-wrap">
-                        <img
-                          src="./src/image/menu-arrow.svg"
-                          alt=""
-                          class="burger__menu-icon">
-                    </span>
+                    <div class="burger__menu-wrap">
+                         {{> components/svg
+                            className="burger__menu-icon"
+                            id="burger-menu-arrow"
+                        }}
+                    </div>
                 </a>
             </li>
             <li class="burger__menu-item js-close-burger">
@@ -195,12 +196,12 @@
                   href="#!"
                   class="burger__menu-link">
                     <span class="burger__menu-text">Our blog</span>
-                    <span class="burger__menu-wrap">
-                        <img
-                          src="./src/image/menu-arrow.svg"
-                          alt=""
-                          class="burger__menu-icon">
-                    </span>
+                    <div class="burger__menu-wrap">
+                         {{> components/svg
+                            className="burger__menu-icon"
+                            id="burger-menu-arrow"
+                        }}
+                    </div>
                 </a>
             </li>
             <li class="burger__menu-item js-close-burger">
@@ -208,12 +209,12 @@
                   href="#!"
                   class="burger__menu-link">
                     <span class="burger__menu-text">Contacts</span>
-                    <span class="burger__menu-wrap">
-                        <img
-                          src="./src/image/menu-arrow.svg"
-                          alt=""
-                          class="burger__menu-icon">
-                    </span>
+                    <div class="burger__menu-wrap">
+                         {{> components/svg
+                            className="burger__menu-icon"
+                            id="burger-menu-arrow"
+                        }}
+                    </div>
                 </a>
             </li>
         </ul>
@@ -224,16 +225,18 @@
             <a
               href="#!"
               class="js-close-burger">
-                <svg class="burger__social-icon">
-                    <use xlink:href="/sprite.svg#icon-instagram"></use>
-                </svg>
+                {{> components/svg
+                    className="burger__social-icon"
+                    id="instagram"
+                }}
             </a>
             <a
               href="#!"
               class="js-close-burger">
-                <svg class="burger__social-icon">
-                    <use xlink:href="/sprite.svg#icon-facebook"></use>
-                </svg>
+                {{> components/svg
+                    className="burger__social-icon"
+                    id="facebook"
+                }}
             </a>
         </div>
     </div>

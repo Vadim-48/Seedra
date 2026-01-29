@@ -1,0 +1,204 @@
+@use "@/scss/mixins/media" as media;
+.blog{
+    margin-top: 92px;
+    padding-bottom: 300px;
+    @include media.max-width(xs) {
+        margin-top: 34px;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__header-btn{
+        border: 1px solid var(--light-grey-stroke);
+        width: 173px;
+        @include media.max-width(sm) {
+            width: 160px;
+        }
+    }
+
+    &__wrap{
+        margin-top: 39px;
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr);
+        gap: 30px;
+        grid-auto-rows: 1fr;
+        @include media.max-width(md) {
+            grid-template-columns: repeat( 2, 1fr);
+        }
+        @include media.max-width(xs) {
+            display: flex;
+            gap: 0;
+            margin-top: 32px;
+            //height: auto;
+            //align-items: stretch;
+        }
+    }
+    &__card{
+        @include media.max-width(xs) {
+            //max-width: 350px;
+            width: 92%;
+            height: auto;
+        }
+    }
+}
+
+.news-card{
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    //flex: auto 0 0;
+
+    @include media.max-width(sm) {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    @include media.max-width(sm) {
+        min-height: 400px;
+    }
+
+    &_light-blue{
+        background: var(--light-blue);
+    }
+    &_light-green{
+        background: var(--light-green);
+    }
+    &__content{
+        padding: 30px 0 8px 30px;
+        position: relative;
+        z-index: 1;
+        @include media.max-width(sm) {
+            padding: 20px 0 0 20px;
+        }
+    }
+    &__date-row{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__icon{
+        width: 24px;
+        height: 24px;
+    }
+    &__date-text{
+        font-size: 14px;
+        line-height: 178%;
+        color: var(--text-secondary);
+    }
+    &__title{
+        margin-top: 10px;
+        padding-right: 6%;
+    }
+    &__text{
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+        margin-top: 3px;
+        padding-right: 2%;
+        &:empty{
+            display: none;
+        }
+    }
+    &__btn{
+        border: 1px solid var(--light-grey-stroke);
+        width: 106px;
+        margin-top: 14px;
+    }
+    &__photo{
+        &_square{
+            height: 100%;
+            aspect-ratio: 1;
+            max-height: 300px;
+            margin: auto 0 0 0;
+            @include media.max-width(sm) {
+                width: 70%;
+                height: auto;
+                //margin: -60px 0 0 auto;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            @include media.max-width(xs) {
+                //position: absolute;
+                width: 72%;
+                right: -12%;
+            }
+        }
+        &_rectangle{
+            aspect-ratio: 133 / 183;
+            margin: -25px 1px 0 auto;
+            //width: 81%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 62%;
+
+            @include media.max-width(sm) {
+                //position: relative;
+                //width: 60%;
+                aspect-ratio: 157 / 215;
+                position: absolute;
+                height: auto;
+                width: 50%;
+                //margin: -60px 0 0 auto;
+            }
+            @include media.max-width(xs) {
+                position: absolute;
+            }
+        }
+        &_round{
+            height: 79%;
+            aspect-ratio: 1;
+            position: absolute;
+            right: -12%;
+            bottom: -35%;
+
+            @include media.max-width(sm) {
+                //position: relative;
+                height: auto;
+                //width: 80%;
+                //margin: -60px -53px -67px auto;
+                //right: 0;
+                //bottom: 0;
+                width: 68%;
+                right: -25%;
+                bottom: -13%;
+
+            }
+            @include media.max-width(xs) {
+                //position: absolute;
+            }
+        }
+    }
+}
+.grid-row-2{
+    grid-row: span 2;
+
+    @include media.max-width(sm) {
+        grid-row: span 1;
+    }
+    & .news-card__content{
+        padding: 24px 0 0 24px;
+        @include media.max-width(sm) {
+            padding: 20px 0 0 20px;
+        }
+    }
+
+}
+.grid-column-2{
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+.grid-span-1{
+    & .news-card__text{
+        display: none;
+        @include media.max-width(sm) {
+            display: block;
+        }
+    }
+}

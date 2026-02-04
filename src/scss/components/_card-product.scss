@@ -2,22 +2,17 @@
 .card {
     border: 2px solid var(--light-grey-stroke);
     border-radius: 8px;
-    max-width: 350px;
+    //max-width: 350px;
     //height: 100%;
     position: relative;
     padding: 26px 26px 23px 26px ;
-    //aspect-ratio: 175 / 256;
     display: grid;
     grid-template-rows: 1fr auto;
     align-content: start;
     gap: 7px;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: space-between;
     @include media.max-width(xs) {
         height: auto;
     }
-
 
     &__favorite {
         position: absolute;
@@ -37,11 +32,8 @@
     }
 
     &__photo {
-        //width: 294px;
-        //height: 294px;
         width: 100%;
         aspect-ratio: 1;
-        //margin: 26px auto 0 auto;
         display: block;
         overflow: hidden;
         border-radius: 12px;
@@ -50,20 +42,17 @@
     &__wrap {
     }
 
-    &__star-row{
+    &__rating{
         display: flex;
         align-items: center;
         gap: 3px;
         margin-top: 25px;
-        @include media.max-width(xs) {
-            margin: 34px 0 0 16px;
-        }
+            @include media.max-width(xs) {
+                margin: 34px 0 0 16px;
+            }
     }
-    &__star-icon{
-        width: 14px;
-        height: 13px;
-    }
-    &__star-comments{
+
+    &__rating-comments{
         font-weight: 400;
         font-size: 14px;
         line-height: 178%;
@@ -87,8 +76,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        //flex-grow: 1;
-        //margin-top: 7px;
+
         @include media.max-width(xs) {
             margin: 0 0 0 16px;
         }

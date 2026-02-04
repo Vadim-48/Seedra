@@ -1,9 +1,9 @@
 @use "@/scss/mixins/media" as media;
 .blog{
     margin-top: 92px;
-    padding-bottom: 300px;
+    //padding-bottom: 300px;
     @include media.max-width(xs) {
-        margin-top: 34px;
+        margin-top: 26px;
     }
     &__header{
         display: flex;
@@ -30,14 +30,11 @@
         @include media.max-width(xs) {
             display: flex;
             gap: 0;
-            margin-top: 32px;
-            //height: auto;
-            //align-items: stretch;
+            margin-top: 24px;
         }
     }
     &__card{
         @include media.max-width(xs) {
-            //max-width: 350px;
             width: 92%;
             height: auto;
         }

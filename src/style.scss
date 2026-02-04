@@ -5,12 +5,15 @@
 
 @use "./scss/components/btn";
 @use "./scss/components/typography";
+@use "./scss/components/rating";
 
 @use "./scss/main/hero";
 @use "./scss/main/info";
 @use "./scss/main/products";
 @use "./scss/main/blog";
+@use "./scss/main/feedback";
+@use "./scss/main/about";
 
 @use "./scss/components/products-category";
-@use "./scss/components/card";
+@use "./scss/components/card-product";
 //@use "./scss/components/card";

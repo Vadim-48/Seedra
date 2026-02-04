@@ -6,33 +6,17 @@
                 id="card-favorite"
             }}
         </div>
-        <img
-          src=""
-          alt=""
-          class="card__photo"
-          id="card-photo-1">
-        <div class="card__star-row">
-            {{> components/svg
-                className="card__star-icon"
-                id="star"
+        <picture class="card__photo">
+            <img
+              src=""
+              alt="">
+        </picture>
+
+        <div class="card__rating">
+            {{> components/rating
+                className=""
             }}
-            {{> components/svg
-                className="card__star-icon"
-                id="star"
-            }}
-            {{> components/svg
-                className="card__star-icon"
-                id="star"
-            }}
-            {{> components/svg
-                className="card__star-icon"
-                id="star"
-            }}
-            {{> components/svg
-                className="card__star-icon"
-                id="half-star"
-            }}
-            <span class="card__star-comments">(123)</span>
+            <span class="card__rating-comments">(122)</span>
         </div>
         <p class="card__title"></p>
     </div>

@@ -1,0 +1,80 @@
+@use "@/scss/mixins/media" as media;
+.about {
+    margin-top: 80px;
+    overflow: hidden;
+    @include media.max-width(xs) {
+        margin-top: 36px;
+    }
+    &__container{
+        @include media.max-width(md) {
+            display: contents;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        @include media.max-width(md) {
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+    }
+
+    &__content {
+        margin: -30px -5% 0 0;
+        @include media.max-width(md) {
+            margin: 0;
+            padding-inline: 15px;
+        }
+    }
+
+    &__title {
+        @include media.max-width(xs) {
+            width: 65%;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        text-indent: 8px;
+        &:first-of-type {
+            margin-top: 32px;
+            @include media.max-width(xs) {
+                margin-top: 18px;
+            }
+        }
+        &:nth-of-type(2) {
+            margin-top: 28px;
+        }
+        &:last-of-type {
+            margin-top: 28px;
+        }
+    }
+    &__photo{
+        width: 58%;
+        aspect-ratio: 642 / 577;
+        height: 100%;
+        flex: 1 0 auto;
+        transform: translateX(19%);
+        @include media.max-width(lg) {
+            transform: translateX(15%);
+        }
+        @include media.max-width(md) {
+            transform: translateX(11%);
+            width: 75%;
+        }
+        @include media.max-width(sm) {
+            width: 100%;
+        }
+        @include media.max-width(xs) {
+            width: 109%;
+            transform: translateX(7.5%);
+        }
+    }
+}
+
+

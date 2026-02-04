@@ -1,0 +1,133 @@
+@use "@/scss/mixins/media" as media;
+.feedback {
+    margin-top: 87px;
+    //padding-bottom: 110px;
+    @include media.max-width(xs) {
+        margin-top: 51px;
+        //padding-bottom: 0;
+    }
+
+    &__title {
+        text-align: center;
+        @include media.max-width(xs) {
+            text-align: left;
+            margin-left: 15px;
+        }
+    }
+
+    &__row {
+        margin: 43px 0 0 0;
+        padding-bottom: 54px;
+        @include media.max-width(xs) {
+            margin: 25px 0 0 15px;
+            padding-bottom: 0;
+        }
+    }
+    &__card-review{
+        //width: 37.5%;
+        width: 540px;
+        flex-shrink: 0;
+        opacity: 0.5;
+        height: auto;
+        margin-top: 35px;
+        transition: margin 0.3s ease;
+        @include media.max-width(xs) {
+            margin-top: 0;
+        }
+    }
+    & .swiper-slide-active {
+        opacity: 1;
+        //margin-top: 0;
+        margin: 0 0 35px 0;
+        @include media.max-width(xs) {
+            margin: 0;
+        }
+    }
+}
+.swiper-pagination{
+    @include media.max-width(xs) {
+        display: none;
+    }
+}
+.swiper-pagination-bullet {
+    border-radius: 30px;
+    width: 35px;
+    height: 6px;
+    background: var(--green-brand);
+    opacity: 0.2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.card-review {
+    border: 1px solid var(--light-grey-stroke);
+    border-radius: 12px;
+    padding: 34px 34px 38px 34px;
+    box-shadow: 0 4px 21px 0 rgba(209, 209, 209, 0.25);
+    background: var(--white);
+    @include media.max-width(xs) {
+        padding: 22px 22px 24px 22px;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        @include media.max-width(xs) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__name-wrap {
+        margin-top: 4px;
+        @include media.max-width(xs) {
+            margin-top: 0px;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.39;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+
+    &__date {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__rating{
+        margin-top: 32px;
+        gap: 4px;
+        & svg{
+            width: 21px;
+            height: 20px;
+        }
+        @include media.max-width(xs) {
+            margin-top: 16px;
+        }
+    }
+    &__text {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        margin-top: 16px;
+        @include media.max-width(xs) {
+            font-size: 14px;
+            line-height: 2;
+        }
+    }
+}

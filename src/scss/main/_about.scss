@@ -1,5 +1,6 @@
 @use "@/scss/mixins/media" as media;
 .about {
+    position: relative;
     margin-top: 80px;
     overflow: hidden;
     @include media.max-width(xs) {
@@ -73,6 +74,19 @@
         @include media.max-width(xs) {
             width: 109%;
             transform: translateX(7.5%);
+        }
+    }
+    &__img-right{
+        position: absolute;
+        right: 0;
+        top: 56%;
+        width: 70px;
+        height: 100px;
+        @include media.max-width(lg) {
+            top: 83%;
+        }
+        @include media.max-width(sm) {
+            display: none;
         }
     }
 }

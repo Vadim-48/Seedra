@@ -1,8 +1,20 @@
+@use "@/scss/mixins/adaptive-value" as adaptive;
 @use "@/scss/mixins/media" as media;
+.main-title{
+    font-weight: 600;
+    @include adaptive.value(font-size, 48, 28);
+    line-height: 1.13;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    @include media.max-width(sm) {
+        line-height: 1.29;
+    }
+}
+
 .title{
     font-weight: 600;
     font-size: 36px;
-    line-height: 1.50;
+    line-height: 1.5;
     letter-spacing: -0.05em;
     //width: 124px;
     @include media.max-width(sm) {

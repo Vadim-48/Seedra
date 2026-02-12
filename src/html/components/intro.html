@@ -1,0 +1,18 @@
+<div class="intro__wrap">
+    <div class="intro__content">
+        <h1 class="intro__title">
+            {{title}}
+        </h1>
+        <p class="intro__text">
+            {{text}}
+        </p>
+    </div>
+    {{> components/picture
+        className="intro__photo"
+        alt="img"
+        desktop="./src/image/components/intro/bg.jpg"
+        desktopWebp="./src/image/components/intro/bg.webp"
+        mobile="./src/image/components/intro/bg_2.jpg"
+        mobileWebp="./src/image/components/intro/bg_2.webp"
+    }}
+</div>

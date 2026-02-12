@@ -1,13 +1,13 @@
 @use "@/scss/mixins/media" as media;
 .footer {
-    margin-top: 78px;
+    //margin-top: 78px;
     padding-bottom: 28px;
-    @include media.max-width(md) {
-        margin-top: 41px;
-    }
-    @include media.max-width(xs) {
-        margin-top: 91px;
-    }
+    //@include media.max-width(md) {
+    //    margin-top: 41px;
+    //}
+    //@include media.max-width(xs) {
+    //    margin-top: 91px;
+    //}
 
     &__main {
         display: grid;
@@ -117,13 +117,13 @@
     }
 
     &__social {
+        display: flex;
+        gap: 26px;
     }
     &__social-icon {
+        color: var(--green-brand);
         width: 19px;
         height: 19px;
-        &:not(:first-child) {
-            margin-left: 26px;
-        }
     }
 
     &__copyright {
@@ -131,4 +131,9 @@
         line-height: 1.78;
         color: var(--text-secondary);
     }
+}
+
+.star-test{
+    height: 20px;
+    width: 20px;
 }

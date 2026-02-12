@@ -1,0 +1,32 @@
+@use "@/scss/mixins/media" as media;
+.blog{
+    &__wrap{
+        //margin-top: 39px;
+        margin-top: 33px;
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr);
+        gap: 30px;
+        grid-auto-rows: 1fr;
+        @include media.max-width(md) {
+            grid-template-columns: repeat( 2, 1fr);
+        }
+        @include media.max-width(xs) {
+            grid-template-columns: 1fr;
+            margin-top: 16px;
+            gap: 11px;
+            & .news-card__content{
+                padding: 20px 30px 0 20px;
+            }
+        }
+    }
+    &__card{
+        @include media.max-width(xs) {
+            //aspect-ratio: 68 / 80;
+        }
+        @include media.max-width(xxs) {
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+}

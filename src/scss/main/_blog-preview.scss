@@ -1,0 +1,44 @@
+@use "@/scss/mixins/media" as media;
+.blog-preview{
+    margin-top: 92px;
+    @include media.max-width(xs) {
+        margin-top: 23px;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__header-btn{
+        border: 1px solid var(--light-grey-stroke);
+        width: 173px;
+        @include media.max-width(sm) {
+            width: 160px;
+        }
+    }
+
+    &__wrap{
+        margin-top: 39px;
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr);
+        gap: 30px;
+        grid-auto-rows: 1fr;
+        @include media.max-width(md) {
+            grid-template-columns: repeat( 2, 1fr);
+        }
+        @include media.max-width(xs) {
+            display: flex;
+            gap: 0;
+            margin-top: 24px;
+        }
+    }
+    &__card{
+        //@include media.max-width(sm) {
+        //    min-height: 400px;
+        //}
+        @include media.max-width(xs) {
+            width: 92%;
+            height: auto;
+        }
+    }
+}

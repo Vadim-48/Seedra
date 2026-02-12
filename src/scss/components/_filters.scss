@@ -1,0 +1,88 @@
+@use "@/scss/mixins/media" as media;
+.filters {
+    margin-top: 17px;
+    @include media.max-width(xs) {
+        margin-top: 15px;
+    }
+    &__wrap{
+        display: flex;
+        gap: 20px;
+    }
+    &__search-form {
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 71px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-left: 34px;
+        //width: 74.3%;
+        flex-grow: 1;
+        @include media.max-width(xs) {
+            height: 53px;
+            padding-left: 30px;
+        }
+    }
+    &__search-btn{
+    }
+    &__search-icon{
+        width: 16px;
+        height: 16px;
+    }
+    &__search-input{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--text-secondary);
+    }
+    &__filter-btn{
+        margin-inline: auto 18px;
+        display: none;
+        @include media.max-width(sm) {
+            display: block;
+        }
+
+    }
+    &__filter-icon{
+        width: 14px;
+        height: 14px;
+    }
+    &__sort-btn{
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 71px;
+        height: 64px;
+        width: 23.2%;
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 25px;
+        margin-right: 8px;
+        @include media.max-width(sm) {
+            display: none;
+        }
+    }
+    &__sort-inner{
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+
+    }
+    &__sort-text{
+        font-size: 14px;
+        line-height: 1.38;
+        color: var(--text-secondary);
+    }
+    &__sort-item{
+        font-weight: 500;
+        font-size: 16px;
+        //line-height: 1.56;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+    &__sort-icon{
+        width: 14px;
+        height: 14px;
+    }
+}

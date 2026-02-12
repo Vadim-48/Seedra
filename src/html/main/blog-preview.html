@@ -1,51 +1,55 @@
-<div class="blog__header">
-    <h2 class="blog__title title">
+<div class="blog-preview__header">
+    <h2 class="blog-preview__title title">
         Our blog.
     </h2>
-    <a href="#!" class="blog__header-btn button">Go to our blog</a>
+    <a href="#!" class="blog-preview__header-btn button">Go to our blog</a>
 </div>
 
 <div class="swiper">
-    <div class="blog__wrap swiper-wrapper">
+    <div class="blog-preview__wrap swiper-wrapper">
         {{> components/card-blog
-            className="blog__card grid-column-2 news-card_light-green swiper-slide"
+            className="blog-preview__card news-card_tall news-card_light-green swiper-slide"
             date="12.09.2021"
             title="How to plant spinach correctly in winter"
             text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
             classNamePicture="news-card__photo_square"
-            desktop="./src/image/news-card/spinach.png"
-            desktopWebp="./src/image/news-card/spinach.webp"
+            desktop="./src/image/components/news-card/spinach.png"
+            desktopWebp="./src/image/components/news-card/spinach.webp"
             alt=""
+            href="card-news.html"
         }}
         {{> components/card-blog
-            className="blog__card grid-row-2 news-card_light-blue swiper-slide"
+            className="blog-preview__card news-card_wide news-card_light-blue swiper-slide"
             date="12.09.2021"
             title="How to plant spinach correctly in winter"
             text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
             classNamePicture="news-card__photo_rectangle"
-            desktop="./src/image/news-card/girl-strawberries.png"
-            desktopWebp="./src/image/news-card/girl-strawberries.webp"
+            desktop="./src/image/components/news-card/girl-strawberries.png"
+            desktopWebp="./src/image/components/news-card/girl-strawberries.webp"
             alt=""
+            href="#!"
         }}
         {{> components/card-blog
-            className="blog__card news-card_light-blue grid-span-1 swiper-slide"
+            className="blog-preview__card news-card_basic news-card_light-blue swiper-slide"
             date="12.09.2021"
             title="How to plant spinach correctly in winter"
             text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
             classNamePicture="news-card__photo_round"
-            desktop="./src/image/news-card/strawberries.png"
-            desktopWebp="./src/image/news-card/strawberries.webp"
+            desktop="./src/image/components/news-card/strawberries-circle.png"
+            desktopWebp="./src/image/components/news-card/strawberries-circle.webp"
             alt=""
+            href="#!"
         }}
         {{> components/card-blog
-            className="blog__card news-card_light-blue grid-span-1 swiper-slide"
+            className="blog-preview__card news-card_basic news-card_light-blue swiper-slide"
             date="12.09.2021"
             title="How to plant spinach correctly in winter"
             text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
             classNamePicture="news-card__photo_round"
-            desktop="./src/image/news-card/strawberries.png"
-            desktopWebp="./src/image/news-card/strawberries.webp"
+            desktop="./src/image/components/news-card/strawberries-circle.png"
+            desktopWebp="./src/image/components/news-card/strawberries-circle.webp"
             alt=""
+            href="#!"
         }}
     </div>
 </div>

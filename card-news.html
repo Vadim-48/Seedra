@@ -10,10 +10,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
-    <link
       rel="preconnect"
       href="https://fonts.googleapis.com">
     <link
@@ -25,7 +21,7 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/style.scss">
+      href="./src/scss/card-news-style.scss">
     <title>Seedra</title>
 </head>
 <body class="body">
@@ -40,32 +36,19 @@
     {{> base/burger}}
 </header>
 <main>
-    <section class="hero">
+    <section class="news-header">
         <div class="container">
-            {{> main/hero}}
+            {{> card-news/news-header}}
         </div>
     </section>
-    <section class="info">
+    <section class="">
         <div class="container">
-            {{> main/info}}
+
         </div>
     </section>
-    <section class="products">
+    <section class="">
         <div class="container">
-            {{> main/products}}
-        </div>
-    </section>
-    <section class="blog-preview">
-        <div class="container">
-            {{> main/blog-preview}}
-        </div>
-    </section>
-    <section class="feedback">
-        {{> main/feedback}}
-    </section>
-    <section class="about">
-        <div class="about__container container">
-            {{> main/about}}
+
         </div>
     </section>
 </main>
@@ -76,10 +59,9 @@
         {{> base/footer}}
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script
   type="module"
-  src="/src/main.js"
+  src="./src/js/card-news.js"
   defer></script>
 </body>
 </html>

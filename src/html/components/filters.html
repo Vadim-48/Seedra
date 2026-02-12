@@ -1,0 +1,36 @@
+<div class="filters__wrap">
+    <form
+      action="#"
+      class="filters__search-form">
+        <button class="filters__search-btn">
+            {{> components/svg
+                className="filters__search-icon"
+                id="search"
+            }}
+        </button>
+        <input
+          type="search"
+          class="filters__search-input"
+          placeholder="Search">
+        <button class="filters__filter-btn" type="button">
+            {{> components/svg
+            className="filters__filter-icon"
+            id="filter"
+            }}
+        </button>
+    </form>
+    <button class="filters__sort-btn" type="button">
+        <div class="filters__sort-inner">
+            <span class="filters__sort-text">
+                Sort by
+            </span>
+            <span class="filters__sort-item">
+                Recently
+            </span>
+        </div>
+        {{> components/svg
+            className="filters__sort-icon"
+            id="burger-category-arrow"
+        }}
+    </button>
+</div>

@@ -46,6 +46,7 @@
     }
 
     &__main {
+        //height: 100%;
     }
 
     &__text {
@@ -100,6 +101,17 @@
     }
 
     &__aside-title {
+        @include media.max-width(sm) {
+            margin-top: 38px;
+            font-size: 24px;
+        }
+    }
+    & .swiper{
+        display: contents;
+        @include media.max-width(sm) {
+            display: flex;
+            margin-top: 20px;
+        }
     }
 
     &__aside-wrap {
@@ -111,11 +123,12 @@
         //row-gap: 24px;
         gap: 24px;
         //flex-direction: column;
-        height: calc(100% - 48px);
+        height: calc(100% - 70px);
         @include media.max-width(sm) {
             display: flex;
             height: auto;
             gap: 0;
+            margin-top: 0;
         }
     }
     &__aside-card{

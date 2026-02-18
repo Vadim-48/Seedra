@@ -5,7 +5,7 @@ import { loadHeroProduct } from "./js/modules/hero.js";
 import { burger } from "./js/modules/burger.js";
 import { burgerAccordion } from "./js/modules/burger-accordion.js";
 import { initSwipers } from "./js/modules/swiper.js";
-import {  initFeedbackSwiper } from "./js/modules/swiper-feedback.js";
+import { initFeedbackSwiper } from "./js/modules/swiper-feedback.js";
 
 console.log('Firebase ready', app);
 

@@ -15,9 +15,7 @@
     @include media.max-width(sm) {
         min-height: 400px;
     }
-    @include media.max-width(xs) {
-        //min-height: 450px;
-    }
+
     &_wide{
         grid-row: span 2;
 
@@ -112,15 +110,12 @@
                 right: 0;
             }
             @include media.max-width(xs) {
-                //width: 72%;
-                //right: -12%;
                 width: 66%;
                 right: -2%;
             }
         }
         &_rectangle{
             aspect-ratio: 133 / 183;
-            //margin: -25px 1px 0 auto;
             position: absolute;
             right: 0;
             bottom: 0;
@@ -128,19 +123,14 @@
 
             @include media.max-width(sm) {
                 aspect-ratio: 89 / 122;
-                //position: absolute;
                 height: auto;
                 width: 49%;
                 right: -4%;
                 bottom: 0;
             }
-            @include media.max-width(xs) {
-                //position: absolute;
-            }
         }
         &_rectangle-high{
             aspect-ratio: 109 / 146;
-            //margin: -25px 1px 0 auto;
             position: absolute;
             right: -7%;
             bottom: -1%;
@@ -148,31 +138,25 @@
 
             @include media.max-width(sm) {
                 aspect-ratio: 89 / 122;
-                //position: absolute;
                 height: auto;
                 width: 56%;
                 right: -6%;
                 bottom: -10%;
             }
-            @include media.max-width(xs) {
-                //position: absolute;
-            }
+        }
+        &_outside-right{
+            right: -16%;
+
         }
         &_rectangle-in-wide{
-            //aspect-ratio: 55 / 51;
             aspect-ratio: 22 / 17;
-            //width: 79%;
             height: 40.5%;
             position: absolute;
             right: -16%;
             bottom: 0;
-            @include media.max-width(md) {
-                //height: 45%;
-            }
             @include media.max-width(xs) {
                 aspect-ratio: 43 / 33;
                 width: 62%;
-                //right: 10%;
                 right: 0;
                 height: auto;
             }

@@ -1,6 +1,32 @@
 @use "@/scss/mixins/media" as media;
-.button{
+.btn_white{
+    height: 51px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.78;
+    letter-spacing: -0.04em;
+    color: var(--green-brand);
     background: var(--white);
+    transition: background .3s ease, border-color .3s ease;
+    @include media.max-width(sm) {
+        font-size: 14px;
+    }
+    &:focus-visible, &:hover {
+        background: var(--invisible-green);
+    }
+    &:active{
+        background: var(--invisible-green);
+        border-color: var(--green-brand);
+    }
+}
+
+.btn_green{
     height: 51px;
     border-radius: 8px;
     display: flex;
@@ -11,14 +37,17 @@
     font-size: 16px;
     line-height: 1.78;
     letter-spacing: -0.04em;
-    color: var(--green-brand);
+    color: var(--white);
+    background: var(--green-brand);
+    transition: background .3s ease;
     @include media.max-width(sm) {
         font-size: 14px;
     }
-
-    &_green{
-        color: var(--white);
-        background: var(--green-brand);
+    &:focus-visible, &:hover {
+        background: var(--hover);
+    }
+    &:active{
+        background: var(--primary-color);
     }
 }
 // focus (focus-visible), hover, active

@@ -14,7 +14,7 @@ const pages = {
     'our-blog':  resolve(__dirname, 'our-blog.html'),
     'card-news':  resolve(__dirname, 'card-news.html'),
     // our-blog:  resolve(__dirname, 'our-blog.html'),
-    // contacts:  resolve(__dirname, 'contacts.html'),
+    product:  resolve(__dirname, 'product.html'),
 }
 
 export default defineConfig({

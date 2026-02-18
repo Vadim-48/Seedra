@@ -59,29 +59,31 @@
     </div>
     <div class="one-news__aside">
         <h3 class="one-news__aside-title sub-title">Related titles</h3>
-        <div class="one-news__aside-wrap">
-            {{> components/card-blog
-            className="one-news__aside-card news-card_wide news-card_light-blue"
-            date="12.09.2021"
-            title="How to plant spinach correctly in winter"
-            text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
-            classNamePicture="news-card__photo_rectangle"
-            desktop="./src/image/components/news-card/girl-strawberries.png"
-            desktopWebp="./src/image/components/news-card/girl-strawberries.webp"
-            alt=""
-            href="#!"
-            }}
-            {{> components/card-blog
-            className="one-news__aside-card news-card_wide news-card_light-green"
-            date="12.09.2021"
-            title="How to plant spinach correctly in winter"
-            text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
-            classNamePicture="news-card__photo_rectangle-high"
-            desktop="./src/image/components/news-card/girl-in-hat.png"
-            desktopWebp="./src/image/components/news-card/girl-in-hat.webp"
-            alt=""
-            href="#!"
-            }}
+        <div class="swiper">
+            <div class="one-news__aside-wrap swiper-wrapper">
+                {{> components/card-blog
+                className="one-news__aside-card news-card_wide news-card_light-blue swiper-slide"
+                date="12.09.2021"
+                title="How to plant spinach correctly in winter"
+                text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
+                classNamePicture="news-card__photo_rectangle"
+                desktop="./src/image/components/news-card/girl-strawberries.png"
+                desktopWebp="./src/image/components/news-card/girl-strawberries.webp"
+                alt=""
+                href="#!"
+                }}
+                {{> components/card-blog
+                className="one-news__aside-card news-card_wide news-card_light-green swiper-slide"
+                date="12.09.2021"
+                title="How to plant spinach correctly in winter"
+                text="In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months..."
+                classNamePicture="news-card__photo_rectangle-high"
+                desktop="./src/image/components/news-card/girl-in-hat.png"
+                desktopWebp="./src/image/components/news-card/girl-in-hat.webp"
+                alt=""
+                href="#!"
+                }}
+            </div>
         </div>
     </div>
 </div>

@@ -20,13 +20,13 @@
     </nav>
     <div class="header__right-wrap">
         <div class="header__social">
-            <a href="#!">
+            <a href="{{> links/instagram}}">
                 {{> components/svg
                     className="header__social-icon"
                     id="instagram"
                 }}
             </a>
-            <a href="#!">
+            <a href="{{> links/facebook}}">
                 {{> components/svg
                     className="header__social-icon"
                     id="facebook"
@@ -49,7 +49,7 @@
         </form>
         <div class="header__actions">
             <button
-              class="header__actions-btn favorite-btn"
+              class="header__actions-btn header__favorite-btn"
               aria-label="Add to favorites">
                 {{> components/svg
                     className="header__actions-icon"
@@ -57,7 +57,7 @@
                 }}
             </button>
             <button
-              class="header__actions-btn card-btn"
+              class="header__actions-btn header__card-btn"
               aria-label="Open cart">
                 {{> components/svg
                     className="header__actions-icon"

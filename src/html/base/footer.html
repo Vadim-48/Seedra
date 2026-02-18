@@ -54,14 +54,18 @@
 <div class="footer__line"></div>
 <div class="footer__bottom">
     <div class="footer__social">
-        {{> components/svg
-            className="footer__social-icon"
-            id="instagram"
-        }}
-        {{> components/svg
-            className="footer__social-icon"
-            id="facebook"
-        }}
+        <a href="{{> links/instagram}}">
+            {{> components/svg
+                className="footer__social-icon"
+                id="instagram"
+            }}
+        </a>
+        <a href="{{> links/facebook}}">
+            {{> components/svg
+                className="footer__social-icon"
+                id="facebook"
+            }}
+        </a>
     </div>
     <p class="footer__copyright">All rights reserved</p>
 </div>

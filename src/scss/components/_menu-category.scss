@@ -18,8 +18,16 @@
 
         display: flex;
         align-items: center;
+        transition: color .3s ease, border-color .3s ease;
         @include media.max-width(sm) {
             height: 57px;
+        }
+        &:focus-visible, &:hover {
+            border-color: var(--invisible-green);
+        }
+        &:active{
+            color: var(--green-brand);
+            border-color: var(--green-brand);
         }
     }
     &__icon{

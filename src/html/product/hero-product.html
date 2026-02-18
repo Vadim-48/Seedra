@@ -1,0 +1,180 @@
+<div class="hero-product__breadcrumb">
+    <span class="hero-product__breadcrumb-item">Main</span>
+    <span class="hero-product__breadcrumb-item">Cataloug</span>
+    <span class="hero-product__breadcrumb-item">Vegetables</span>
+    <span class="hero-product__breadcrumb-item">Cucumber</span>
+    <span class="hero-product__breadcrumb-item">SEEDRA cucumber</span>
+</div>
+<div class="hero-product__wrap">
+    <div class="hero-product__galery">
+        <picture class="hero-product__photo">
+            <img src="./src/image/image.png" alt="product" loading="lazy">
+        </picture>
+        <div class="hero-product__thumbnails">
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+            <button class="hero-product__thumbnails-item">
+                <img src="./src/image/image.png" alt="product" loading="lazy">
+            </button>
+        </div>
+    </div>
+    <div class="hero-product__content">
+        <h1 class="hero-product__title sub-title">SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting</h1>
+        <div class="hero-product__tags">
+            <div class="hero-product__tag hero-product__status">
+                {{> components/svg
+                className="hero-product__status-icon"
+                id="check"
+                }}
+                <span class="hero-product__status-text">AVAILABLE</span>
+            </div>
+            <div class="hero-product__tag hero-product__category">
+                {{> components/svg
+                className="hero-product__category-icon"
+                id="btn-category-4"
+                }}
+                <span class="hero-product__category-text">VEGETABLES</span>
+            </div>
+        </div>
+        <div class="hero-product__selector-wrap">
+            <div class="hero-product__selector selector">
+                <div class="selector__head">
+                    <div class="selector__chose">
+                        <span class="selector__chose-text-prefix">Size</span>
+                        <span class="selector__chose-number">2 PACK</span>
+                    </div>
+                    <div class="selector__number">
+                        <button class="selector__number-add">
+                            {{> components/svg
+                            className="selector__number-icon"
+                            id="minus"
+                            }}
+                        </button>
+                        <div class="selector__number-wrap">
+                            <span class="selector__number-item">2</span>
+                        </div>
+                        <button class="selector__number-remove">
+                            {{> components/svg
+                            className="selector__number-icon"
+                            id="plus"
+                            }}
+                        </button>
+                    </div>
+                </div>
+                <div class="selector__option-wrap">
+                    <div class="selector__option">
+                        <input
+                          type="radio"
+                          id="pack-1"
+                          name="pack"
+                          value="1"
+                          class="selector__input">
+                        <label
+                          for="pack-1"
+                          class="selector__label">
+                            <span class="selector__amount">1 pack</span>
+                            <span class="selector__price">
+                                <span class="selector__price-prefix">start from</span>
+                                <span class="selector__price-value">$1,56</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="selector__option">
+                        <input
+                          type="radio"
+                          id="pack-2"
+                          name="pack"
+                          value="2"
+                          class="selector__input">
+                        <label
+                          for="pack-2"
+                          class="selector__label">
+                            <span class="selector__amount">2 pack</span>
+                            <span class="selector__price">
+                                <span class="selector__price-prefix">start from</span>
+                                <span class="selector__price-value">$1,56</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="selector__option">
+                        <input
+                          type="radio"
+                          id="pack-3"
+                          name="pack"
+                          value="3"
+                          class="selector__input">
+                        <label
+                          for="pack-3"
+                          class="selector__label">
+                            <span class="selector__amount">3 pack</span>
+                            <span class="selector__price">
+                                <span class="selector__price-prefix">start from</span>
+                                <span class="selector__price-value">$1,56</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="selector__option">
+                        <input
+                          type="radio"
+                          id="pack-4"
+                          name="pack"
+                          value="4"
+                          class="selector__input">
+                        <label
+                          for="pack-4"
+                          class="selector__label">
+                            <span class="selector__amount">4 pack</span>
+                            <span class="selector__price">
+                                <span class="selector__price-prefix">start from</span>
+                                <span class="selector__price-value">$1,56</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="selector__option">
+                        <input
+                          type="radio"
+                          id="pack-5"
+                          name="pack"
+                          value="5"
+                          class="selector__input">
+                        <label
+                          for="pack-5"
+                          class="selector__label">
+                            <span class="selector__amount">5 pack</span>
+                            <span class="selector__price">
+                                <span class="selector__price-prefix">start from</span>
+                                <span class="selector__price-value">$1,56</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-product__foot">
+                <div class="hero-product__price">
+                    <span class="hero-product__old-price">$15.56</span>
+                    <span class="hero-product__new-price">$12.56</span>
+                </div>
+                <div class="hero-product__foot-right">
+                    {{> components/svg
+                    className="hero-product__favorite"
+                    id="favorite"
+                    }}
+                    <button class="hero-product__btn btn_green">Add to card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

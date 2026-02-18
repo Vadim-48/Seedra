@@ -13,21 +13,9 @@
         flex: 1 0 auto;
     }
     &__btn-all{
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 8px;
         width: 155px;
-        height: 51px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.78;
-        letter-spacing: -0.04em;
-        color: var(--green-brand);
+        border-color: var(--light-grey-stroke);
         @include media.max-width(sm) {
-            font-size: 14px;
             width: 124px;
             height: 47px;
         }

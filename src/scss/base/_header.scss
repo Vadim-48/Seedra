@@ -64,6 +64,13 @@
         color: var(--text-secondary);
         width: 19px;
         height: 19px;
+        transition: color .3s ease, opacity .3s ease;
+        &:focus-visible, &:hover {
+            opacity: 0.7;
+        }
+        &:active{
+            color: var(--green-brand);
+        }
     }
 
     &__search-form {
@@ -98,6 +105,13 @@
         @include media.max-width(sm) {
             display: flex;
         }
+    }
+    &__favorite-btn{
+        //--favorite-stroke: var(--green-brand);
+        //--favorite-fill: var(--green-brand);
+    }
+    &__card-btn{
+        color: var(--green-brand);
     }
     &__burger-btn{
         display: none;

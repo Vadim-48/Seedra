@@ -10,6 +10,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
       rel="preconnect"
       href="https://fonts.googleapis.com">
     <link
@@ -20,9 +24,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/card-news-CyxFF7EK.js"></script>
+  <script type="module" crossorigin src="/Seedra/assets/card-news-DFtBeuQB.js"></script>
   <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-fsrTvoOq.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/card-news-CoeyZRMN.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/card-news-Z8hpuu8C.css">
 </head>
 <body class="body">
 <header
@@ -52,11 +56,11 @@
                 </nav>
                 <div class="header__right-wrap">
                     <div class="header__social">
-                        <a href="#!">
+                        <a href="https://www.instagram.com/">
                             <svg class="header__social-icon">
                                 <use xlink:href="/Seedra/sprite.svg#icon-instagram"></use>
                             </svg>            </a>
-                        <a href="#!">
+                        <a href="https://www.facebook.com/">
                             <svg class="header__social-icon">
                                 <use xlink:href="/Seedra/sprite.svg#icon-facebook"></use>
                             </svg>            </a>
@@ -75,13 +79,13 @@
                     </form>
                     <div class="header__actions">
                         <button
-                          class="header__actions-btn favorite-btn"
+                          class="header__actions-btn header__favorite-btn"
                           aria-label="Add to favorites">
                             <svg class="header__actions-icon">
                                 <use xlink:href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>            </button>
                         <button
-                          class="header__actions-btn card-btn"
+                          class="header__actions-btn header__card-btn"
                           aria-label="Open cart">
                             <svg class="header__actions-icon">
                                 <use xlink:href="/Seedra/sprite.svg#icon-cart"></use>
@@ -298,13 +302,13 @@
         <div class="burger__container">
             <div class="burger__social">
                 <a
-                  href="#!"
+                  href="https://www.instagram.com/"
                   class="js-close-burger">
                     <svg class="burger__social-icon">
                         <use xlink:href="/Seedra/sprite.svg#icon-instagram"></use>
                     </svg>            </a>
                 <a
-                  href="#!"
+                  href="https://www.facebook.com/"
                   class="js-close-burger">
                     <svg class="burger__social-icon">
                         <use xlink:href="/Seedra/sprite.svg#icon-facebook"></use>
@@ -401,59 +405,75 @@
                 </div>
                 <div class="one-news__aside">
                     <h3 class="one-news__aside-title sub-title">Related titles</h3>
-                    <div class="one-news__aside-wrap">
-                        <div class="one-news__aside-card news-card_wide news-card_light-blue news-card">
-                            <div class="news-card__content">
-                                <div class="news-card__date-row">
-                                    <svg class="news-card__icon">
-                                        <use xlink:href="/Seedra/sprite.svg#icon-clock"></use>
-                                    </svg>            <span class="news-card__date-text">12.09.2021</span>
+                    <div class="swiper">
+                        <div class="one-news__aside-wrap swiper-wrapper">
+                            <div class="one-news__aside-card news-card_wide news-card_light-blue swiper-slide news-card">
+                                <div class="news-card__content">
+                                    <div class="news-card__date-row">
+                                        <svg class="news-card__icon">
+                                            <use xlink:href="/Seedra/sprite.svg#icon-clock"></use>
+                                        </svg>            <span class="news-card__date-text">12.09.2021</span>
+                                    </div>
+                                    <h3 class="news-card__title sub-title">
+                                        How to plant spinach correctly in winter
+                                    </h3>
+                                    <p class="news-card__text">
+                                        In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...
+                                    </p>
+                                    <a
+                                      href="#!"
+                                      class="news-card__btn btn_white">Read</a>
                                 </div>
-                                <h3 class="news-card__title sub-title">
-                                    How to plant spinach correctly in winter
-                                </h3>
-                                <p class="news-card__text">
-                                    In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...
-                                </p>
-                                <a
-                                  href="#!"
-                                  class="news-card__btn button">Read</a>
+                                <picture class="news-card__photo_rectangle news-card__photo">
+                                    <source srcset="/Seedra/assets/girl-strawberries-CRl9LR1o.webp" type="image/webp">
+                                    <img src="/Seedra/assets/girl-strawberries-BftHWMD8.png" alt="" loading="lazy">
+                                </picture>
                             </div>
-                            <picture class="news-card__photo_rectangle news-card__photo">
-                                <source srcset="/Seedra/assets/girl-strawberries-CRl9LR1o.webp" type="image/webp">
-                                <img src="/Seedra/assets/girl-strawberries-BftHWMD8.png" alt="" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="one-news__aside-card news-card_wide news-card_light-green news-card">
-                            <div class="news-card__content">
-                                <div class="news-card__date-row">
-                                    <svg class="news-card__icon">
-                                        <use xlink:href="/Seedra/sprite.svg#icon-clock"></use>
-                                    </svg>            <span class="news-card__date-text">12.09.2021</span>
+                            <div class="one-news__aside-card news-card_wide news-card_light-green swiper-slide news-card">
+                                <div class="news-card__content">
+                                    <div class="news-card__date-row">
+                                        <svg class="news-card__icon">
+                                            <use xlink:href="/Seedra/sprite.svg#icon-clock"></use>
+                                        </svg>            <span class="news-card__date-text">12.09.2021</span>
+                                    </div>
+                                    <h3 class="news-card__title sub-title">
+                                        How to plant spinach correctly in winter
+                                    </h3>
+                                    <p class="news-card__text">
+                                        In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...
+                                    </p>
+                                    <a
+                                      href="#!"
+                                      class="news-card__btn btn_white">Read</a>
                                 </div>
-                                <h3 class="news-card__title sub-title">
-                                    How to plant spinach correctly in winter
-                                </h3>
-                                <p class="news-card__text">
-                                    In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...
-                                </p>
-                                <a
-                                  href="#!"
-                                  class="news-card__btn button">Read</a>
+                                <picture class="news-card__photo_rectangle-high news-card__photo">
+                                    <source srcset="/Seedra/assets/girl-in-hat-BoMOLn1m.webp" type="image/webp">
+                                    <img src="/Seedra/assets/girl-in-hat-DE1eF5UJ.png" alt="" loading="lazy">
+                                </picture>
                             </div>
-                            <picture class="news-card__photo_rectangle-high news-card__photo">
-                                <source srcset="/Seedra/assets/girl-in-hat-BoMOLn1m.webp" type="image/webp">
-                                <img src="/Seedra/assets/girl-in-hat-DE1eF5UJ.png" alt="" loading="lazy">
-                            </picture>
                         </div>
                     </div>
                 </div>
             </div>        </div>
     </section>
-    <section class="">
+    <section class="share">
         <div class="container">
-
-        </div>
+            <div class="share__wrap">
+                <div class="share__content">
+                    <p class="share__text">
+                        Title was helpful?
+                    </p>
+                    <h2 class="share__title">Share with friends</h2>
+                </div>
+                <div class="share__social-row">
+                    <svg class="share__social-icon">
+                        <use xlink:href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>        <svg class="share__social-icon">
+                        <use xlink:href="/Seedra/sprite.svg#icon-twitter"></use>
+                    </svg>        <svg class="share__social-icon">
+                        <use xlink:href="/Seedra/sprite.svg#icon-pinterest"></use>
+                    </svg>    </div>
+            </div>        </div>
     </section>
 </main>
 <footer
@@ -516,13 +536,18 @@
         <div class="footer__line"></div>
         <div class="footer__bottom">
             <div class="footer__social">
-                <svg class="footer__social-icon">
-                    <use xlink:href="/Seedra/sprite.svg#icon-instagram"></use>
-                </svg>        <svg class="footer__social-icon">
-                    <use xlink:href="/Seedra/sprite.svg#icon-facebook"></use>
-                </svg>    </div>
+                <a href="https://www.instagram.com/">
+                    <svg class="footer__social-icon">
+                        <use xlink:href="/Seedra/sprite.svg#icon-instagram"></use>
+                    </svg>        </a>
+                <a href="https://www.facebook.com/">
+                    <svg class="footer__social-icon">
+                        <use xlink:href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>        </a>
+            </div>
             <p class="footer__copyright">All rights reserved</p>
         </div>    </div>
-</footer>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 </html>

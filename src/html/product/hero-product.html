@@ -5,10 +5,10 @@
     <span class="hero-product__breadcrumb-item">Cucumber</span>
     <span class="hero-product__breadcrumb-item">SEEDRA cucumber</span>
 </div>
-<div class="hero-product__wrap">
-    <div class="hero-product__galery">
+<div class="hero-product__wrap" data-product-id="product_hero-card">
+    <div class="hero-product__gallery">
         <picture class="hero-product__photo">
-            <img src="./src/image/image.png" alt="product" loading="lazy">
+            <img src="" alt="product" loading="lazy" data-product-photo>
         </picture>
         <div class="hero-product__thumbnails">
             <button class="hero-product__thumbnails-item">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="hero-product__content">
-        <h1 class="hero-product__title sub-title">SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting</h1>
+        <h1 class="hero-product__title sub-title" data-product-name>SEEDRA Corn</h1>
         <div class="hero-product__tags">
             <div class="hero-product__tag hero-product__status">
                 {{> components/svg
@@ -164,8 +164,8 @@
             </div>
             <div class="hero-product__foot">
                 <div class="hero-product__price">
-                    <span class="hero-product__old-price">$15.56</span>
-                    <span class="hero-product__new-price">$12.56</span>
+                    <span class="hero-product__old-price" data-product-old-price></span>
+                    <span class="hero-product__new-price" data-product-price></span>
                 </div>
                 <div class="hero-product__foot-right">
                     {{> components/svg

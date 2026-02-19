@@ -8,6 +8,11 @@
     grid-template-rows: 1fr auto;
     align-content: start;
     gap: 7px;
+    min-width: 0;
+    transition: box-shadow .3s ease;
+    &:focus-visible, &:hover {
+        box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+    }
     @include media.max-width(xs) {
         height: auto;
     }
@@ -107,9 +112,6 @@
         font-size: 28px;
         line-height: 1.93;
         color: var(--text-primary);
-        &::before{
-            content: '$';
-        }
         &:empty {
             display: none;
         }
@@ -123,9 +125,6 @@
         color: var(--text-secondary);
         text-decoration: line-through;
         margin-left: 15px;
-        &::before{
-            content: '$';
-        }
         &:empty {
             display: none;
         }

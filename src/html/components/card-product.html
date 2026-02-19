@@ -1,5 +1,5 @@
-<div class="{{className}} card" data-card-id="{{dataId}}" id="{{id}}">
-    <div class="card__wrap">
+<div  class="{{className}} card" data-product-id="{{dataId}}">
+    <a href="#" class="card__wrap">
         <button class="card__favorite">
             {{> components/svg
                 className="card__favorite-icon"
@@ -9,25 +9,26 @@
         <picture class="card__photo">
             <img
               src=""
-              alt="">
+              alt=""
+              data-product-photo>
         </picture>
-
         <div class="card__rating">
             {{> components/rating
                 className=""
             }}
-            <span class="card__rating-comments">(122)</span>
+            <span class="card__rating-comments" data-product-reviews>(122)</span>
         </div>
-        <p class="card__title"></p>
-    </div>
+        <p class="card__title" data-product-name></p>
+    </a>
     <div class="card__footer">
         <div class="card__price-row">
             {{> components/svg
                 className="card__fire-price"
                 id="fire"
+                dataAttribute="data-product-fire-price"
             }}
-            <span class="card__price"></span>
-            <span class="card__old-price"></span>
+            <span class="card__price" data-product-price></span>
+            <span class="card__old-price" data-product-old-price></span>
         </div>
         <button class="card__button">
             {{> components/svg

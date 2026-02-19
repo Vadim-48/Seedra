@@ -29,6 +29,9 @@
             margin-top: 20px;
         }
     }
+    &__swiper{
+        overflow: visible;
+    }
     &__list{
         margin-top: 27px;
         display: grid;
@@ -47,8 +50,6 @@
     &__card{
         @include media.max-width(xs) {
             width: 319px;
-            //aspect-ratio: 319 / 512;
-            //flex: 1 0 auto;
             padding: 26px 11px 11px 11px;
         }
     }

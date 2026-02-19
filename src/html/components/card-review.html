@@ -1,17 +1,18 @@
-<div class="{{className}} card-review" data-card-id="{{dataId}}" id="{{id}}">
+<div class="{{className}} card-review" data-review-id="{{dataId}}">
     <div class="card-review__head">
         <picture class="card-review__photo">
             <img
               src=""
-              alt="">
+              alt=""
+              data-review-photo>
         </picture>
         <div class="card-review__name-wrap">
-            <p class="card-review__name"></p>
-            <p class="card-review__date"></p>
+            <p class="card-review__name" data-review-name></p>
+            <p class="card-review__date" data-review-date></p>
         </div>
     </div>
     {{> components/rating
-        className="card-review__rating"
+    className="card-review__rating"
     }}
-    <p class="card-review__text"></p>
+    <p class="card-review__text" data-review-text></p>
 </div>

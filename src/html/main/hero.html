@@ -1,4 +1,4 @@
-<div class="hero__wrap">
+<div class="hero__wrap" data-product-id="product_hero">
     {{> components/picture
         className="hero__bg"
         alt="img"
@@ -11,7 +11,7 @@
         <div class="hero__content">
             <h1
               class="hero__title main-title"
-              id="hero-title">SEEDRA Basil Seeds
+              data-product-name>SEEDRA Basil Seeds
             </h1>
             <p class="hero__text">Be sure of our quality - the freshest batches
                 of this season. Non-GMO, Heirloom - our seeds were tested and
@@ -22,13 +22,14 @@
                 {{> components/svg
                     className="hero__price-img"
                     id="fire"
+                    dataAttribute="data-product-fire-price"
                 }}
                 <span
                   class="hero__price"
-                  id="hero-price">$1</span>
+                  data-product-price></span>
                 <span
                   class="hero__price-old"
-                  id="hero-old-price">$15</span>
+                  data-product-old-price></span>
             </div>
             <div class="hero__btn-row">
                 <button class="hero__btn hero__btn_add btn_green">
@@ -43,6 +44,6 @@
           src=""
           alt="Seedra"
           class="hero__img"
-          id="hero-image">
+          data-product-photo>
     </div>
 </div>

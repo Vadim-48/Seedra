@@ -44,16 +44,14 @@
         height: 24px;
         --favorite-stroke: var(--yellow);
     }
-
+    &__wrap {
+    }
     &__photo {
         width: 100%;
         aspect-ratio: 1;
         display: block;
         overflow: hidden;
         border-radius: 12px;
-    }
-
-    &__wrap {
     }
 
     &__rating{

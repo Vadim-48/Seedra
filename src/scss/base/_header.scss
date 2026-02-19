@@ -34,6 +34,13 @@
     &__logo {
         width: 97px;
         height: 21px;
+        transition: opacity .3s ease;
+        &:focus-visible, &:hover {
+            opacity: 0.7;
+        }
+        &:active{
+            opacity: 1;
+        }
     }
 
     &__logo-icon {
@@ -175,9 +182,18 @@
 
     &__menu-item {
         flex: 0 0 auto;
+        transition: color .3s ease, opacity .3s ease;
         &:not(:last-child) {
             border-right: 1px solid var(--light-grey-stroke);
             padding-right: 16px;
+        }
+        &:focus-visible, &:hover {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        &:active{
+            color: var(--green-brand);
+            opacity: 1;
         }
     }
 }

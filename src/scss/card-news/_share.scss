@@ -58,6 +58,13 @@
         width: 26px;
         height: 26px;
         color: white;
+        transition: color .3s ease, opacity .3s ease;
+        &:focus-visible, &:hover {
+            opacity: 0.7;
+        }
+        &:active{
+            color: #f5693c;
+        }
     }
 }
 

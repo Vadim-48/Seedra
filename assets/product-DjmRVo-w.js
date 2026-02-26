@@ -1,1 +1,0 @@
-import{b as r,a as o}from"./burger-accordion-fsrTvoOq.js";import{l as a}from"./product-firebase-CilHCgjw.js";import"./firebase-C67ONCVO.js";document.addEventListener("DOMContentLoaded",async()=>{r(),o(),await a("product_hero-card","product-5")});

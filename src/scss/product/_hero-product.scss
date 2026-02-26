@@ -1,7 +1,7 @@
 @use "@/scss/mixins/media" as media;
 .hero-product {
     margin-top: 19px;
-    padding-bottom: 150px;
+    //padding-bottom: 150px;
     @include media.max-width(md) {
 
     }
@@ -16,14 +16,23 @@
         font-size: 16px;
         line-height: 1.75;
         color: var(--text-secondary);
+        position: relative;
         &:last-child{
             font-weight: 500;
             line-height: 1.78;
             letter-spacing: -0.04em;
             color: var(--text-primary);
         }
-        &:not(:last-child)::after{
-            content: " / ";
+        &:not(:first-child){
+            margin-left: 14px;
+        }
+        &:not(:last-child) {
+            &::after {
+                content: " / ";
+                pointer-events: none;
+                position: absolute;
+                right: -14px;
+            }
         }
     }
     &__wrap {

@@ -1,38 +1,128 @@
 <div class="hero-product__breadcrumb">
-    <span class="hero-product__breadcrumb-item">Main</span>
-    <span class="hero-product__breadcrumb-item">Cataloug</span>
-    <span class="hero-product__breadcrumb-item">Vegetables</span>
-    <span class="hero-product__breadcrumb-item">Cucumber</span>
-    <span class="hero-product__breadcrumb-item">SEEDRA cucumber</span>
+    <a
+      href="#!"
+      class="hero-product__breadcrumb-item">Main</a>
+    <a
+      href="#!"
+      class="hero-product__breadcrumb-item">Cataloug</a>
+    <a
+      href="#!"
+      class="hero-product__breadcrumb-item">Vegetables</a>
+    <a
+      href="#!"
+      class="hero-product__breadcrumb-item">Cucumber</a>
+    <a
+      href="#!"
+      class="hero-product__breadcrumb-item">SEEDRA cucumber</a>
 </div>
-<div class="hero-product__wrap" data-product-id="product_hero-card">
+<div
+  class="hero-product__wrap"
+  data-product-id="product_hero-card">
     <div class="hero-product__gallery">
-        <picture class="hero-product__photo">
-            <img src="" alt="product" loading="lazy" data-product-photo>
-        </picture>
-        <div class="hero-product__thumbnails">
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
-            <button class="hero-product__thumbnails-item">
-                <img src="./src/image/image.png" alt="product" loading="lazy">
-            </button>
+        <div class="swiper hero-product__swiper swiper">
+            <div class="swiper-wrapper">
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-main>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-1>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-2>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-3>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-4>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-5>
+                </picture>
+                <picture class="hero-product__photo swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-photo-2>
+                </picture>
+            </div>
+        </div>
+        <div class="hero-product__thumbsSwiper swiper">
+            <div class="hero-product__thumbnails swiper-wrapper">
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-main>
+            </picture>
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-1>
+            </picture>
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-2>
+            </picture>
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-3>
+            </picture>
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-4>
+            </picture>
+            <picture class="hero-product__thumbnails-item swiper-slide">
+                <img
+                  src="./src/image/image.png"
+                  alt="product"
+                  loading="lazy"
+                  data-product-photo-5>
+            </picture>
+        </div>
         </div>
     </div>
     <div class="hero-product__content">
-        <h1 class="hero-product__title sub-title" data-product-name>SEEDRA Corn</h1>
+        <h1
+          class="hero-product__title sub-title"
+          data-product-name>SEEDRA Corn</h1>
         <div class="hero-product__tags">
             <div class="hero-product__tag hero-product__status">
                 {{> components/svg
@@ -164,15 +254,20 @@
             </div>
             <div class="hero-product__foot">
                 <div class="hero-product__price">
-                    <span class="hero-product__old-price" data-product-old-price></span>
-                    <span class="hero-product__new-price" data-product-price></span>
+                    <span
+                      class="hero-product__old-price"
+                      data-product-old-price></span>
+                    <span
+                      class="hero-product__new-price"
+                      data-product-price></span>
                 </div>
                 <div class="hero-product__foot-right">
                     {{> components/svg
                     className="hero-product__favorite"
                     id="favorite"
                     }}
-                    <button class="hero-product__btn btn_green">Add to card</button>
+                    <button class="hero-product__btn btn_green">Add to card
+                    </button>
                 </div>
             </div>
         </div>

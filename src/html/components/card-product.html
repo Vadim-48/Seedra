@@ -1,40 +1,54 @@
-<div  class="{{className}} card" data-product-id="{{dataId}}">
+<a
+  href="{{hrefLink}}"
+  class="{{className}} card"
+  data-product-id="{{dataId}}">
     <button class="card__favorite">
         {{> components/svg
         className="card__favorite-icon"
         id="favorite"
         }}
     </button>
-    <a href="{{hrefLink}}" class="card__wrap">
+    <div
+      href="{{hrefLink}}"
+      class="card__wrap">
         <picture class="card__photo">
             <img
               src=""
               alt="{{altImg}}"
+              loading="lazy"
               data-product-photo>
         </picture>
         <div class="card__rating">
             {{> components/rating
-                className=""
+            className=""
             }}
-            <span class="card__rating-comments" data-product-reviews>(122)</span>
+            <span
+              class="card__rating-comments"
+              data-product-reviews>(122)</span>
         </div>
-        <p class="card__title" data-product-name></p>
-    </a>
+        <p
+          class="card__title"
+          data-product-name></p>
+    </div>
     <div class="card__footer">
         <div class="card__price-row">
             {{> components/svg
-                className="card__fire-price"
-                id="fire"
-                dataAttribute="data-product-fire-price"
+            className="card__fire-price"
+            id="fire"
+            dataAttribute="data-product-fire-price"
             }}
-            <span class="card__price" data-product-price></span>
-            <span class="card__old-price" data-product-old-price></span>
+            <span
+              class="card__price"
+              data-product-price></span>
+            <span
+              class="card__old-price"
+              data-product-old-price></span>
         </div>
         <button class="card__button">
             {{> components/svg
-                className="card__button-icon"
-                id="cart"
+            className="card__button-icon"
+            id="cart"
             }}
         </button>
     </div>
-</div>
+</a>

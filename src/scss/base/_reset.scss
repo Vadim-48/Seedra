@@ -4,7 +4,15 @@
   border: 0;
 }
 
-*, *:before, *:after {
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    all: unset;
+}
+
+*, *::before, *::after, button {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -14,8 +22,11 @@
   outline: none;
 }
 
-a:focus, a:active {
-  outline: none;
+//a:focus, a:active {
+//  outline: none;
+//}
+a:focus:not(:focus-visible), a:active {
+    outline: none;
 }
 
 a{
@@ -31,7 +42,7 @@ nav, footer, header, aside {
 html, body {
   height: 100%;
   width: 100%;
-  font-size: 100%;
+  //font-size: 100%;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
@@ -49,10 +60,12 @@ input::-ms-clear {
   display: none;
 }
 
-button {
-  cursor: pointer;
-  background-color: transparent; 
-}
+//button {
+//  cursor: pointer;
+//  background-color: transparent;
+//  all: unset;
+//  //box-sizing: border-box;
+//}
 
 button::-moz-focus-inner {
   padding: 0;

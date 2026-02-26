@@ -1,0 +1,114 @@
+@use "@/scss/mixins/media" as media;
+.info-prod {
+    margin-top: 81px;
+    @include media.max-width(sm) {
+        margin-top: 57px;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.5;
+        letter-spacing: -0.05em;
+        color: var(--text-primary);
+        @include media.max-width(sm) {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.56;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &__line {
+        background: var(--light-grey-stroke);
+        width: 100%;
+        height: 1px;
+        margin-top: 22px;
+        @include media.max-width(sm) {
+            display: none;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 52% 1fr;
+        gap: 5%;
+        margin-top: 33px;
+        @include media.max-width(md) {
+            display: block;
+        }
+        @include media.max-width(sm) {
+            margin-top: 16px;
+        }
+    }
+
+    &__list {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        padding-left: 24px;
+    }
+
+    &__list-item {
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 4px;
+            width: 4px;
+            top: 0.75em;
+            left: -14px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--text-primary);
+        }
+    }
+
+    &__specs {
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 12px;
+        padding: 27px 24px;
+        align-self: start;
+        @include media.max-width(md) {
+            margin-top: 22px;
+        }
+    }
+
+    &__specs-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 5%;
+        align-items: center;
+        &:not(:first-child) {
+            margin-top: 17px;
+        }
+    }
+
+    &__specs-name {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__specs-item {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        text-align: right;
+        flex-shrink: 0;
+        color: var(--text-primary);
+    }
+    &__specs-line{
+        background: var(--light-grey-stroke);
+        height: 1px;
+        width: 100%;
+        margin-top: 10px;
+        @include media.max-width(xs) {
+            margin-top: 16px;
+        }
+    }
+}
+.sub-title {
+}

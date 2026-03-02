@@ -28,22 +28,17 @@ export async function loadProductsFirebase(dataCard, productId) {
         if (product.photo && innerPhoto) innerPhoto.src = product.photo;
 
         const stars = cardList.querySelectorAll('[data-rating] svg use');
-        let starCount = 0;
-        let index=0;
-        const starFraction = product.star - Math.floor(product.star);
-        do {
-            starCount++;
-            if (Math.floor(product.star) > index) {
-                stars[index].setAttribute('href', './sprite.svg#icon-star')
+        const fullStar = Math.floor(product.star);
+        const halfStar = product.star - fullStar;
+        for (let i = 0; i < stars.length; i++) {
+            if (fullStar > i) {
+                stars[i].setAttribute('href', './sprite.svg#icon-star');
             } else {
-                if (starFraction > 0.1) stars[index].setAttribute('href', './sprite.svg#icon-star-half');
-                // break;
+                if (halfStar > 0) stars[i].setAttribute('href', './sprite.svg#icon-star-half');
+                break;
             };
-            index++;
-        } while (product.star > starCount);
+        };
     }
 
     loadCard();
-
-
 }

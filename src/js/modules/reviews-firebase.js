@@ -35,19 +35,16 @@ export async function loadReviewFirebase(dataReviewId, productId) {
         }
 
         const stars = reviewsList.querySelectorAll('[data-rating] svg use');
-        let starCount = 0;
-        let index=0;
-        const starFraction = reviewsItem.star - Math.floor(reviewsItem.star);
-        do {
-            starCount++;
-            if (Math.floor(reviewsItem.star) > index) {
-                stars[index].setAttribute('href', './sprite.svg#icon-star')
+        const fullStar = Math.floor(reviewsItem.star);
+        const halfStar = reviewsItem.star - fullStar;
+        for (let i = 0; i < stars.length; i++) {
+            if (fullStar > i) {
+                stars[i].setAttribute('href', './sprite.svg#icon-star');
             } else {
-                if (starFraction > 0.1) stars[index].setAttribute('href', './sprite.svg#icon-star-half');
-                // break;
-            };
-            index++;
-        } while (reviewsItem.star > starCount);
+                if (halfStar > 0) stars[i].setAttribute('href', './sprite.svg#icon-star-half');
+                break;
+            }
+        }
     }
 
     loadReview();

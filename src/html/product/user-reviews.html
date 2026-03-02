@@ -6,9 +6,9 @@
 </div>
 <div class="user-reviews__content">
     <div class="user-reviews__aside">
-        <div class="user-reviews__rating-summary rating-summary">
+        <div class="user-reviews__rating-summary rating-summary" data-rating-all>
             <div class="rating-summary__head">
-                <span class="rating-summary__reviews-grade">4,1</span>
+                <span class="rating-summary__reviews-grade" data-stars-summary-number>4,1</span>
                 <div class="rating-summary__head-inner">
                     <span class="rating-summary__reviews-number">124 reviews</span>
                     {{> components/rating
@@ -28,8 +28,8 @@
                 <progress
                   max="124"
                   value="55"
-                  class="rating-summary__progress"></progress>
-                <span class="rating-summary__star-number">55</span>
+                  class="rating-summary__progress" data-stars-5-progress></progress>
+                <span class="rating-summary__star-number" data-stars-5-number>55</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -42,8 +42,8 @@
                 <progress
                   max="124"
                   value="44"
-                  class="rating-summary__progress"></progress>
-                <span class="rating-summary__star-number">44</span>
+                  class="rating-summary__progress" data-stars-4-progress></progress>
+                <span class="rating-summary__star-number" data-stars-4-number>44</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -56,8 +56,8 @@
                 <progress
                   max="124"
                   value="33"
-                  class="rating-summary__progress"></progress>
-                <span class="rating-summary__star-number">33</span>
+                  class="rating-summary__progress" data-stars-3-progress></progress>
+                <span class="rating-summary__star-number" data-stars-3-number>33</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -70,8 +70,8 @@
                 <progress
                   max="124"
                   value="22"
-                  class="rating-summary__progress"></progress>
-                <span class="rating-summary__star-number">22</span>
+                  class="rating-summary__progress" data-stars-2-progress></progress>
+                <span class="rating-summary__star-number" data-stars-2-number>22</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -84,8 +84,8 @@
                 <progress
                   max="124"
                   value="11"
-                  class="rating-summary__progress"></progress>
-                <span class="rating-summary__star-number">11</span>
+                  class="rating-summary__progress" data-stars-1-progress></progress>
+                <span class="rating-summary__star-number" data-stars-1-number>11</span>
             </div>
         </div>
         <div class="user-reviews__reviews-gallery reviews-gallery">
@@ -98,7 +98,7 @@
                   href="#!"
                   class="reviews-gallery__view-btn">View</a>
             </div>
-            <div class="reviews-gallery__gallery">
+            <div class="reviews-gallery__gallery" data-photos-video>
                 <picture class="reviews-gallery__photo">
                     <img
                       src="./src/image/image.png"

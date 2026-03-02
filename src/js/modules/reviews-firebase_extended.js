@@ -16,38 +16,12 @@ export async function loadReviewFirebase(dataReviewId, productId) {
         const innerDate = reviewsList.querySelector('[data-review-date]');
         const innerName = reviewsList.querySelector('[data-review-name]');
         const innerPhoto = reviewsList.querySelector('[data-review-photo]');
-        const innerGallery = reviewsList.querySelector('[data-review-gallery]');
-        const innerImgList = reviewsList.querySelectorAll('[data-review-img]');
         const innerText = reviewsList.querySelector('[data-review-text]');
 
         if (reviewsItem.date && innerDate) innerDate.textContent = reviewsItem.date;
         if (reviewsItem.name && innerName) innerName.textContent = reviewsItem.name;
         if (reviewsItem.photo && innerPhoto) innerPhoto.src = reviewsItem.photo;
         if (reviewsItem.text && innerText) innerText.textContent = reviewsItem.text;
-
-        if (reviewsItem.reviewImg && innerImgList && innerGallery) {
-            innerGallery.style.display = 'flex';
-            innerImgList.forEach((img, index) => {
-                if (reviewsItem.reviewImg[index] && img) {
-                img.src = reviewsItem.reviewImg[index];
-                }
-            });
-        }
-
-        const stars = reviewsList.querySelectorAll('[data-rating] svg use');
-        let starCount = 0;
-        let index=0;
-        const starFraction = reviewsItem.star - Math.floor(reviewsItem.star);
-        do {
-            starCount++;
-            if (Math.floor(reviewsItem.star) > index) {
-                stars[index].setAttribute('href', './sprite.svg#icon-star')
-            } else {
-                if (starFraction > 0.1) stars[index].setAttribute('href', './sprite.svg#icon-star-half');
-                // break;
-            };
-            index++;
-        } while (reviewsItem.star > starCount);
     }
 
     loadReview();

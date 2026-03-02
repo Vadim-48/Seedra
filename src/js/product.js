@@ -6,6 +6,8 @@ import { burgerAccordion } from "@/js/modules/burger-accordion.js";
 
 import { loadHeroProductsFirebase } from "@/js/modules/hero-product-firebase.js";
 import { initProductSwiper } from "@/js/modules/swiper-hero-product.js";
+import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
+import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
 
 
 document.addEventListener("DOMContentLoaded", async() => {
@@ -15,7 +17,12 @@ document.addEventListener("DOMContentLoaded", async() => {
     burgerAccordion();
 
     // await loadProductsFirebase("product_hero-card","product-5");
-    await loadHeroProductsFirebase("product_hero-card","product-5");
+    await Promise.all([
+        loadHeroProductsFirebase("product_hero-card","product-5"),
+
+        loadReviewFirebase("card-review-1", "review-1"),
+        loadReviewFirebase("card-review-2", "review-2"),
+    ]);
 
     initProductSwiper();
 
@@ -42,3 +49,5 @@ accordionList.forEach(item => {
         }
     });
 });
+
+

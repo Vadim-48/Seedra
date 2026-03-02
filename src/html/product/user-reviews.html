@@ -1,0 +1,143 @@
+<div class="user-reviews__head">
+    <h2 class="user-reviews__title">Customer reviews.</h2>
+    <a
+      href="#!"
+      class="user-reviews__btn btn_white">Make review</a>
+</div>
+<div class="user-reviews__content">
+    <div class="user-reviews__aside">
+        <div class="user-reviews__rating-summary rating-summary">
+            <div class="rating-summary__head">
+                <span class="rating-summary__reviews-grade">4,1</span>
+                <div class="rating-summary__head-inner">
+                    <span class="rating-summary__reviews-number">124 reviews</span>
+                    {{> components/rating
+                    className="rating-summary__rating"
+                    }}
+                </div>
+            </div>
+            <hr class="rating-summary__line">
+            <div class="rating-summary__row">
+                <label
+                  class="rating-summary__label">
+                    <span>5</span>
+                    {{> components/svg
+                    className="rating-summary__label-icon"
+                    id="star"
+                    }}</label>
+                <progress
+                  max="124"
+                  value="55"
+                  class="rating-summary__progress"></progress>
+                <span class="rating-summary__star-number">55</span>
+            </div>
+            <div class="rating-summary__row">
+                <label
+                  class="rating-summary__label">
+                    <span>4</span>
+                    {{> components/svg
+                    className="rating-summary__label-icon"
+                    id="star"
+                    }}</label>
+                <progress
+                  max="124"
+                  value="44"
+                  class="rating-summary__progress"></progress>
+                <span class="rating-summary__star-number">44</span>
+            </div>
+            <div class="rating-summary__row">
+                <label
+                  class="rating-summary__label">
+                    <span>3</span>
+                    {{> components/svg
+                    className="rating-summary__label-icon"
+                    id="star"
+                    }}</label>
+                <progress
+                  max="124"
+                  value="33"
+                  class="rating-summary__progress"></progress>
+                <span class="rating-summary__star-number">33</span>
+            </div>
+            <div class="rating-summary__row">
+                <label
+                  class="rating-summary__label">
+                    <span>2</span>
+                    {{> components/svg
+                    className="rating-summary__label-icon"
+                    id="star"
+                    }}</label>
+                <progress
+                  max="124"
+                  value="22"
+                  class="rating-summary__progress"></progress>
+                <span class="rating-summary__star-number">22</span>
+            </div>
+            <div class="rating-summary__row">
+                <label
+                  class="rating-summary__label">
+                    <span>1</span>
+                    {{> components/svg
+                    className="rating-summary__label-icon"
+                    id="star"
+                    }}</label>
+                <progress
+                  max="124"
+                  value="11"
+                  class="rating-summary__progress"></progress>
+                <span class="rating-summary__star-number">11</span>
+            </div>
+        </div>
+        <div class="user-reviews__reviews-gallery reviews-gallery">
+            <div class="reviews-gallery__head">
+                <div class="reviews-gallery__head-inner">
+                    <span class="reviews-gallery__reviews-number">124 reviews</span>
+                    <h3 class="reviews-gallery__title">Photo&Video review</h3>
+                </div>
+                <a
+                  href="#!"
+                  class="reviews-gallery__view-btn">View</a>
+            </div>
+            <div class="reviews-gallery__gallery">
+                <picture class="reviews-gallery__photo">
+                    <img
+                      src="./src/image/image.png"
+                      alt="reviews-img"
+                      loading="lazy"
+                      data-product-photo>
+                </picture>
+                <picture class="reviews-gallery__photo">
+                    <img
+                      src="./src/image/image.png"
+                      alt="reviews-img"
+                      loading="lazy"
+                      data-product-photo>
+                </picture>
+                <picture class="reviews-gallery__photo">
+                    <img
+                      src="./src/image/image.png"
+                      alt="reviews-img"
+                      loading="lazy"
+                      data-product-photo>
+                </picture>
+                <picture class="reviews-gallery__photo">
+                    <img
+                      src="./src/image/image.png"
+                      alt="reviews-img"
+                      loading="lazy"
+                      data-product-photo>
+                </picture>
+            </div>
+        </div>
+    </div>
+    <div class="user-reviews__list">
+        {{> components/card-review_extended
+        className="user-reviews__card-review card-review_extended swiper-slide"
+        dataId="card-review-1"
+        }}
+        {{> components/card-review_extended
+        className="user-reviews__card-review card-review_extended swiper-slide"
+        dataId="card-review-2"
+        }}
+    </div>
+</div>

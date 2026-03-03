@@ -2,7 +2,7 @@
 .faq {
     margin-top: 80px;
     @include media.max-width(sm) {
-
+        margin-top: 35px;
     }
     &__title {
         font-weight: 600;
@@ -33,126 +33,7 @@
     &__accordion {
     }
 
-    &__accordion-row {
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 8px;
-        //transition: max-height .3s ease, padding-bottom 0.3s ease;
-        &:not(:first-child) {
-            margin-top: 10px;
-        }
-        &.active .faq__accordion-body{
-            //height: auto;
-            padding: 10px 25px 25px 29px;
 
-            @include media.max-width(sm) {
-                padding: 11px 26px 0 24px;
-                margin-top: 5px;
-            }
-        }
-        &.active .faq__accordion-icon{
-            padding-bottom: 30px;
-            & span:first-of-type {
-                //display: none;
-            }
-        }
-    }
-
-    &__accordion-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 25px 16px 29px;
-        width: 100%;
-        @include media.max-width(sm) {
-            padding: 17px 10px 0px 19px;
-        }
-    }
-
-    &__accordion-title {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.56;
-        letter-spacing: -0.04em;
-        color: var(--text-primary);
-        width: 74%;
-        @include media.max-width(sm) {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.78;
-            letter-spacing: 0;
-            width: 100%;
-        }
-    }
-
-    &__accordion-icon {
-        position: relative;
-        width: 18px;
-        height: 18px;
-        & span {
-            position: absolute;
-            //top: 50%;
-            top: 9px;
-            width: 18px;
-            height: 1.5px;
-            background: var(--green-brand);
-            &:first-of-type {
-                transform: rotate(90deg);
-            }
-        }
-        &_right{
-            @include media.max-width(sm) {
-                display: none;
-            }
-        }
-        &_bottom{
-            display: none;
-            @include media.max-width(sm) {
-                display: block;
-                margin-inline: auto;
-                //bottom: 17px;
-                padding-bottom: 34px;
-                //margin-top: 41px;
-                margin-top: 24px;
-            }
-        }
-    }
-    &__accordion-body{
-        transition: max-height .3s ease, padding-bottom 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        //height: 0;
-        max-height: 0;
-        padding: 0px 25px 0 29px;
-    }
-
-    &__accordion-line {
-        height: 1px;
-        background-color: var(--light-grey-stroke);
-        width: 86%;
-        @include media.max-width(sm) {
-            width: 100%;
-        }
-        //margin-top: 10px;
-    }
-
-    &__accordion-text {
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 1.75;
-        color: var(--text-primary);
-        width: 84%;
-        &:first-of-type {
-            margin-top: 20px;
-            @include media.max-width(sm) {
-                margin-top: 16px;
-            }
-        }
-        @include media.max-width(sm) {
-            font-size: 14px;
-            line-height: 2;
-            width: 100%;
-        }
-    }
     &__form-wrap{
         align-self: start;
         position: relative;
@@ -211,6 +92,129 @@
     &__form-btn {
         width: 104px;
         margin-top: 10px;
+    }
+}
+
+.accordion{
+    &__row {
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 8px;
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        &.active .accordion__body-wrap{
+            grid-template-rows: 1fr;
+            margin: 10px 0 25px 0;
+            @include media.max-width(sm) {
+                margin: 18px 0 -5px 0;
+            }
+        }
+        &.active .accordion__icon{
+            & span:first-of-type {
+                visibility: hidden;
+                //height: 0;
+            }
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 25px 16px 29px;
+        width: 100%;
+        @include media.max-width(sm) {
+            padding: 17px 10px 0px 19px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.56;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+        width: 74%;
+        @include media.max-width(sm) {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.78;
+            letter-spacing: 0;
+            width: 100%;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        & span {
+            position: absolute;
+            //top: 50%;
+            top: 9px;
+            width: 18px;
+            height: 1.5px;
+            background: var(--green-brand);
+            //transition: width .3s ease;
+            &:first-of-type {
+                transform: rotate(90deg);
+            }
+        }
+        &_right{
+            @include media.max-width(sm) {
+                display: none;
+            }
+        }
+        &_bottom{
+            display: none;
+            @include media.max-width(sm) {
+                display: block;
+                margin-inline: auto;
+                //bottom: 17px;
+                padding-bottom: 34px;
+                //margin-top: 41px;
+                margin-top: 24px;
+            }
+        }
+    }
+    &__body-wrap{
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease;
+        //margin: 10px 25px 25px 29px;
+    }
+    &__body{
+        overflow: hidden;
+        margin: 0 25px 0 29px;
+    }
+
+
+    &__line {
+        height: 1px;
+        background-color: var(--light-grey-stroke);
+        width: 86%;
+        @include media.max-width(sm) {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        width: 84%;
+        &:first-of-type {
+            margin-top: 20px;
+            @include media.max-width(sm) {
+                margin-top: 16px;
+            }
+        }
+        @include media.max-width(sm) {
+            font-size: 14px;
+            line-height: 2;
+            width: 100%;
+        }
     }
 }
 

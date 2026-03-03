@@ -10,7 +10,7 @@
             <div class="rating-summary__head">
                 <span class="rating-summary__reviews-grade" data-stars-summary-number>4,1</span>
                 <div class="rating-summary__head-inner">
-                    <span class="rating-summary__reviews-number">124 reviews</span>
+                    <span class="rating-summary__reviews-number" data-reviews-number>124 reviews</span>
                     {{> components/rating
                     className="rating-summary__rating"
                     }}
@@ -88,10 +88,10 @@
                 <span class="rating-summary__star-number" data-stars-1-number>11</span>
             </div>
         </div>
-        <div class="user-reviews__reviews-gallery reviews-gallery">
+        <div class="user-reviews__reviews-gallery reviews-gallery" data-reviews-all-img>
             <div class="reviews-gallery__head">
                 <div class="reviews-gallery__head-inner">
-                    <span class="reviews-gallery__reviews-number">124 reviews</span>
+                    <span class="reviews-gallery__reviews-number" data-reviews-number>124 reviews</span>
                     <h3 class="reviews-gallery__title">Photo&Video review</h3>
                 </div>
                 <a
@@ -99,28 +99,28 @@
                   class="reviews-gallery__view-btn">View</a>
             </div>
             <div class="reviews-gallery__gallery" data-photos-video>
-                <picture class="reviews-gallery__photo">
+                <picture class="reviews-gallery__photo" data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo">
+                <picture class="reviews-gallery__photo" data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo">
+                <picture class="reviews-gallery__photo" data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo">
+                <picture class="reviews-gallery__photo" data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
@@ -130,7 +130,8 @@
             </div>
         </div>
     </div>
-    <div class="user-reviews__list">
+    <div class="user-reviews__swiper swiper">
+        <div class="swiper-wrapper">
         {{> components/card-review_extended
         className="user-reviews__card-review card-review_extended swiper-slide"
         dataId="card-review-1"
@@ -139,5 +140,6 @@
         className="user-reviews__card-review card-review_extended swiper-slide"
         dataId="card-review-2"
         }}
+        </div>
     </div>
 </div>

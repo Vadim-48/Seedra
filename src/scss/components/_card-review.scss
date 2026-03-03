@@ -12,10 +12,14 @@
 
     &__head {
         display: grid;
-        grid-template-columns: 88px 1fr;
-        grid-template-rows: 1fr auto;
-        row-gap: 32px;
+        grid-template-columns: 78px 1fr;
+        //grid-template-rows: 1fr auto;
         align-items: center;
+        @include media.max-width(xs) {
+            grid-template-columns: 48px 1fr;
+            gap: 15px 10px;
+            align-items: start;
+        }
     }
 
     &__photo {
@@ -26,6 +30,7 @@
         @include media.max-width(xs) {
             width: 40px;
             height: 40px;
+            margin-top: 10px;
         }
     }
 
@@ -75,11 +80,12 @@
         }
     }
     &__gallery{
-        display: none;
+        display: none; // зробити flex через джс при наявності картинок
         align-items: center;
         gap: 7px;
         flex-wrap: wrap;
         margin-top: 12px;
+        overflow: auto;
     }
     &__review-img{
         border-radius: 4px;
@@ -90,11 +96,13 @@
         background: var(--light-grey-stroke);
         height: 1px;
         width: 100%;
-        margin-top: 26px;
+        margin-top: 20px;
         display: none;
+        @include media.max-width(sm) {
+            margin-top: 13px;
+        }
     }
     &__foot{
-        //display: flex;
         display: none;
         align-items: center;
         margin-top: 18px;
@@ -113,7 +121,7 @@
         margin-left: 4px;
     }
     &__verified{
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         gap: 8px;
@@ -125,33 +133,48 @@
         height: 40px;
         background: var(--invisible-green);
         margin-left: 37px;
+        @include media.max-width(xs) {
+            margin-left: 20px;
+        }
     }
 }
 
 .card-review_extended {
-    .card-review{
+    padding: 34px 34px 28px 34px;
+    grid-template-columns: 48px 1fr;
+    gap: 15px 10px;
+    & .card-review{
         &__head {
             //grid-template-columns: 88px 1fr 130px;
-            grid-template-columns: 88px 1fr 130px;
+            grid-template-columns: 78px 1fr 130px;
             grid-template-rows: auto;
+            //grid-template-rows: 1fr auto;
+            gap: 32px 10px;
+            @include media.max-width(md) {
+                grid-template-columns: 78px 1fr;
+                gap: 15px 10px
+            }
             @include media.max-width(xs) {
-                grid-template-columns: 58px 1fr;
-                //row-gap: 40px;
+                grid-template-columns: 48px 1fr;
+                gap: 15px 10px
             }
         }
         &__text {
             margin-top: 28px;
+            @include media.max-width(sm) {
+                margin-top: 16px;
+            }
         }
         &__rating{
             grid-column: span 1;
-            @include media.max-width(xs) {
+            @include media.max-width(md) {
                 grid-column: span 2;
             }
         }
-        &__gallery{
-            //display: flex;  // зробити flex через джс при наявності картинок
-            display: none;
-            overflow: auto;
+        &__gallery-wrap{
+            @include media.max-width(sm) {
+               display: none;
+            }
         }
         &__line{
             display: block;

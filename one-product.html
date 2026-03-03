@@ -25,7 +25,7 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/scss/product-style.scss">
+      href="./src/scss/one-product-style.scss">
     <title>Seedra</title>
 </head>
 <body class="body">
@@ -42,22 +42,27 @@
 <main>
     <section class="hero-product">
         <div class="container">
-            {{> product/hero-product}}
+            {{> one-product/hero-product}}
         </div>
     </section>
     <section class="info-prod">
         <div class="container">
-            {{> product/info-prod}}
+            {{> one-product/info-prod}}
         </div>
     </section>
     <section class="faq">
         <div class="container">
-            {{> product/faq}}
+            {{> one-product/faq}}
         </div>
     </section>
     <section class="user-reviews">
         <div class="container">
-            {{> product/user-reviews}}
+            {{> one-product/user-reviews}}
+        </div>
+    </section>
+    <section class="related">
+        <div class="container">
+            {{> one-product/related}}
         </div>
     </section>
 </main>
@@ -71,7 +76,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script
   type="module"
-  src="./src/js/product.js"
+  src="./src/js/one-product.js"
   defer></script>
 </body>
 </html>

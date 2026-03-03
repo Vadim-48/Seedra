@@ -15,6 +15,7 @@
     }
     @include media.max-width(xs) {
         height: auto;
+        padding: 26px 11px 11px 11px;
     }
 
     &__favorite {
@@ -54,14 +55,18 @@
         border-radius: 12px;
     }
 
-    &__rating{
+    &__rating-row{
         display: flex;
         align-items: center;
         gap: 3px;
         margin-top: 25px;
             @include media.max-width(xs) {
-                margin: 34px 0 0 16px;
+                //margin: 34px 0 0 16px;
+                margin: 30px 0 0 16px;
             }
+    }
+    &__rating{
+        gap: 3px;
     }
 
     &__rating-comments{

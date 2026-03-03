@@ -29,9 +29,9 @@
             margin-top: 20px;
         }
     }
-    &__swiper{
-        overflow: visible;
-    }
+    //&__swiper{
+        //overflow: visible;
+    //}
     &__list{
         margin-top: 27px;
         display: grid;
@@ -50,7 +50,7 @@
     &__card{
         @include media.max-width(xs) {
             width: 319px;
-            padding: 26px 11px 11px 11px;
+            //padding: 26px 11px 11px 11px;
         }
     }
 }

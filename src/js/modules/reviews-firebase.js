@@ -14,16 +14,23 @@ export async function loadReviewFirebase(dataReviewId, productId) {
         // console.log("reviewsMap: ", reviewsItem);
 
         const innerDate = reviewsList.querySelector('[data-review-date]');
+        const innerDateExtended = reviewsList.querySelector('[data-review-date-extended]');
         const innerName = reviewsList.querySelector('[data-review-name]');
         const innerPhoto = reviewsList.querySelector('[data-review-photo]');
         const innerGallery = reviewsList.querySelector('[data-review-gallery]');
         const innerImgList = reviewsList.querySelectorAll('[data-review-img]');
         const innerText = reviewsList.querySelector('[data-review-text]');
+        const innerPackSize = reviewsList.querySelector('[data-review-pack-size]');
+        const innerVerified = reviewsList.querySelector('[data-review-verified]');
 
         if (reviewsItem.date && innerDate) innerDate.textContent = reviewsItem.date;
+        if (reviewsItem.dateExtended && innerDateExtended) innerDateExtended.textContent = reviewsItem.dateExtended;
         if (reviewsItem.name && innerName) innerName.textContent = reviewsItem.name;
         if (reviewsItem.photo && innerPhoto) innerPhoto.src = reviewsItem.photo;
         if (reviewsItem.text && innerText) innerText.textContent = reviewsItem.text;
+        if (reviewsItem.packSize && innerPackSize) innerPackSize.textContent = reviewsItem.packSize + " PACK";
+        if (reviewsItem.verified && innerVerified) innerVerified.style.display = "flex";
+
 
         if (reviewsItem.reviewImg && innerImgList && innerGallery) {
             innerGallery.style.display = 'flex';

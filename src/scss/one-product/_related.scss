@@ -1,0 +1,33 @@
+@use "@/scss/mixins/media" as media;
+.related{
+    margin-top: 66px;
+    @include media.max-width(sm) {
+        margin-top: 8px;
+    }
+    &__title{
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.5;
+        letter-spacing: -0.05em;
+        color: var(--text-primary);
+        @include media.max-width(sm) {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.39;
+            letter-spacing: -0.04em;
+        }
+    }
+    &__swiper{
+        margin-top: 39px;
+        @include media.max-width(sm) {
+            margin-top: 21px;
+        }
+    }
+    &__card{
+        //height: 100%;
+        height: auto;
+        //@include media.max-width(xs) {
+        //    padding: 26px 11px 11px 11px;
+        //}
+    }
+}

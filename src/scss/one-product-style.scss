@@ -7,11 +7,13 @@
 @use "@/scss/components/typography";
 @use "@/scss/components/rating";
 @use "@/scss/components/card-review";
+@use "@/scss/components/card-product";
 
-@use "@/scss/product/hero-product";
-@use "@/scss/product/info-prod";
-@use "@/scss/product/faq";
-@use "@/scss/product/user-reviews";
+@use "@/scss/one-product/hero-product";
+@use "@/scss/one-product/info-prod";
+@use "@/scss/one-product/faq";
+@use "@/scss/one-product/user-reviews";
+@use "@/scss/one-product/related";
 
 
 //@use "@/scss/our-blog/intro--about";
@@ -20,4 +22,4 @@
 //@use "@/scss/our-blog/blog";
 
 @use "@/scss/base/footer";
-@use "@/scss/product/footer--product";
+@use "@/scss/one-product/footer_one-product";

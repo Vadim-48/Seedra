@@ -1,41 +1,49 @@
 <div class="container">
-    <h2 class="related__title">Related products.</h2>
+    <div class="products-prev__head">
+        <h2 class="products-prev__title title">Our products.</h2>
+        <button class="products-prev__btn-all btn_white">
+            <span class="products-prev__text">View all (<span class="products-prev__number">12</span>)</span>
+        </button>
+    </div>
+    {{> components/menu-category
+    className="products-prev__category"
+    }}
 </div>
-<div class="related__swiper-container container">
-    <div class="related__swiper swiper">
-        <div class="swiper-wrapper">
+<div class="products-prev__swiper-container container">
+    <div class="products-prev__swiper swiper">
+        <div class="products-prev__list swiper-wrapper">
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-1"
             hrefLink="./one-product.html"
             altImg="product Seedra"
             }}
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-2"
             hrefLink="./one-product.html"
             altImg="product Seedra"
             }}
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-3"
             hrefLink="./one-product.html"
             altImg="product Seedra"
             }}
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-4"
             hrefLink="./one-product.html"
             altImg="product Seedra"
             }}
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-5"
             hrefLink="./one-product.html"
             altImg="product Seedra"
             }}
             {{> components/card-product
-            className="related__card swiper-slide"
+            className="products-prev__card swiper-slide"
             dataId="card-6"
             hrefLink="./one-product.html"
             altImg="product Seedra"

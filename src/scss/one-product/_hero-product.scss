@@ -17,6 +17,7 @@
         line-height: 1.75;
         color: var(--text-secondary);
         position: relative;
+        transition: color .3s ease, opacity .3s ease;
         &:last-child{
             font-weight: 500;
             line-height: 1.78;
@@ -32,7 +33,16 @@
                 pointer-events: none;
                 position: absolute;
                 right: -14px;
+                color: var(--text-secondary);
             }
+        }
+        &:focus-visible, &:hover {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        &:active{
+            color: var(--green-brand);
+            opacity: 1;
         }
     }
     &__wrap {
@@ -53,14 +63,19 @@
         min-width: 0;
     }
 
-    &__photo {
+    &__gallery-item {
         border-radius: 12px;
-        //width: 445px;
-        //height: 445px;
         overflow: hidden;
         width: 100%;
         aspect-ratio: 1;
-
+        & .video__play-icon{
+            width: 45px;
+            height: 46px;
+            transition: transform .3s ease;
+            &:focus-visible, &:hover {
+                transform: scale(1.2);
+            }
+        }
     }
 
     &__thumbnails {
@@ -256,6 +271,7 @@
         text-align: center;
         color: var(--text-primary);
         margin-left: 7px;
+        text-transform: uppercase;
     }
 
     &__number {
@@ -270,7 +286,7 @@
     &__number-add {
         margin-top: 4px;
     }
-    &__number-wrap{
+    &__number-inner{
         background: var(--invisible-green);
         padding-inline: 11px;
         border-radius: 6px;
@@ -308,9 +324,14 @@
         &:not(:first-child){
             margin-top: 8px;
         }
-        //@include media.max-width(xs) {
-        //    margin-top: 5px;
-        //}
+        &:has(.selector__input:checked) {
+            border: 1px solid var(--primary-color);
+        }
+        &:focus-visible, &:hover {
+            & .selector__amount{
+                color: var(--green-brand);
+            }
+        }
     }
 
     &__input {
@@ -319,7 +340,6 @@
         height: 17px;
         accent-color: var(--green-brand);
         &:checked{
-            //box-shadow: 0 4px 4px 0 rgba(53, 151, 64, 0.3);
             &::before {
                 content: "";
                 position: absolute;
@@ -351,6 +371,7 @@
         line-height: 1.78;
         text-align: center;
         color: var(--text-primary);
+        transition: color .3s ease;
     }
 
     &__price {
@@ -374,4 +395,33 @@
     }
 }
 
+.video{
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 101%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__overlay-photo{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+    }
+
+    &__play-icon {
+        position: absolute;
+        width: 17px;
+        height: 18px;
+        z-index: 5;
+    }
+}
 

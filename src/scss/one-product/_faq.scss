@@ -57,6 +57,7 @@
     }
 
     &__form-fieldset {
+        position: relative;
     }
 
     &__form-title {
@@ -74,6 +75,17 @@
         color: var(--text-primary);
         margin-top: 4px;
     }
+    &__form-text-error{
+        position: absolute;
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--danger);
+        left: 4px;
+        bottom: -8px;
+        &:empty {
+            display: none;
+        }
+    }
 
     &__form-area {
         font-weight: 300;
@@ -87,6 +99,9 @@
         border: 1px solid var(--light-grey-stroke);
         border-radius: 8px;
         background: var(--white);
+        &.error::placeholder{
+            color: var(--danger);
+        }
     }
 
     &__form-btn {
@@ -124,7 +139,7 @@
         padding: 16px 25px 16px 29px;
         width: 100%;
         @include media.max-width(sm) {
-            padding: 17px 10px 0px 19px;
+            padding: 17px 10px 0 19px;
         }
     }
 

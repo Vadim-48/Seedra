@@ -1,13 +1,21 @@
 @use "@/scss/mixins/media" as media;
 .user-reviews {
-    margin-top: 88px;
+    margin-top: 83px;
     @include media.max-width(sm) {
         margin-top: 25px;
+    }
+    &__container{
+        @include media.max-width(sm) {
+            padding: 0;
+        }
     }
     &__head{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include media.max-width(sm) {
+            padding: 0 15px;
+        }
     }
     &__title {
         font-weight: 600;
@@ -16,7 +24,7 @@
         letter-spacing: -0.05em;
         color: var(--text-primary);
         @include media.max-width(sm) {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 18px;
             line-height: 1.39;
             letter-spacing: -0.04em;
@@ -27,6 +35,7 @@
         width: 160px;
         @include media.max-width(sm) {
             width: 120px;
+            height: 47px;
         }
     }
     &__content{
@@ -42,7 +51,9 @@
 
     &__aside {
         min-width: 0;
-        //align-self: start;
+        @include media.max-width(sm) {
+            padding: 0 15px;
+        }
     }
 
     &__rating-summary {
@@ -51,12 +62,16 @@
     &__reviews-gallery {
         margin-top: 20px;
     }
-
-    &__swiper {
+    &__swiper-wrap {
         @include media.max-width(sm) {
-            margin-top: 6px;
-            padding: 25px 0;
+            margin-top: 15px;
+            padding: 15px;
+            overflow: hidden;
         }
+
+    }
+    &__swiper {
+        overflow: visible;
 
         & .swiper-wrapper{
             display: contents;
@@ -72,6 +87,12 @@
             @include media.max-width(sm) {
                 margin-top: 0;
             }
+        }
+    }
+    &__desktop-hidden{
+        display: none;
+        @include media.max-width(sm) {
+            display: block;
         }
     }
 }

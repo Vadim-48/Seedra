@@ -16,10 +16,19 @@
     }
 
     &__row {
-        margin: 43px 0 0 0;
+        margin: 28px 0 0 0;
+        //padding-bottom: 54px;
+        overflow: hidden;
+        padding: 15px 0;
+        @include media.max-width(xs) {
+            margin: 10px 0 0 15px;
+            //padding-bottom: 0;
+        }
+    }
+    &__swiper{
+        overflow: visible;
         padding-bottom: 54px;
         @include media.max-width(xs) {
-            margin: 25px 0 0 15px;
             padding-bottom: 0;
         }
     }

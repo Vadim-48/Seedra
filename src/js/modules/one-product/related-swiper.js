@@ -2,20 +2,24 @@ let relatedSwiper = null;
 
 export const initRelatedSwiper = () => {
     relatedSwiper = new Swiper('.related__swiper', {
-        slidesPerView: 1.1,
-        spaceBetween: 10,
+        slidesPerView: 1.08,
+        spaceBetween: 15,
         loop: true,
         breakpoints: {
-            1024: {
+            1000: {
                 slidesPerView: 3,
                 spaceBetween: 30,
             },
-            768: {
+            800: {
                 slidesPerView: 2.5,
                 spaceBetween: 30,
             },
-            476: {
+            630: {
                 slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            476: {
+                slidesPerView: 1.5,
                 spaceBetween: 20,
             },
         },

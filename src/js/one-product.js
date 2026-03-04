@@ -1,33 +1,33 @@
-import { burger } from "@/js/modules/burger.js";
-import { burgerAccordion } from "@/js/modules/burger-accordion.js";
-// import { initAsideSwiper } from "@/js/modules/swiper-one-news.js";
-// import { loadProductsFirebase } from "@/js/modules/product-firebase.js";
-// import { loadProductsFirebase } from "@/js/modules/product-firebase.js";
+import {burger} from "@/js/modules/burger.js";
+import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 
-import { loadHeroProductsFirebase } from "@/js/modules/one-product/hero-firebase.js";
-import { initProductSwiper } from "@/js/modules/one-product/hero-swiper.js";
+import {loadHeroProductsFirebase} from "@/js/modules/one-product/hero-firebase.js";
+import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
 import {allReviewsImg, totalStars} from "@/js/modules/one-product/user-reviews-firebase.js";
 import {initUserReviewsSwiper} from "@/js/modules/one-product/user-reviews-swiper.js";
 import {initRelatedSwiper} from "@/js/modules/one-product/related-swiper.js";
+import {initVideoPlayers} from "@/js/modules/one-product/video-play.js";
+import {initAccordion} from "@/js/modules/one-product/accordion.js";
+import {initFormValidate} from "@/js/modules/one-product/validate.js";
 
 
-document.addEventListener("DOMContentLoaded", async() => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
 
     burgerAccordion();
 
-    // await loadProductsFirebase("product_hero-card","product-5");
     await Promise.all([
-        loadHeroProductsFirebase("product_hero-card","product-5"),
+        loadHeroProductsFirebase("product_hero-card", "product-5"),
 
         loadReviewFirebase("card-review-1", "review-1"),
         loadReviewFirebase("card-review-2", "review-2"),
+        loadReviewFirebase("card-review-3", "review-3"),
 
-        totalStars("data-rating-all","allStars"),
-        allReviewsImg("data-reviews-all-img","allReviews"),
+        totalStars("data-rating-all", "allStars"),
+        allReviewsImg("data-reviews-all-img", "allReviews"),
 
         loadProductsFirebase("card-1", "product-1"),
         loadProductsFirebase("card-2", "product-2"),
@@ -37,39 +37,19 @@ document.addEventListener("DOMContentLoaded", async() => {
         loadProductsFirebase("card-6", "product-6"),
     ]);
 
-    initProductSwiper();
+    initHeroSwiper();
 
     initUserReviewsSwiper();
 
     initRelatedSwiper();
+
+    initVideoPlayers();
+
+    initAccordion();
+
+    initFormValidate();
 });
 
 
-document.querySelectorAll('.accordion__row').forEach((btn) => {
-    btn.addEventListener('click', () => {
-        // btn.parentElement.classList.toggle('active');
-        btn.classList.toggle('active');
-    });
-})
-
-// const accordionList = document.querySelectorAll(".faq__accordion-head");
-//
-// accordionList.forEach(item => {
-//     item.addEventListener("click", function () {
-//         const clickItem = this;
-//         accordionList.forEach(element => {
-//             if (element !== clickItem) {
-//                 element.parentElement.classList.remove("active");
-//             }
-//         });
-//         item.parentElement.classList.toggle("active");
-//         let currentItem = item.parentElement.querySelector(".faq__accordion-body");
-//         if (item.parentElement.classList.contains("active")) {
-//             currentItem.style.maxHeight = currentItem.scrollHeight + "px";
-//         } else {
-//             currentItem.style.maxHeight = 0;
-//         }
-//     });
-// });
 
 

@@ -1,7 +1,7 @@
 @use "@/scss/mixins/media" as media;
 .footer {
-    margin-top: 31px;
+    margin-top: 16px;
     @include media.max-width(md) {
-        margin-top: 23px;
+        margin-top: 3px;
     }
 }

@@ -6,11 +6,17 @@
 </div>
 <div class="user-reviews__content">
     <div class="user-reviews__aside">
-        <div class="user-reviews__rating-summary rating-summary" data-rating-all>
+        <div
+          class="user-reviews__rating-summary rating-summary"
+          data-rating-all>
             <div class="rating-summary__head">
-                <span class="rating-summary__reviews-grade" data-stars-summary-number>4,1</span>
+                <span
+                  class="rating-summary__reviews-grade"
+                  data-stars-summary-number>4,1</span>
                 <div class="rating-summary__head-inner">
-                    <span class="rating-summary__reviews-number" data-reviews-number>124 reviews</span>
+                    <span
+                      class="rating-summary__reviews-number"
+                      data-reviews-number>124 reviews</span>
                     {{> components/rating
                     className="rating-summary__rating"
                     }}
@@ -28,8 +34,11 @@
                 <progress
                   max="124"
                   value="55"
-                  class="rating-summary__progress" data-stars-5-progress></progress>
-                <span class="rating-summary__star-number" data-stars-5-number>55</span>
+                  class="rating-summary__progress"
+                  data-stars-5-progress></progress>
+                <span
+                  class="rating-summary__star-number"
+                  data-stars-5-number>55</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -42,8 +51,11 @@
                 <progress
                   max="124"
                   value="44"
-                  class="rating-summary__progress" data-stars-4-progress></progress>
-                <span class="rating-summary__star-number" data-stars-4-number>44</span>
+                  class="rating-summary__progress"
+                  data-stars-4-progress></progress>
+                <span
+                  class="rating-summary__star-number"
+                  data-stars-4-number>44</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -56,8 +68,11 @@
                 <progress
                   max="124"
                   value="33"
-                  class="rating-summary__progress" data-stars-3-progress></progress>
-                <span class="rating-summary__star-number" data-stars-3-number>33</span>
+                  class="rating-summary__progress"
+                  data-stars-3-progress></progress>
+                <span
+                  class="rating-summary__star-number"
+                  data-stars-3-number>33</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -70,8 +85,11 @@
                 <progress
                   max="124"
                   value="22"
-                  class="rating-summary__progress" data-stars-2-progress></progress>
-                <span class="rating-summary__star-number" data-stars-2-number>22</span>
+                  class="rating-summary__progress"
+                  data-stars-2-progress></progress>
+                <span
+                  class="rating-summary__star-number"
+                  data-stars-2-number>22</span>
             </div>
             <div class="rating-summary__row">
                 <label
@@ -84,43 +102,60 @@
                 <progress
                   max="124"
                   value="11"
-                  class="rating-summary__progress" data-stars-1-progress></progress>
-                <span class="rating-summary__star-number" data-stars-1-number>11</span>
+                  class="rating-summary__progress"
+                  data-stars-1-progress></progress>
+                <span
+                  class="rating-summary__star-number"
+                  data-stars-1-number>11</span>
             </div>
         </div>
-        <div class="user-reviews__reviews-gallery reviews-gallery" data-reviews-all-img>
+        <div
+          class="user-reviews__reviews-gallery reviews-gallery"
+          data-reviews-all-img>
             <div class="reviews-gallery__head">
                 <div class="reviews-gallery__head-inner">
-                    <span class="reviews-gallery__reviews-number" data-reviews-number>124 reviews</span>
+                    <span
+                      class="reviews-gallery__reviews-number"
+                      data-reviews-number>124 reviews</span>
                     <h3 class="reviews-gallery__title">Photo&Video review</h3>
                 </div>
                 <a
                   href="#!"
                   class="reviews-gallery__view-btn">View</a>
             </div>
-            <div class="reviews-gallery__gallery" data-photos-video>
-                <picture class="reviews-gallery__photo" data-reviews-img>
+            <div
+              class="reviews-gallery__gallery"
+              data-photos-video>
+                <picture
+                  class="reviews-gallery__photo"
+                  data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo" data-reviews-img>
+                <picture
+                  class="reviews-gallery__photo"
+                  data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo" data-reviews-img>
+                <picture
+                  class="reviews-gallery__photo"
+                  data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <picture class="reviews-gallery__photo" data-reviews-img>
+                <picture
+                  class="reviews-gallery__photo"
+                  data-reviews-img>
                     <img
                       src="./src/image/image.png"
                       alt="reviews-img"
@@ -130,16 +165,25 @@
             </div>
         </div>
     </div>
-    <div class="user-reviews__swiper swiper">
-        <div class="swiper-wrapper">
-        {{> components/card-review_extended
-        className="user-reviews__card-review card-review_extended swiper-slide"
-        dataId="card-review-1"
-        }}
-        {{> components/card-review_extended
-        className="user-reviews__card-review card-review_extended swiper-slide"
-        dataId="card-review-2"
-        }}
+    <div class="user-reviews__swiper-wrap">
+        <div class="user-reviews__swiper swiper">
+            <div class="swiper-wrapper">
+                {{> components/card-review_extended
+                className="user-reviews__card-review
+                swiper-slide"
+                dataId="card-review-1"
+                }}
+                {{> components/card-review_extended
+                className="user-reviews__card-review
+                swiper-slide"
+                dataId="card-review-2"
+                }}
+                {{> components/card-review_extended
+                className="user-reviews__card-review
+                swiper-slide user-reviews__desktop-hidden"
+                dataId="card-review-3"
+                }}
+            </div>
         </div>
     </div>
 </div>

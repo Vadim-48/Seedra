@@ -1,8 +1,8 @@
 @use "@/scss/mixins/media" as media;
-.blog-preview{
-    margin-top: 92px;
+.blog-prev{
+    margin-top: 77px;
     @include media.max-width(xs) {
-        margin-top: 23px;
+        margin-top: 15px;
     }
     &__header{
         display: flex;

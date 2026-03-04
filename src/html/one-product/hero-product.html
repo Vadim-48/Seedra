@@ -21,102 +21,131 @@
     <div class="hero-product__gallery">
         <div class="hero-product__swiper swiper">
             <div class="hero-product__swiper-wrapper swiper-wrapper">
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-main>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-1>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-2>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-3>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-4>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
+                <picture class="hero-product__gallery-item swiper-slide">
                     <img
                       src=""
                       alt="product"
                       loading="lazy"
-                      data-product-photo-5>
+                      data-product-photo>
                 </picture>
-                <picture class="hero-product__photo swiper-slide">
-                    <img
-                      src=""
-                      alt="product"
-                      loading="lazy"
-                      data-product-photo-2>
-                </picture>
+                <div class="hero-product__gallery-item hero-product__video video swiper-slide" data-video-file>
+                    <div class="video__overlay">
+                        <picture class="video__overlay-photo">
+                            <img
+                              src=""
+                              alt="img"
+                              class="video__overlay"
+                              loading="lazy" data-product-video-wrap>
+                        </picture>
+                        {{> components/svg
+                        className="video__play-icon"
+                        id="play"
+                        }}
+                    </div>
+                    <div
+                      class="video__file"
+                      data-video-id></div>
+                </div>
             </div>
         </div>
         <div class="hero-product__thumbsSwiper swiper">
             <div class="hero-product__thumbnails swiper-wrapper">
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-main>
-            </picture>
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-1>
-            </picture>
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-2>
-            </picture>
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-3>
-            </picture>
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-4>
-            </picture>
-            <picture class="hero-product__thumbnails-item swiper-slide">
-                <img
-                  src="./src/image/image.png"
-                  alt="product"
-                  loading="lazy"
-                  data-product-photo-5>
-            </picture>
-        </div>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <picture class="hero-product__thumbnails-item swiper-slide">
+                    <img
+                      src=""
+                      alt="product"
+                      loading="lazy"
+                      data-product-thumb>
+                </picture>
+                <div class="hero-product__thumbnails-item video swiper-slide">
+                    <div class="video__overlay">
+                        <picture class="video__overlay-photo">
+                            <img
+                              src=""
+                              alt="img"
+                              class="video__overlay-img"
+                              loading="lazy" data-product-video-wrap>
+                        </picture>
+                        {{> components/svg
+                        className="video__play-icon"
+                        id="play"
+                        }}
+                    </div>
+                    <div
+                      class="video__file"
+                      data-video-id></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="hero-product__content">
@@ -147,16 +176,16 @@
                         <span class="selector__chose-number">2 PACK</span>
                     </div>
                     <div class="selector__number">
-                        <button class="selector__number-add">
+                        <button class="selector__number-remove">
                             {{> components/svg
                             className="selector__number-icon"
                             id="minus"
                             }}
                         </button>
-                        <div class="selector__number-wrap">
+                        <div class="selector__number-inner">
                             <span class="selector__number-item">2</span>
                         </div>
-                        <button class="selector__number-remove">
+                        <button class="selector__number-add">
                             {{> components/svg
                             className="selector__number-icon"
                             id="plus"
@@ -188,7 +217,8 @@
                           id="pack-2"
                           name="pack"
                           value="2"
-                          class="selector__input">
+                          class="selector__input"
+                          checked>
                         <label
                           for="pack-2"
                           class="selector__label">

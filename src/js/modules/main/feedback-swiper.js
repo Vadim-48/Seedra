@@ -1,7 +1,5 @@
 let feedbackSwiper = null;
 
-
-
 export const initFeedbackSwiper = () => {
     feedbackSwiper = new Swiper('.feedback .swiper', {
         slidesPerView: 1.15,

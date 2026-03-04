@@ -1,8 +1,8 @@
 @use "@/scss/mixins/media" as media;
-.products{
+.products-prev{
     margin-top: 57px;
     @include media.max-width(xs) {
-        margin-top: 32px;
+        margin-top: 29px;
     }
     &__head{
         display: flex;
@@ -29,11 +29,19 @@
             margin-top: 20px;
         }
     }
-    //&__swiper{
-        //overflow: visible;
-    //}
+    &__swiper-container{
+        overflow: hidden;
+        padding: 15px 30px;
+        margin-top: 12px;
+        @include media.max-width(sm) {
+            padding: 15px;
+            margin-top: 8px;
+        }
+    }
+    &__swiper{
+        overflow: visible;
+    }
     &__list{
-        margin-top: 27px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px 30px;
@@ -41,7 +49,6 @@
             grid-template-columns: repeat(2, 1fr);
         }
         @include media.max-width(xs) {
-            margin-top: 23px;
             display: flex;
             gap: 0;
             align-items: stretch;

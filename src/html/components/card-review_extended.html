@@ -1,65 +1,69 @@
 <div
-  class="{{className}} card-review"
+  class="{{className}} card-review card-review_extended"
   data-review-id="{{dataId}}">
-    <div class="card-review__head">
-        <picture class="card-review__photo">
-            <img
-              src=""
-              alt=""
-              loading="lazy"
-              data-review-photo>
-        </picture>
-        <div class="card-review__about">
-            <p
-              class="card-review__name"
-              data-review-name></p>
-            <p
-              class="card-review__date"
-              data-review-date-extended></p>
-        </div>
-        {{> components/rating
-        className="card-review__rating"
-        }}
-    </div>
-    <p
-      class="card-review__text"
-      data-review-text></p>
-    <div class="card-review__gallery-wrap">
-        <div
-          class="card-review__gallery"
-          data-review-gallery>
-            <picture class="card-review__review-img">
+    <div class="card-review__content">
+        <div class="card-review__head">
+            <picture class="card-review__photo">
                 <img
-                  src="./src/image/image.png"
+                  src=""
                   alt=""
                   loading="lazy"
-                  data-review-img>
+                  data-review-photo>
             </picture>
-            <picture class="card-review__review-img">
-                <img
-                  src="./src/image/image.png"
-                  alt=""
-                  loading="lazy"
-                  data-review-img>
-            </picture>
-        </div>
-    </div>
-    <hr class="card-review__line">
-    <div class="card-review__foot">
-        <div class="card-review__chose">
-            <span class="card-review__chose-text">Size</span>
-            <span
-              class="card-review__chose-number"
-              data-review-pack-size>2 PACK</span>
-        </div>
-        <div
-          class="card-review__verified"
-          data-review-verified>
-            {{> components/svg
-            className="hero-product__status-icon"
-            id="check"
+            <div class="card-review__about">
+                <p
+                  class="card-review__name"
+                  data-review-name></p>
+                <p
+                  class="card-review__date"
+                  data-review-date-extended></p>
+            </div>
+            {{> components/rating
+            className="card-review__rating"
             }}
-            <span class="hero-product__status-text">VERIFIED</span>
+        </div>
+        <p
+          class="card-review__text"
+          data-review-text></p>
+        <div class="card-review__gallery-wrap">
+            <div
+              class="card-review__gallery"
+              data-review-gallery>
+                <picture class="card-review__review-img">
+                    <img
+                      src="./src/image/image.png"
+                      alt=""
+                      loading="lazy"
+                      data-review-img>
+                </picture>
+                <picture class="card-review__review-img">
+                    <img
+                      src="./src/image/image.png"
+                      alt=""
+                      loading="lazy"
+                      data-review-img>
+                </picture>
+            </div>
+        </div>
+    </div>
+    <div class="card-review__foot">
+        <hr class="card-review__line">
+        <div class="card-review__foot-inner">
+            <div class="card-review__chose">
+                <span class="card-review__chose-text">Size</span>
+                <span
+                  class="card-review__chose-number"
+                  data-review-pack-size>0 PACK</span>
+            </div>
+            <div
+              class="card-review__verified"
+              data-review-verified>
+                {{> components/svg
+                className="hero-product__status-icon"
+                id="check"
+                }}
+                <span class="hero-product__status-text">VERIFIED</span>
+            </div>
         </div>
     </div>
 </div>

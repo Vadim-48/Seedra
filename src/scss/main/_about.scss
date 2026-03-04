@@ -1,10 +1,10 @@
 @use "@/scss/mixins/media" as media;
 .about {
     position: relative;
-    margin-top: 80px;
+    margin-top: 65px;
     overflow: hidden;
     @include media.max-width(xs) {
-        margin-top: 36px;
+        margin-top: 20px;
     }
     &__container{
         @include media.max-width(md) {

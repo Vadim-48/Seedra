@@ -2,7 +2,7 @@
 .related{
     margin-top: 66px;
     @include media.max-width(sm) {
-        margin-top: 8px;
+        margin-top: 19px;
     }
     &__title{
         font-weight: 600;
@@ -17,17 +17,20 @@
             letter-spacing: -0.04em;
         }
     }
-    &__swiper{
-        margin-top: 39px;
+    &__swiper-container{
+        overflow: hidden;
+        padding: 15px 30px;
+        margin-top: 24px;
         @include media.max-width(sm) {
-            margin-top: 21px;
+            padding: 15px;
+            margin-top: 6px;
         }
     }
+    &__swiper{
+        overflow: visible;
+    }
     &__card{
-        //height: 100%;
         height: auto;
-        //@include media.max-width(xs) {
-        //    padding: 26px 11px 11px 11px;
-        //}
+        min-width: 0;
     }
 }

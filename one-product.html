@@ -24,10 +24,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/product-CabFSEQ9.js"></script>
+  <script type="module" crossorigin src="/Seedra/assets/one-product-Bl2Jw3q9.js"></script>
   <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-fsrTvoOq.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/product-C_DU2W2_.css">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-CuNbgBgj.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/one-product-XnapSg0L.css">
 </head>
 <body class="body">
 <header
@@ -465,14 +466,14 @@
                                     <span class="selector__chose-number">2 PACK</span>
                                 </div>
                                 <div class="selector__number">
-                                    <button class="selector__number-add">
+                                    <button class="selector__number-remove">
                                         <svg class="selector__number-icon"  >
                                             <use href="/Seedra/sprite.svg#icon-minus"></use>
                                         </svg>                        </button>
-                                    <div class="selector__number-wrap">
+                                    <div class="selector__number-inner">
                                         <span class="selector__number-item">2</span>
                                     </div>
-                                    <button class="selector__number-remove">
+                                    <button class="selector__number-add">
                                         <svg class="selector__number-icon"  >
                                             <use href="/Seedra/sprite.svg#icon-plus"></use>
                                         </svg>                        </button>
@@ -638,67 +639,88 @@
         <div class="container">
             <h2 class="faq__title">Frequently asked questions.</h2>
             <div class="faq__inner">
+            
                 <div class="faq__accordion">
-                    <div class="faq__accordion-row">
-                        <button type="button" class="faq__accordion-head">
-                            <h3 class="faq__accordion-title">For seller: are these seeds
+                    <div class="accordion__row">
+                        <button
+                          type="button"
+                          class="accordion__head">
+                            <h3 class="accordion__title">For seller: are these seeds
                                 organic? it does matter if they are organic, seeds can hold
                                 pesticides from the plant they grow from.</h3>
-                            <div class="faq__accordion-icon faq__accordion-icon_right">
+                            <div class="accordion__icon accordion__icon_right">
                                 <span></span><span></span>
                             </div>
                         </button>
-                        <div class="faq__accordion-body">
-                            <hr class="faq__accordion-line">
-                            <p class="faq__accordion-text">I planted them in all purpose potting
-                                soil. Moist not wet. Placed them on a heat mat. If not
-                                available, somewhere where it's 72 degrees. Add natural light,
-                                but I used artificial light. Takes 10- 15 days because of there
-                                hard shell on the seed.</p>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of there
+                                    hard shell on the seed.</p>
+                            </div>
                         </div>
-                        <div class="faq__accordion-icon faq__accordion-icon_bottom">
+                        <div class="accordion__icon_bottom accordion__icon ">
                             <span></span><span></span>
                         </div>
                     </div>
-                    <div class="faq__accordion-row active">
-                        <button type="button" class="faq__accordion-head">
-                            <h3 class="faq__accordion-title">Can they be grown on hydroponic
+                    <div class="accordion__row active">
+                        <button
+                          type="button"
+                          class="accordion__head">
+                            <h3 class="accordion__title">Can they be grown on hydroponic
                                 systems</h3>
-                            <div class="faq__accordion-icon faq__accordion-icon_right">
+                            <div class="accordion__icon accordion__icon_right">
                                 <span></span><span></span>
                             </div>
                         </button>
-                        <div class="faq__accordion-body">
-                            <hr class="faq__accordion-line">
-                            <p class="faq__accordion-text">I have heat mats and artificial
-                                light. </p>
-                            <p class="faq__accordion-text">I planted them in all purpose potting
-                                soil. Moist not wet. Placed them on a heat mat. If not
-                                available, somewhere where it's 72 degrees. Add natural light,
-                                but I used artificial light. Takes 10- 15 days because of there
-                                hard shell on the seed. </p>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I have heat mats and artificial
+                                    light. </p>
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of there
+                                    hard shell on the seed. </p>
+                            </div>
                         </div>
-                        <div class="faq__accordion-icon faq__accordion-icon_bottom">
+                        <div class="accordion__icon accordion__icon_bottom">
                             <span></span><span></span>
                         </div>
                     </div>
-                    <div class="faq__accordion-row">
-                        <div class="faq__accordion-head">
-                            <h3 class="faq__accordion-title">They did not germinate even
+                    <div class="accordion__row">
+                        <div class="accordion__head">
+                            <h3 class="accordion__title">They did not germinate even
                                 when i followed directions. <br> What should i do?</h3>
-                            <div class="faq__accordion-icon faq__accordion-icon_right">
+                            <div class="accordion__icon accordion__icon_right">
                                 <span></span><span></span>
                             </div>
                         </div>
-                        <div class="faq__accordion-body">
-                            <hr class="faq__accordion-line">
-                            <p class="faq__accordion-text">I planted them in all purpose potting
-                                soil. Moist not wet. Placed them on a heat mat. If not
-                                available, somewhere where it's 72 degrees. Add natural light,
-                                but I used artificial light. Takes 10- 15 days because of there
-                                hard shell on the seed.</p>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of
+                                    there
+                                    hard shell on the seed.</p>
+                            </div>
                         </div>
-                        <div class="faq__accordion-icon faq__accordion-icon_bottom">
+                        <div class="accordion__icon accordion__icon_bottom">
                             <span></span><span></span>
                         </div>
                     </div>
@@ -733,6 +755,622 @@
                         <button class="faq__form-btn btn_green">Send</button>
                     </form>
                 </div>
+            </div>        </div>
+    </section>
+    <section class="user-reviews">
+        <div class="container">
+            <div class="user-reviews__head">
+                <h2 class="user-reviews__title">Customer reviews.</h2>
+                <a
+                  href="#!"
+                  class="user-reviews__btn btn_white">Make review</a>
+            </div>
+            <div class="user-reviews__content">
+                <div class="user-reviews__aside">
+                    <div class="user-reviews__rating-summary rating-summary" data-rating-all>
+                        <div class="rating-summary__head">
+                            <span class="rating-summary__reviews-grade" data-stars-summary-number>4,1</span>
+                            <div class="rating-summary__head-inner">
+                                <span class="rating-summary__reviews-number" data-reviews-number>124 reviews</span>
+                                <div class="rating rating-summary__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>                </div>
+                        </div>
+                        <hr class="rating-summary__line">
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>5</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="55"
+                              class="rating-summary__progress" data-stars-5-progress></progress>
+                            <span class="rating-summary__star-number" data-stars-5-number>55</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>4</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="44"
+                              class="rating-summary__progress" data-stars-4-progress></progress>
+                            <span class="rating-summary__star-number" data-stars-4-number>44</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>3</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="33"
+                              class="rating-summary__progress" data-stars-3-progress></progress>
+                            <span class="rating-summary__star-number" data-stars-3-number>33</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>2</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="22"
+                              class="rating-summary__progress" data-stars-2-progress></progress>
+                            <span class="rating-summary__star-number" data-stars-2-number>22</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>1</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="11"
+                              class="rating-summary__progress" data-stars-1-progress></progress>
+                            <span class="rating-summary__star-number" data-stars-1-number>11</span>
+                        </div>
+                    </div>
+                    <div class="user-reviews__reviews-gallery reviews-gallery" data-reviews-all-img>
+                        <div class="reviews-gallery__head">
+                            <div class="reviews-gallery__head-inner">
+                                <span class="reviews-gallery__reviews-number" data-reviews-number>124 reviews</span>
+                                <h3 class="reviews-gallery__title">Photo&Video review</h3>
+                            </div>
+                            <a
+                              href="#!"
+                              class="reviews-gallery__view-btn">View</a>
+                        </div>
+                        <div class="reviews-gallery__gallery" data-photos-video>
+                            <picture class="reviews-gallery__photo" data-reviews-img>
+                                <img
+                                  src="/Seedra/assets/image-BHSMFlJs.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="reviews-gallery__photo" data-reviews-img>
+                                <img
+                                  src="/Seedra/assets/image-BHSMFlJs.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="reviews-gallery__photo" data-reviews-img>
+                                <img
+                                  src="/Seedra/assets/image-BHSMFlJs.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="reviews-gallery__photo" data-reviews-img>
+                                <img
+                                  src="/Seedra/assets/image-BHSMFlJs.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-reviews__swiper swiper">
+                    <div class="swiper-wrapper">
+                    <div
+                      class="user-reviews__card-review card-review_extended swiper-slide card-review"
+                      data-review-id="card-review-1">
+                        <div class="card-review__head">
+                            <picture class="card-review__photo">
+                                <img
+                                  src=""
+                                  alt=""
+                                  loading="lazy"
+                                  data-review-photo>
+                            </picture>
+                            <div class="card-review__about">
+                                <p
+                                  class="card-review__name"
+                                  data-review-name></p>
+                                <p
+                                  class="card-review__date"
+                                  data-review-date-extended></p>
+                            </div>
+                            <div class="rating card-review__rating" data-rating>
+                                <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg></div>    </div>
+                        <p
+                          class="card-review__text"
+                          data-review-text></p>
+                        <div class="card-review__gallery-wrap">
+                            <div
+                              class="card-review__gallery"
+                              data-review-gallery>
+                                <picture class="card-review__review-img">
+                                    <img
+                                      src="/Seedra/assets/image-BHSMFlJs.png"
+                                      alt=""
+                                      loading="lazy"
+                                      data-review-img>
+                                </picture>
+                                <picture class="card-review__review-img">
+                                    <img
+                                      src="/Seedra/assets/image-BHSMFlJs.png"
+                                      alt=""
+                                      loading="lazy"
+                                      data-review-img>
+                                </picture>
+                            </div>
+                        </div>
+                        <hr class="card-review__line">
+                        <div class="card-review__foot">
+                            <div class="card-review__chose">
+                                <span class="card-review__chose-text">Size</span>
+                                <span
+                                  class="card-review__chose-number"
+                                  data-review-pack-size>2 PACK</span>
+                            </div>
+                            <div
+                              class="card-review__verified"
+                              data-review-verified>
+                                <svg class="hero-product__status-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-check"></use>
+                                </svg>            <span class="hero-product__status-text">VERIFIED</span>
+                            </div>
+                        </div>
+                    </div>        <div
+                      class="user-reviews__card-review card-review_extended swiper-slide card-review"
+                      data-review-id="card-review-2">
+                        <div class="card-review__head">
+                            <picture class="card-review__photo">
+                                <img
+                                  src=""
+                                  alt=""
+                                  loading="lazy"
+                                  data-review-photo>
+                            </picture>
+                            <div class="card-review__about">
+                                <p
+                                  class="card-review__name"
+                                  data-review-name></p>
+                                <p
+                                  class="card-review__date"
+                                  data-review-date-extended></p>
+                            </div>
+                            <div class="rating card-review__rating" data-rating>
+                                <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg>    <svg class="rating__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                </svg></div>    </div>
+                        <p
+                          class="card-review__text"
+                          data-review-text></p>
+                        <div class="card-review__gallery-wrap">
+                            <div
+                              class="card-review__gallery"
+                              data-review-gallery>
+                                <picture class="card-review__review-img">
+                                    <img
+                                      src="/Seedra/assets/image-BHSMFlJs.png"
+                                      alt=""
+                                      loading="lazy"
+                                      data-review-img>
+                                </picture>
+                                <picture class="card-review__review-img">
+                                    <img
+                                      src="/Seedra/assets/image-BHSMFlJs.png"
+                                      alt=""
+                                      loading="lazy"
+                                      data-review-img>
+                                </picture>
+                            </div>
+                        </div>
+                        <hr class="card-review__line">
+                        <div class="card-review__foot">
+                            <div class="card-review__chose">
+                                <span class="card-review__chose-text">Size</span>
+                                <span
+                                  class="card-review__chose-number"
+                                  data-review-pack-size>2 PACK</span>
+                            </div>
+                            <div
+                              class="card-review__verified"
+                              data-review-verified>
+                                <svg class="hero-product__status-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-check"></use>
+                                </svg>            <span class="hero-product__status-text">VERIFIED</span>
+                            </div>
+                        </div>
+                    </div>        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="related">
+        <div class="container">
+            <h2 class="related__title">Related products.</h2>
+            <div class="related__swiper swiper">
+                <div class="swiper-wrapper">
+                    <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-1">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-2">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-3">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-4">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-5">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-6">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>    </div>
             </div>        </div>
     </section>
 </main>

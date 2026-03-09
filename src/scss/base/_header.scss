@@ -35,8 +35,13 @@
         width: 97px;
         height: 21px;
         transition: opacity .3s ease;
-        &:focus-visible, &:hover {
+        &:focus-visible {
             opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                opacity: 0.7;
+            }
         }
         &:active{
             opacity: 1;
@@ -72,8 +77,13 @@
         width: 19px;
         height: 19px;
         transition: color .3s ease, opacity .3s ease;
-        &:focus-visible, &:hover {
+        &:focus-visible {
             opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                opacity: 0.7;
+            }
         }
         &:active{
             color: var(--green-brand);
@@ -187,9 +197,15 @@
             border-right: 1px solid var(--light-grey-stroke);
             padding-right: 16px;
         }
-        &:focus-visible, &:hover {
+        &:focus-visible{
             color: var(--green-brand);
             opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--green-brand);
+                opacity: 0.7;
+            }
         }
         &:active{
             color: var(--green-brand);

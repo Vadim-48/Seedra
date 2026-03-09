@@ -7,6 +7,5 @@ console.log('Firebase ready', app);
 document.addEventListener("DOMContentLoaded", async() => {
 
     burger();
-
     burgerAccordion();
 });

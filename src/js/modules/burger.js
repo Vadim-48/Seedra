@@ -45,5 +45,4 @@ export function burger() {
     window.addEventListener("resize", () => {
             closeBurger();
     })
-
 }

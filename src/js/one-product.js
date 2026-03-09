@@ -16,7 +16,6 @@ import {initFormValidate} from "@/js/modules/one-product/validate.js";
 document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
-
     burgerAccordion();
 
     await Promise.all([

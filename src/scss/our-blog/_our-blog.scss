@@ -1,0 +1,12 @@
+@use "@/scss/mixins/media" as media;
+.our-blog{
+    & .intro{
+        margin-top: 32px;
+    }
+    & .footer {
+        margin-top: 83px;
+        @include media.max-width(md) {
+            margin-top: 48px;
+        }
+    }
+}

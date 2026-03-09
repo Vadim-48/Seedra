@@ -36,9 +36,15 @@
                 color: var(--text-secondary);
             }
         }
-        &:focus-visible, &:hover {
+        &:focus-visible {
             color: var(--green-brand);
             opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--green-brand);
+                opacity: 0.7;
+            }
         }
         &:active{
             color: var(--green-brand);
@@ -72,8 +78,13 @@
             width: 45px;
             height: 46px;
             transition: transform .3s ease;
-            &:focus-visible, &:hover {
+            &:focus-visible {
                 transform: scale(1.2);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
     }
@@ -327,9 +338,16 @@
         &:has(.selector__input:checked) {
             border: 1px solid var(--primary-color);
         }
-        &:focus-visible, &:hover {
+        &:focus-visible {
             & .selector__amount{
                 color: var(--green-brand);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                & .selector__amount{
+                    color: var(--green-brand);
+                }
             }
         }
     }

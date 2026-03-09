@@ -65,8 +65,30 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        &.active .burger__category-icon {
-            transform: rotate(180deg);
+        color: var(--text-primary);
+        transition: opacity .3s ease, color .3s ease;
+        &.active {
+            color: var(--green-brand);
+            & .burger__category-icon{
+                transform: rotate(180deg);
+                color: var(--green-brand);
+            }
+        }
+        &:focus-visible,{
+            color: var(--green-brand);
+            opacity: 0.7;
+            & .burger__category-icon {
+                color: var(--green-brand);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--green-brand);
+                opacity: 0.7;
+                & .burger__category-icon {
+                    color: var(--green-brand);
+                }
+            }
         }
     }
 
@@ -75,13 +97,13 @@
         font-size: 16px;
         line-height: 1.78;
         letter-spacing: -0.04em;
-        color: var(--text-primary);
+
     }
 
     &__category-icon {
         width: 12px;
         height: 7px;
-
+        transition: opacity .3s ease, color .3s ease;
     }
 
     &__subcategory {
@@ -106,6 +128,20 @@
         font-size: 16px;
         line-height: 1.75;
         color: var(--text-secondary);
+        transition: color .3s ease, opacity .3s ease;
+        &:focus-visible {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--green-brand);
+                opacity: 0.7;
+            }
+        }
+        &:active{
+            color: var(--green-brand);
+        }
     }
     &__line{
         background: #cfcfcf;;
@@ -162,8 +198,13 @@
         height: 19px;
         color: var(--text-secondary);
         transition: color .3s ease, opacity .3s ease;
-        &:focus-visible, &:hover {
+        &:focus-visible {
             opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover{
+                opacity: 0.7;
+            }
         }
         &:active{
             color: var(--green-brand);

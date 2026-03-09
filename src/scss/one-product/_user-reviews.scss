@@ -218,9 +218,15 @@
         letter-spacing: -0.04em;
         color: var(--green-brand);
         transition: color .3s ease, text-decoration .3s ease;
-        &:focus-visible, &:hover {
+        &:focus-visible {
             color: #50c75a;
             text-decoration: underline;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: #50c75a;
+                text-decoration: underline;
+            }
         }
         &:active{
             color: #045e09;

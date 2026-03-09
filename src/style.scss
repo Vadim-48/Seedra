@@ -1,23 +1,23 @@
-@use "./scss/base/reset";
-@use "./scss/base/base";
-@use "./scss/base/header";
-@use "./scss/base/burger";
+@use "@/scss/base/reset";
+@use "@/scss/base/base";
+@use "@/scss/base/header";
+@use "@/scss/base/burger";
 
-@use "./scss/components/btn";
-@use "./scss/components/typography";
-@use "./scss/components/rating";
+@use "@/scss/components/btn";
+@use "@/scss/components/typography";
+@use "@/scss/components/rating";
 @use "@/scss/components/card-review";
 
-@use "./scss/main/hero";
-@use "./scss/main/info";
-@use "./scss/components/menu-category";
-@use "./scss/components/card-product";
-@use "./scss/main/products-prev";
-@use "./scss/components/card-blog";
-@use "./scss/main/blog-prev";
-@use "./scss/main/feedback";
-@use "./scss/main/about";
+@use "@/scss/main/hero";
+@use "@/scss/main/info";
+@use "@/scss/components/menu-category";
+@use "@/scss/components/card-product";
+@use "@/scss/main/products-prev";
+@use "@/scss/components/card-blog";
+@use "@/scss/main/blog-prev";
+@use "@/scss/main/feedback";
+@use "@/scss/main/about";
 
 
-@use "./scss/base/footer";
-@use "./scss/main/footer_main";
+@use "@/scss/base/footer";
+@use "@/scss/main/footer_main";

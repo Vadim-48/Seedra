@@ -1,0 +1,141 @@
+@use "@/scss/mixins/media" as media;
+.product-area {
+    margin-top: 25px;
+    &__wrap {
+        display: grid;
+        grid-template-columns: 23% 1fr;
+        gap: 32px;
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__sidebar {
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat( 3, 1fr);
+        gap: 25px 30px;
+        @include media.max-width(md) {
+            grid-template-columns: repeat( 2, 1fr);
+        }
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__card{
+        & .card__old-price{
+            display: none;
+        }
+    }
+}
+
+.filter-form {
+    @include media.max-width(sm) {
+
+    }
+    &__title{
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-primary);
+    }
+
+    &__group {
+        margin-top: 6px;
+        &.active .filter-form__group-body-wrap{
+            grid-template-rows: 1fr;
+        }
+        &.active .filter-form__group-arrow{
+            transform: rotate(180deg);
+            & use{
+                color: var(--green-brand);
+            }
+        }
+    }
+
+    &__group-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__group-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+    &__group-body-wrap {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease;
+    }
+    &__group-body {
+        overflow: hidden;
+
+        & label{
+            font-size: 14px;
+            line-height: 1.78;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            &:not(:first-of-type) {
+                margin-top: 13px;
+            }
+            &:first-of-type{
+                margin-top: 17px;
+            }
+            &:last-of-type{
+                padding-bottom: 10px;
+            }
+        }
+        & input{
+            appearance: none;
+            border: 1px solid var(--light-grey-stroke);
+            border-radius: 6px;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            &:checked{
+                background: var(--invisible-green);
+                border: 1px solid var(--green-brand);
+            }
+            &:checked::after {
+                content: "";
+                position: absolute;
+                left: 6px;
+                top: 2px;
+                width: 5px;
+                height: 10px;
+                border: solid var(--green-brand);
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &__group-line{
+        height: 1px;
+        width: 100%;
+        background: var(--light-grey-stroke);
+        margin-top: 7px;
+    }
+
+    &__group-arrow {
+        width: 12px;
+        height: 7px;
+        & use{
+            color: var(--text-secondary);
+        }
+    }
+    &__line{
+        height: 1px;
+        width: 100%;
+        background: var(--light-grey-stroke);
+        margin-top: 7px;
+    }
+}

@@ -17,8 +17,13 @@
     @include media.max-width(sm) {
         font-size: 14px;
     }
-    &:focus-visible, &:hover {
+    &:focus-visible {
         background: var(--invisible-green);
+    }
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: var(--invisible-green);
+        }
     }
     &:active{
         background: var(--invisible-green);
@@ -43,8 +48,13 @@
     @include media.max-width(sm) {
         font-size: 14px;
     }
-    &:focus-visible, &:hover {
+    &:focus-visible {
         background: var(--hover);
+    }
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: var(--hover);
+        }
     }
     &:active{
         background: var(--primary-color);

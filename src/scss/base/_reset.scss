@@ -5,11 +5,12 @@
 }
 
 button {
+    all: unset;
     cursor: pointer;
     background: none;
     border: none;
     font: inherit;
-    all: unset;
+
 }
 
 *, *::before, *::after, button {

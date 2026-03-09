@@ -1,0 +1,10 @@
+@use "@/scss/mixins/media" as media;
+
+.one-product {
+    & .footer {
+        margin-top: 16px;
+        @include media.max-width(md) {
+            margin-top: 3px;
+        }
+    }
+}

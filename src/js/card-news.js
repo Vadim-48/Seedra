@@ -5,7 +5,6 @@ import { initAsideSwiper } from "@/js/modules/card-news/swiper-one-news.js";
 document.addEventListener("DOMContentLoaded", async() => {
 
     burger();
-
     burgerAccordion();
 
     initAsideSwiper();

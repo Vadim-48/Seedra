@@ -16,14 +16,20 @@
         height: 72px;
         flex: 1 1 auto;
 
+
         display: flex;
         align-items: center;
         transition: color .3s ease, border-color .3s ease;
         @include media.max-width(sm) {
             height: 57px;
         }
-        &:focus-visible, &:hover {
+        &:focus-visible {
             border-color: var(--invisible-green);
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border-color: var(--invisible-green);
+            }
         }
         &:active{
             color: var(--green-brand);

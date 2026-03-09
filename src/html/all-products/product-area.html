@@ -1,0 +1,212 @@
+<div class="product-area__wrap">
+    <aside class="product-area__sidebar">
+        <form
+          action="#"
+          class="filter-form">
+            <h1 class="filter-form__title">FILTERS</h1>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group active"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Seed type </span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+                        <hr class="filter-form__group-line">
+                        <label><input
+                          type="checkbox"
+                          name="seed"
+                          value="hybrid">Hybrid</label>
+                        <label><input
+                          type="checkbox"
+                          name="seed"
+                          value="pollinated">Open Pollinated</label>
+                        <label><input
+                          type="checkbox"
+                          name="seed"
+                          value="organic">Organic Seeds, Plants, and
+                            Supplies</label>
+                        <label><input
+                          type="checkbox"
+                          name="seed"
+                          value="pelleted">Pelleted See</label>
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Featured</span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+                        <hr class="filter-form__group-line">
+                        <label><input
+                          type="checkbox"
+                          name="seed"
+                          value="featured">Featured</label>
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Growing Conditions</span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+                        <hr class="filter-form__group-line">
+                        <label><input
+                          type="checkbox"
+                          name="conditions"
+                          value="conditions">Growing Conditions</label>
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Price</span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Use</span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+                        <hr class="filter-form__group-line">
+                        <label><input
+                          type="checkbox"
+                          name="use"
+                          value="use">Use</label>
+                    </div>
+                </div>
+            </fieldset>
+            <hr class="filter-form__line">
+            <fieldset
+              class="filter-form__group"
+              data-accordion>
+                <button
+                  class="filter-form__group-btn"
+                  type="button">
+                    <span class="filter-form__group-title">Additional Characteristic</span>
+                    {{> components/svg
+                    className="filter-form__group-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="filter-form__group-body-wrap">
+                    <div class="filter-form__group-body">
+                        <hr class="filter-form__group-line">
+                        <label><input
+                          type="checkbox"
+                          name="characteristic"
+                          value="characteristic">Characteristic</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </aside>
+    <div class="product-area__list">
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-1"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-2"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-3"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-4"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-5"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-6"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-7"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-8"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+        {{> components/card-product
+        className="product-area__card swiper-slide"
+        dataId="card-9"
+        hrefLink="./one-product.html"
+        altImg="product Seedra"
+        }}
+    </div>
+</div>

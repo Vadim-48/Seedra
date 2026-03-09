@@ -1,0 +1,23 @@
+@use "@/scss/mixins/media" as media;
+
+.all-products {
+    & .filters {
+        margin-top: 32px;
+        @include media.max-width(sm) {
+            margin-top: 24px;
+        }
+    }
+    & .menu-category {
+        margin-top: 25px;
+        @include media.max-width(md) {
+            margin-top: 19px;
+        }
+    }
+    //& .footer {
+    //    margin-top: 25px;
+    //    @include media.max-width(md) {
+    //        margin-top: 19px;
+    //    }
+    //}
+}
+

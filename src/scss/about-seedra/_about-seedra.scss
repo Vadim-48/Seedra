@@ -1,0 +1,28 @@
+@use "@/scss/mixins/media" as media;
+
+.about-seedra {
+    & .intro {
+        margin-top: 31px;
+    }
+
+    & .intro__wrap {
+
+        @include media.max-width(sm) {
+            padding: 30px 5% 23px 5%;
+        }
+    }
+
+    & .intro__title {
+
+        @include media.max-width(sm) {
+            padding-inline: 5%;
+        }
+    }
+
+    & .info-content {
+        margin-top: 15px;
+        @include media.max-width(sm) {
+            margin-top: 11px;
+        }
+    }
+}

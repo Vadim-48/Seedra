@@ -1,0 +1,72 @@
+@use "@/scss/mixins/media" as media;
+.our-story {
+    position: relative;
+    margin-top: 39px;
+    @include media.max-width(xs) {
+        margin-top: 30px;
+    }
+    &__container{
+        @include media.max-width(md) {
+            display: contents;
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 48.8% 1fr;
+        column-gap: 5.8%;
+        @include media.max-width(md) {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 25px;
+        }
+    }
+
+    &__photo{
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 28px;
+        @include media.max-width(md) {
+            width: 80%;
+           margin-inline: auto;
+        }
+        @include media.max-width(sm) {
+            width: 100%;
+            margin-inline: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        @include media.max-width(xs) {
+            width: 65%;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        text-indent: 8px;
+        &:first-of-type {
+            margin-top: 32px;
+            @include media.max-width(xs) {
+                margin-top: 10px;
+            }
+        }
+        &:nth-of-type(2) {
+            margin-top: 28px;
+        }
+        &:last-of-type {
+            margin-top: 28px;
+        }
+    }
+}
+
+

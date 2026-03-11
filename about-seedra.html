@@ -21,10 +21,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/scss/our-blog-style.scss">
+      href="./src/scss/about-seedra-style.scss">
     <title>Seedra</title>
 </head>
-<body class="our-blog">
+<body class="about-seedra">
 <header
   class="header"
   id="header">
@@ -39,19 +39,32 @@
     <section class="intro">
         <div class="container">
             {{> components/intro
-            title="Welcome to our blog"
-            text="Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden"
+            title="Who we are and what we do"
+            text="Here you can find a lot of interesting and useful information
+            that you need in gardening and creating a beautiful garden"
             }}
         </div>
     </section>
-    <section class="filters">
-        <div class="container">
-            {{> components/filters}}
+    <section class="info-content">
+        <div class="info-content__container container">
+            {{> components/info-content
+            classNameImg="info-content__photo"
+            alt="img"
+            desktop="./src/image/main/about/about-img.png"
+            desktopWebp="./src/image/main/about/about-img.webp"
+            mobile="./src/image/main/about/about-img_2.png"
+            mobileWebp="./src/image/main/about/about-img_2.webp"
+            }}
         </div>
     </section>
-    <section class="blog">
+    <section class="our-story">
         <div class="container">
-            {{> our-blog/blog}}
+            {{> about-seedra/our-story }}
+        </div>
+    </section>
+    <section class="our-team">
+        <div class="container">
+
         </div>
     </section>
 </main>
@@ -64,7 +77,7 @@
 </footer>
 <script
   type="module"
-  src="./src/js/our-blog.js"
+  src="./src/js/about-seedra.js"
   defer></script>
 </body>
 </html>

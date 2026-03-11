@@ -8,6 +8,7 @@
 @use "@/scss/components/rating";
 @use "@/scss/components/card-review";
 
+@use "@/scss/main/main";
 @use "@/scss/main/hero";
 @use "@/scss/main/info";
 @use "@/scss/components/menu-category";
@@ -16,8 +17,6 @@
 @use "@/scss/components/card-blog";
 @use "@/scss/main/blog-prev";
 @use "@/scss/main/feedback";
-@use "@/scss/main/about";
-
+@use "@/scss/components/info-content";
 
 @use "@/scss/base/footer";
-@use "@/scss/main/footer_main";

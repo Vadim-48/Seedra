@@ -1,11 +1,12 @@
 @use "@/scss/mixins/media" as media;
-.about {
+.info-content {
     position: relative;
-    margin-top: 65px;
+    //margin-top: 65px;
     overflow: hidden;
-    @include media.max-width(xs) {
-        margin-top: 20px;
-    }
+    padding-top: 20px;
+    //@include media.max-width(xs) {
+    //    margin-top: 20px;
+    //}
     &__container{
         @include media.max-width(md) {
             display: contents;

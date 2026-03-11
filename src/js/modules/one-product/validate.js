@@ -6,16 +6,23 @@ export const initFormValidate = () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const value =textArea.value.trim();
+        const value = textArea.value.trim();
 
         if (!value) {
             textError.textContent = 'Try again';
             textArea.classList.add('error');
             return;
         }
-        form.reset();
+
         textError.textContent = '';
-        textArea.classList.remove('error')
+        textArea.classList.remove('error');
         form.submit();
-    })
+    });
+
+    textArea.addEventListener('input', () => {
+        if (textArea.value.trim()) {
+            textError.textContent = '';
+            textArea.classList.remove('error');
+        }
+    });
 }

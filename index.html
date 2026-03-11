@@ -28,7 +28,7 @@
       href="./src/style.scss">
     <title>Seedra</title>
 </head>
-<body class="body">
+<body class="body main">
 <header
   class="header"
   id="header">
@@ -61,9 +61,16 @@
     <section class="feedback">
         {{> main/feedback}}
     </section>
-    <section class="about">
-        <div class="about__container container">
-            {{> main/about}}
+    <section class="info-content">
+        <div class="info-content__container container">
+            {{> components/info-content
+            classNameImg="info-content__photo"
+            alt="img"
+            desktop="./src/image/main/about/about-img.png"
+            desktopWebp="./src/image/main/about/about-img.webp"
+            mobile="./src/image/main/about/about-img_2.png"
+            mobileWebp="./src/image/main/about/about-img_2.webp"
+            }}
         </div>
     </section>
 </main>

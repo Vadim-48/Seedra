@@ -10,6 +10,7 @@ export async function loadProductsFirebase(dataCard, productId) {
 
     const loadCard = () => {
         const cardList = document.querySelector(`[data-product-id="${dataCard}"]`);
+        cardList.dataset.productFaerbase = productId;
         const product = productsMap[productId];
         // console.log("Product: ", product);
 

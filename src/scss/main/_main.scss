@@ -1,0 +1,16 @@
+@use "@/scss/mixins/media" as media;
+
+.main {
+    & .footer {
+        margin-top: 36px;
+        @include media.max-width(sm) {
+            margin-top: 57px;
+        }
+    }
+    & .info-content {
+        margin-top: 45px;
+        @include media.max-width(xs) {
+            margin-top: 0;
+        }
+    }
+}

@@ -51,9 +51,8 @@
     &__form {
         position: relative;
         z-index: 2;
-        //padding: 139px 25px 20px 25px;
-        //padding: 40% 8% 6% 7%;
-        padding: 139px 8% 20px 7%;
+        //padding: 139px 8% 20px 7%;
+        padding: 119px 8% 20px 7%;
     }
 
     &__form-fieldset {
@@ -81,7 +80,7 @@
         line-height: 1.78;
         color: var(--danger);
         left: 4px;
-        bottom: -8px;
+        margin-top: 2px;
         &:empty {
             display: none;
         }
@@ -106,7 +105,7 @@
 
     &__form-btn {
         width: 104px;
-        margin-top: 10px;
+        margin-top: 30px;
     }
 }
 

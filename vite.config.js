@@ -9,11 +9,10 @@ import {hulakPlugins} from 'vite-plugin-hulak-tools'
 
 const pages = {
     index: resolve(__dirname, 'index.html'),
-    // all-products:  resolve(__dirname, 'all-products.html'),
-    // 'about-seedra':  resolve(__dirname, 'about-seedra.html'),
+    "all-products":  resolve(__dirname, 'all-products.html'),
     'our-blog':  resolve(__dirname, 'our-blog.html'),
     'card-news':  resolve(__dirname, 'card-news.html'),
-    // our-blog:  resolve(__dirname, 'our-blog.html'),
+    "about-seedra":  resolve(__dirname, 'about-seedra.html'),
     'one-product':  resolve(__dirname, 'one-product.html'),
 }
 

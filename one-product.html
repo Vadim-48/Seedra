@@ -1,1 +1,1615 @@
-import"./assets/modulepreload-polyfill-B5Qt9EMX.js";import{b as B,a as R}from"./assets/burger-accordion-D28zlQNL.js";import{g as _,c as q,d as L}from"./assets/firebase-C67ONCVO.js";import{l as p}from"./assets/product-firebase-DnW3fr0w.js";import{l as E}from"./assets/reviews-firebase-RkQPZ6N3.js";async function T(n,s){const a=await _(q(L,"products")),c={};a.forEach(o=>{c[o.id]=o.data()});const t=document.querySelector(`[data-product-id="${n}"]`),e=c[s],l=t.querySelector("[data-product-name]"),u=t.querySelector("[data-product-price]"),i=t.querySelector("[data-product-old-price]"),d=t.querySelector("[data-product-fire-price]");e.name&&l&&(l.textContent=e.name),e.price!=null&&u!=null&&(u.textContent="$"+e.price),e.firePrice&&d&&(d.style.display="block"),e.oldPrice!=null&&i!=null&&(i.textContent="$"+e.oldPrice);const w=t.querySelectorAll("[data-product-photo]"),m=t.querySelectorAll("[data-product-thumb]");for(let o=0;o<w.length;o++)w[o].src=e.thumbs[o],m[o].src=e.thumbs[o];t.querySelectorAll("[data-product-video-wrap]").forEach(o=>{o.src=e.video.img});const y=t.querySelectorAll("[data-video-id]");y.forEach(o=>{o.dataset.videoId=e.video.id}),console.log("sfas",y);const h=t.querySelector(".selector__number-remove"),r=t.querySelector(".selector__number-add"),S=t.querySelector(".selector__number-item");h.addEventListener("click",()=>{let o=parseInt(S.textContent,10);o>0&&(o-=1),S.textContent=o}),r.addEventListener("click",()=>{let o=parseInt(S.textContent,10);o+=1,S.textContent=o});const k=t.querySelectorAll(".selector__input"),I=t.querySelector(".selector__chose-number");k.forEach((o,J)=>{o.addEventListener("change",()=>{I.textContent=o.value+" pack"})})}let P=!1,g=[],b=[];const D={playsinline:1,controls:1,rel:0,modestbranding:1};function $(n){if(window.YT&&window.YT.Player){n();return}if(g.push(n),!P){P=!0;const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api",document.head.appendChild(s),window.onYouTubeIframeAPIReady=()=>{g.forEach(a=>a()),g=[]}}}function M({selector:n="[data-video-file]",autoplay:s=!0}={}){const a=document.querySelectorAll(n);a.length&&a.forEach((c,t)=>{const e=c.querySelector(".video__overlay"),l=c.querySelector(".video__file");if(!e||!l)return;l.id||(l.id=`yt-player-${t}`);const u=l.dataset.videoId;u&&($(()=>{const i=new YT.Player(l.id,{width:"100%",height:"100%",videoId:u,playerVars:D,events:{onReady:d=>{}}});b.push(i)}),e.addEventListener("click",()=>{e.style.display="none";const i=c.querySelector(".video__play-icon");i&&(i.style.display="none");const d=b[t];d&&d.playVideo()}))})}const F=()=>{b.forEach(s=>{try{s.stopVideo()}catch{}}),document.querySelectorAll(".hero-product__video.video").forEach(s=>{const a=s.querySelector(".video__overlay"),c=s.querySelector(".video__play-icon");a&&(a.style.display="flex"),c&&(c.style.display="block")})};let A=null,x=null;document.querySelectorAll(".hero-product__thumbsSwiper .swiper-slide").length;const Y=()=>{x=new Swiper(".hero-product__thumbsSwiper",{spaceBetween:10,slidesPerView:6,loop:!0,watchSlidesProgress:!0,breakpoints:{1024:{spaceBetween:10,slidesPerView:6},650:{spaceBetween:6,slidesPerView:10},550:{spaceBetween:10,slidesPerView:8}}}),A=new Swiper(".hero-product__swiper",{slidesPerView:1,spaceBetween:5,centeredSlides:!1,loop:!0,thumbs:{swiper:x}}),A.on("slideChange",()=>{F()})};async function H(n,s){const a=await _(q(L,"reviews")),c={};a.forEach(r=>{c[r.id]=r.data()});const t=document.querySelector(`[${n}]`),e=c[s],l=[e.oneStar,e.twoStar,e.threeStar,e.fourStar,e.fiveStar],u=[],i=[];for(let r=1;r<=5;r++)u.push(t.querySelector(`[data-stars-${r}-number]`)),i.push(t.querySelector(`[data-stars-${r}-progress]`));const d=t.querySelector("[data-stars-summary-number]"),w=e.fiveStar+e.fourStar+e.threeStar+e.twoStar+e.oneStar,m=Math.round((e.fiveStar*5+e.fourStar*4+e.threeStar*3+e.twoStar*2+e.oneStar)/w*10)/10;d.textContent=m;for(let r=0;r<5;r++)i[r].value=l[r],i[r].max=w,u[r].textContent=l[r];const v=t.querySelectorAll("[data-rating] svg use"),y=Math.floor(m),h=m-y;for(let r=0;r<v.length;r++)if(y>r)v[r].setAttribute("href","./sprite.svg#icon-star");else{h>0&&v[r].setAttribute("href","./sprite.svg#icon-star-half");break}}async function N(n,s){const a=await _(q(L,"reviews")),c={};a.forEach(i=>{c[i.id]=i.data()});const t=document.querySelector(`[${n}]`),e=c[s];console.log(e),t.querySelectorAll("[data-reviews-img] img").forEach((i,d)=>{i&&e.img[d]&&(i.src=e.img[d])}),document.querySelectorAll("[data-reviews-number]").forEach((i,d)=>{i&&e.number&&(i.textContent=e.number+" reviews")})}let f=null;const V=window.matchMedia("(max-width: 768px)"),O=()=>{f=new Swiper(".user-reviews__swiper",{slidesPerView:1.1,spaceBetween:15,loop:!0})},U=()=>{f?.destroy(!0,!0),f=null},C=()=>{window.Swiper&&(V.matches?!f&&document.querySelector(".user-reviews__swiper")&&O():U())},W=()=>{C(),V.addEventListener("change",C)},j=()=>{new Swiper(".related__swiper",{slidesPerView:1.08,spaceBetween:15,loop:!0,breakpoints:{1e3:{slidesPerView:3,spaceBetween:30},800:{slidesPerView:2.5,spaceBetween:30},630:{slidesPerView:2,spaceBetween:30},476:{slidesPerView:1.5,spaceBetween:20}}})},z=()=>{document.querySelectorAll("[data-accordion]").forEach(n=>{n.addEventListener("click",()=>{n.classList.toggle("active")})})},G=()=>{const n=document.getElementById("ask-form"),s=document.getElementById("question"),a=document.getElementById("text-error");n.addEventListener("submit",c=>{if(c.preventDefault(),!s.value.trim()){a.textContent="Try again",s.classList.add("error");return}a.textContent="",s.classList.remove("error"),n.submit()}),s.addEventListener("input",()=>{s.value.trim()&&(a.textContent="",s.classList.remove("error"))})};document.addEventListener("DOMContentLoaded",async()=>{B(),R(),await Promise.all([T("product_hero-card","product-5"),E("card-review-1","review-1"),E("card-review-2","review-2"),E("card-review-3","review-3"),H("data-rating-all","allStars"),N("data-reviews-all-img","allReviews"),p("card-1","product-1"),p("card-2","product-2"),p("card-3","product-3"),p("card-4","product-4"),p("card-5","product-5"),p("card-6","product-6")]),Y(),W(),j(),M(),z(),G()});
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Seedra/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet">
+    <title>Seedra</title>
+  <script type="module" crossorigin src="/Seedra/assets/one-product-CqyblPl8.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-D28zlQNL.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-firebase-DnW3fr0w.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-RkQPZ6N3.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/one-product-HWzO5RL8.css">
+</head>
+<body class="body one-product">
+<header
+  class="header"
+  id="header">
+    <div class="header__wrap">
+        <div class="header__container container">
+            <div class="header__inner">
+                <a
+                  href="./index.html"
+                  class="header__logo"
+                  aria-label="Go to homepage">
+                    <img
+                      src="data:image/svg+xml,%3csvg%20width='97'%20height='21'%20viewBox='0%200%2097%2021'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_2_17)'%3e%3cpath%20d='M0%2018.2738L2.34072%2015.6633C3.51215%2016.9686%205.09913%2017.4041%206.81627%2017.4041C8.94984%2017.4041%2010.095%2016.5048%2010.095%2014.8514C10.095%2014.1256%209.91306%2013.5166%209.52294%2013.1107C9.15806%2012.7343%208.74162%2012.5312%207.88297%2012.386L5.64573%2012.0379C4.05875%2011.777%202.88732%2011.226%202.05516%2010.3267C1.17036%209.3398%200.728499%208.00518%200.728499%206.26552C0.728499%202.58112%203.17395%200%207.18097%200C9.73008%200%2011.5783%200.69623%2013.1653%202.40761L10.875%204.93071C9.70466%203.6833%208.29958%203.50979%207.07623%203.50979C5.15087%203.50979%204.21416%204.69937%204.21416%206.12029C4.21416%206.64191%204.37063%207.19309%204.76075%207.59904C5.12563%207.97672%205.72397%208.29527%206.47771%208.41223L8.66428%208.76034C10.3547%209.02125%2011.4216%209.54287%2012.2019%2010.3548C13.1916%2011.3993%2013.6334%2012.9074%2013.6334%2014.7356C13.6334%2018.7376%2010.6414%2021%206.76435%2021C3.95419%2021%201.82062%2020.3331%200%2018.2738Z'%20fill='%23359740'/%3e%3cpath%20d='M17.0422%2020.8264V0.173492H29.2442V3.77067H20.658V8.61527H27.9702V12.2112H20.658V17.2293H29.2442V20.8264H17.0422Z'%20fill='%23359740'/%3e%3cpath%20d='M32.784%2020.8264V0.173492H44.986V3.77067H36.3998V8.61527H43.712V12.2112H36.3998V17.2293H44.986V20.8264H32.784Z'%20fill='%23359740'/%3e%3cpath%20d='M75.5077%2020.8264L71.8906%2012.5888H69.2887V20.8264H65.6729V0.173492H72.932C76.7043%200.173492%2078.9416%203.04599%2078.9416%206.49684C78.9416%209.39761%2077.3546%2011.1962%2075.5594%2011.922L79.6966%2020.8264H75.5077ZM72.6973%203.77067H69.2887V9.22428H72.6973C74.2843%209.22428%2075.3257%208.09255%2075.3257%206.49684C75.3257%204.90241%2074.2843%203.77067%2072.6973%203.77067Z'%20fill='%23359740'/%3e%3cpath%20d='M93.2265%2020.8264L92.1343%2017.1714H85.5517L84.432%2020.8264H80.6598L87.3988%200.173492H90.2344L97%2020.8264H93.2265ZM88.9076%206.26549L86.5656%2013.7784H91.1711L88.9076%206.26549Z'%20fill='%23359740'/%3e%3cpath%20d='M60.1041%202.14669C58.8807%200.783611%2057.1373%200.173492%2055.2119%200.173492H48.5258V20.8264H52.5798C53.9762%2016.8158%2056.0899%2012.4403%2054.6492%205.95777C56.5685%2012.7179%2054.6702%2017.0141%2053.3305%2020.8264H55.2119C57.1373%2020.8264%2058.8807%2020.2174%2060.1039%2018.8543C62.1857%2016.533%2061.9773%2013.5164%2061.9773%2010.4126C61.9775%207.30984%2062.1859%204.4669%2060.1041%202.14669ZM54.5232%2018.3867C55.5609%2015.7915%2056.6516%2011.6286%2055.0997%206.52511C57.1763%209.12624%2057.4979%2012.97%2057.0578%2014.7236C60.8161%2010.5128%2056.9536%205.59313%2053.0999%203.49692C55.5571%208.10466%2055.1865%2012.4462%2053.2785%2017.6694C47.2841%2013.4709%2054.4005%208.12211%2052.3837%202.36555C61.0891%206.09768%2062.641%2014.4906%2054.5232%2018.3867Z'%20fill='%23359740'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_2_17'%3e%3crect%20width='97'%20height='21'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt="seedra"
+                      class="header__logo-icon">
+                </a>
+                <nav
+                  class="header__nav"
+                  aria-label="Main navigation">
+                    <ul class="nav__menu">
+                        <li class="nav__menu-item"><a href="./all-products.html">ALL PRODUCTS</a></li>
+                        <li class="nav__menu-item"><a href="./about-seedra.html">ABOUT SEEDRA</a></li>
+                        <li class="nav__menu-item"><a href="./our-blog.html">OUR BLOG</a></li>
+                        <li class="nav__menu-item"><a href="#!">CONTACTS</a></li>
+                    </ul>
+                </nav>
+                <div class="header__right-wrap">
+                    <div class="header__social">
+                        <a href="https://www.instagram.com/">
+                            <svg class="header__social-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                            </svg>            </a>
+                        <a href="https://www.facebook.com/">
+                            <svg class="header__social-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                            </svg>            </a>
+                    </div>
+                    <form
+                      action="#!"
+                      class="header__search-form search-form">
+                        <button class="search-form__btn ">
+                            <svg class="search-form__btn-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-search"></use>
+                            </svg>            </button>
+                        <input
+                          type="search"
+                          class="search-form__search"
+                          placeholder="Search">
+                    </form>
+                    <div class="header__actions">
+                        <button
+                          class="header__actions-btn header__favorite-btn"
+                          aria-label="Add to favorites">
+                            <svg class="header__actions-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>            </button>
+                        <button
+                          class="header__actions-btn header__card-btn"
+                          aria-label="Open cart">
+                            <svg class="header__actions-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-cart"></use>
+                            </svg>            </button>
+                    </div>
+                    <button
+                      class="header__burger-btn"
+                      aria-label="Open menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>        </div>
+    </div>
+    <div class="burger__bg"></div>
+    <div class="burger">
+        <div class="burger__container">
+            <form
+              action="#"
+              class="burger__search-form search-form">
+                <button class="search-form__btn">
+                    <svg class="search-form__btn-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-search"></use>
+                    </svg>            </button>
+                <input
+                  type="search"
+                  class="search-form__search"
+                  placeholder="Search">
+            </form>
+        </div>
+        <div class="burger__container">
+            <ul class="burger__category">
+                <li class="burger__category-item">
+                    <button class="burger__category-btn js-close-burger">
+                        <span class="burger__category-text">All vegetables</span>
+                    </button>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Bundles</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Bundles-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a  href="#!" class="burger__subcategory-btn js-close-burger">
+                                Bundles-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Herbs</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Herb-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Herb-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Vegetables</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Cucumber
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Onion
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Garlic
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Fruits</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Fruit-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Fruit-2
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                fruit-3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Supplies</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Supply-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Supply-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Flowers</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Flower-1
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr class="burger__line">
+        <nav class="burger__container">
+            <ul class="burger__menu">
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./all-products.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">All products</span>
+                        <div class="burger__menu-wrap">
+                            <svg class="burger__menu-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                            </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./about-seedra.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">About Seedra</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./our-blog.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">Our blog</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="#!"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">Contacts</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <hr class="burger__line">
+        <div class="burger__container">
+            <div class="burger__social">
+                <a
+                  href="https://www.instagram.com/"
+                  class="js-close-burger">
+                    <svg class="burger__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                    </svg>            </a>
+                <a
+                  href="https://www.facebook.com/"
+                  class="js-close-burger">
+                    <svg class="burger__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>            </a>
+            </div>
+        </div>
+    </div></header>
+<main>
+    <section class="hero-product">
+        <div class="container">
+            <div class="hero-product__breadcrumb">
+                <a
+                  href="#!"
+                  class="hero-product__breadcrumb-item">Main</a>
+                <a
+                  href="#!"
+                  class="hero-product__breadcrumb-item">Cataloug</a>
+                <a
+                  href="#!"
+                  class="hero-product__breadcrumb-item">Vegetables</a>
+                <a
+                  href="#!"
+                  class="hero-product__breadcrumb-item">Cucumber</a>
+                <a
+                  href="#!"
+                  class="hero-product__breadcrumb-item">SEEDRA cucumber</a>
+            </div>
+            <div
+              class="hero-product__wrap"
+              data-product-id="product_hero-card">
+                <div class="hero-product__gallery">
+                    <div class="hero-product__swiper swiper">
+                        <div class="hero-product__swiper-wrapper swiper-wrapper">
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture class="hero-product__gallery-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="hero-product__gallery-item hero-product__video video swiper-slide" data-video-file>
+                                <div class="video__overlay">
+                                    <picture class="video__overlay-photo">
+                                        <img
+                                          src=""
+                                          alt="img"
+                                          class="video__overlay"
+                                          loading="lazy" data-product-video-wrap>
+                                    </picture>
+                                    <svg class="video__play-icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-play"></use>
+                                    </svg>                    </div>
+                                <div
+                                  class="video__file"
+                                  data-video-id></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-product__thumbsSwiper swiper">
+                        <div class="hero-product__thumbnails swiper-wrapper">
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <picture class="hero-product__thumbnails-item swiper-slide">
+                                <img
+                                  src=""
+                                  alt="product"
+                                  loading="lazy"
+                                  data-product-thumb>
+                            </picture>
+                            <div class="hero-product__thumbnails-item video swiper-slide">
+                                <div class="video__overlay">
+                                    <picture class="video__overlay-photo">
+                                        <img
+                                          src=""
+                                          alt="img"
+                                          class="video__overlay-img"
+                                          loading="lazy" data-product-video-wrap>
+                                    </picture>
+                                    <svg class="video__play-icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-play"></use>
+                                    </svg>                    </div>
+                                <div
+                                  class="video__file"
+                                  data-video-id></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-product__content">
+                    <h1
+                      class="hero-product__title sub-title"
+                      data-product-name>SEEDRA Corn</h1>
+                    <div class="hero-product__tags">
+                        <div class="hero-product__tag hero-product__status">
+                            <svg class="hero-product__status-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-check"></use>
+                            </svg>                <span class="hero-product__status-text">AVAILABLE</span>
+                        </div>
+                        <div class="hero-product__tag hero-product__category">
+                            <svg class="hero-product__category-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-btn-category-4"></use>
+                            </svg>                <span class="hero-product__category-text">VEGETABLES</span>
+                        </div>
+                    </div>
+                    <div class="hero-product__selector-wrap">
+                        <div class="hero-product__selector selector">
+                            <div class="selector__head">
+                                <div class="selector__chose">
+                                    <span class="selector__chose-text-prefix">Size</span>
+                                    <span class="selector__chose-number">2 PACK</span>
+                                </div>
+                                <div class="selector__number">
+                                    <button class="selector__number-remove">
+                                        <svg class="selector__number-icon"  >
+                                            <use href="/Seedra/sprite.svg#icon-minus"></use>
+                                        </svg>                        </button>
+                                    <div class="selector__number-inner">
+                                        <span class="selector__number-item">2</span>
+                                    </div>
+                                    <button class="selector__number-add">
+                                        <svg class="selector__number-icon"  >
+                                            <use href="/Seedra/sprite.svg#icon-plus"></use>
+                                        </svg>                        </button>
+                                </div>
+                            </div>
+                            <div class="selector__option-wrap">
+                                <div class="selector__option">
+                                    <input
+                                      type="radio"
+                                      id="pack-1"
+                                      name="pack"
+                                      value="1"
+                                      class="selector__input">
+                                    <label
+                                      for="pack-1"
+                                      class="selector__label">
+                                        <span class="selector__amount">1 pack</span>
+                                        <span class="selector__price">
+                                            <span class="selector__price-prefix">start from</span>
+                                            <span class="selector__price-value">$1,56</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="selector__option">
+                                    <input
+                                      type="radio"
+                                      id="pack-2"
+                                      name="pack"
+                                      value="2"
+                                      class="selector__input"
+                                      checked>
+                                    <label
+                                      for="pack-2"
+                                      class="selector__label">
+                                        <span class="selector__amount">2 pack</span>
+                                        <span class="selector__price">
+                                            <span class="selector__price-prefix">start from</span>
+                                            <span class="selector__price-value">$1,56</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="selector__option">
+                                    <input
+                                      type="radio"
+                                      id="pack-3"
+                                      name="pack"
+                                      value="3"
+                                      class="selector__input">
+                                    <label
+                                      for="pack-3"
+                                      class="selector__label">
+                                        <span class="selector__amount">3 pack</span>
+                                        <span class="selector__price">
+                                            <span class="selector__price-prefix">start from</span>
+                                            <span class="selector__price-value">$1,56</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="selector__option">
+                                    <input
+                                      type="radio"
+                                      id="pack-4"
+                                      name="pack"
+                                      value="4"
+                                      class="selector__input">
+                                    <label
+                                      for="pack-4"
+                                      class="selector__label">
+                                        <span class="selector__amount">4 pack</span>
+                                        <span class="selector__price">
+                                            <span class="selector__price-prefix">start from</span>
+                                            <span class="selector__price-value">$1,56</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="selector__option">
+                                    <input
+                                      type="radio"
+                                      id="pack-5"
+                                      name="pack"
+                                      value="5"
+                                      class="selector__input">
+                                    <label
+                                      for="pack-5"
+                                      class="selector__label">
+                                        <span class="selector__amount">5 pack</span>
+                                        <span class="selector__price">
+                                            <span class="selector__price-prefix">start from</span>
+                                            <span class="selector__price-value">$1,56</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-product__foot">
+                            <div class="hero-product__price">
+                                <span
+                                  class="hero-product__old-price"
+                                  data-product-old-price></span>
+                                <span
+                                  class="hero-product__new-price"
+                                  data-product-price></span>
+                            </div>
+                            <div class="hero-product__foot-right">
+                                <svg class="hero-product__favorite"  >
+                                    <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                                </svg>                    <button class="hero-product__btn btn_green">Add to card
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info-prod">
+        <div class="container">
+            <h2 class="info-prod__title">Product information.</h2>
+            <hr class="info-prod__line">
+            <div class="info-prod__inner">
+                <ul class="info-prod__list">
+                    <li class="info-prod__list-item">EEDRA Cilantro Seeds - contains 300
+                        seeds in 1 Pack and professional instructions created by PhD Helga
+                        George
+                    </li>
+                    <li class="info-prod__list-item">Be sure of our quality - the freshest
+                        batches of this season. Non-GMO, Heirloom - our seeds were tested
+                        and have the best germination ratings. Your easy growing experience
+                        is our guarantee
+                    </li>
+                    <li class="info-prod__list-item">Cilantro common culinary uses: salsa,
+                        guacamole, pesto, salads, chutney, baked breads, pad thai, pico de
+                        gallo, rice, grilled shrimp skewers, falafel, and more
+                    </li>
+                    <li class="info-prod__list-item">Proudly sourced in the USA - our garden
+                        seeds are grown, harvested, and packaged in the USA. We support
+                        local farmers and are happy to produce this American-made product
+                    </li>
+                    <li class="info-prod__list-item">SEEDRA customer service - please
+                        contact us directly through Amazon with any questions or concerns
+                        about our products. We care about each customer and do our best to
+                        provide you with 100% satisfaction
+                    </li>
+                </ul>
+                <div class="info-prod__specs">
+                    <div class="info-prod__specs-row">
+                        <span class="info-prod__specs-name">Package Dimensions</span>
+                        <span class="info-prod__specs-item">5.51 x 3.5 x 0.35 inches</span>
+                    </div>
+                    <hr class="info-prod__specs-line">
+                    <div class="info-prod__specs-row">
+                        <span class="info-prod__specs-name">Item Weight</span>
+                        <span class="info-prod__specs-item">0.317 ounces</span>
+                    </div>
+                    <hr class="info-prod__specs-line">
+                    <div class="info-prod__specs-row">
+                        <span class="info-prod__specs-name">ASIN</span>
+                        <span class="info-prod__specs-item">B08Z3HN5MP</span>
+                    </div>
+                </div>
+            </div>        </div>
+    </section>
+    <section class="faq">
+        <div class="container">
+            <h2 class="faq__title">Frequently asked questions.</h2>
+            <div class="faq__inner">
+            
+                <div class="faq__accordion">
+                    <div
+                      class="accordion__row"
+                      data-accordion>
+                        <button
+                          type="button"
+                          class="accordion__head">
+                            <h3 class="accordion__title">For seller: are these seeds
+                                organic? it does matter if they are organic, seeds can hold
+                                pesticides from the plant they grow from.</h3>
+                            <div class="accordion__icon accordion__icon_right">
+                                <span></span><span></span>
+                            </div>
+                        </button>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of there
+                                    hard shell on the seed.</p>
+                            </div>
+                        </div>
+                        <div class="accordion__icon_bottom accordion__icon ">
+                            <span></span><span></span>
+                        </div>
+                    </div>
+                    <div
+                      class="accordion__row active"
+                      data-accordion>
+                        <button
+                          type="button"
+                          class="accordion__head">
+                            <h3 class="accordion__title">Can they be grown on hydroponic
+                                systems</h3>
+                            <div class="accordion__icon accordion__icon_right">
+                                <span></span><span></span>
+                            </div>
+                        </button>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I have heat mats and artificial
+                                    light. </p>
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of there
+                                    hard shell on the seed. </p>
+                            </div>
+                        </div>
+                        <div class="accordion__icon accordion__icon_bottom">
+                            <span></span><span></span>
+                        </div>
+                    </div>
+                    <div
+                      class="accordion__row"
+                      data-accordion>
+                        <div class="accordion__head">
+                            <h3 class="accordion__title">They did not germinate even
+                                when i followed directions. <br> What should i do?</h3>
+                            <div class="accordion__icon accordion__icon_right">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="accordion__body-wrap">
+                            <div class="accordion__body">
+                                <hr class="accordion__line">
+                                <p class="accordion__text">I planted them in all purpose
+                                    potting
+                                    soil. Moist not wet. Placed them on a heat mat. If not
+                                    available, somewhere where it's 72 degrees. Add natural
+                                    light,
+                                    but I used artificial light. Takes 10- 15 days because
+                                    of
+                                    there
+                                    hard shell on the seed.</p>
+                            </div>
+                        </div>
+                        <div class="accordion__icon accordion__icon_bottom">
+                            <span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__form-wrap">
+                    <picture class="faq__form-bg">
+                        <source srcset="data:image/webp;base64,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" media="(min-width:769px)" type="image/webp">
+                        <source srcset="/Seedra/assets/form-bg-MJBaRZEW.jpg" media="(min-width:769px)">
+                    
+                        <source srcset="data:image/webp;base64,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" media="(max-width:768px)" type="image/webp">
+                        <source srcset="/Seedra/assets/form-bg-MJBaRZEW.jpg" media="(max-width:768px)">
+                    
+                        <img src="/Seedra/assets/form-bg-MJBaRZEW.jpg" alt="form-bg" loading="lazy">
+                    </picture>
+            
+                    <form
+                      action="#"
+                      name="ask-form"
+                      id="ask-form"
+                      method="POST"
+                      autocomplete="off"
+                      class="faq__form">
+                        <fieldset class="faq__form-fieldset">
+                            <h3 class="faq__form-title">Didn’t find answer?</h3>
+                            <p class="faq__form-text">Ask your own!</p>
+                            <textarea
+                              name="question"
+                              id="question"
+                              placeholder="Type here"
+                              class="faq__form-area"></textarea>
+                            <p
+                              id="text-error"
+                              class="faq__form-text-error"></p>
+                        </fieldset>
+                        <button
+                          type="submit"
+                          class="faq__form-btn btn_green">Send
+                        </button>
+                    </form>
+                </div>
+            </div>        </div>
+    </section>
+    <section class="user-reviews">
+        <div class="user-reviews__container container">
+            <div class="user-reviews__head">
+                <h2 class="user-reviews__title">Customer reviews.</h2>
+                <a
+                  href="#!"
+                  class="user-reviews__btn btn_white">Make review</a>
+            </div>
+            <div class="user-reviews__content">
+                <div class="user-reviews__aside">
+                    <div
+                      class="user-reviews__rating-summary rating-summary"
+                      data-rating-all>
+                        <div class="rating-summary__head">
+                            <span
+                              class="rating-summary__reviews-grade"
+                              data-stars-summary-number>4,1</span>
+                            <div class="rating-summary__head-inner">
+                                <span
+                                  class="rating-summary__reviews-number"
+                                  data-reviews-number>124 reviews</span>
+                                <div class="rating rating-summary__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>                </div>
+                        </div>
+                        <hr class="rating-summary__line">
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>5</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="55"
+                              class="rating-summary__progress"
+                              data-stars-5-progress></progress>
+                            <span
+                              class="rating-summary__star-number"
+                              data-stars-5-number>55</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>4</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="44"
+                              class="rating-summary__progress"
+                              data-stars-4-progress></progress>
+                            <span
+                              class="rating-summary__star-number"
+                              data-stars-4-number>44</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>3</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="33"
+                              class="rating-summary__progress"
+                              data-stars-3-progress></progress>
+                            <span
+                              class="rating-summary__star-number"
+                              data-stars-3-number>33</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>2</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="22"
+                              class="rating-summary__progress"
+                              data-stars-2-progress></progress>
+                            <span
+                              class="rating-summary__star-number"
+                              data-stars-2-number>22</span>
+                        </div>
+                        <div class="rating-summary__row">
+                            <label
+                              class="rating-summary__label">
+                                <span>1</span>
+                                <svg class="rating-summary__label-icon"  >
+                <use href="/Seedra/sprite.svg#icon-star"></use>
+            </svg></label>
+                            <progress
+                              max="124"
+                              value="11"
+                              class="rating-summary__progress"
+                              data-stars-1-progress></progress>
+                            <span
+                              class="rating-summary__star-number"
+                              data-stars-1-number>11</span>
+                        </div>
+                    </div>
+                    <div
+                      class="user-reviews__reviews-gallery reviews-gallery"
+                      data-reviews-all-img>
+                        <div class="reviews-gallery__head">
+                            <div class="reviews-gallery__head-inner">
+                                <span
+                                  class="reviews-gallery__reviews-number"
+                                  data-reviews-number>124 reviews</span>
+                                <h3 class="reviews-gallery__title">Photo&Video review</h3>
+                            </div>
+                            <a
+                              href="#!"
+                              class="reviews-gallery__view-btn">View</a>
+                        </div>
+                        <div
+                          class="reviews-gallery__gallery"
+                          data-photos-video>
+                            <picture
+                              class="reviews-gallery__photo"
+                              data-reviews-img>
+                                <img
+                                  src="./src/image/image.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture
+                              class="reviews-gallery__photo"
+                              data-reviews-img>
+                                <img
+                                  src="./src/image/image.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture
+                              class="reviews-gallery__photo"
+                              data-reviews-img>
+                                <img
+                                  src="./src/image/image.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <picture
+                              class="reviews-gallery__photo"
+                              data-reviews-img>
+                                <img
+                                  src="./src/image/image.png"
+                                  alt="reviews-img"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-reviews__swiper-wrap">
+                    <div class="user-reviews__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div
+                              class="user-reviews__card-review
+                                            swiper-slide card-review card-review_extended"
+                              data-review-id="card-review-1">
+                                <div class="card-review__content">
+                                    <div class="card-review__head">
+                                        <picture class="card-review__photo">
+                                            <img
+                                              src=""
+                                              alt=""
+                                              loading="lazy"
+                                              data-review-photo>
+                                        </picture>
+                                        <div class="card-review__about">
+                                            <p
+                                              class="card-review__name"
+                                              data-review-name></p>
+                                            <p
+                                              class="card-review__date"
+                                              data-review-date-extended></p>
+                                        </div>
+                                        <div class="rating card-review__rating" data-rating>
+                                            <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg></div>        </div>
+                                    <p
+                                      class="card-review__text"
+                                      data-review-text></p>
+                                    <div class="card-review__gallery-wrap">
+                                        <div
+                                          class="card-review__gallery"
+                                          data-review-gallery>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-review__foot">
+                                    <hr class="card-review__line">
+                                    <div class="card-review__foot-inner">
+                                        <div class="card-review__chose">
+                                            <span class="card-review__chose-text">Size</span>
+                                            <span
+                                              class="card-review__chose-number"
+                                              data-review-pack-size>0 PACK</span>
+                                        </div>
+                                        <div
+                                          class="card-review__verified"
+                                          data-review-verified>
+                                            <svg class="hero-product__status-icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-check"></use>
+                                            </svg>                <span class="hero-product__status-text">VERIFIED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                <div
+                              class="user-reviews__card-review
+                                            swiper-slide card-review card-review_extended"
+                              data-review-id="card-review-2">
+                                <div class="card-review__content">
+                                    <div class="card-review__head">
+                                        <picture class="card-review__photo">
+                                            <img
+                                              src=""
+                                              alt=""
+                                              loading="lazy"
+                                              data-review-photo>
+                                        </picture>
+                                        <div class="card-review__about">
+                                            <p
+                                              class="card-review__name"
+                                              data-review-name></p>
+                                            <p
+                                              class="card-review__date"
+                                              data-review-date-extended></p>
+                                        </div>
+                                        <div class="rating card-review__rating" data-rating>
+                                            <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg></div>        </div>
+                                    <p
+                                      class="card-review__text"
+                                      data-review-text></p>
+                                    <div class="card-review__gallery-wrap">
+                                        <div
+                                          class="card-review__gallery"
+                                          data-review-gallery>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-review__foot">
+                                    <hr class="card-review__line">
+                                    <div class="card-review__foot-inner">
+                                        <div class="card-review__chose">
+                                            <span class="card-review__chose-text">Size</span>
+                                            <span
+                                              class="card-review__chose-number"
+                                              data-review-pack-size>0 PACK</span>
+                                        </div>
+                                        <div
+                                          class="card-review__verified"
+                                          data-review-verified>
+                                            <svg class="hero-product__status-icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-check"></use>
+                                            </svg>                <span class="hero-product__status-text">VERIFIED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                <div
+                              class="user-reviews__card-review
+                                            swiper-slide user-reviews__desktop-hidden card-review card-review_extended"
+                              data-review-id="card-review-3">
+                                <div class="card-review__content">
+                                    <div class="card-review__head">
+                                        <picture class="card-review__photo">
+                                            <img
+                                              src=""
+                                              alt=""
+                                              loading="lazy"
+                                              data-review-photo>
+                                        </picture>
+                                        <div class="card-review__about">
+                                            <p
+                                              class="card-review__name"
+                                              data-review-name></p>
+                                            <p
+                                              class="card-review__date"
+                                              data-review-date-extended></p>
+                                        </div>
+                                        <div class="rating card-review__rating" data-rating>
+                                            <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg>    <svg class="rating__icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                            </svg></div>        </div>
+                                    <p
+                                      class="card-review__text"
+                                      data-review-text></p>
+                                    <div class="card-review__gallery-wrap">
+                                        <div
+                                          class="card-review__gallery"
+                                          data-review-gallery>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                            <picture class="card-review__review-img">
+                                                <img
+                                                  src="./src/image/image.png"
+                                                  alt=""
+                                                  loading="lazy"
+                                                  data-review-img>
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-review__foot">
+                                    <hr class="card-review__line">
+                                    <div class="card-review__foot-inner">
+                                        <div class="card-review__chose">
+                                            <span class="card-review__chose-text">Size</span>
+                                            <span
+                                              class="card-review__chose-number"
+                                              data-review-pack-size>0 PACK</span>
+                                        </div>
+                                        <div
+                                          class="card-review__verified"
+                                          data-review-verified>
+                                            <svg class="hero-product__status-icon"  >
+                                                <use href="/Seedra/sprite.svg#icon-check"></use>
+                                            </svg>                <span class="hero-product__status-text">VERIFIED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="related">
+        <div class="container">
+            <h2 class="related__title">Related products.</h2>
+        </div>
+        <div class="related__swiper-container container">
+            <div class="related__swiper swiper">
+                <div class="swiper-wrapper">
+                    <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-1">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>            <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-2">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>            <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-3">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>            <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-4">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>            <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-5">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>            <a
+                      href="./one-product.html"
+                      class="related__card swiper-slide card"
+                      data-product-id="card-6">
+                        <button class="card__favorite">
+                            <svg class="card__favorite-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>    </button>
+                        <div
+                          href="./one-product.html"
+                          class="card__wrap">
+                            <picture class="card__photo">
+                                <img
+                                  src=""
+                                  alt="product Seedra"
+                                  loading="lazy"
+                                  data-product-photo>
+                            </picture>
+                            <div class="card__rating-row">
+                                <div class="rating card__rating" data-rating>
+                                    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg>    <svg class="rating__icon"  >
+                                        <use href="/Seedra/sprite.svg#icon-star-empty"></use>
+                                    </svg></div>            <span
+                                  class="card__rating-comments"
+                                  data-product-reviews>(122)</span>
+                            </div>
+                            <p
+                              class="card__title"
+                              data-product-name></p>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__price-row">
+                                <svg class="card__fire-price" data-product-fire-price >
+                                    <use href="/Seedra/sprite.svg#icon-fire"></use>
+                                </svg>            <span
+                                  class="card__price"
+                                  data-product-price></span>
+                                <span
+                                  class="card__old-price"
+                                  data-product-old-price></span>
+                            </div>
+                            <button class="card__button">
+                                <svg class="card__button-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>        </button>
+                        </div>
+                    </a>        </div>
+            </div>
+        </div>    </section>
+</main>
+<footer
+  class="footer"
+  id="footer">
+    <div class="container">
+        <div class="footer__main">
+            <ul class="footer__nav footer__nav-left">
+                <li class="footer__nav-item">
+                    <a
+                      href="./all-products.html"
+                      class="footer__nav-link">
+                        ALL PRODUCTS
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="./about-seedra.html"
+                      class="footer__nav-link">
+                        ABOUT SEEDRA
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="./our-blog.html"
+                      class="footer__nav-link">
+                        OUR BLOG
+                    </a>
+                </li>
+            </ul>
+            <a
+              href="./index.html"
+              class="footer__logo"
+              aria-label="Go to homepage">
+                <img
+                  src="data:image/svg+xml,%3csvg%20width='97'%20height='21'%20viewBox='0%200%2097%2021'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_2_17)'%3e%3cpath%20d='M0%2018.2738L2.34072%2015.6633C3.51215%2016.9686%205.09913%2017.4041%206.81627%2017.4041C8.94984%2017.4041%2010.095%2016.5048%2010.095%2014.8514C10.095%2014.1256%209.91306%2013.5166%209.52294%2013.1107C9.15806%2012.7343%208.74162%2012.5312%207.88297%2012.386L5.64573%2012.0379C4.05875%2011.777%202.88732%2011.226%202.05516%2010.3267C1.17036%209.3398%200.728499%208.00518%200.728499%206.26552C0.728499%202.58112%203.17395%200%207.18097%200C9.73008%200%2011.5783%200.69623%2013.1653%202.40761L10.875%204.93071C9.70466%203.6833%208.29958%203.50979%207.07623%203.50979C5.15087%203.50979%204.21416%204.69937%204.21416%206.12029C4.21416%206.64191%204.37063%207.19309%204.76075%207.59904C5.12563%207.97672%205.72397%208.29527%206.47771%208.41223L8.66428%208.76034C10.3547%209.02125%2011.4216%209.54287%2012.2019%2010.3548C13.1916%2011.3993%2013.6334%2012.9074%2013.6334%2014.7356C13.6334%2018.7376%2010.6414%2021%206.76435%2021C3.95419%2021%201.82062%2020.3331%200%2018.2738Z'%20fill='%23359740'/%3e%3cpath%20d='M17.0422%2020.8264V0.173492H29.2442V3.77067H20.658V8.61527H27.9702V12.2112H20.658V17.2293H29.2442V20.8264H17.0422Z'%20fill='%23359740'/%3e%3cpath%20d='M32.784%2020.8264V0.173492H44.986V3.77067H36.3998V8.61527H43.712V12.2112H36.3998V17.2293H44.986V20.8264H32.784Z'%20fill='%23359740'/%3e%3cpath%20d='M75.5077%2020.8264L71.8906%2012.5888H69.2887V20.8264H65.6729V0.173492H72.932C76.7043%200.173492%2078.9416%203.04599%2078.9416%206.49684C78.9416%209.39761%2077.3546%2011.1962%2075.5594%2011.922L79.6966%2020.8264H75.5077ZM72.6973%203.77067H69.2887V9.22428H72.6973C74.2843%209.22428%2075.3257%208.09255%2075.3257%206.49684C75.3257%204.90241%2074.2843%203.77067%2072.6973%203.77067Z'%20fill='%23359740'/%3e%3cpath%20d='M93.2265%2020.8264L92.1343%2017.1714H85.5517L84.432%2020.8264H80.6598L87.3988%200.173492H90.2344L97%2020.8264H93.2265ZM88.9076%206.26549L86.5656%2013.7784H91.1711L88.9076%206.26549Z'%20fill='%23359740'/%3e%3cpath%20d='M60.1041%202.14669C58.8807%200.783611%2057.1373%200.173492%2055.2119%200.173492H48.5258V20.8264H52.5798C53.9762%2016.8158%2056.0899%2012.4403%2054.6492%205.95777C56.5685%2012.7179%2054.6702%2017.0141%2053.3305%2020.8264H55.2119C57.1373%2020.8264%2058.8807%2020.2174%2060.1039%2018.8543C62.1857%2016.533%2061.9773%2013.5164%2061.9773%2010.4126C61.9775%207.30984%2062.1859%204.4669%2060.1041%202.14669ZM54.5232%2018.3867C55.5609%2015.7915%2056.6516%2011.6286%2055.0997%206.52511C57.1763%209.12624%2057.4979%2012.97%2057.0578%2014.7236C60.8161%2010.5128%2056.9536%205.59313%2053.0999%203.49692C55.5571%208.10466%2055.1865%2012.4462%2053.2785%2017.6694C47.2841%2013.4709%2054.4005%208.12211%2052.3837%202.36555C61.0891%206.09768%2062.641%2014.4906%2054.5232%2018.3867Z'%20fill='%23359740'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_2_17'%3e%3crect%20width='97'%20height='21'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                  alt="seedra"
+                  class="footer__logo-icon">
+            </a>
+            <ul class="footer__nav footer__nav-right">
+                <li class="footer__nav-item">
+                    <a
+                      href="#!"
+                      class="footer__nav-link">
+                        Terms&Conditions
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="#!"
+                      class="footer__nav-link">
+                        Privacy Policy
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__line"></div>
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <a href="https://www.instagram.com/">
+                    <svg class="footer__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                    </svg>        </a>
+                <a href="https://www.facebook.com/">
+                    <svg class="footer__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>        </a>
+            </div>
+            <p class="footer__copyright">All rights reserved</p>
+        </div>    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</body>
+</html>

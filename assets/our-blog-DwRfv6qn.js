@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as o}from"./firebase-C67ONCVO.js";import{b as r,a as e}from"./burger-accordion-D28zlQNL.js";console.log("Firebase ready",o);document.addEventListener("DOMContentLoaded",async()=>{r(),e()});

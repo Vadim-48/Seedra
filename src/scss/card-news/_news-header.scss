@@ -8,9 +8,9 @@
         overflow: hidden;
         //padding: 65px 0 78px 57px;
         padding: 65px 0 78px 5%;
-        @include media.max-width(sm) {
-            //padding: 65px 0 78px 37px;
-        }
+        //@include media.max-width(sm) {
+        //    //padding: 65px 0 78px 37px;
+        //}
         @include media.max-width(xs) {
             padding: 22px 0 0 36px;
         }

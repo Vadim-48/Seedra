@@ -21,7 +21,7 @@
         background: var(--invisible-green);
     }
     @media (hover: hover) and (pointer: fine) {
-        &:hover {
+        &:hover:not(:active) {
             background: var(--invisible-green);
         }
     }
@@ -52,7 +52,7 @@
         background: var(--hover);
     }
     @media (hover: hover) and (pointer: fine) {
-        &:hover {
+        &:hover:not(:active) {
             background: var(--hover);
         }
     }
@@ -60,4 +60,4 @@
         background: var(--primary-color);
     }
 }
-// focus (focus-visible), hover, active
+// :focus (:focus-visible), @media (hover: hover) and (pointer: fine) {:hover:not(:active)}, :active

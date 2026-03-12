@@ -10,6 +10,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
       rel="preconnect"
       href="https://fonts.googleapis.com">
     <link
@@ -47,14 +51,7 @@
     </section>
     <section class="info-content">
         <div class="info-content__container container">
-            {{> components/info-content
-            classNameImg="info-content__photo"
-            alt="img"
-            desktop="./src/image/main/about/about-img.png"
-            desktopWebp="./src/image/main/about/about-img.webp"
-            mobile="./src/image/main/about/about-img_2.png"
-            mobileWebp="./src/image/main/about/about-img_2.webp"
-            }}
+            {{> components/info-content }}
         </div>
     </section>
     <section class="our-story">
@@ -64,7 +61,7 @@
     </section>
     <section class="our-team">
         <div class="container">
-
+            {{> about-seedra/our-team }}
         </div>
     </section>
 </main>
@@ -75,6 +72,7 @@
         {{> base/footer}}
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script
   type="module"
   src="./src/js/about-seedra.js"

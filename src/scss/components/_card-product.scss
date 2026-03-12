@@ -14,7 +14,7 @@
         box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
     }
     @media (hover: hover) and (pointer: fine) {
-        &:hover {
+        &:hover:not(:active) {
             box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
         }
     }
@@ -39,7 +39,7 @@
             background: #ffffcb;
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 background: #ffffcb;
             }
         }
@@ -156,7 +156,7 @@
             background: var(--invisible-green);
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 background: var(--invisible-green);
             }
         }

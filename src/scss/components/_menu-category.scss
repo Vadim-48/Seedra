@@ -27,7 +27,7 @@
             border-color: var(--invisible-green);
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 border-color: var(--invisible-green);
             }
         }

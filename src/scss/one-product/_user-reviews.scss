@@ -223,7 +223,7 @@
             text-decoration: underline;
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 color: #50c75a;
                 text-decoration: underline;
             }

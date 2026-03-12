@@ -1,0 +1,65 @@
+@use "@/scss/mixins/media" as media;
+.our-team {
+    margin-top: 124px;
+    @include media.max-width(sm) {
+        margin-top: 25px;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__swiper{
+        margin-top: 78px;
+        @include media.max-width(sm) {
+            margin-top: 33px;
+        }
+    }
+    &__swiper-wrapper {
+        //display: flex;
+        //align-items: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        @include media.max-width(xs) {
+            display: flex;
+            gap: 0;
+        }
+    }
+
+    &__member {
+        text-align: center;
+        min-width: 0;
+        height: auto;
+    }
+    &__member-photo{
+        width: 100%;
+        aspect-ratio: 1;
+
+    }
+
+    &__member-name {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.55;
+        letter-spacing: -0.05em;
+        color: var(--text-primary);
+        margin-top: 16px;
+        @include media.max-width(sm) {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &__member-position {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        margin-top: 16px;
+        @include media.max-width(sm) {
+            font-size: 14px;
+            line-height: 2;
+            margin-top: 1px;
+        }
+    }
+}

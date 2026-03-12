@@ -39,7 +39,7 @@
             opacity: 0.7;
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 opacity: 0.7;
             }
         }
@@ -81,7 +81,7 @@
             opacity: 0.7;
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 opacity: 0.7;
             }
         }
@@ -202,7 +202,7 @@
             opacity: 0.7;
         }
         @media (hover: hover) and (pointer: fine) {
-            &:hover {
+            &:hover:not(:active) {
                 color: var(--green-brand);
                 opacity: 0.7;
             }

@@ -35,16 +35,17 @@
         </p>
     </div>
     {{> components/picture
-    className=classNameImg
-    alt=alt
-    desktop=desktop
-    desktopWebp=desktopWebp
-    mobile=mobile
-    mobileWebp=mobileWebp
+    className="info-content__photo"
+    alt="img"
+    desktop="./src/image/components/info-content/img.png"
+    desktopWebp="./src/image/components/info-content/img.webp"
+    mobile="./src/image/components/info-content/img_2.png"
+    mobileWebp="./src/image/components/info-content/img_2.webp"
     }}
 </div>
 <picture class="info-content__img-right">
+    <source srcset="./src/image/components/info-content/img-right.webp" type="image/webp">
     <img
-      src="./src/image/main/about/about-img-right.png"
+      src="./src/image/components/info-content/img-right.png"
       alt="">
 </picture>

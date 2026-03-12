@@ -25,4 +25,10 @@
             margin-top: 11px;
         }
     }
+    & .footer {
+        margin-top: 78px;
+        @include media.max-width(sm) {
+            margin-top: 49px;
+        }
+    }
 }

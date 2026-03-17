@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Seedra/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet">
+<!--    <link-->
+<!--      rel="stylesheet"-->
+<!--      href="./src/scss/contacts-style.scss">-->
+    <title>Seedra</title>
+</head>
+<body class="contacts">
+<header
+  class="header"
+  id="header">
+    <div class="header__wrap">
+        <div class="header__container container">
+            <div class="header__inner">
+                <a
+                  href="./index.html"
+                  class="header__logo"
+                  aria-label="Go to homepage">
+                    <img
+                      src="./src/image/logo.svg"
+                      alt="seedra"
+                      class="header__logo-icon">
+                </a>
+                <nav
+                  class="header__nav"
+                  aria-label="Main navigation">
+                    <ul class="nav__menu">
+                        <li class="nav__menu-item"><a href="./all-products.html">ALL PRODUCTS</a></li>
+                        <li class="nav__menu-item"><a href="./about-seedra.html">ABOUT SEEDRA</a></li>
+                        <li class="nav__menu-item"><a href="./our-blog.html">OUR BLOG</a></li>
+                        <li class="nav__menu-item"><a href="./contacts.html">CONTACTS</a></li>
+                    </ul>
+                </nav>
+                <div class="header__right-wrap">
+                    <div class="header__social">
+                        <a href="https://www.instagram.com/">
+                            <svg class="header__social-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                            </svg>            </a>
+                        <a href="https://www.facebook.com/">
+                            <svg class="header__social-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                            </svg>            </a>
+                    </div>
+                    <form
+                      action="#!"
+                      class="header__search-form search-form">
+                        <button class="search-form__btn ">
+                            <svg class="search-form__btn-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-search"></use>
+                            </svg>            </button>
+                        <input
+                          type="search"
+                          class="search-form__search"
+                          placeholder="Search">
+                    </form>
+                    <div class="header__actions">
+                        <button
+                          class="header__actions-btn header__favorite-btn"
+                          aria-label="Add to favorites">
+                            <svg class="header__actions-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                            </svg>            </button>
+                        <button
+                          class="header__actions-btn header__card-btn"
+                          aria-label="Open cart">
+                            <svg class="header__actions-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-cart"></use>
+                            </svg>            </button>
+                    </div>
+                    <button
+                      class="header__burger-btn"
+                      aria-label="Open menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>        </div>
+    </div>
+    <div class="burger__bg"></div>
+    <div class="burger">
+        <div class="burger__container">
+            <form
+              action="#"
+              class="burger__search-form search-form">
+                <button class="search-form__btn">
+                    <svg class="search-form__btn-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-search"></use>
+                    </svg>            </button>
+                <input
+                  type="search"
+                  class="search-form__search"
+                  placeholder="Search">
+            </form>
+        </div>
+        <div class="burger__container">
+            <ul class="burger__category">
+                <li class="burger__category-item">
+                    <button class="burger__category-btn js-close-burger">
+                        <span class="burger__category-text">All vegetables</span>
+                    </button>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Bundles</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Bundles-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a  href="#!" class="burger__subcategory-btn js-close-burger">
+                                Bundles-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Herbs</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Herb-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Herb-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Vegetables</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Cucumber
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Onion
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Garlic
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Fruits</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Fruit-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Fruit-2
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                fruit-3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Supplies</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Supply-1
+                            </a>
+                        </li>
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Supply-2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__category-item">
+                    <button
+                      class="burger__category-btn">
+                        <span class="burger__category-text">Flowers</span>
+                        <svg class="burger__category-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>                </button>
+                    <ul class="burger__subcategory">
+                        <li class="burger__subcategory-item">
+                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                                Flower-1
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr class="burger__line">
+        <nav class="burger__container">
+            <ul class="burger__menu">
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./all-products.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">All products</span>
+                        <div class="burger__menu-wrap">
+                            <svg class="burger__menu-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                            </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./about-seedra.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">About Seedra</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./our-blog.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">Our blog</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+                <li class="burger__menu-item js-close-burger">
+                    <a
+                      href="./contacts.html"
+                      class="burger__menu-link">
+                        <span class="burger__menu-text">Contacts</span>
+                        <div class="burger__menu-wrap">
+                             <svg class="burger__menu-icon"  >
+                                 <use href="/Seedra/sprite.svg#icon-arrow-right"></use>
+                             </svg>                    </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <hr class="burger__line">
+        <div class="burger__container">
+            <div class="burger__social">
+                <a
+                  href="https://www.instagram.com/"
+                  class="js-close-burger">
+                    <svg class="burger__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                    </svg>            </a>
+                <a
+                  href="https://www.facebook.com/"
+                  class="js-close-burger">
+                    <svg class="burger__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>            </a>
+            </div>
+        </div>
+    </div></header>
+<div class="contacts__inner">
+<main>
+    <section class="contact-us">
+        <div class="container">
+            <div class="contact-us__wrap">
+                <picture class="contact-us__bg">
+                    <source srcset="./src/image/contacts/bg.webp" media="(min-width:769px)" type="image/webp">
+                    <source srcset="./src/image/contacts/bg.jpg" media="(min-width:769px)">
+                
+                    <source srcset="./src/image/contacts/bg_2.webp" media="(max-width:768px)" type="image/webp">
+                    <source srcset="./src/image/contacts/bg_2.jpg" media="(max-width:768px)">
+                
+                    <img src="./src/image/contacts/bg.jpg" alt="img" loading="lazy">
+                </picture>
+                <div class="contact-us__content">
+                    <div class="contact-us__info">
+                        <h1 class="contact-us__title main-title">Contact us</h1>
+                        <p class="contact-us__text">Send for us your request and we <br>
+                            will get
+                            in touch with you as <br> soon as possible</p>
+                    </div>
+                    <div class="contact-us__connects-wrap">
+                        <div class="contact-us__connects">
+                            <div class="contact-us__icon-wrap">
+                                <svg class="contact-us__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-phone"></use>
+                                </svg>                </div>
+                            <a
+                              href="tel:+380987828223"
+                              class="contact-us__connects-item sub-title">+380 98 782 82 23</a>
+                        </div>
+                        <div class="contact-us__connects">
+                            <div class="contact-us__icon-wrap">
+                                <svg class="contact-us__icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-mail"></use>
+                                </svg>                </div>
+                            <a
+                              href="mailto:info@gmail.com"
+                              class="contact-us__connects-item sub-title">mailmail@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <form
+                  name="request-form"
+                  id="request-form"
+                  method="POST"
+                  autocomplete="off"
+                  class="contact-us__form"
+                  novalidate>
+                    <label class="contact-us__form-label">Name<input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      class="contact-us__form-input"
+                      >
+                        <p class="contact-us__form-input-error">Try again</p></label>
+                    <label class="contact-us__form-label">E-mail<input
+                      type="email"
+                      name="email"
+                      placeholder="Your email"
+                      class="contact-us__form-input"
+                      >
+                        <p class="contact-us__form-input-error">Try again</p></label>
+                    <label class="contact-us__form-label">Message<textarea
+                      name="message"
+                      placeholder="Your message"
+                      class="contact-us__form-input"
+                      ></textarea>
+                        <p class="contact-us__form-input-error">Try again</p></label>
+                    <div class="contact-us__form-foot">
+                        <button
+                          type="submit"
+                          class="contact-us__form-btn btn_green">Send request
+                        </button>
+                        <p class="contact-us__form-policy">By sending request you agree to
+                            <br> out Pivacy&Policy</p>
+                    </div>
+                </form>
+            </div>        </div>
+    </section>
+</main>
+<footer
+  class="footer"
+  id="footer">
+    <div class="container">
+        <div class="footer__main">
+            <ul class="footer__nav footer__nav-left">
+                <li class="footer__nav-item">
+                    <a
+                      href="./all-products.html"
+                      class="footer__nav-link">
+                        ALL PRODUCTS
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="./about-seedra.html"
+                      class="footer__nav-link">
+                        ABOUT SEEDRA
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="./our-blog.html"
+                      class="footer__nav-link">
+                        OUR BLOG
+                    </a>
+                </li>
+            </ul>
+            <a
+              href="./index.html"
+              class="footer__logo"
+              aria-label="Go to homepage">
+                <img
+                  src="./src/image/logo.svg"
+                  alt="seedra"
+                  class="footer__logo-icon">
+            </a>
+            <ul class="footer__nav footer__nav-right">
+                <li class="footer__nav-item">
+                    <a
+                      href="#!"
+                      class="footer__nav-link">
+                        Terms&Conditions
+                    </a>
+                </li>
+                <li class="footer__nav-line" aria-hidden="true"></li>
+                <li class="footer__nav-item">
+                    <a
+                      href="#!"
+                      class="footer__nav-link">
+                        Privacy Policy
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__line"></div>
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <a href="https://www.instagram.com/">
+                    <svg class="footer__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-instagram"></use>
+                    </svg>        </a>
+                <a href="https://www.facebook.com/">
+                    <svg class="footer__social-icon"  >
+                        <use href="/Seedra/sprite.svg#icon-facebook"></use>
+                    </svg>        </a>
+            </div>
+            <p class="footer__copyright">All rights reserved</p>
+        </div>    </div>
+</footer>
+</div>
+<!--<script-->
+<!--  type="module"-->
+<!--  src="./src/js/contacts.js"-->
+<!--  defer></script>-->
+</body>
+
+</html>

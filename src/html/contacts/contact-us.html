@@ -1,0 +1,78 @@
+<div class="contact-us__wrap">
+    {{> components/picture
+    className="contact-us__bg"
+    alt="img"
+    desktop="./src/image/contacts/bg.jpg"
+    desktopWebp="./src/image/contacts/bg.webp"
+    mobile="./src/image/contacts/bg_2.jpg"
+    mobileWebp="./src/image/contacts/bg_2.webp"
+    }}
+    <div class="contact-us__content">
+        <div class="contact-us__info">
+            <h1 class="contact-us__title main-title">Contact us</h1>
+            <p class="contact-us__text">Send for us your request and we <br>
+                will get
+                in touch with you as <br> soon as possible</p>
+        </div>
+        <div class="contact-us__connects-wrap">
+            <div class="contact-us__connects">
+                <div class="contact-us__icon-wrap">
+                    {{> components/svg
+                    className="contact-us__icon"
+                    id="phone"
+                    }}
+                </div>
+                <a
+                  href="tel:+380987828223"
+                  class="contact-us__connects-item sub-title">+380 98 782 82 23</a>
+            </div>
+            <div class="contact-us__connects">
+                <div class="contact-us__icon-wrap">
+                    {{> components/svg
+                    className="contact-us__icon"
+                    id="mail"
+                    }}
+                </div>
+                <a
+                  href="mailto:info@gmail.com"
+                  class="contact-us__connects-item sub-title">mailmail@gmail.com</a>
+            </div>
+        </div>
+    </div>
+    <form
+      name="request-form"
+      id="request-form"
+      method="POST"
+      autocomplete="off"
+      class="contact-us__form"
+      novalidate>
+        <label class="contact-us__form-label">Name<input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          class="contact-us__form-input"
+          >
+            <p class="contact-us__form-input-error">Try again</p></label>
+        <label class="contact-us__form-label">E-mail<input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          class="contact-us__form-input"
+          >
+            <p class="contact-us__form-input-error">Try again</p></label>
+        <label class="contact-us__form-label">Message<textarea
+          name="message"
+          placeholder="Your message"
+          class="contact-us__form-input"
+          ></textarea>
+            <p class="contact-us__form-input-error">Try again</p></label>
+        <div class="contact-us__form-foot">
+            <button
+              type="submit"
+              class="contact-us__form-btn btn_green">Send request
+            </button>
+            <p class="contact-us__form-policy">By sending request you agree to
+                <br> out Pivacy&Policy</p>
+        </div>
+    </form>
+</div>

@@ -1,9 +1,9 @@
 @use "@/scss/mixins/media" as media;
-.filters {
-    margin-top: 17px;
-    @include media.max-width(xs) {
-        margin-top: 15px;
-    }
+.search-filter {
+    //margin-top: 17px;
+    //@include media.max-width(xs) {
+    //    margin-top: 15px;
+    //}
     &__wrap{
         display: flex;
         gap: 20px;

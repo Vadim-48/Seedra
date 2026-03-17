@@ -21,10 +21,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/scss/all-products-style.scss">
+      href="./src/scss/contacts-style.scss">
     <title>Seedra</title>
 </head>
-<body class="all-products">
+<body class="contacts">
 <header
   class="header"
   id="header">
@@ -35,25 +35,11 @@
     </div>
     {{> base/burger}}
 </header>
+<div class="contacts__inner">
 <main>
-    <section class="search-filter">
+    <section class="contact-us">
         <div class="container">
-            {{> components/search-filter}}
-        </div>
-    </section>
-    <section class="menu-category">
-        <div class="container">
-            {{> components/menu-category}}
-        </div>
-    </section>
-    <section class="product-area">
-        <div class="container">
-            {{> all-products/product-area}}
-        </div>
-    </section>
-    <section class="">
-        <div class="container">
-
+            {{>contacts/contact-us}}
         </div>
     </section>
 </main>
@@ -64,9 +50,11 @@
         {{> base/footer}}
     </div>
 </footer>
+</div>
 <script
   type="module"
-  src="./src/js/all-products.js"
+  src="./src/js/contacts.js"
   defer></script>
 </body>
+
 </html>

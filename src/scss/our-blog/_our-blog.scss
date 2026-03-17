@@ -3,6 +3,12 @@
     & .intro{
         margin-top: 32px;
     }
+    & .search-filter {
+        margin-top: 17px;
+        @include media.max-width(xs) {
+            margin-top: 15px;
+        }
+    }
     & .footer {
         margin-top: 83px;
         @include media.max-width(md) {

@@ -20,11 +20,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/all-products-DMOD1jAv.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-fsrTvoOq.js">
+  <script type="module" crossorigin src="/Seedra/assets/all-products-DIyYyHMV.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/scroll-lock-du7lXG5Y.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-DHvM1E9V.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-firebase-DnW3fr0w.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-CNwuCUcK.css">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-firebase-BlJL6RdD.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-CZ9aLO7R.css">
 </head>
 <body class="all-products">
 <header
@@ -412,21 +413,25 @@
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
                                     <hr class="filter-form__group-line">
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="seedType"
                                       value="hybrid">Hybrid</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="seedType"
                                       value="pollinated">Open Pollinated</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="seedType"
                                       value="organic">Organic Seeds, Plants, and
                                         Supplies</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="seedType"
                                       value="pelleted">Pelleted See</label>
                                 </div>
@@ -446,12 +451,14 @@
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
                                     <hr class="filter-form__group-line">
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="featureType"
                                       value="one">One</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="featureType"
                                       value="two">Two</label>
                                 </div>
@@ -471,12 +478,14 @@
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
                                     <hr class="filter-form__group-line">
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="growingType"
                                       value="fast">Fast</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="growingType"
                                       value="slow">slow</label>
                                 </div>
@@ -495,15 +504,35 @@
                                 </svg>                </button>
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
-                                    <label class="filter-form__price-label">
-                                        <span class="filter-form__price-text">$</span>
-                                        <input
-                                          type="number"
-                                          min="1"
-                                          max="1000"
-                                          placeholder="1"
-                                          class="filter-form__price-input"
-                                          value="fast">Fast</label>
+                                    <hr class="filter-form__group-line">
+                                    <div class="filter-form__price-wrap">
+                                        <div class="filter-form__price">
+                                            <label class="filter-form__price-label">
+                                                <span class="filter-form__text_above">From</span>
+                                                <span class="filter-form__price-text">$</span>
+                                                <input
+                                                  type="number"
+                                                  min="1"
+                                                  max="1000"
+                                                  placeholder="1"
+                                                  class="filter-form__price-input"
+                                                  id="price-min"></label>
+                                            <div class="filter-form__price-line"></div>
+                                            <label class="filter-form__price-label">
+                                                <span class="filter-form__text_above">To</span>
+                                                <span class="filter-form__price-text">$</span>
+                                                <input
+                                                  type="number"
+                                                  min="1"
+                                                  max="1000"
+                                                  placeholder="1000"
+                                                  class="filter-form__price-input"
+                                                  id="price-max"></label>
+                                        </div>
+                                        <div
+                                          id="range-slider"
+                                          class="filter-form__price-slider"></div>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>
@@ -521,12 +550,14 @@
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
                                     <hr class="filter-form__group-line">
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="useType"
                                       value="warm">Warm</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="useType"
                                       value="cold">Cold</label>
                                 </div>
@@ -546,12 +577,14 @@
                             <div class="filter-form__group-body-wrap">
                                 <div class="filter-form__group-body">
                                     <hr class="filter-form__group-line">
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="characteristicType"
                                       value="one">One</label>
-                                    <label><input
+                                    <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
+                                      class="filter-form__checkbox-input"
                                       name="characteristicType"
                                       value="two">Two</label>
                                 </div>
@@ -563,6 +596,7 @@
                     <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-1">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -617,6 +651,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-2">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -671,6 +706,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-3">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -725,6 +761,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-4">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -779,6 +816,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-5">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -833,6 +871,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-6">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -887,6 +926,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-7">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -941,6 +981,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-8">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >
@@ -995,6 +1036,7 @@
                     </a>        <a
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
+                      data-lazy-card
                       data-product-id="card-9">
                         <button class="card__favorite">
                             <svg class="card__favorite-icon"  >

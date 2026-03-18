@@ -1,0 +1,1 @@
+import"./scroll-lock-du7lXG5Y.js";import{a as o}from"./firebase-C67ONCVO.js";import{b as r,a as e}from"./burger-accordion-DHvM1E9V.js";console.log("Firebase ready",o);document.addEventListener("DOMContentLoaded",async()=>{r(),e()});

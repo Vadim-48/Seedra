@@ -1,14 +1,17 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
+import {initCategoryDropdown} from "@/js/modules/menu-category-dropdown.js";
 import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
+import {initRangeSlider} from "@/js/modules/all-products/range-slider.js";
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
     burgerAccordion();
-
+    initCategoryDropdown();
     initAccordionForm();
 
     await Promise.all([
@@ -24,110 +27,59 @@ document.addEventListener("DOMContentLoaded", async () => {
         initCardFilter(),
     ]);
 
-
+    initRangeSlider();
 });
 
-// const inputSearchEl = document.querySelectorAll('[data-search-form] input');
-// inputSearchEl.addEventListener("input", (e) => {
-//
-// })
 
-
-
-// import {collection, getDocs} from "firebase/firestore";
-// import {db} from "@/firebase/firebase.js";
+// const menuCategoryEl = document.querySelector('[data-menu-category]');
+// const btnList = menuCategoryEl.querySelectorAll('.category__btn');
+// // const dropdownWrap = menuCategoryEl.querySelector('.category__dropdown-list');
+// const dropdownListEl = menuCategoryEl.querySelectorAll('.category-dropdown');
+// // const doc = document;
+// console.log(dropdownListEl);
 //
-// const productsSnapshot = await getDocs(collection(db, "products"));
-// const productDataList = {};
-// productsSnapshot.forEach((doc) => {
-//     // productDataList[doc.id] = doc.data().seedType;
-//     const data = doc.data();
-//     productDataList[doc.id] = {
-//         seedType: data.seedType,
-//         featureType: data.featureType,
-//         growingType: data.growingType,
-//         characteristicType: data.characteristicType,
-//         useType: data.useType,
-//     };
-// })
-// delete productDataList.main;
-// console.log("productDataList", productDataList);
-//
-//
-// const formInputListEl = document.querySelectorAll(".filter-form input");
-// const cardListEl = document.querySelectorAll('[data-product-id]');
-// console.log("formInputListEl", formInputListEl);
-// console.log("cardListEl", cardListEl);
-//
-// formInputListEl.forEach(input => {
-//     input.addEventListener("change", () => {
-//         const inputCheckedListEl = [...formInputListEl]
-//             .filter(el => el.checked)
-//         // .map(el => el.value && el.name)
-//
-//
-//         const inputSeedList = inputCheckedListEl.filter(el => el.name == "seedType")
-//             .map(el => el.value);
-//         const inputFeaturedList = inputCheckedListEl.filter(el => el.name == "featureType")
-//             .map(el => el.value);
-//         const inputGrowingList = inputCheckedListEl.filter(el => el.name == "growingType")
-//             .map(el => el.value);
-//         const inputUseList = inputCheckedListEl.filter(el => el.name == "useType")
-//             .map(el => el.value);
-//         const inputCharacteristicList = inputCheckedListEl.filter(el => el.name == "characteristicType")
-//             .map(el => el.value);
-//         // console.log("inputSeedList", inputSeedList);
-//         // console.log("inputSeedList", inputFeaturedList);
-//         // console.log("inputSeedList", inputGrowingList);
-//         // console.log("inputSeedList", inputUseList);
-//         // console.log("inputSeedList", inputCharacteristicList);
-//
-//
-//
-//
-//             // cardListEl
-//             cardListEl.forEach(card => {
-//                 let key = card.dataset.productFaerbase;
-//                 const product = productDataList[key];
-//
-//                 let foundSeedType = false;
-//                 let foundFeaturedType = false;
-//                 let foundGrowingType = false;
-//                 let foundUseType = false;
-//                 let foundCharacteristicType = false;
-//
-//                 if (inputSeedList.includes(product.seedType)) {
-//                     foundSeedType = true;
-//                 }
-//                 if (inputFeaturedList.includes(product.featureType)) {
-//                     foundFeaturedType = true;
-//                 }
-//                 if (inputGrowingList.includes(product.growingType)) {
-//                     foundGrowingType = true;
-//                 }
-//                 if (inputUseList.includes(product.useType)) {
-//                     foundUseType = true;
-//                 }
-//                 if (inputCharacteristicList.includes(product.characteristicType)) {
-//                     foundCharacteristicType = true;
-//                 }
-//
-//
-//                 console.log("dsssssssf",card.dataset.productFaerbase);
-//                 if (card.dataset.productFaerbase === key) {
-//                     if ((foundSeedType || (inputSeedList.length == 0))
-//                         && (foundFeaturedType || (inputFeaturedList.length == 0))
-//                         && (foundGrowingType || (inputGrowingList.length == 0))
-//                         && (foundUseType || (inputUseList.length == 0))
-//                         && (foundCharacteristicType || (inputCharacteristicList.length == 0))) {
-//                         card.style.display = "grid";
-//                     } else {
-//                         card.style.display = "none";
-//                     }
-//                 }
-//             });
-//
+// btnList.forEach((btn, index) => {
+//     btn.addEventListener("click", (e) => {
+//         dropdownListEl.forEach(el => {
+//             el.classList.remove('open');
+//         })
+//         dropdownListEl[index].classList.add('open');
 //     })
+// })
+//
+// document.addEventListener("click", (e) => {
+//     if (!menuCategoryEl.contains(e.target)) {
+//         dropdownListEl.forEach(el => {
+//             el.classList.remove('open');
+//         })
+//     }
+// })
+
+
+
+
+// const inputSearchEl = document.querySelector('[data-search-form] input');
+// const cardsListEl = document.querySelectorAll('[data-product-id]');
+// // const cardsPriceListEl = document.querySelectorAll('[data-product-price]');
+// // console.log("cardsNameListEl", cardsNameListEl);
+//
+// const cardList = []
+// cardsListEl.forEach(el => {
+//     const name = el;
+//     const nameValue = el.querySelector('[data-product-name]').textContent;
+//     cardList[el] = nameValue;
+// })
+//
+// console.log("cardList", cardList);
+//
+//
+// // console.log("cardsNameLis", cardsNameLis);
+//
+// inputSearchEl.addEventListener("input", (e) => {
+//     // console.log("inputSearchEl", e.target.value);
+//     // cardListEl.forEach(card => {
+//     //     console.log("inputSearchEldsf", card.dataset.productName.textContent);
+//     // })
 // })
 
 

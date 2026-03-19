@@ -20,21 +20,25 @@
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
                         <hr class="filter-form__group-line">
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="seedType"
                           value="hybrid">Hybrid</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="seedType"
                           value="pollinated">Open Pollinated</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="seedType"
                           value="organic">Organic Seeds, Plants, and
                             Supplies</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="seedType"
                           value="pelleted">Pelleted See</label>
                     </div>
@@ -56,12 +60,14 @@
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
                         <hr class="filter-form__group-line">
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="featureType"
                           value="one">One</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="featureType"
                           value="two">Two</label>
                     </div>
@@ -83,12 +89,14 @@
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
                         <hr class="filter-form__group-line">
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="growingType"
                           value="fast">Fast</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="growingType"
                           value="slow">slow</label>
                     </div>
@@ -109,7 +117,35 @@
                 </button>
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
-
+                        <hr class="filter-form__group-line">
+                        <div class="filter-form__price-wrap">
+                            <div class="filter-form__price">
+                                <label class="filter-form__price-label">
+                                    <span class="filter-form__text_above">From</span>
+                                    <span class="filter-form__price-text">$</span>
+                                    <input
+                                      type="number"
+                                      min="1"
+                                      max="1000"
+                                      placeholder="1"
+                                      class="filter-form__price-input"
+                                      id="price-min"></label>
+                                <div class="filter-form__price-line"></div>
+                                <label class="filter-form__price-label">
+                                    <span class="filter-form__text_above">To</span>
+                                    <span class="filter-form__price-text">$</span>
+                                    <input
+                                      type="number"
+                                      min="1"
+                                      max="1000"
+                                      placeholder="1000"
+                                      class="filter-form__price-input"
+                                      id="price-max"></label>
+                            </div>
+                            <div
+                              id="range-slider"
+                              class="filter-form__price-slider"></div>
+                        </div>
                     </div>
                 </div>
             </fieldset>
@@ -129,12 +165,14 @@
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
                         <hr class="filter-form__group-line">
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="useType"
                           value="warm">Warm</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="useType"
                           value="cold">Cold</label>
                     </div>
@@ -156,12 +194,14 @@
                 <div class="filter-form__group-body-wrap">
                     <div class="filter-form__group-body">
                         <hr class="filter-form__group-line">
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="characteristicType"
                           value="one">One</label>
-                        <label><input
+                        <label class="filter-form__checkbox-label"><input
                           type="checkbox"
+                          class="filter-form__checkbox-input"
                           name="characteristicType"
                           value="two">Two</label>
                     </div>

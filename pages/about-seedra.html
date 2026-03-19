@@ -25,10 +25,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/scss/one-product-style.scss">
+      href="/src/scss/about-seedra-style.scss">
     <title>Seedra</title>
 </head>
-<body class="body one-product">
+<body class="about-seedra">
 <header
   class="header"
   id="header">
@@ -40,28 +40,29 @@
     {{> base/burger}}
 </header>
 <main>
-    <section class="hero-product">
+    <section class="intro">
         <div class="container">
-            {{> one-product/hero-product}}
+            {{> components/intro
+            title="Who we are and what we do"
+            text="Here you can find a lot of interesting and useful information
+            that you need in gardening and creating a beautiful garden"
+            }}
         </div>
     </section>
-    <section class="info-prod">
+    <section class="info-content">
+        <div class="info-content__container container">
+            {{> components/info-content }}
+        </div>
+    </section>
+    <section class="our-story">
         <div class="container">
-            {{> one-product/info-prod}}
+            {{> about-seedra/our-story }}
         </div>
     </section>
-    <section class="faq">
+    <section class="our-team">
         <div class="container">
-            {{> one-product/faq}}
+            {{> about-seedra/our-team }}
         </div>
-    </section>
-    <section class="user-reviews">
-        <div class="user-reviews__container container">
-            {{> one-product/user-reviews}}
-        </div>
-    </section>
-    <section class="related">
-        {{> one-product/related}}
     </section>
 </main>
 <footer
@@ -74,7 +75,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script
   type="module"
-  src="./src/js/one-product.js"
+  src="/src/js/about-seedra.js"
   defer></script>
 </body>
 </html>

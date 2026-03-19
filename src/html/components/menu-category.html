@@ -1,39 +1,140 @@
-<div class="{{className}} category">
-    <div class="category__wrap">
-        {{> components/btn-category
+<div
+  class="{{className}} category"
+  data-menu-category>
+    <div class="category__btn-list-wrap">
+        <div class="category__btn-list">
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-1"
             text="ALL"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-2"
             text="BUNDLES"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-3"
             text="HERBS"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-4"
             text="VEGETABLES"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-5"
             text="FRUITS"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-6"
             text="SUPPLIES"
-        }}
-        {{> components/btn-category
+            }}
+            {{> components/btn-category
             className="category__btn"
             id="btn-category-7"
             text="FLOWERS"
-        }}
+            }}
+        </div>
+    </div>
+    <div class="category__dropdown-list">
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">All</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/bundles }}
+                    {{> components/category-dropdown/herbs }}
+                    {{> components/category-dropdown/vegetables }}
+                    {{> components/category-dropdown/fruits }}
+                    {{> components/category-dropdown/supplies }}
+                    {{> components/category-dropdown/flowers }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all</button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Bundles</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/bundles }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Bundles
+                </button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Herbs</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/herbs }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Herbs
+                </button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Vegetables</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/vegetables }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Vegetables
+                </button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Fruits</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/fruits }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Fruits
+                </button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Supplies</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/supplies }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Supplies
+                </button>
+            </div>
+        </div>
+        <div class="category__dropdown category-dropdown">
+            <div class="category-dropdown__arrow_behind"></div>
+            <div class="category-dropdown__content">
+                <div class="category-dropdown__arrow_front"></div>
+                <h2 class="category-dropdown__title sub-title">Flowers</h2>
+                <ul class="category-dropdown__list">
+                    {{> components/category-dropdown/flowers }}
+                </ul>
+                <hr class="category-dropdown__line">
+                <button class="category-dropdown__view-all">View all Flowers
+                </button>
+            </div>
+        </div>
     </div>
 </div>

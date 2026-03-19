@@ -18,9 +18,28 @@
         padding-left: 34px;
         //width: 74.3%;
         flex-grow: 1;
+        transition: color .3s ease,  box-shadow .3s ease;
         @include media.max-width(xs) {
             height: 53px;
             padding-left: 30px;
+        }
+        &:focus-visible {
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+            }
+        }
+        &:active{
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+
+            & .search-filter__search-input{
+                color: var(--text-primary);
+                &::placeholder{
+                    color: var(--text-primary);
+                }
+            }
         }
     }
     &__search-btn{
@@ -35,6 +54,12 @@
         line-height: 1.78;
         letter-spacing: -0.04em;
         color: var(--text-secondary);
+        transition: color .3s ease;
+        width: 93%;
+        &::placeholder{
+            transition: color .3s ease;
+        }
+
     }
     &__filter-btn{
         margin-inline: auto 18px;

@@ -3,7 +3,7 @@ import {db} from "@/firebase/firebase.js";
 
 function debounce(func, wait) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
@@ -21,22 +21,24 @@ export async function initCardFilter() {
             growingType: data.growingType,
             characteristicType: data.characteristicType,
             useType: data.useType,
+            price: data.price,
         };
     })
     delete productDataList.main;
-    console.log("productDataList", productDataList);
 
-
-    const formInputListEl = document.querySelectorAll(".filter-form input");
+    const formInputListEl = document.querySelectorAll("input");
     const cardListEl = document.querySelectorAll('[data-product-id]');
-    console.log("formInputListEl", formInputListEl);
-    console.log("cardListEl", cardListEl);
 
     formInputListEl.forEach(input => {
-        input.addEventListener("change", debounce(() => {
+        input.addEventListener("input", debounce(() => {
             const inputCheckedListEl = [...formInputListEl]
                 .filter(el => el.checked)
             // .map(el => el.value && el.name)
+            const inputPriceListEl = [...formInputListEl]
+                .filter(el => el.type === "number")
+                .map(el => el.value);
+            const priceMin = Number(inputPriceListEl[0]) || 0;
+            const priceMax = Number(inputPriceListEl[1]) || Infinity;
 
             const inputSeedList = inputCheckedListEl.filter(el => el.name == "seedType")
                 .map(el => el.value);
@@ -58,6 +60,7 @@ export async function initCardFilter() {
                 let foundGrowingType = false;
                 let foundUseType = false;
                 let foundCharacteristicType = false;
+                let foundPrice = false;
 
                 if (inputSeedList.includes(product.seedType)) {
                     foundSeedType = true;
@@ -75,12 +78,17 @@ export async function initCardFilter() {
                     foundCharacteristicType = true;
                 }
 
+                if (product.price >= priceMin && product.price <= priceMax) {
+                    foundPrice = true;
+                }
+
                 if (card.dataset.productFaerbase === key) {
                     if ((foundSeedType || (inputSeedList.length == 0))
                         && (foundFeaturedType || (inputFeaturedList.length == 0))
                         && (foundGrowingType || (inputGrowingList.length == 0))
                         && (foundUseType || (inputUseList.length == 0))
-                        && (foundCharacteristicType || (inputCharacteristicList.length == 0))) {
+                        && (foundCharacteristicType || (inputCharacteristicList.length == 0))
+                        && (foundPrice == true)) {
                         card.style.display = "grid";
                     } else {
                         card.style.display = "none";
@@ -90,29 +98,4 @@ export async function initCardFilter() {
 
         }, 300));
     });
-
-    const inputSearchEl = document.querySelector('[data-search-form] input');
-    const cardsListEl = document.querySelectorAll('[data-product-id]');
-    // const cardsPriceListEl = document.querySelectorAll('[data-product-price]');
-    // console.log("cardsNameListEl", cardsNameListEl);
-
-    const cardList = []
-    cardsListEl.forEach(el => {
-        const name = el;
-        const nameValue = el.querySelector('[data-product-name]').textContent;
-        cardList[el] = nameValue;
-    })
-
-    console.log("cardList", cardList);
-
-
-    // console.log("cardsNameLis", cardsNameLis);
-
-    inputSearchEl.addEventListener("input", (e) => {
-        // console.log("inputSearchEl", e.target.value);
-        // cardListEl.forEach(card => {
-        //     console.log("inputSearchEldsf", card.dataset.productName.textContent);
-        // })
-    })
-
 }

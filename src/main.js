@@ -1,5 +1,6 @@
 import { burger } from "./js/modules/burger.js";
 import { burgerAccordion } from "./js/modules/burger-accordion.js";
+import {initCategoryDropdown} from "@/js/modules/menu-category-dropdown.js";
 
 import { loadProductsFirebase } from "./js/modules/product-firebase.js";
 import { loadReviewFirebase } from "./js/modules/reviews-firebase.js";
@@ -11,23 +12,34 @@ import { initFeedbackSwiper } from "./js/modules/main/feedback-swiper.js";
 document.addEventListener("DOMContentLoaded", async() => {
     burger();
     burgerAccordion();
+    initCategoryDropdown();
 
-    await Promise.all([
-        loadProductsFirebase("product_hero", "main"),
-        loadProductsFirebase("card-1", "product-1"),
-        loadProductsFirebase("card-2", "product-2"),
-        loadProductsFirebase("card-3", "product-3"),
-        loadProductsFirebase("card-4", "product-4"),
-        loadProductsFirebase("card-5", "product-5"),
-        loadProductsFirebase("card-6", "product-6"),
+    const productsToLoad = [
+        { id: "product_hero", path: "main" },
+        { id: "card-1", path: "product-1" },
+        { id: "card-2", path: "product-2" },
+        { id: "card-3", path: "product-3" },
+        { id: "card-4", path: "product-4" },
+        { id: "card-5", path: "product-5" },
+        { id: "card-6", path: "product-6" },
+    ];
 
-        loadReviewFirebase("card-review-1", "review-1"),
-        loadReviewFirebase("card-review-2", "review-2"),
-        loadReviewFirebase("card-review-3", "review-3"),
-        loadReviewFirebase("card-review-4", "review-1"),
-        loadReviewFirebase("card-review-5", "review-2"),
-    ]);
+    const reviewsToLoad = [
+        { id: "card-review-1", path: "review-1" },
+        { id: "card-review-2", path: "review-2" },
+        { id: "card-review-3", path: "review-3" },
+        { id: "card-review-4", path: "review-1" },
+        { id: "card-review-5", path: "review-2" },
+    ];
 
+    try {
+        await Promise.all([
+            ...productsToLoad.map(p => loadProductsFirebase(p.id, p.path)),
+            ...reviewsToLoad.map(r => loadReviewFirebase(r.id, r.path))
+        ]);
+    } catch (error) {
+        console.error(error);
+    }
 
     initProductsPrevSwiper();
     initBlogPreviewSwiper();

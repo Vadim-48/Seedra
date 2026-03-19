@@ -21,10 +21,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="./src/scss/contacts-style.scss">
+      href="/src/scss/our-blog-style.scss">
     <title>Seedra</title>
 </head>
-<body class="contacts">
+<body class="our-blog">
 <header
   class="header"
   id="header">
@@ -35,11 +35,23 @@
     </div>
     {{> base/burger}}
 </header>
-<div class="contacts__inner">
 <main>
-    <section class="contact-us">
+    <section class="intro">
         <div class="container">
-            {{>contacts/contact-us}}
+            {{> components/intro
+            title="Welcome to our blog"
+            text="Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden"
+            }}
+        </div>
+    </section>
+    <section class="search-filter">
+        <div class="container">
+            {{> components/search-filter}}
+        </div>
+    </section>
+    <section class="blog">
+        <div class="container">
+            {{> our-blog/blog}}
         </div>
     </section>
 </main>
@@ -50,11 +62,9 @@
         {{> base/footer}}
     </div>
 </footer>
-</div>
 <script
   type="module"
-  src="./src/js/contacts.js"
+  src="/src/js/our-blog.js"
   defer></script>
 </body>
-
 </html>

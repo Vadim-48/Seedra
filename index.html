@@ -24,12 +24,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/index-BBH-OC9z.js"></script>
+  <script type="module" crossorigin src="/Seedra/assets/index-CLIqfmpo.js"></script>
   <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-fsrTvoOq.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-dropdown-DPxj9aEO.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/product-firebase-Cxmw9zUv.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-DcwbwstC.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/index-B4che6kU.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/index-C3_OZ4TA.css">
 </head>
 <body class="body main">
 <header
@@ -398,44 +399,355 @@
                     <span class="products-prev__text">View all (<span class="products-prev__number">12</span>)</span>
                 </button>
             </div>
-            <div class="products-prev__category category">
-                <div class="category__wrap">
-                    <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-1"></use>
-                        </svg>
-                        <span class="category__text">ALL</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-2"></use>
-                        </svg>
-                        <span class="category__text">BUNDLES</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-3"></use>
-                        </svg>
-                        <span class="category__text">HERBS</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-4"></use>
-                        </svg>
-                        <span class="category__text">VEGETABLES</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-5"></use>
-                        </svg>
-                        <span class="category__text">FRUITS</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-6"></use>
-                        </svg>
-                        <span class="category__text">SUPPLIES</span>
-                    </button>        <button class="category__btn">
-                        <svg class="category__icon">
-                            <use xlink:href="/Seedra/sprite.svg#icon-btn-category-7"></use>
-                        </svg>
-                        <span class="category__text">FLOWERS</span>
-                    </button>    </div>
+            <div
+              class="products-prev__category category"
+              data-menu-category>
+                <div class="category__btn-list-wrap">
+                    <div class="category__btn-list">
+                        <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-1"></use>
+                            </svg>
+                            <span class="category__text">ALL</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-2"></use>
+                            </svg>
+                            <span class="category__text">BUNDLES</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-3"></use>
+                            </svg>
+                            <span class="category__text">HERBS</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-4"></use>
+                            </svg>
+                            <span class="category__text">VEGETABLES</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-5"></use>
+                            </svg>
+                            <span class="category__text">FRUITS</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-6"></use>
+                            </svg>
+                            <span class="category__text">SUPPLIES</span>
+                        </button>            <button class="category__btn">
+                            <svg class="category__icon">
+                                <use xlink:href="/Seedra/sprite.svg#icon-btn-category-7"></use>
+                            </svg>
+                            <span class="category__text">FLOWERS</span>
+                        </button>        </div>
+                </div>
+                <div class="category__dropdown-list">
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">All</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 6</button>
+                                    </li>                        <li class="category-dropdown__item">
+                                        <button>Angelica</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Anise</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Anise Hyssop</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Asclepias (Butterfly Weed)</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Basil</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bee Balm</button>
+                                    </li>                        <li class="category-dropdown__item">
+                                        <button>Vegetable 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 6</button>
+                                    </li>                        <li class="category-dropdown__item">
+                                        <button>Fruit 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 6</button>
+                                    </li>                        <li class="category-dropdown__item">
+                                        <button>Supply 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 6</button>
+                                    </li>                        <li class="category-dropdown__item">
+                                        <button>Flower 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">Bundles</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bundles 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all Bundles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">Herbs</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Angelica</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Anise</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Anise Hyssop</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Asclepias (Butterfly Weed)</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Basil</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Bee Balm</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all Herbs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">
+                                    Vegetables</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Vegetable 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all
+                                    Vegetables
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">Fruits</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Fruit 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all Fruits
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">Supplies</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Supply 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all
+                                    Supplies
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category__dropdown category-dropdown">
+                        <div class="category-dropdown__arrow_behind"></div>
+                        <div class="category-dropdown__content">
+                            <div class="category-dropdown__content-inner">
+                                <div class="category-dropdown__arrow_front"></div>
+                                <h2 class="category-dropdown__title sub-title">Flowers</h2>
+                                <ul class="category-dropdown__list">
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 1</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 2</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 3</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 4</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 5</button>
+                                    </li>
+                                    <li class="category-dropdown__item">
+                                        <button>Flower 6</button>
+                                    </li>                    </ul>
+                                <hr class="category-dropdown__line">
+                                <button class="category-dropdown__view-all">View all Flowers
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div></div>
         <div class="products-prev__swiper-container container">
             <div class="products-prev__swiper swiper">

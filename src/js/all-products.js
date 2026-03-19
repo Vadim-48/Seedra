@@ -1,5 +1,6 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
+import {initFilterDropdown} from "@/js/modules/all-products/filter-dropdown.js";
 import {initCategoryDropdown} from "@/js/modules/menu-category-dropdown.js";
 import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
     burgerAccordion();
+    initFilterDropdown();
     initCategoryDropdown();
     initAccordionForm();
 
@@ -29,6 +31,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initRangeSlider();
 });
+
+
+
 
 
 // const menuCategoryEl = document.querySelector('[data-menu-category]');

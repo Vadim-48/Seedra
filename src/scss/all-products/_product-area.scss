@@ -1,11 +1,11 @@
 @use "@/scss/mixins/media" as media;
-@import 'nouislider/dist/nouislider.css';
 .product-area {
     margin-top: 25px;
 
     &__wrap {
         display: grid;
-        grid-template-columns: 23% 1fr;
+        //grid-template-columns: 23% 1fr;
+        grid-template-columns: 253px 1fr;
         gap: 32px;
         @include media.max-width(sm) {
             grid-template-columns: 1fr;
@@ -13,6 +13,9 @@
     }
 
     &__sidebar {
+        @include media.max-width(sm) {
+            display: none;
+        }
     }
 
     &__list {
@@ -23,7 +26,7 @@
         @include media.max-width(md) {
             grid-template-columns: repeat( 2, 1fr);
         }
-        @include media.max-width(sm) {
+        @include media.max-width(xs) {
             grid-template-columns: 1fr;
         }
     }
@@ -34,208 +37,5 @@
         }
     }
 }
-
-.filter-form {
-    @include media.max-width(sm) {
-
-    }
-
-    &__title {
-        font-size: 14px;
-        line-height: 1.78;
-        color: var(--text-primary);
-    }
-
-    &__group {
-        margin-top: 6px;
-
-        &.active {
-            & .filter-form__group-body-wrap {
-                grid-template-rows: 1fr;
-            }
-        }
-
-        &.active .filter-form__group-arrow {
-            transform: rotate(180deg);
-
-            & use {
-                color: var(--green-brand);
-            }
-        }
-    }
-
-    &__group-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    &__group-title {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.78;
-        letter-spacing: -0.04em;
-        color: var(--text-primary);
-    }
-
-    &__group-body-wrap {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: 0.3s ease;
-    }
-
-    &__group-body {
-        overflow: hidden;
-        margin-left: -15px;
-        padding-left: 15px;
-    }
-    &__checkbox-label {
-        font-size: 14px;
-        line-height: 1.78;
-        color: var(--text-secondary);
-        display: flex;
-        align-items: center;
-        gap: 9px;
-
-        &:not(:first-of-type) {
-            margin-top: 13px;
-        }
-
-        &:first-of-type {
-            margin-top: 17px;
-        }
-
-        &:last-of-type {
-            padding-bottom: 10px;
-        }
-    }
-    &__checkbox-input {
-        appearance: none;
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 6px;
-        width: 20px;
-        height: 20px;
-        position: relative;
-        cursor: pointer;
-
-        &:checked {
-            background: var(--invisible-green);
-            border: 1px solid var(--green-brand);
-        }
-
-        &:checked::after {
-            content: "";
-            position: absolute;
-            left: 6px;
-            top: 2px;
-            width: 5px;
-            height: 10px;
-            border: solid var(--green-brand);
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-    }
-
-    &__group-line {
-        height: 1px;
-        width: 100%;
-        background: var(--light-grey-stroke);
-        margin-top: 7px;
-    }
-
-    &__group-arrow {
-        width: 12px;
-        height: 7px;
-
-        & use {
-            color: var(--text-secondary);
-        }
-    }
-
-    &__line {
-        height: 1px;
-        width: 100%;
-        background: var(--light-grey-stroke);
-        margin-top: 7px;
-    }
-    &__price-wrap {
-        margin-top: 40px;
-        width: 90%;
-        padding-bottom: 20px;
-    }
-
-    &__price {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 40px;
-    }
-
-    &__price-label {
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 7px;
-        width: 95px;
-        height: 46px;
-        padding: 0 13px;
-    }
-    &__text_above{
-        position: absolute;
-        top: -28px;
-        left: 0;
-        font-size: 14px;
-        line-height: 1.78;
-        text-align: center;
-        color: var(--text-secondary);
-    }
-    &__price-text {
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 1.75;
-        text-align: center;
-        color: var(--text-primary);
-    }
-
-    &__price-input {
-        border: none;
-        &::placeholder {
-            color: var(--text-secondary);
-        }
-    }
-
-    &__price-line {
-        background:  var(--text-secondary);
-        height: 2px;
-        width: 18px;
-    }
-    &__price-slider{
-        margin-top: 25px;
-        background: var(--light-grey-stroke);
-        border-radius: 59px;
-        height: 5px;
-
-        & .noUi-connect{
-            background: var(--green-brand);
-        }
-        & .noUi-handle{
-            border-radius: 100%;
-            border: 1px solid var(--green-brand);
-            box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.25);
-            width: 14px;
-            height: 14px;
-        }
-        & .noUi-handle::after, .noUi-handle::before{
-            display: none;
-        }
-        & .noUi-handle {
-            right: -8px;
-        }
-    }
-}
-
-
 
 

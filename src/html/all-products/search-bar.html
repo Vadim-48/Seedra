@@ -1,0 +1,14 @@
+<div class="search-bar__inner">
+    {{> components/toolbar
+    className="search-bar__toolbar"
+    }}
+    <div class="search-bar__filter-dropdown filter-dropdown">
+        <div class="filter-dropdown__arrow_behind"></div>
+        <div class="filter-dropdown__inner">
+            <div class="filter-dropdown__arrow_front"></div>
+            {{> all-products/filter-form
+            className="filter-dropdown__filter"
+            }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@use "@/scss/mixins/media" as media;
+.search-bar{
+    position: relative;
+    margin-top: 32px;
+    @include media.max-width(sm) {
+        margin-top: 24px;
+    }
+
+    &__filter-dropdown{
+        display: none;
+        position: absolute;
+        right: 15px;
+        z-index: 10;
+        &.open{
+            display: block;
+        }
+    }
+
+}
+.filter-dropdown{
+    width: 345px;
+    margin-top: 10px;
+
+    &__arrow_behind{
+        box-shadow: 0 4px 58px 0 rgba(204, 204, 204, 0.12), 0 4px 26px 0 rgba(199, 199, 199, 0.5);
+        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+        width: 28px;
+        height: 10px;
+        //background: red;
+        background-color: var(--white);
+        position: absolute;
+        top: -8px;
+        right: 3.5%;
+        z-index: 6;
+    }
+    &__arrow_front{
+        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+        width: 28px;
+        height: 10px;
+        //background: green;
+        background-color: var(--white);
+        position: absolute;
+        top: -8px;
+        right: 3.5%;
+        //z-index: 6;
+
+    }
+    &__inner{
+        padding: 30px 23px 40px 16px;
+        background: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 4px 58px 0 rgba(204, 204, 204, 0.12), 0 4px 26px 0 rgba(199, 199, 199, 0.5);
+        position: relative;
+        z-index: 7;
+    }
+}

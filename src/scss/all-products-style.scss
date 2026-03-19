@@ -5,12 +5,14 @@
 
 @use "@/scss/components/btn";
 @use "@/scss/components/typography";
-@use "@/scss/components/search-filter";
+@use "@/scss/components/toolbar";
 @use "@/scss/components/menu-category";
 @use "@/scss/components/rating";
 @use "@/scss/components/card-product";
 
 @use "@/scss/all-products/all-products";
+@use "@/scss/all-products/search-bar";
 @use "@/scss/all-products/product-area";
+@use "@/scss/all-products/filter-form";
 
 @use "@/scss/base/footer";

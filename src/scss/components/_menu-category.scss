@@ -98,13 +98,18 @@
         padding: 30px;
         //max-height: 300px;
         //overflow-y: auto;
+        overflow: visible;
+    }
+    &__content-inner {
+        max-height: 400px;
+        overflow-y: auto;
     }
     &__arrow_behind{
         position: absolute;
         z-index: 6;
         background-color: var(--white);
         width: 60px;
-        height: 60px;
+        height: 20px;
         left: 50%;
         top: -7px;
         transform: translateX(-50%);
@@ -113,7 +118,7 @@
     }
     &__arrow_front{
         position: absolute;
-        z-index: 6;
+        //z-index: 6;
         background-color: var(--white);
         width: 60px;
         height: 20px;

@@ -1,0 +1,128 @@
+<div class="checkout__wrap">
+    <div class="checkout__personal-info">
+        <div class="personal-info__header">
+            <div class="personal-info__header-inner">
+                <a
+                  href="./cart.html"
+                  class="personal-info__btn-return">
+                    {{> components/svg
+                    className="personal-info__btn-return-icon"
+                    id="arrow-return"
+                    }}
+                </a>
+                <h1 class="personal-info__title title">Checkout</h1>
+            </div>
+            <div class="personal-info__page">
+                <div class="personal-info__page-item"></div>
+                <div class="personal-info__page-item"></div>
+            </div>
+        </div>
+        <form
+          name="checkout-form"
+          id="checkout-form"
+          method="POST"
+          autocomplete="off"
+          novalidate
+          class="personal-info__checkout-form checkout-form">
+            <h2 class="checkout-form__title sub-title">Personal info</h2>
+            <div class="checkout-form__group">
+                <label
+                  class="checkout-form__group-label">
+                    Name
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      class="checkout-form__group-input">
+                </label>
+                <label
+                  class="checkout-form__group-label">
+                    Phone number
+                    <input
+                      type="tel"
+                      name="phone"
+                      inputmode="tel"
+                      placeholder="Your number"
+                      class="checkout-form__group-input">
+                </label>
+            </div>
+            <h2 class="checkout-form__title sub-title">Adress</h2>
+            <div class="checkout-form__group">
+                <label
+                  class="checkout-form__group-label">
+                    State
+                    <input
+                      type="text"
+                      name="state"
+                      placeholder="Name of state"
+                      class="checkout-form__group-input">
+                </label>
+                <label
+                  class="checkout-form__group-label">
+                    City
+                    <input
+                      type="text"
+                      name="city"
+                      placeholder="Name of city"
+                      class="checkout-form__group-input">
+                </label>
+                <label
+                  class="checkout-form__group-label">
+                    Address
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="1901 Thornridge Cir. Shiloh, Hawaii 81063"
+                      class="checkout-form__group-input">
+                </label>
+                <label
+                  class="checkout-form__group-label">
+                    ZIP code
+                    <input
+                      type="text"
+                      name="zip-code"
+                      placeholder="ZIP code"
+                      class="checkout-form__group-input">
+                </label>
+            </div>
+            <button
+              type="submit"
+              class="checkout-form__btn btn_green">Continue
+            </button>
+        </form>
+    </div>
+    <div class="checkout__info-cart info-cart">
+        <h3 class="info-cart__title">Your cart</h3>
+        <div class="info-cart__list">
+            <div class="info-cart__list-item">
+                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                <p class="info-cart__list-item-price">$0</p>
+            </div>
+            <div class="info-cart__list-item">
+                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                <p class="info-cart__list-item-price">$0</p>
+            </div>
+            <div class="info-cart__list-item">
+                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                <p class="info-cart__list-item-price">$0</p>
+            </div>
+            <div class="info-cart__list-item">
+                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                <p class="info-cart__list-item-price">$0</p>
+            </div>
+            <div class="info-cart__list-item">
+                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                <p class="info-cart__list-item-price">$0</p>
+            </div>
+        </div>
+        <div class="info-cart__total">
+            <span class="info-cart__total-label">Total amount</span>
+            <span class="info-cart__total-value">$0</span>
+        </div>
+    </div>
+</div>

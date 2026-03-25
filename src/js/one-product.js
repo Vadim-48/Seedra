@@ -2,6 +2,7 @@ import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 
 import {loadHeroProductsFirebase} from "@/js/modules/one-product/hero-firebase.js";
+import {innitAmount} from "@/js/modules/amount-count.js";
 import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
@@ -35,6 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadProductsFirebase("card-5", "product-5"),
         loadProductsFirebase("card-6", "product-6"),
     ]);
+
+    innitAmount();
 
     initHeroSwiper();
 

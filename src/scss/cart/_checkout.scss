@@ -1,0 +1,218 @@
+@use "@/scss/mixins/media" as media;
+.checkout {
+    margin-top: 33px;
+    @include media.max-width(sm) {
+        margin-top: 30px;
+    }
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 30px;
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__personal-info {
+    }
+
+    &__info-cart {
+        align-self: start;
+    }
+}
+
+.personal-info {
+
+    &__header {
+        display: flex;
+        //align-items: center;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &__header-inner {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        @include media.max-width(sm) {
+            gap: 11px;
+        }
+    }
+
+    &__btn-return {
+    }
+
+    &__btn-return-icon {
+        width: 30px;
+        height: 30px;
+        color:  var(--text-secondary);
+    }
+
+    &__title {
+    }
+
+    &__page {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    &__page-item {
+        border-radius: 30px;
+        width: 22px;
+        height: 6px;
+        background: var(--green-brand);
+        &:last-child {
+            opacity: 0.2;
+        }
+    }
+
+    &__checkout-form {
+        margin-top: 32px;
+        @include media.max-width(sm) {
+            margin-top: 27px;
+        }
+    }
+}
+
+.checkout-form {
+
+    &__title {
+        @include media.max-width(sm) {
+            font-weight: 500;
+            line-height: 1.39;
+            letter-spacing: -0.04em;
+        }
+        &:nth-of-type(2){
+            margin-top: 26px;
+            @include media.max-width(sm) {
+                margin-top: 31px;
+            }
+        }
+    }
+
+    &__group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 30px;
+        margin-top: 17px;
+        @include media.max-width(md) {
+            grid-template-columns: 1fr;
+        }
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr 1fr;
+            margin-top: 20px;
+        }
+        @include media.max-width(xs) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+
+    &__group-label {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__group-input {
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 4px;
+        width: 100%;
+        height: 56px;
+        padding: 0 24px;
+
+        &::placeholder {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+    }
+
+    &__btn {
+        width: 160px;
+        margin-top: 34px;
+        @include media.max-width(sm) {
+            margin: 45px auto 0 auto;
+        }
+    }
+}
+
+.info-cart {
+    border: 1px solid var(--light-grey-stroke);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px 0 rgba(207, 207, 207, 0.25);
+    background: var(--white);
+    padding: 24px 0 39px 31px;
+    @include media.max-width(sm) {
+        display: none;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.56;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
+        padding-right: 51px;
+    }
+    &__list{
+        margin-top: 19px;
+        max-height: 300px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        padding-right: 51px;
+    }
+
+    &__list-item {
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--light-grey-stroke);
+            margin-top: 9px;
+        }
+    }
+
+    &__list-item-title {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__list-item-price {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.39;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+        margin-top: 8px;
+    }
+
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 51px;
+        margin-top: 38px;
+    }
+
+    &__total-label {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__total-value {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.39;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+}

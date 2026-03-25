@@ -281,40 +281,6 @@
         text-transform: uppercase;
     }
 
-    &__number {
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 11px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 14px;
-    }
-
-    &__number-add {
-        margin-top: 4px;
-    }
-    &__number-inner{
-        background: var(--invisible-green);
-        padding-inline: 11px;
-        border-radius: 6px;
-    }
-    &__number-item {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.78;
-        letter-spacing: -0.04em;
-        color: var(--green-brand);
-
-    }
-
-    &__number-remove {
-        margin-top: 4px;
-    }
-    &__number-icon{
-        width: 16px;
-        height: 16px;
-    }
-
     &__option-wrap {
         margin-top: 8px;
         @include media.max-width(xs) {

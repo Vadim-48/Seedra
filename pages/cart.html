@@ -21,10 +21,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="/src/scss/contacts-style.scss">
+      href="/src/scss/cart-style.scss">
     <title>Seedra</title>
 </head>
-<body class="contacts">
+<body class="cart">
 <header
   class="header"
   id="header">
@@ -36,14 +36,14 @@
     {{> base/burger}}
 </header>
 <main>
-    <section class="contact-us">
-        <div class="container">
-            {{>contacts/contact-us}}
+    <section class="your-cart">
+        <div class="your-cart__container container">
+            {{> cart/your-cart}}
         </div>
     </section>
 </main>
 <footer
-  class="footer"
+  class="cart__footer footer"
   id="footer">
     <div class="container">
         {{> base/footer}}
@@ -51,7 +51,7 @@
 </footer>
 <script
   type="module"
-  src="/src/js/contacts.js"
+  src="/src/js/cart.js"
   defer></script>
 </body>
 </html>

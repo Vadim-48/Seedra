@@ -8,7 +8,7 @@ export async function loadProductsFirebase(dataCard, productId) {
         productsMap[doc.id] = doc.data();
     })
     const cardList = document.querySelector(`[data-product-id="${dataCard}"]`);
-    cardList.dataset.productFaerbase = productId;
+    cardList.dataset.productFirebase = productId;
     const product = productsMap[productId];
 
     const innerNumberReviews = cardList.querySelector('[data-product-reviews]');

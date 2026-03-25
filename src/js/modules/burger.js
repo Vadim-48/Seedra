@@ -16,9 +16,10 @@ export function burger() {
         burgerBg.classList.toggle("active", isActive);
 
         if (isActive) {
-            disablePageScroll();
+            disablePageScroll(burger);
         } else {
-            enablePageScroll();
+            enablePageScroll(burger);
+            clearQueueScrollLocks();
             document.dispatchEvent(new Event('burger:close'));
         }
     };

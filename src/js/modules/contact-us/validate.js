@@ -11,14 +11,18 @@ export const initFormValidate = () => {
             const formInput = label.querySelector('.contact-us__form-input');
             const value = formInput.value.trim();
 
-            if (!value && (formInput.type !== 'email')) {
+            if (!value) {
                 label.classList.add('error');
                 // formInput.placeholder = "Typing....";
                 formError = true;
-            } else if (formInput.type === 'email' && !emailPattern.test(value)) {
-                label.classList.add('error');
-                // formInput.placeholder = "Typing....";
-                formError = true;
+            } else if (formInput.type === 'email') {
+                if (!emailPattern.test(value) || value.length > 54) {
+                    label.classList.add('error');
+                    // formInput.placeholder = "Typing....";
+                    formError = true;
+                } else {
+                    label.classList.remove('error');
+                }
             } else {
                 label.classList.remove('error');
                 // formInput.placeholder = "";
@@ -36,16 +40,21 @@ export const initFormValidate = () => {
         formInput.addEventListener('input', e => {
             const value = formInput.value.trim();
             if (label.classList.contains('error')) {
-                if (value && (formInput.type !== 'email')) {
-                    label.classList.remove('error');
+
+                if (formInput.type !== 'email') {
+                    if (value) {
+                        label.classList.remove('error');
+                    }
                 }
-                if (formInput.type === 'email' && emailPattern.test(value)) {
-                    label.classList.remove('error');
+
+                if (formInput.type === 'email') {
+                    if (emailPattern.test(value) && value.length <= 54) {
+                        label.classList.remove('error');
+                    }
                 }
             }
         })
     })
-
 }
 
 

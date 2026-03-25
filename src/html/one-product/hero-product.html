@@ -175,23 +175,9 @@
                         <span class="selector__chose-text-prefix">Size</span>
                         <span class="selector__chose-number">2 PACK</span>
                     </div>
-                    <div class="selector__number">
-                        <button class="selector__number-remove">
-                            {{> components/svg
-                            className="selector__number-icon"
-                            id="minus"
-                            }}
-                        </button>
-                        <div class="selector__number-inner">
-                            <span class="selector__number-item">2</span>
-                        </div>
-                        <button class="selector__number-add">
-                            {{> components/svg
-                            className="selector__number-icon"
-                            id="plus"
-                            }}
-                        </button>
-                    </div>
+                    {{> components/amount
+                    className="selector__amount"
+                    }}
                 </div>
                 <div class="selector__option-wrap">
                     <div class="selector__option">

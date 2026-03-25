@@ -18,4 +18,10 @@ $breakpoints: (
     }
 }
 
+@mixin min-width($breakpoint) {
+    @media (min-width: #{map.get($breakpoints, $breakpoint) + 1px}) {
+        @content;
+    }
+}
+
 

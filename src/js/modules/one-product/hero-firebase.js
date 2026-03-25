@@ -41,19 +41,6 @@ export async function loadHeroProductsFirebase(dataCard, productId) {
     })
     console.log( "sfas",innerDataVideoIdList);
 
-    const packCountRemoveEl = cardList.querySelector('.selector__number-remove');
-    const packCountAddEl = cardList.querySelector('.selector__number-add');
-    const packCountEl = cardList.querySelector('.selector__number-item');
-    packCountRemoveEl.addEventListener('click', () => {
-        let count = parseInt(packCountEl.textContent, 10);
-        if (count > 0) {count -= 1;}
-        packCountEl.textContent = count;
-    })
-    packCountAddEl.addEventListener('click', () => {
-        let count = parseInt(packCountEl.textContent, 10);
-        count += 1;
-        packCountEl.textContent = count;
-    })
     const packSelectListEl = cardList.querySelectorAll('.selector__input');
     const packChoseEl = cardList.querySelector('.selector__chose-number');
     packSelectListEl.forEach((el, index) =>{

@@ -21,10 +21,10 @@
       rel="stylesheet">
     <link
       rel="stylesheet"
-      href="/src/scss/contacts-style.scss">
+      href="/src/scss/checkout-cart-style.scss">
     <title>Seedra</title>
 </head>
-<body class="contacts">
+<body class="checkout-cart">
 <header
   class="header"
   id="header">
@@ -36,9 +36,9 @@
     {{> base/burger}}
 </header>
 <main>
-    <section class="contact-us">
-        <div class="container">
-            {{>contacts/contact-us}}
+    <section class="checkout">
+        <div class="checkout__container container">
+            {{> cart/checkout}}
         </div>
     </section>
 </main>
@@ -51,7 +51,7 @@
 </footer>
 <script
   type="module"
-  src="/src/js/contacts.js"
+  src="/src/js/checkout-cart.js"
   defer></script>
 </body>
 </html>

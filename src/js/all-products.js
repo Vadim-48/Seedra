@@ -1,7 +1,10 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 import {initFilterDropdown} from "@/js/modules/all-products/filter-dropdown.js";
-import {initCategoryDropdown} from "@/js/modules/menu-category-dropdown.js";
+import {
+    initMenuCategoryScroll,
+    initCategoryDropdown,
+} from "@/js/modules/menu-category.js";
 import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
@@ -12,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
     burgerAccordion();
+    initMenuCategoryScroll();
     initFilterDropdown();
     initCategoryDropdown();
     initAccordionForm();
@@ -26,65 +30,62 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadProductsFirebase("card-7", "product-1"),
         loadProductsFirebase("card-8", "product-2"),
         loadProductsFirebase("card-9", "product-3"),
-        initCardFilter(),
+        // initCardFilter(),
     ]);
+    initCardFilter();
 
     initRangeSlider();
 });
 
+const cardProduct = document.querySelectorAll("[data-product-id]");
 
 
+cardProduct.forEach(product => {
+    const btn = product.querySelector(".card__button");
+    // const productId = product.querySelector("[data-product-firebase]");
+    btn.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log(product.dataset);
+    });
+})
+
+// function handler(event) {
+//     event.preventDefault();
+//     console.log("clicked");
+// }
+
+// import {collection, getDocs} from "firebase/firestore";
+// import {query, where} from "firebase/firestore";
+// import {db} from "@/firebase/firebase.js";
 
 
-// const menuCategoryEl = document.querySelector('[data-menu-category]');
-// const btnList = menuCategoryEl.querySelectorAll('.category__btn');
-// // const dropdownWrap = menuCategoryEl.querySelector('.category__dropdown-list');
-// const dropdownListEl = menuCategoryEl.querySelectorAll('.category-dropdown');
-// // const doc = document;
-// console.log(dropdownListEl);
-//
-// btnList.forEach((btn, index) => {
-//     btn.addEventListener("click", (e) => {
-//         dropdownListEl.forEach(el => {
-//             el.classList.remove('open');
-//         })
-//         dropdownListEl[index].classList.add('open');
-//     })
+// const formInputListEl = document.querySelectorAll("input");
+// const cardListEl = document.querySelectorAll('[data-product-id]');
+// const cardsListEl = document.querySelectorAll('[data-product-firebase]');
+// console.log("jhgjgjkjhk",cardsListEl);
+// cardsListEl.forEach((el) => {
+//     console.log("fddfsd",el.dataset.productFirebase);
 // })
-//
-// document.addEventListener("click", (e) => {
-//     if (!menuCategoryEl.contains(e.target)) {
-//         dropdownListEl.forEach(el => {
-//             el.classList.remove('open');
-//         })
-//     }
-// })
+// console.log(cardsListEl.dataset);
 
-
-
-
-// const inputSearchEl = document.querySelector('[data-search-form] input');
-// const cardsListEl = document.querySelectorAll('[data-product-id]');
-// // const cardsPriceListEl = document.querySelectorAll('[data-product-price]');
-// // console.log("cardsNameListEl", cardsNameListEl);
+// formInputListEl.forEach(input => {
+//     input.addEventListener("input", async () => {
+//         const inputCheckedListEl = [...formInputListEl]
+//             .filter(el => el.checked)
+//             // .map(el => el.value && el.name)
+//             .map(el => el.value)
+//         console.log(inputCheckedListEl)
+//         //
+//         const productsFirebase = collection(db, "products");
+//         const q = query(productsFirebase, where("seedType", "in", inputCheckedListEl));
+//         const querySnapshot = await getDocs(q);
+//         querySnapshot.forEach((doc) => {
+//             console.log(doc.id, ' => ', doc.data());
 //
-// const cardList = []
-// cardsListEl.forEach(el => {
-//     const name = el;
-//     const nameValue = el.querySelector('[data-product-name]').textContent;
-//     cardList[el] = nameValue;
-// })
+//         });
 //
-// console.log("cardList", cardList);
+//     });
 //
-//
-// // console.log("cardsNameLis", cardsNameLis);
-//
-// inputSearchEl.addEventListener("input", (e) => {
-//     // console.log("inputSearchEl", e.target.value);
-//     // cardListEl.forEach(card => {
-//     //     console.log("inputSearchEldsf", card.dataset.productName.textContent);
-//     // })
-// })
+// });
 
 

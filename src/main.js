@@ -1,6 +1,9 @@
 import { burger } from "./js/modules/burger.js";
 import { burgerAccordion } from "./js/modules/burger-accordion.js";
-import {initCategoryDropdown} from "@/js/modules/menu-category-dropdown.js";
+import {
+    initMenuCategoryScroll,
+    initCategoryDropdown,
+} from "@/js/modules/menu-category.js";
 
 import { loadProductsFirebase } from "./js/modules/product-firebase.js";
 import { loadReviewFirebase } from "./js/modules/reviews-firebase.js";
@@ -12,6 +15,7 @@ import { initFeedbackSwiper } from "./js/modules/main/feedback-swiper.js";
 document.addEventListener("DOMContentLoaded", async() => {
     burger();
     burgerAccordion();
+    initMenuCategoryScroll();
     initCategoryDropdown();
 
     const productsToLoad = [

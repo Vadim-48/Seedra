@@ -12,24 +12,28 @@
       class="header__nav"
       aria-label="Main navigation">
         <ul class="nav__menu">
-            <li class="nav__menu-item"><a href="{{> links/nav_all-products}}">ALL PRODUCTS</a></li>
-            <li class="nav__menu-item"><a href="{{> links/nav_about-seedra}}">ABOUT SEEDRA</a></li>
-            <li class="nav__menu-item"><a href="{{> links/nav_our-blog}}">OUR BLOG</a></li>
-            <li class="nav__menu-item"><a href="{{> links/nav_contacts}}">CONTACTS</a></li>
+            <li class="nav__menu-item"><a href="{{> links/nav_all-products}}">ALL
+                PRODUCTS</a></li>
+            <li class="nav__menu-item"><a href="{{> links/nav_about-seedra}}">ABOUT
+                SEEDRA</a></li>
+            <li class="nav__menu-item"><a href="{{> links/nav_our-blog}}">OUR
+                BLOG</a></li>
+            <li class="nav__menu-item"><a href="{{> links/nav_contacts}}">CONTACTS</a>
+            </li>
         </ul>
     </nav>
     <div class="header__right-wrap">
         <div class="header__social">
             <a href="{{> links/instagram}}">
                 {{> components/svg
-                    className="header__social-icon"
-                    id="instagram"
+                className="header__social-icon"
+                id="instagram"
                 }}
             </a>
             <a href="{{> links/facebook}}">
                 {{> components/svg
-                    className="header__social-icon"
-                    id="facebook"
+                className="header__social-icon"
+                id="facebook"
                 }}
             </a>
         </div>
@@ -38,8 +42,8 @@
           class="header__search-form search-form">
             <button class="search-form__btn ">
                 {{> components/svg
-                    className="search-form__btn-icon"
-                    id="search"
+                className="search-form__btn-icon"
+                id="search"
                 }}
             </button>
             <input
@@ -48,22 +52,24 @@
               placeholder="Search">
         </form>
         <div class="header__actions">
-            <button
+            <a
+              href="./favorite.html"
               class="header__actions-btn header__favorite-btn"
               aria-label="Add to favorites">
                 {{> components/svg
-                    className="header__actions-icon"
-                    id="favorite"
+                className="header__actions-icon"
+                id="favorite"
                 }}
-            </button>
-            <button
+            </a>
+            <a
+              href="./cart.html"
               class="header__actions-btn header__card-btn"
               aria-label="Open cart">
                 {{> components/svg
-                    className="header__actions-icon"
-                    id="cart"
+                className="header__actions-icon"
+                id="cart"
                 }}
-            </button>
+            </a>
         </div>
         <button
           class="header__burger-btn"

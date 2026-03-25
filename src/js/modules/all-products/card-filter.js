@@ -1,101 +1,109 @@
 import {collection, getDocs} from "firebase/firestore";
+import {query, where} from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
 
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
+// function debounce(func, wait) {
+//     let timeout;
+//     return function (...args) {
+//         clearTimeout(timeout);
+//         timeout = setTimeout(() => func.apply(this, args), wait);
+//     };
+// }
 
 export async function initCardFilter() {
+    const filterFormList = document.querySelectorAll(".filter-form");
+    const inputList = document.querySelectorAll(".filter-form input");
+    const cardsList = document.querySelectorAll('[data-product-firebase]');
 
-    const productsSnapshot = await getDocs(collection(db, "products"));
-    const productDataList = {};
-    productsSnapshot.forEach((doc) => {
-        const data = doc.data();
-        productDataList[doc.id] = {
-            seedType: data.seedType,
-            featureType: data.featureType,
-            growingType: data.growingType,
-            characteristicType: data.characteristicType,
-            useType: data.useType,
-            price: data.price,
-        };
-    })
-    delete productDataList.main;
+    let checkboxNameList = [...inputList]
+        .map(el => el.name)
+        .filter(el => el !== "")
+    checkboxNameList = [...new Set(checkboxNameList)]
+    console.log("fddfsd", checkboxNameList);
 
-    const formInputListEl = document.querySelectorAll("input");
-    const cardListEl = document.querySelectorAll('[data-product-id]');
-
-    formInputListEl.forEach(input => {
-        input.addEventListener("input", debounce(() => {
-            const inputCheckedListEl = [...formInputListEl]
+    inputList.forEach(input => {
+        input.addEventListener("input", async (e) => {
+            const inputChecked = [...inputList]
                 .filter(el => el.checked)
-            // .map(el => el.value && el.name)
-            const inputPriceListEl = [...formInputListEl]
-                .filter(el => el.type === "number")
                 .map(el => el.value);
-            const priceMin = Number(inputPriceListEl[0]) || 0;
-            const priceMax = Number(inputPriceListEl[1]) || Infinity;
+            console.log("inputChecked", inputChecked);
 
-            const inputSeedList = inputCheckedListEl.filter(el => el.name == "seedType")
-                .map(el => el.value);
-            const inputFeaturedList = inputCheckedListEl.filter(el => el.name == "featureType")
-                .map(el => el.value);
-            const inputGrowingList = inputCheckedListEl.filter(el => el.name == "growingType")
-                .map(el => el.value);
-            const inputUseList = inputCheckedListEl.filter(el => el.name == "useType")
-                .map(el => el.value);
-            const inputCharacteristicList = inputCheckedListEl.filter(el => el.name == "characteristicType")
-                .map(el => el.value);
+            const productsFirebase = collection(db, "products");
+            let docsObj = {};
 
-            cardListEl.forEach(card => {
-                let key = card.dataset.productFaerbase;
-                const product = productDataList[key];
+            for (const name of checkboxNameList) {
+                docsObj[name] = [];
+                const q = query(productsFirebase, where(name, "in", inputChecked));
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach(doc => {
+                    docsObj[name].push(doc.id);
+                });
+            }
+            console.log("allDocs", docsObj);
 
-                let foundSeedType = false;
-                let foundFeaturedType = false;
-                let foundGrowingType = false;
-                let foundUseType = false;
-                let foundCharacteristicType = false;
-                let foundPrice = false;
+            // const filter = query(productsFirebase, where('seedType', 'in', inputChecked),
+            //     where('featureType', 'in', inputChecked),
+            //     where('growingType', 'in', inputChecked),
+            //     where('useType', 'in', inputChecked),
+            //     where('characteristicType', 'in', inputChecked));
+            // const querySnapshot = await getDocs(filter);
+            // querySnapshot.forEach((doc) => {
+            //     console.log(doc.id, ' => ', doc.data());
+            // });
 
-                if (inputSeedList.includes(product.seedType)) {
-                    foundSeedType = true;
-                }
-                if (inputFeaturedList.includes(product.featureType)) {
-                    foundFeaturedType = true;
-                }
-                if (inputGrowingList.includes(product.growingType)) {
-                    foundGrowingType = true;
-                }
-                if (inputUseList.includes(product.useType)) {
-                    foundUseType = true;
-                }
-                if (inputCharacteristicList.includes(product.characteristicType)) {
-                    foundCharacteristicType = true;
-                }
 
-                if (product.price >= priceMin && product.price <= priceMax) {
-                    foundPrice = true;
-                }
+            // cardsList.forEach((el) => {
+            //     if (allDocs.includes(el.dataset.productFirebase)) {
+            //         el.style.display = "grid";
+            //     } else {
+            //         el.style.display = "none";
+            //     }
+            // });
 
-                if (card.dataset.productFaerbase === key) {
-                    if ((foundSeedType || (inputSeedList.length == 0))
-                        && (foundFeaturedType || (inputFeaturedList.length == 0))
-                        && (foundGrowingType || (inputGrowingList.length == 0))
-                        && (foundUseType || (inputUseList.length == 0))
-                        && (foundCharacteristicType || (inputCharacteristicList.length == 0))
-                        && (foundPrice == true)) {
-                        card.style.display = "grid";
-                    } else {
-                        card.style.display = "none";
-                    }
-                }
-            });
+        })
+    })
 
-        }, 300));
-    });
+
+    // const formInputListEl = document.querySelectorAll("input");
+// const cardListEl = document.querySelectorAll('[data-product-id]');
+//     const cardsListEl = document.querySelectorAll('[data-product-firebase]');
+//
+//     cardsListEl.forEach((el) => {
+//         console.log("fddfsd", el.dataset.productFirebase);
+//     })
+//
+//
+//     formInputListEl.forEach(input => {
+//         input.addEventListener("input", async () => {
+//             let inputCheckboxList = [...formInputListEl]
+//                 .map(el => el.name)
+//                 .filter(el => el !== "")
+//
+//             inputCheckboxList = [...new Set(inputCheckboxList)];
+//
+//             console.log("fddddd", inputCheckboxList);
+//
+//             const inputCheckedListEl = [...formInputListEl]
+//                 .filter(el => el.checked)
+//                 .map(el => el.value)
+//             console.log(inputCheckedListEl);
+//
+//
+//             const productsFirebase = collection(db, "products");
+//             const q = query(productsFirebase, where("seedType", "in", inputCheckedListEl));
+//             const querySnapshot = await getDocs(q);
+//             const filterListId = querySnapshot.docs.map(el => el.id);
+//             console.log(filterListId);
+//
+//             cardsListEl.forEach((el) => {
+//                 if (filterListId.includes(el.dataset.productFirebase)) {
+//                     el.style.display = "grid";
+//                 } else {
+//                     el.style.display = "none";
+//                 }
+//             });
+//
+//         });
+//
+//     });
 }

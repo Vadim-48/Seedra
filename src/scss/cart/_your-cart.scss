@@ -278,6 +278,12 @@
     &__delivery {
         position: relative;
         margin-top: 28px;
+
+        &.open{
+            .form-summary__delivery-dropdown{
+                display: flex;
+            }
+        }
     }
 
     &__delivery-select {
@@ -319,9 +325,11 @@
 
     &__delivery-dropdown {
         position: absolute;
+        z-index: 10;
         top: 64px;
         width: 100%;
         background: var(--light-grey-stroke);
+        opacity: 0.8;
         border: 1px solid var(--light-grey-stroke);
         border-radius: 10px;
         padding: 10px 26px;
@@ -335,6 +343,26 @@
         letter-spacing: -0.04em;
         color: var(--text-primary);
         display: none;
+        & span{
+            cursor: pointer;
+            width: max-content;
+            transition: opacity .3s ease, color .3s ease;
+            @include media.max-width(sm) {
+                font-size: 14px;
+            }
+            &:focus-visible {
+                color: var(--green-brand);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover:not(:active) {
+                    color: var(--green-brand);
+                    opacity: 0.8;
+                }
+            }
+            &:active{
+                color: var(--green-brand);
+            }
+        }
     }
 
     &__promocode {
@@ -343,6 +371,7 @@
         color: var(--text-secondary);
         display: block;
         margin-top: 20px;
+        position: relative;
 
         & input {
             border: 1px solid var(--light-grey-stroke);

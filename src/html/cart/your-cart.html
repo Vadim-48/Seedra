@@ -42,7 +42,9 @@
             </div>
 
         </div>
-        <a href="{{> links/nav_all-products}}" class="your-cart__btn btn_white">Continue shopping</a>
+        <a
+          href="{{> links/nav_all-products}}"
+          class="your-cart__btn btn_white">Continue shopping</a>
     </div>
 
     <form
@@ -58,20 +60,22 @@
             <span class="form-summary__total-price">$0</span>
         </div>
         <div class="form-summary__delivery">
-            <button type="button" class="form-summary__delivery-select">
-                <div class="form-summary__delivery-content">
-                    <span class="form-summary__delivery-label">Type of delivery</span>
-                    <span class="form-summary__delivery-value">Shipping</span>
+                <button
+                  type="button"
+                  class="form-summary__delivery-select">
+                    <div class="form-summary__delivery-content">
+                        <span class="form-summary__delivery-label">Type of delivery</span>
+                        <span class="form-summary__delivery-value">Shipping</span>
+                    </div>
+                    {{> components/svg
+                    className="form-summary__delivery-arrow"
+                    id="arrow-bottom"
+                    }}
+                </button>
+                <div class="form-summary__delivery-dropdown">
+                    <span>Shipping</span>
+                    <span>Flying</span>
                 </div>
-                {{> components/svg
-                className="form-summary__delivery-arrow"
-                id="arrow-bottom"
-                }}
-            </button>
-            <div class="form-summary__delivery-dropdown">
-                <span>Shipping</span>
-                <span>Flying</span>
-            </div>
         </div>
         <label
           class="form-summary__promocode">Promocode

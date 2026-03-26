@@ -40,7 +40,7 @@
     "imask": "^7.6.1",
     "inputmask": "^5.0.9",
     "lazy-viewport-loader": "^1.0.2",
-    "libphonenumber-js": "^1.12.31",
+    "libphonenumber-js": "^1.12.40",
     "nouislider": "^15.8.1",
     "scroll-lock": "^2.1.5"
   }

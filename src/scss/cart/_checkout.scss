@@ -46,6 +46,25 @@
         width: 30px;
         height: 30px;
         color:  var(--text-secondary);
+        opacity: 0.1;
+        transition: opacity .3s ease, color .3s ease;
+        @include media.max-width(sm) {
+            font-size: 14px;
+        }
+        &:focus-visible {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                color: var(--green-brand);
+                opacity: 0.7;
+            }
+        }
+        &:active{
+            color: var(--green-brand);
+            opacity: 1;
+        }
     }
 
     &__title {
@@ -113,6 +132,7 @@
         font-size: 14px;
         line-height: 1.78;
         color: var(--text-secondary);
+        position: relative;
     }
 
     &__group-input {
@@ -127,6 +147,20 @@
             font-size: 16px;
             line-height: 1.75;
             color: var(--text-secondary);
+        }
+        &.error::placeholder{
+            color: var(--danger);
+        }
+    }
+    &__text-error{
+        position: absolute;
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--danger);
+        left: 4px;
+        //margin-top: 2px;
+        &:empty {
+            display: none;
         }
     }
 

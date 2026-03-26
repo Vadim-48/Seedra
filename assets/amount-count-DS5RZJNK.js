@@ -1,0 +1,1 @@
+function c(){const n=document.querySelector(".amount__number-remove"),o=document.querySelector(".amount__number-add"),e=document.querySelector(".amount__number-item");n.addEventListener("click",()=>{let t=parseInt(e.textContent,10);t>0&&(t-=1),e.textContent=t}),o.addEventListener("click",()=>{let t=parseInt(e.textContent,10);t+=1,e.textContent=t})}export{c as i};

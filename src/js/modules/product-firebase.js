@@ -17,6 +17,7 @@ export async function loadProductsFirebase(dataCard, productId) {
     const innerOldPrice = cardList.querySelector('[data-product-old-price]');
     const innerFirePrice = cardList.querySelector('[data-product-fire-price]');
     const innerPhoto = cardList.querySelector('[data-product-photo]');
+    const innerHeroPhoto = cardList.querySelector('[data-product-hero-photo]');
 
     if (product.reviewsNumber != null && innerNumberReviews != null) innerNumberReviews.textContent = "(" + product.reviewsNumber + ")";
     if (product.name && innerTitle) innerTitle.textContent = product.name;
@@ -25,6 +26,7 @@ export async function loadProductsFirebase(dataCard, productId) {
     if (product.oldPrice != null && innerOldPrice != null) innerOldPrice.textContent = "$" + Number(product.oldPrice).toFixed(2);
     // if (product.photo && innerPhoto) innerPhoto.src = product.photo;
     if (product.photo && innerPhoto) innerPhoto.src = product.photo;
+    if (product.heroPhoto && innerHeroPhoto) innerHeroPhoto.src = product.heroPhoto;
 
     const stars = cardList.querySelectorAll('[data-rating] svg use');
     const rating = product.star || 0;

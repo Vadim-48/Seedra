@@ -7,9 +7,11 @@ export async function loadHeroProductsFirebase(dataCard, productId) {
     productsSnapshot.forEach((doc) => {
         productsMap[doc.id] = doc.data();
     })
-
-    const cardList = document.querySelector(`[data-product-id="${dataCard}"]`);
     const product = productsMap[productId];
+
+    const cardList = document.querySelector(`[data-product-id]`);
+    cardList.dataset.productId = dataCard;
+    cardList.dataset.productFirebase = productId;
 
     const innerTitle = cardList.querySelector('[data-product-name]');
     const innerPrice = cardList.querySelector('[data-product-price]');
@@ -38,14 +40,5 @@ export async function loadHeroProductsFirebase(dataCard, productId) {
     const innerDataVideoIdList = cardList.querySelectorAll('[data-video-id]');
     innerDataVideoIdList.forEach(el => {
         el.dataset.videoId = product.video.id;
-    })
-    console.log( "sfas",innerDataVideoIdList);
-
-    const packSelectListEl = cardList.querySelectorAll('.selector__input');
-    const packChoseEl = cardList.querySelector('.selector__chose-number');
-    packSelectListEl.forEach((el, index) =>{
-    el.addEventListener('change', () => {
-            packChoseEl.textContent = el.value + " pack";
-        })
     })
 }

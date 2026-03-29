@@ -9,6 +9,8 @@ import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
 import {initRangeSlider} from "@/js/modules/all-products/range-slider.js";
+import {addLocalStorage} from "@/js/modules/add-local-storage.js";
+import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,34 +22,53 @@ document.addEventListener("DOMContentLoaded", async () => {
     initCategoryDropdown();
     initAccordionForm();
 
+    const productsToLoad = [
+        { id: "card-1", path: "product-1" },
+        { id: "card-2", path: "product-2" },
+        { id: "card-3", path: "product-3" },
+        { id: "card-4", path: "product-4" },
+        { id: "card-5", path: "product-5" },
+        { id: "card-6", path: "product-6" },
+        { id: "card-7", path: "product-7" },
+        { id: "card-8", path: "product-8" },
+        { id: "card-9", path: "product-9" },
+    ];
+
     await Promise.all([
-        loadProductsFirebase("card-1", "product-1"),
-        loadProductsFirebase("card-2", "product-2"),
-        loadProductsFirebase("card-3", "product-3"),
-        loadProductsFirebase("card-4", "product-4"),
-        loadProductsFirebase("card-5", "product-5"),
-        loadProductsFirebase("card-6", "product-6"),
-        loadProductsFirebase("card-7", "product-1"),
-        loadProductsFirebase("card-8", "product-2"),
-        loadProductsFirebase("card-9", "product-3"),
-        // initCardFilter(),
+        ...productsToLoad.map(p => loadProductsFirebase(p.id, p.path)),
     ]);
-    initCardFilter();
+    addLocalStorage();
 
     initRangeSlider();
 });
 
-const cardProduct = document.querySelectorAll("[data-product-id]");
+// const cardProduct = document.querySelectorAll("[data-product-id]");
+// let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
+// // let cadsStorageArr =  [];
+//
+// cardProduct.forEach(product => {
+//     const btn = product.querySelector(".card__button");
+//     // const productId = product.querySelector("[data-product-firebase]");
+//
+//     btn.addEventListener("click", function(event) {
+//         event.preventDefault();
+//         console.log(Object.values(product.dataset));
+//
+//         const value = { ...product.dataset};
+//         const productId = product.dataset.productId;
+//
+//         const exists = cadsStorageArr.some(item => item[0] ===productId);
+//         if (!exists) {
+//             cadsStorageArr.push(value);
+//             localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
+//         }
+//
+//         // localStorage.setItem('cart', JSON.stringify(cadsStorageArr))
+//         // cadsStorageArr.push(Object.values(product.dataset));
+//         console.log("dgdf",cadsStorageArr);
+//     });
+// })
 
-
-cardProduct.forEach(product => {
-    const btn = product.querySelector(".card__button");
-    // const productId = product.querySelector("[data-product-firebase]");
-    btn.addEventListener("click", function(event) {
-        event.preventDefault();
-        console.log(product.dataset);
-    });
-})
 
 // function handler(event) {
 //     event.preventDefault();

@@ -17,7 +17,7 @@
 </div>
 <div
   class="hero-product__wrap"
-  data-product-id="product_hero-card">
+  data-product-id>
     <div class="hero-product__gallery">
         <div class="hero-product__swiper swiper">
             <div class="hero-product__swiper-wrapper swiper-wrapper">
@@ -63,14 +63,17 @@
                       loading="lazy"
                       data-product-photo>
                 </picture>
-                <div class="hero-product__gallery-item hero-product__video video swiper-slide" data-video-file>
+                <div
+                  class="hero-product__gallery-item hero-product__video video swiper-slide"
+                  data-video-file>
                     <div class="video__overlay">
                         <picture class="video__overlay-photo">
                             <img
                               src=""
                               alt="img"
                               class="video__overlay"
-                              loading="lazy" data-product-video-wrap>
+                              loading="lazy"
+                              data-product-video-wrap>
                         </picture>
                         {{> components/svg
                         className="video__play-icon"
@@ -134,7 +137,8 @@
                               src=""
                               alt="img"
                               class="video__overlay-img"
-                              loading="lazy" data-product-video-wrap>
+                              loading="lazy"
+                              data-product-video-wrap>
                         </picture>
                         {{> components/svg
                         className="video__play-icon"
@@ -173,13 +177,15 @@
                 <div class="selector__head">
                     <div class="selector__chose">
                         <span class="selector__chose-text-prefix">Size</span>
-                        <span class="selector__chose-number">2 PACK</span>
+                        <span
+                          class="selector__chose-number"
+                          data-pack-count>2 PACK</span>
                     </div>
                     {{> components/amount
                     className="selector__amount"
                     }}
                 </div>
-                <div class="selector__option-wrap">
+                <div class="selector__option-list">
                     <div class="selector__option">
                         <input
                           type="radio"
@@ -282,7 +288,9 @@
                     className="hero-product__favorite"
                     id="favorite"
                     }}
-                    <button class="hero-product__btn btn_green">Add to card
+                    <button
+                      class="hero-product__btn btn_green"
+                      data-btn-add>Add to card
                     </button>
                 </div>
             </div>

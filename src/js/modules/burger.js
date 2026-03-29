@@ -1,36 +1,37 @@
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
 
 export function burger() {
     const burgerBtn = document.querySelector(".header__burger-btn");
-    const burger = document.querySelector(".burger");
+    const burgerMenu = document.querySelector(".burger");
     const burgerBg = document.querySelector(".burger__bg");
     // const body = document.body;
     const burgerLink = document.querySelector(".burger__menu-link");
 
-    if (!burgerBtn || !burger) return;
+    if (!burgerBtn || !burgerMenu) return;
 
     const toggleMenu = () => {
-        const isActive = burger.classList.toggle("active");
+        const isActive = burgerMenu.classList.toggle("active");
 
         burgerBtn.classList.toggle("active", isActive);
         burgerBg.classList.toggle("active", isActive);
 
         if (isActive) {
-            disablePageScroll(burger);
+            disablePageScroll();
         } else {
-            enablePageScroll(burger);
+            enablePageScroll();
             clearQueueScrollLocks();
-            document.dispatchEvent(new Event('burger:close'));
+            // document.dispatchEvent(new Event('burger:close'));
         }
     };
 
     const closeBurger = () =>{
         burgerBtn.classList.remove("active");
-        burger.classList.remove("active");
+        burgerMenu.classList.remove("active");
         burgerBg.classList.remove("active");
         // body.classList.remove("lock")
 
-        enablePageScroll();
+        enablePageScroll(burgerMenu);
+        clearQueueScrollLocks();
 
         document.dispatchEvent(new Event('burger:close'));
     }

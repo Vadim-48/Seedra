@@ -78,7 +78,7 @@
 
     &__list {
         display: grid;
-        grid-template-columns: 1fr 115px minmax(80px, max-content) minmax(60px, max-content);
+        grid-template-columns: 1fr 115px minmax(80px, max-content) minmax(80px, max-content);
         align-items: center;
         gap: 0 20px;
         margin-top: 24px;
@@ -103,9 +103,15 @@
             display: none;
         }
     }
+    &__list-body{
+        display: contents;
+    }
 
     &__cart-item {
         display: contents;
+        &:first-child {
+            display: none;
+        }
         @include media.max-width(md) {
             display: flex;
             flex-direction: column;
@@ -204,7 +210,7 @@
     }
 
     &__amount {
-        width: 104px;
+        width: max-content;
         height: 44px;
     }
 
@@ -254,20 +260,20 @@
         color: var(--text-primary);
     }
 
-    &__total-row {
+    &__items {
         margin-top: 14px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__total-count {
+    &__items-count {
         font-size: 14px;
-        line-height: 178%;
+        line-height: 1.78;
         color: var(--text-secondary);
     }
 
-    &__total-price {
+    &__items-price {
         font-weight: 500;
         font-size: 18px;
         line-height: 1.39;
@@ -405,7 +411,17 @@
         margin-top: 26px;
     }
 
-    &__total-text {
+    &__total-label {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+    &__total-price{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.39;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
     }
 
     &__btn {

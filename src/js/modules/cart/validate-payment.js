@@ -1,17 +1,17 @@
-// import IMask from 'imask';
+import IMask from 'imask';
 
 export const initFormValidate = () => {
-    const form = document.getElementById('checkout-form');
+    const form = document.getElementById('payment-form');
     if (!form) return;
     const inputList = form.querySelectorAll('input');
-    const phoneInput = form.querySelector('input[type="tel"]');
+    // const phoneInput = form.querySelector('input[type="tel"]');
 
     // const maskOptions = {
     //     mask: '+1 (000) 000-00-00',
     //     lazy: true,
     // };
-
-    // IMask(phoneInput, maskOptions);
+    //
+    // IMask(maskOptions);
 
     inputList.forEach((item) => {
         const textError = item.closest('label').querySelector('[data-text-error]');

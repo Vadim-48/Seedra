@@ -2,7 +2,7 @@ import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 
 import {loadHeroProductsFirebase} from "@/js/modules/one-product/hero-firebase.js";
-import {innitAmount} from "@/js/modules/amount-count.js";
+import {innitAmountPack} from "@/js/modules/one-product/amount-pack.js";
 import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
@@ -12,6 +12,7 @@ import {initRelatedSwiper} from "@/js/modules/one-product/related-swiper.js";
 import {initVideoPlayers} from "@/js/modules/one-product/video-play.js";
 import {initAccordion} from "@/js/modules/one-product/accordion.js";
 import {initFormValidate} from "@/js/modules/one-product/validate.js";
+import {addLocalStorage} from "@/js/modules/add-local-storage.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     burgerAccordion();
 
     await Promise.all([
-        loadHeroProductsFirebase("product_hero-card", "product-5"),
+        loadHeroProductsFirebase("card-5", "product-5"),
 
         loadReviewFirebase("card-review-1", "review-1"),
         loadReviewFirebase("card-review-2", "review-2"),
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadProductsFirebase("card-6", "product-6"),
     ]);
 
-    innitAmount();
+    innitAmountPack();
 
     initHeroSwiper();
 
@@ -50,6 +51,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     initAccordion();
 
     initFormValidate();
+
+    addLocalStorage();
 });
 
 

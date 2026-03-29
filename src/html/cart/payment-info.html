@@ -1,0 +1,98 @@
+<div class="payment-info__inner">
+    {{> cart/step-header
+    className="payment-info__step-header"
+    href="./checkout-cart.html"
+    title="Payment info"
+    }}
+    <form
+      action="#"
+      method="POST"
+      id="payment-form"
+      name="payment-form"
+      novalidate
+      class="payment-info__payment-form payment-form">
+        <div class="payment-form__group">
+            <label class="payment-form__label">Card type</label>
+            <div class="payment-form__cards-list">
+                {{> components/svg
+                className="payment-form__cards-list-icon"
+                id="applePay"
+                }}
+                {{> components/svg
+                className="payment-form__cards-list-icon"
+                id="visa"
+                }}
+                {{> components/svg
+                className="payment-form__cards-list-icon"
+                id="masterCard"
+                }}
+                {{> components/svg
+                className="payment-form__cards-list-icon"
+                id="payPal"
+                }}
+            </div>
+        </div>
+        <div class="payment-form__group">
+            <label
+              class="payment-form__label">
+                Card number
+                <input
+                  type="text"
+                  name="card-number"
+                  inputmode="numeric"
+                  placeholder="0000 0000 0000 0000"
+                  maxlength="19"
+                  class="payment-form__input">
+                <span
+                  data-text-error
+                  class="payment-form__text-error"></span>
+            </label>
+        </div>
+        <label
+          class="payment-form__label">
+            Expiring date
+            <input
+              type="text"
+              name="expiry-date"
+              placeholder="MM/YY"
+              inputmode="numeric"
+              maxlength="5"
+              class="payment-form__input">
+            <span
+              data-text-error
+              class="payment-form__text-error"></span>
+        </label>
+        <label
+          class="payment-form__label">
+            CCV
+            <input
+              type="text"
+              name="ccv"
+              placeholder="***"
+              inputmode="numeric"
+              maxlength="3"
+              class="payment-form__input">
+            <span
+              data-text-error
+              class="payment-form__text-error"></span>
+        </label>
+    </form>
+    <hr class="payment-info__line">
+    <div class="payment-info__total">
+        <span class="payment-info__total-label">Total amount</span>
+        <span class="payment-info__total-price">$0</span>
+    </div>
+    <button
+      type="submit"
+      form="payment-form"
+      class="payment-info__btn btn_green">
+        <span class="payment-info__btn_price">$0</span>
+        <div class="payment-info__btn-label-wrap">
+            <span class="payment-info__btn-label">Continue</span>
+            {{> components/svg
+            className="payment-info__btn-label-icon"
+            id="arrow-next"
+            }}
+        </div>
+    </button>
+</div>

@@ -1,29 +1,18 @@
 <div class="checkout__wrap">
     <div class="checkout__personal-info">
-        <div class="personal-info__header">
-            <div class="personal-info__header-inner">
-                <a
-                  href="./cart.html"
-                  class="personal-info__btn-return">
-                    {{> components/svg
-                    className="personal-info__btn-return-icon"
-                    id="arrow-return"
-                    }}
-                </a>
-                <h1 class="personal-info__title title">Checkout</h1>
-            </div>
-            <div class="personal-info__page">
-                <div class="personal-info__page-item"></div>
-                <div class="personal-info__page-item"></div>
-            </div>
-        </div>
+        {{> cart/step-header
+        className="checkout__step-header"
+        href="./cart.html"
+        title="Checkout"
+        }}
         <form
+          action="#"
           name="checkout-form"
           id="checkout-form"
           method="POST"
           autocomplete="off"
           novalidate
-          class="personal-info__checkout-form checkout-form">
+          class="checkout__checkout-form checkout-form">
             <h2 class="checkout-form__title sub-title">Personal info</h2>
             <div class="checkout-form__group">
                 <label
@@ -34,9 +23,9 @@
                       name="name"
                       placeholder="Your name"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
                 <label
                   class="checkout-form__group-label">
@@ -47,12 +36,12 @@
                       inputmode="tel"
                       placeholder="Your number"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
             </div>
-            <h2 class="checkout-form__title sub-title">Adress</h2>
+            <h2 class="checkout-form__title sub-title">Address</h2>
             <div class="checkout-form__group">
                 <label
                   class="checkout-form__group-label">
@@ -62,9 +51,9 @@
                       name="state"
                       placeholder="Name of state"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
                 <label
                   class="checkout-form__group-label">
@@ -74,9 +63,9 @@
                       name="city"
                       placeholder="Name of city"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
                 <label
                   class="checkout-form__group-label">
@@ -86,9 +75,9 @@
                       name="address"
                       placeholder="1901 Thornridge Cir. Shiloh, Hawaii 81063"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
                 <label
                   class="checkout-form__group-label">
@@ -98,9 +87,9 @@
                       name="zip-code"
                       placeholder="ZIP code"
                       class="checkout-form__group-input">
-                    <p
+                    <span
                       data-text-error
-                      class="checkout-form__text-error"></p>
+                      class="checkout-form__text-error"></span>
                 </label>
             </div>
             <button

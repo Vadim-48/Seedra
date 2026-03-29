@@ -1,0 +1,15 @@
+@use "@/scss/mixins/media" as media;
+.payment{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    & main{
+        flex: 1;
+    }
+    & .footer{
+        margin-top: 48px;
+        @include media.max-width(sm) {
+            margin-top: 30px;
+        }
+    }
+}

@@ -2,7 +2,7 @@
     <div class="your-cart__content cart-content">
         <div class="cart-content__header">
             <h1 class="cart-content__title title">Your cart.</h1>
-            <span class="cart-content__count">0 items</span>
+            <span class="cart-content__count" data-total-items>0 item</span>
         </div>
         <hr class="cart-content__line">
         <div class="cart-content__list">
@@ -12,35 +12,36 @@
                 <p class="cart-content__list-header_price">PRICE</p>
                 <p class="cart-content__list-header_total">TOTAL</p>
             </div>
-            <div class="cart-content__cart-item cart-item">
-                <div class="cart-item__product">
-                    <button class="cart-item__btn-del">
-                        <span></span><span></span>
-                    </button>
-                    <picture class="cart-item__photo">
-                        <img
-                          src="/src/image/test.png"
-                          alt="">
-                    </picture>
-                    <p class="cart-item__title">SEEDRA Corn - Bodacious
-                        Hybrid Seeds for Indoor and Outdoor Planting</p>
-                </div>
-                <div class="cart-item__row">
-                    <span class="cart-item__label">AMOUNT</span>
-                    {{> components/amount
-                    className="cart-item__amount"
-                    }}
-                </div>
-                <div class="cart-item__row">
-                    <span class="cart-item__label">PRICE</span>
-                    <span class="cart-item__value">$2.6</span>
-                </div>
-                <div class="cart-item__row">
-                    <span class="cart-item__label">TOTAL</span>
-                    <span class="cart-item__value">$2.6</span>
+            <div class="cart-content__list-body">
+                <div class="cart-content__cart-item cart-item">
+                    <div class="cart-item__product">
+                        <button class="cart-item__btn-del">
+                            <span></span><span></span>
+                        </button>
+                        <picture class="cart-item__photo">
+                            <img
+                              src="/src/image/test.png"
+                              data-product-photo
+                              alt="">
+                        </picture>
+                        <p class="cart-item__title" data-product-title></p>
+                    </div>
+                    <div class="cart-item__row">
+                        <span class="cart-item__label">AMOUNT</span>
+                        {{> components/amount
+                        className="cart-item__amount"
+                        }}
+                    </div>
+                    <div class="cart-item__row">
+                        <span class="cart-item__label">PRICE</span>
+                        <span class="cart-item__value" data-product-price>$0</span>
+                    </div>
+                    <div class="cart-item__row">
+                        <span class="cart-item__label">TOTAL</span>
+                        <span class="cart-item__value" data-product-total-price>$0</span>
+                    </div>
                 </div>
             </div>
-
         </div>
         <a
           href="{{> links/nav_all-products}}"
@@ -55,27 +56,27 @@
       class="your-cart__form-summary form-summary"
       novalidate>
         <h2 class="form-summary__title">Order summary</h2>
-        <div class="form-summary__total-row">
-            <span class="form-summary__total-count">0 ITEMS</span>
-            <span class="form-summary__total-price">$0</span>
+        <div class="form-summary__items">
+            <span class="form-summary__items-count" data-total-items>0 ITEM</span>
+            <span class="form-summary__items-price" data-total-price>$0</span>
         </div>
         <div class="form-summary__delivery">
-                <button
-                  type="button"
-                  class="form-summary__delivery-select">
-                    <div class="form-summary__delivery-content">
-                        <span class="form-summary__delivery-label">Type of delivery</span>
-                        <span class="form-summary__delivery-value">Shipping</span>
-                    </div>
-                    {{> components/svg
-                    className="form-summary__delivery-arrow"
-                    id="arrow-bottom"
-                    }}
-                </button>
-                <div class="form-summary__delivery-dropdown">
-                    <span>Shipping</span>
-                    <span>Flying</span>
+            <button
+              type="button"
+              class="form-summary__delivery-select">
+                <div class="form-summary__delivery-content">
+                    <span class="form-summary__delivery-label">Type of delivery</span>
+                    <span class="form-summary__delivery-value">Shipping</span>
                 </div>
+                {{> components/svg
+                className="form-summary__delivery-arrow"
+                id="arrow-bottom"
+                }}
+            </button>
+            <div class="form-summary__delivery-dropdown">
+                <span>Shipping</span>
+                <span>Flying</span>
+            </div>
         </div>
         <label
           class="form-summary__promocode">Promocode
@@ -85,8 +86,8 @@
         </label>
         <hr class="form-summary__line">
         <div class="form-summary__total">
-            <span class="form-summary__total-text">Total amount</span>
-            <span class="form-summary__total-price">$0</span>
+            <span class="form-summary__total-label">Total amount</span>
+            <span class="form-summary__total-price" data-total-price>$0</span>
         </div>
         <a
           href="./checkout-cart.html"

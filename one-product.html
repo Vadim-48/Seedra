@@ -24,13 +24,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/one-product-BVgqqMSO.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-CrmQjdns.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-ByFQlMLt.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/amount-count-DS5RZJNK.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-firebase-WdYz8lbS.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-Fsp3edvP.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/one-product-Dbt6PnQy.css">
+  <script type="module" crossorigin src="/Seedra/assets/one-product-7xDc82Rp.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-BaOIDHBM.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-local-storage-Ddky1xda.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-DcwbwstC.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/one-product-BiFZWk5F.css">
 </head>
 <body class="body one-product">
 <header
@@ -348,7 +347,7 @@
             </div>
             <div
               class="hero-product__wrap"
-              data-product-id="product_hero-card">
+              data-product-id>
                 <div class="hero-product__gallery">
                     <div class="hero-product__swiper swiper">
                         <div class="hero-product__swiper-wrapper swiper-wrapper">
@@ -394,14 +393,17 @@
                                   loading="lazy"
                                   data-product-photo>
                             </picture>
-                            <div class="hero-product__gallery-item hero-product__video video swiper-slide" data-video-file>
+                            <div
+                              class="hero-product__gallery-item hero-product__video video swiper-slide"
+                              data-video-file>
                                 <div class="video__overlay">
                                     <picture class="video__overlay-photo">
                                         <img
                                           src=""
                                           alt="img"
                                           class="video__overlay"
-                                          loading="lazy" data-product-video-wrap>
+                                          loading="lazy"
+                                          data-product-video-wrap>
                                     </picture>
                                     <svg class="video__play-icon"  >
                                         <use href="/Seedra/sprite.svg#icon-play"></use>
@@ -463,7 +465,8 @@
                                           src=""
                                           alt="img"
                                           class="video__overlay-img"
-                                          loading="lazy" data-product-video-wrap>
+                                          loading="lazy"
+                                          data-product-video-wrap>
                                     </picture>
                                     <svg class="video__play-icon"  >
                                         <use href="/Seedra/sprite.svg#icon-play"></use>
@@ -496,7 +499,9 @@
                             <div class="selector__head">
                                 <div class="selector__chose">
                                     <span class="selector__chose-text-prefix">Size</span>
-                                    <span class="selector__chose-number">2 PACK</span>
+                                    <span
+                                      class="selector__chose-number"
+                                      data-pack-count>2 PACK</span>
                                 </div>
                                 <div class="selector__amount amount__number">
                                     <button class="amount__number-remove">
@@ -511,7 +516,7 @@
                                             <use href="/Seedra/sprite.svg#icon-plus"></use>
                                         </svg>    </button>
                                 </div>                </div>
-                            <div class="selector__option-wrap">
+                            <div class="selector__option-list">
                                 <div class="selector__option">
                                     <input
                                       type="radio"
@@ -612,7 +617,9 @@
                             <div class="hero-product__foot-right">
                                 <svg class="hero-product__favorite"  >
                                     <use href="/Seedra/sprite.svg#icon-favorite"></use>
-                                </svg>                    <button class="hero-product__btn btn_green">Add to card
+                                </svg>                    <button
+                                  class="hero-product__btn btn_green"
+                                  data-btn-add>Add to card
                                 </button>
                             </div>
                         </div>
@@ -1263,7 +1270,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>
@@ -1316,7 +1323,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>
@@ -1369,7 +1376,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>
@@ -1422,7 +1429,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>
@@ -1475,7 +1482,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>
@@ -1528,7 +1535,7 @@
                                   class="card__old-price"
                                   data-product-old-price></span>
                             </div>
-                            <button class="card__button">
+                            <button class="card__button" data-btn-add>
                                 <svg class="card__button-icon"  >
                                     <use href="/Seedra/sprite.svg#icon-cart"></use>
                                 </svg>        </button>

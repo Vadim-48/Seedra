@@ -20,9 +20,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/payment-NqsJo8U8.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-CrmQjdns.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/payment-ChXt_cLE.css">
+  <script type="module" crossorigin src="/Seedra/assets/payment-DIyXnmv4.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-BaOIDHBM.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/payment-ClnHp_jF.css">
 </head>
 <body class="payment">
 <header
@@ -319,10 +319,105 @@
         </div>
     </div></header>
 <main>
-    <section class="intro">
-        <div class="container">
-
-        </div>
+    <section class="payment-info">
+        <div class="payment-info__container container">
+            <div class="payment-info__inner">
+                <div class="payment-info__step-header step-header">
+                    <div class="step-header__inner">
+                        <a
+                          href="./checkout-cart.html"
+                          class="step-header__btn-return">
+                            <svg class="step-header__btn-return-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-arrow-return"></use>
+                            </svg>        </a>
+                        <h1 class="step-header__title title">Payment info</h1>
+                    </div>
+                    <div class="step-header__page">
+                        <div class="step-header__page-item"></div>
+                        <div class="step-header__page-item"></div>
+                    </div>
+                </div>    <form
+                  action="#"
+                  method="POST"
+                  id="payment-form"
+                  name="payment-form"
+                  novalidate
+                  class="payment-info__payment-form payment-form">
+                    <div class="payment-form__group">
+                        <label class="payment-form__label">Card type</label>
+                        <div class="payment-form__cards-list">
+                            <svg class="payment-form__cards-list-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-applePay"></use>
+                            </svg>                <svg class="payment-form__cards-list-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-visa"></use>
+                            </svg>                <svg class="payment-form__cards-list-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-masterCard"></use>
+                            </svg>                <svg class="payment-form__cards-list-icon"  >
+                                <use href="/Seedra/sprite.svg#icon-payPal"></use>
+                            </svg>            </div>
+                    </div>
+                    <div class="payment-form__group">
+                        <label
+                          class="payment-form__label">
+                            Card number
+                            <input
+                              type="text"
+                              name="card-number"
+                              inputmode="numeric"
+                              placeholder="0000 0000 0000 0000"
+                              maxlength="19"
+                              class="payment-form__input">
+                            <span
+                              data-text-error
+                              class="payment-form__text-error"></span>
+                        </label>
+                    </div>
+                    <label
+                      class="payment-form__label">
+                        Expiring date
+                        <input
+                          type="text"
+                          name="expiry-date"
+                          placeholder="MM/YY"
+                          inputmode="numeric"
+                          maxlength="5"
+                          class="payment-form__input">
+                        <span
+                          data-text-error
+                          class="payment-form__text-error"></span>
+                    </label>
+                    <label
+                      class="payment-form__label">
+                        CCV
+                        <input
+                          type="text"
+                          name="ccv"
+                          placeholder="***"
+                          inputmode="numeric"
+                          maxlength="3"
+                          class="payment-form__input">
+                        <span
+                          data-text-error
+                          class="payment-form__text-error"></span>
+                    </label>
+                </form>
+                <hr class="payment-info__line">
+                <div class="payment-info__total">
+                    <span class="payment-info__total-label">Total amount</span>
+                    <span class="payment-info__total-price">$0</span>
+                </div>
+                <button
+                  type="submit"
+                  form="payment-form"
+                  class="payment-info__btn btn_green">
+                    <span class="payment-info__btn_price">$0</span>
+                    <div class="payment-info__btn-label-wrap">
+                        <span class="payment-info__btn-label">Continue</span>
+                        <svg class="payment-info__btn-label-icon"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-next"></use>
+                        </svg>        </div>
+                </button>
+            </div>        </div>
     </section>
 </main>
 <footer

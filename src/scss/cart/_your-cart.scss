@@ -286,20 +286,48 @@
         margin-top: 28px;
 
         &.open{
-            .form-summary__delivery-dropdown{
+            & .form-summary__delivery-dropdown{
                 display: flex;
+            }
+            & .form-summary__delivery-select{
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05);
+                & .form-summary__delivery-arrow{
+                    color: var(--green-brand);
+                }
             }
         }
     }
 
     &__delivery-select {
+        position: relative;
+        z-index: 11;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border: 1px solid var(--light-grey-stroke);
         border-radius: 71px;
+        background: var(--white);
         width: 100%;
         padding: 9px 26px;
+        transition: box-shadow .3s ease, color .3s ease;
+        &:focus-visible {
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            & .form-summary__delivery-arrow{
+                color: var(--green-brand);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+                & .form-summary__delivery-arrow{
+                    color: var(--green-brand);
+                }
+            }
+        }
+        &:active{
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            color: var(--green-brand);
+        }
     }
 
     &__delivery-content {
@@ -326,21 +354,14 @@
     &__delivery-arrow {
         width: 12px;
         height: 7px;
-
+        color: var(--text-secondary);
     }
 
     &__delivery-dropdown {
         position: absolute;
         z-index: 10;
-        top: 64px;
         width: 100%;
-        background: var(--light-grey-stroke);
-        opacity: 0.8;
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 10px;
-        padding: 10px 26px;
-        //display: flex;
-        //align-items: center;
+        padding: 46px 26px 22px 26px;
         flex-direction: column;
         gap: 5px;
         font-weight: 500;
@@ -349,25 +370,44 @@
         letter-spacing: -0.04em;
         color: var(--text-primary);
         display: none;
+
+        top: 30px;
+        border-radius: 0 0 25px 25px;
+        border: 1px solid var(--light-grey-stroke);
+        //background: var(--white);
+        background: #eae9e9;
         & span{
-            cursor: pointer;
-            width: max-content;
-            transition: opacity .3s ease, color .3s ease;
-            @include media.max-width(sm) {
-                font-size: 14px;
-            }
-            &:focus-visible {
+
+        }
+    }
+    &__delivery-dropdown-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: opacity .3s ease, color .3s ease;
+        & span:last-child{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.56;
+            letter-spacing: -0.04em;
+            color: var(--green-brand);
+        }
+        @include media.max-width(sm) {
+            font-size: 14px;
+        }
+        &:focus-visible {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
                 color: var(--green-brand);
+                opacity: 0.7;
             }
-            @media (hover: hover) and (pointer: fine) {
-                &:hover:not(:active) {
-                    color: var(--green-brand);
-                    opacity: 0.8;
-                }
-            }
-            &:active{
-                color: var(--green-brand);
-            }
+        }
+        &:active{
+            color: var(--green-brand);
         }
     }
 
@@ -384,12 +424,25 @@
             border-radius: 4px;
             width: 100%;
             padding: 18px 24px;
+            transition: box-shadow .3s ease, color .3s ease;
 
             &::placeholder {
                 font-weight: 300;
                 font-size: 16px;
                 line-height: 175%;
                 color: var(--text-secondary);
+            }
+
+            &:focus-visible {
+                box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover:not(:active) {
+                    box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+                }
+            }
+            &:active{
+                box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
             }
         }
     }

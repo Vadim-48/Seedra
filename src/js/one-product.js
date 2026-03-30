@@ -12,7 +12,8 @@ import {initRelatedSwiper} from "@/js/modules/one-product/related-swiper.js";
 import {initVideoPlayers} from "@/js/modules/one-product/video-play.js";
 import {initAccordion} from "@/js/modules/one-product/accordion.js";
 import {initFormValidate} from "@/js/modules/one-product/validate.js";
-import {addLocalStorage} from "@/js/modules/add-local-storage.js";
+import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
+import {addFavoriteLocalStorage} from "@/js/modules/add-fovorite-local-storage.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     burgerAccordion();
 
     await Promise.all([
-        loadHeroProductsFirebase("card-5", "product-5"),
+        loadHeroProductsFirebase("card-hero", "product-5"),
 
         loadReviewFirebase("card-review-1", "review-1"),
         loadReviewFirebase("card-review-2", "review-2"),
@@ -52,7 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initFormValidate();
 
-    addLocalStorage();
+    addCartLocalStorage();
+    addFavoriteLocalStorage();
 });
 
 

@@ -10,7 +10,7 @@ export async function loadHeroProductsFirebase(dataCard, productId) {
     const product = productsMap[productId];
 
     const cardList = document.querySelector(`[data-product-id]`);
-    cardList.dataset.productId = dataCard;
+    // cardList.dataset.productId = dataCard;
     cardList.dataset.productFirebase = productId;
 
     const innerTitle = cardList.querySelector('[data-product-name]');

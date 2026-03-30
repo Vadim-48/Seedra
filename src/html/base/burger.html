@@ -19,7 +19,7 @@
     <div class="burger__container">
         <ul class="burger__category">
             <li class="burger__category-item">
-                <button class="burger__category-btn js-close-burger">
+                <button class="burger__category-btn" data-burger-close>
                     <span class="burger__category-text">All vegetables</span>
                 </button>
             </li>
@@ -34,12 +34,12 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Bundles-1
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a  href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a  href="#!" class="burger__subcategory-btn" data-burger-close>
                             Bundles-2
                         </a>
                     </li>
@@ -56,12 +56,12 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Herb-1
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Herb-2
                         </a>
                     </li>
@@ -78,17 +78,17 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Cucumber
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Onion
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Garlic
                         </a>
                     </li>
@@ -105,17 +105,17 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Fruit-1
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Fruit-2
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             fruit-3
                         </a>
                     </li>
@@ -132,12 +132,12 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Supply-1
                         </a>
                     </li>
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Supply-2
                         </a>
                     </li>
@@ -154,7 +154,7 @@
                 </button>
                 <ul class="burger__subcategory">
                     <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn js-close-burger">
+                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
                             Flower-1
                         </a>
                     </li>
@@ -165,7 +165,7 @@
     <hr class="burger__line">
     <nav class="burger__container">
         <ul class="burger__menu">
-            <li class="burger__menu-item js-close-burger">
+            <li class="burger__menu-item" data-burger-close>
                 <a
                   href="{{> links/nav_all-products}}"
                   class="burger__menu-link">
@@ -178,7 +178,7 @@
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item js-close-burger">
+            <li class="burger__menu-item" data-burger-close>
                 <a
                   href="{{> links/nav_about-seedra}}"
                   class="burger__menu-link">
@@ -191,7 +191,7 @@
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item js-close-burger">
+            <li class="burger__menu-item" data-burger-close>
                 <a
                   href="{{> links/nav_our-blog}}"
                   class="burger__menu-link">
@@ -204,7 +204,7 @@
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item js-close-burger">
+            <li class="burger__menu-item" data-burger-close>
                 <a
                   href="{{> links/nav_contacts}}"
                   class="burger__menu-link">
@@ -224,7 +224,7 @@
         <div class="burger__social">
             <a
               href="{{> links/instagram}}"
-              class="js-close-burger">
+              data-burger-close>
                 {{> components/svg
                     className="burger__social-icon"
                     id="instagram"
@@ -232,7 +232,7 @@
             </a>
             <a
               href="{{> links/facebook}}"
-              class="js-close-burger">
+              data-burger-close>
                 {{> components/svg
                     className="burger__social-icon"
                     id="facebook"

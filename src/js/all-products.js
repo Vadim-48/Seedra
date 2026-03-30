@@ -9,7 +9,8 @@ import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
 import {initRangeSlider} from "@/js/modules/all-products/range-slider.js";
-import {addLocalStorage} from "@/js/modules/add-local-storage.js";
+import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
+import {addFavoriteLocalStorage} from "@/js/modules/add-fovorite-local-storage.js";
 import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
 
 
@@ -37,76 +38,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
         ...productsToLoad.map(p => loadProductsFirebase(p.id, p.path)),
     ]);
-    addLocalStorage();
+    addCartLocalStorage();
+    addFavoriteLocalStorage();
 
     initRangeSlider();
 });
 
-// const cardProduct = document.querySelectorAll("[data-product-id]");
-// let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
-// // let cadsStorageArr =  [];
-//
-// cardProduct.forEach(product => {
-//     const btn = product.querySelector(".card__button");
-//     // const productId = product.querySelector("[data-product-firebase]");
-//
-//     btn.addEventListener("click", function(event) {
-//         event.preventDefault();
-//         console.log(Object.values(product.dataset));
-//
-//         const value = { ...product.dataset};
-//         const productId = product.dataset.productId;
-//
-//         const exists = cadsStorageArr.some(item => item[0] ===productId);
-//         if (!exists) {
-//             cadsStorageArr.push(value);
-//             localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
-//         }
-//
-//         // localStorage.setItem('cart', JSON.stringify(cadsStorageArr))
-//         // cadsStorageArr.push(Object.values(product.dataset));
-//         console.log("dgdf",cadsStorageArr);
-//     });
-// })
-
-
-// function handler(event) {
-//     event.preventDefault();
-//     console.log("clicked");
-// }
-
-// import {collection, getDocs} from "firebase/firestore";
-// import {query, where} from "firebase/firestore";
-// import {db} from "@/firebase/firebase.js";
-
-
-// const formInputListEl = document.querySelectorAll("input");
-// const cardListEl = document.querySelectorAll('[data-product-id]');
-// const cardsListEl = document.querySelectorAll('[data-product-firebase]');
-// console.log("jhgjgjkjhk",cardsListEl);
-// cardsListEl.forEach((el) => {
-//     console.log("fddfsd",el.dataset.productFirebase);
-// })
-// console.log(cardsListEl.dataset);
-
-// formInputListEl.forEach(input => {
-//     input.addEventListener("input", async () => {
-//         const inputCheckedListEl = [...formInputListEl]
-//             .filter(el => el.checked)
-//             // .map(el => el.value && el.name)
-//             .map(el => el.value)
-//         console.log(inputCheckedListEl)
-//         //
-//         const productsFirebase = collection(db, "products");
-//         const q = query(productsFirebase, where("seedType", "in", inputCheckedListEl));
-//         const querySnapshot = await getDocs(q);
-//         querySnapshot.forEach((doc) => {
-//             console.log(doc.id, ' => ', doc.data());
-//
-//         });
-//
-//     });
-//
-// });
 
 

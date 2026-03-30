@@ -1,12 +1,16 @@
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
 
+import {
+    updateFavoriteIcon,
+    updateCartIcon,
+} from "@/js/modules/update-header-icons.js";
+
 function calcTotal() {
     const cartRawData = localStorage.getItem("cart");
     let cadsStorageArr = JSON.parse(cartRawData) || [];
     const totalPriceList = document.querySelectorAll("[data-product-total-price]");
     const innerTotalPrice = document.querySelectorAll("[data-total-price]");
-    // console.log(totalPriceList);
 
     const countCards = document.querySelectorAll("[data-total-items]");
     countCards.forEach(card => {
@@ -22,7 +26,37 @@ function calcTotal() {
     innerTotalPrice.forEach((item) => {
         item.textContent = "$" + totalAmount.toFixed(2);
     })
+
+    const innerTFinalPrice = document.querySelector("[data-final-price]");
+    const choseDeliveryWrap = document.querySelector(".form-summary__delivery");
+    const choseDeliveryValue = choseDeliveryWrap.querySelector(".form-summary__delivery-value");
+    const deliveryOptionsList = document.querySelectorAll(".form-summary__delivery-dropdown-item");
+        const deliveryOptionsArray = [...deliveryOptionsList]
+        .map(item=> {
+           const spans = item.querySelectorAll("span")
+            return{
+               name:spans[0].textContent.trim(),
+                price: parseFloat(spans[1].textContent.replace(/[^\d.]/g, '')) || 0,
+            };
+        });
+
+        for (let i = 0; i < deliveryOptionsArray.length; i++) {
+            if (choseDeliveryValue.textContent == deliveryOptionsArray[i].name) {
+                let finalPrice = parseInt(deliveryOptionsArray[i].price) + totalAmount;
+                finalPrice = finalPrice.toFixed(2);
+                innerTFinalPrice.textContent ="$" + finalPrice;
+                localStorage.setItem('finalPrice', JSON.stringify(finalPrice));
+            }
+        }
+
+    updateCartIcon();
+    updateFavoriteIcon();
 }
+
+window.addEventListener("deliveryChange", (e) => {
+    calcTotal();
+})
+
 
 
 export async function loadCards() {
@@ -37,12 +71,17 @@ export async function loadCards() {
     const cartRawData = localStorage.getItem("cart");
     let cadsStorageArr = JSON.parse(cartRawData) || [];
 
+
     for (let i = 0; i < cadsStorageArr.length; i++) {
         const cloneCard = card.cloneNode(true);
-        // const productId = cadsStorageArr[i].productId;
 
         const productId = cadsStorageArr[i].productId;
-        console.log(productId);
+
+        const productData = productsMap[productId];
+        if (!productData) {
+            console.error(`Product with ID ${productId} not found in Firebase`);
+            continue;
+        }
 
         cloneCard.dataset.productId = cadsStorageArr[i].productId;
 
@@ -53,12 +92,13 @@ export async function loadCards() {
 
         if (productsMap[productId].photo && innerPhoto) innerPhoto.src = productsMap[productId].photo;
         if (productsMap[productId].name && innerTitle) innerTitle.textContent = productsMap[productId].name;
-        if (productsMap[productId].price != null && innerPrice != null) innerPrice.textContent = "$" + Number(productsMap[productId].price).toFixed(2);
+        if (productsMap[productId].price != null && innerPrice != null) {
+            innerPrice.textContent = "$" + Number(productsMap[productId].price).toFixed(2)
+        }
 
         const innerTotalPrice = cloneCard.querySelector('[data-product-total-price]');
         const amountProduct = cloneCard.querySelector('.amount__number-item');
         amountProduct.textContent =cadsStorageArr[i].packCount;
-        // if (productsMap[packCount].price != null && innerPrice != null) innerPrice.textContent = "$" + Number(productsMap[productId].price).toFixed(2);
 
         console.log("sfdg", cadsStorageArr[i].packCount);
 
@@ -113,6 +153,14 @@ export function innitAmountPrice() {
         const totalPrice = amount * price;
 
         totalPriceEL.textContent = "$" + totalPrice.toFixed(2);
+
+        let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
+        const productCard = e.target.closest('[data-product-id]');
+        const productId = productCard.dataset.productId;
+
+        const findProduct = cadsStorageArr.find(e => e.productId === productId);
+            findProduct.packCount = amount;
+            localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
         calcTotal();
     })
 }

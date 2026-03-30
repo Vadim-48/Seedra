@@ -1,33 +1,32 @@
-// import IMask from 'imask';
+import lpn from 'google-libphonenumber';
 
 export const initFormValidate = () => {
     const form = document.getElementById('checkout-form');
     if (!form) return;
     const inputList = form.querySelectorAll('input');
-    const phoneInput = form.querySelector('input[type="tel"]');
+    const phoneUtil = lpn.PhoneNumberUtil.getInstance();
+    const PNF = lpn.PhoneNumberFormat;
 
-    // const maskOptions = {
-    //     mask: '+1 (000) 000-00-00',
-    //     lazy: true,
-    // };
+    function validateFullNumber(inputNumber) {
+        try {
+            const formattedNumber = inputNumber.startsWith('+') ? inputNumber : '+' + inputNumber;
+            const number = phoneUtil.parseAndKeepRawInput(formattedNumber, null);
 
-    // IMask(phoneInput, maskOptions);
+            if (phoneUtil.isValidNumber(number)) {
+                return phoneUtil.format(number, PNF.INTERNATIONAL);
+            }
+            return false;
+        } catch (e) {
+            return false;
+        }
+    }
 
     inputList.forEach((item) => {
         const textError = item.closest('label').querySelector('[data-text-error]');
-
         item.addEventListener('input', () => {
-            if (item.value.trim()) {
-                if (item.type === 'tel') {
-                    const digits  = item.value.replace(/\D/g, '');
-                    if (digits.length === 11) {
-                        textError.textContent = '';
-                        item.classList.remove('error');
-                    }
-                } else {
-                    textError.textContent = '';
-                    item.classList.remove('error');
-                }
+            if (textError) {
+                textError.textContent = '';
+                item.classList.remove('error');
             }
         });
     });
@@ -38,29 +37,31 @@ export const initFormValidate = () => {
 
         inputList.forEach((item) => {
             const textError = item.closest('label').querySelector('[data-text-error]');
+            const value = item.value.trim();
 
-            if (item.type === 'tel') {
-                const digits = item.value.replace(/\D/g, '');
-                if (digits.length !== 11) {
-                    textError.textContent = 'Try again';
-                    item.classList.add('error');
-                    errorFound = true;
-                    return;
-                }
-            }
-
-            if (!item.value.trim()) {
-                textError.textContent = 'Try again';
+            if (!value) {
+                if (textError) textError.textContent = 'Try again';
                 item.classList.add('error');
                 errorFound = true;
-            } else if (item.type !== 'tel') {
-                textError.textContent = '';
-                item.classList.remove('error');
+                return;
+            }
+
+            if (item.type === 'tel') {
+                const rawValue = item.value.replace(/[^\d+]/g, '');
+                const prettyNumber = validateFullNumber(rawValue);
+
+                if (!prettyNumber) {
+                    if (textError) textError.textContent = 'Try again';
+                    item.classList.add('error');
+                    errorFound = true;
+                } else {
+                    item.value = prettyNumber;
+                }
             }
         });
 
         if (!errorFound) {
-            form.submit();
+            // form.submit();
             window.location.href = './payment.html';
         }
     });

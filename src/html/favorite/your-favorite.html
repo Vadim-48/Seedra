@@ -1,0 +1,41 @@
+<div class="your-favorite__wrap">
+    <div class="your-favorite__header">
+        <h1 class="your-favorite__title title">Your favorite</h1>
+        <span
+          class="your-favorite__count"
+          data-total-items>0 item</span>
+    </div>
+    <hr class="your-favorite__line">
+    <div class="your-favorite__list">
+        <div class="your-favorite__list-header">
+            <p class="your-favorite__list-header_product">PRODUCT DETAILS</p>
+            <p class="your-favorite__list-header_price">PRICE</p>
+        </div>
+        <div class="your-favorite__list-body">
+            <div class="your-favorite__favorite-item favorite-item">
+                <div class="favorite-item__product">
+                    <div class="favorite-item__photo-wrap">
+                        <button class="favorite-item__btn-del">
+                            <span></span><span></span>
+                        </button>
+                        <picture class="favorite-item__photo">
+                            <img
+                              src="/src/image/test.png"
+                              data-product-photo
+                              alt="">
+                        </picture>
+                    </div>
+                    <p
+                      class="favorite-item__title"
+                      data-product-title></p>
+                </div>
+                <span
+                  class="favorite-item__value"
+                  data-product-price>$0</span>
+            </div>
+        </div>
+    </div>
+    <a
+      href="{{> links/nav_all-products}}"
+      class="your-favorite__btn btn_white">Continue shopping</a>
+</div>

@@ -12,6 +12,11 @@ export const innitDeliveryDropdown = () => {
         item.addEventListener('click', () => {
             btnValue.textContent = item.textContent;
             btnWrap.classList.remove('open');
+
+            const event = new CustomEvent('deliveryChange', {
+                detail: {method: item.textContent},
+            });
+            window.dispatchEvent(event);
         })
     })
 

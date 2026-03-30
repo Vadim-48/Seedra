@@ -1,0 +1,188 @@
+@use "@/scss/mixins/media" as media;
+.payment-info {
+    margin-top: 65px;
+    //margin-left: -22px;
+    @include media.max-width(sm) {
+        margin-top: 30px;
+    }
+
+    &__inner {
+        max-width: 447px;
+        margin-inline: auto;
+    }
+
+    &__step-header {
+        width: 100%;
+        & .step-header__page-item{
+            &:first-child {
+                opacity: 0.2;
+            }
+        }
+    }
+
+    &__payment-form {
+        margin-top: 32px;
+        @include media.max-width(sm) {
+            margin-top: 20px;
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--light-grey-stroke);
+        margin-top: 45px;
+        @include media.max-width(sm) {
+            margin-top: 20px;
+        }
+    }
+
+    &__total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 28px;
+        @include media.max-width(sm) {
+            margin-top: 16px;
+        }
+
+    }
+
+    &__total-label {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+    }
+
+    &__total-price {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.39;
+        letter-spacing: -0.04em;
+        color: var(--text-primary);
+    }
+
+    &__btn {
+        width: 100%;
+        margin-top: 30px;
+        justify-content: space-between;
+        padding-inline: 21px 15px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+        color: var(--white);
+        @include media.max-width(sm) {
+            margin-top: 24px;
+        }
+
+        &_price {
+        }
+    }
+
+    &__btn-label-wrap {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+
+    &__btn-label {
+    }
+
+    &__btn-label-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.payment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px;
+
+    &__group {
+        grid-column: span 2;
+
+        &:not(:first-child) {
+            margin-top: 8px;
+            @include media.max-width(sm) {
+                margin-top: 3px;
+            }
+        }
+    }
+
+    &__cards-list {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        margin-top: 10px;
+        @include media.max-width(sm) {
+            gap: 25px;
+        }
+    }
+
+    &__cards-list-icon {
+        width: 67px;
+        height: 47px;
+        border-radius: 6px;
+        border: 1.35px solid var(--light-grey-stroke);
+        transition: background .3s ease, border-color .3s ease;
+        cursor: pointer;
+        &.active{
+            border-color: var(--green-brand);
+        }
+        @include media.max-width(sm) {
+            font-size: 14px;
+        }
+        &:focus-visible {
+            background: var(--invisible-green);
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                background: var(--invisible-green);
+            }
+        }
+        &:active{
+            border-color: rgba(53, 151, 64, 0.5);
+            background: var(--invisible-green);
+        }
+    }
+
+    &__label {
+        font-size: 14px;
+        line-height: 1.78;
+        color: var(--text-secondary);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-secondary);
+        border: 1px solid var(--light-grey-stroke);
+        border-radius: 4px;
+        height: 56px;
+        padding: 0 24px;
+        width: 100%;
+        margin-top: 2px;
+        transition: box-shadow .3s ease, color .3s ease;
+        @include media.max-width(sm) {
+            font-size: 14px;
+        }
+        &:focus-visible {
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+            }
+        }
+        &:active{
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+            color: var(--text-primary);
+        }
+    }
+}
+

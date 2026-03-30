@@ -23,7 +23,7 @@
         padding: 26px 11px 11px 11px;
     }
 
-    &__favorite {
+    &__favorite-btn {
         position: absolute;
         border: 1px solid var(--light-grey-stroke);
         border-radius: 100%;
@@ -35,7 +35,11 @@
         right: 10px;
         top: 10px;
         background: var(--white);
-        &:focus-visible{
+        transition: background .3s ease;
+        &.added{
+            border: 1px solid var(--yellow);
+        }
+        &:focus-visible, &:active{
             background: #ffffcb;
         }
         @media (hover: hover) and (pointer: fine) {
@@ -43,6 +47,7 @@
                 background: #ffffcb;
             }
         }
+
         &.active{
             border-color: var(--yellow);
         }
@@ -152,6 +157,7 @@
         align-items: center;
         justify-content: center;
         color: var(--green-brand);
+        transition: background .3s ease, color .3s ease;
         &:focus-visible{
             background: var(--invisible-green);
         }
@@ -163,6 +169,20 @@
         &:active {
             background: var(--green-brand);
             color: var(--white);
+        }
+        &.added{
+            background: var(--green-brand);
+            &:focus-visible{
+                background: var(--hover);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover:not(:active) {
+                    background: var(--hover);
+                }
+            }
+            &:active {
+                background: var(--green-brand);
+            }
         }
     }
     &__button-icon{

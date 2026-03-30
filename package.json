@@ -37,6 +37,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "firebase": "^12.7.0",
+    "google-libphonenumber": "^3.2.44",
     "imask": "^7.6.1",
     "inputmask": "^5.0.9",
     "lazy-viewport-loader": "^1.0.2",

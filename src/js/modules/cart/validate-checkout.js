@@ -1,19 +1,18 @@
-import lpn from 'google-libphonenumber';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 export const initFormValidate = () => {
     const form = document.getElementById('checkout-form');
     if (!form) return;
     const inputList = form.querySelectorAll('input');
-    const phoneUtil = lpn.PhoneNumberUtil.getInstance();
-    const PNF = lpn.PhoneNumberFormat;
+    // const phoneUtil = lpn.PhoneNumberUtil.getInstance();
+    // const PNF = lpn.PhoneNumberFormat;
 
     function validateFullNumber(inputNumber) {
         try {
-            const formattedNumber = inputNumber.startsWith('+') ? inputNumber : '+' + inputNumber;
-            const number = phoneUtil.parseAndKeepRawInput(formattedNumber, null);
+            const phoneNumber = parsePhoneNumberFromString(inputNumber.startsWith('+') ? inputNumber : '+' + inputNumber);
 
-            if (phoneUtil.isValidNumber(number)) {
-                return phoneUtil.format(number, PNF.INTERNATIONAL);
+            if (phoneNumber && phoneNumber.isValid()) {
+                return phoneNumber.formatInternational();
             }
             return false;
         } catch (e) {

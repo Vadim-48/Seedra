@@ -24,13 +24,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/index-Cxt2K99I.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-CglSLtZ3.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-Zgyisi_Q.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-local-storage-Ddky1xda.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/reviews-firebase-DcwbwstC.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/index-oUUlrhIJ.css">
+  <script type="module" crossorigin src="/Seedra/assets/index-BiuWrYvK.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-DE482--l.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-CiKdKoZj.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-B-uysvjV.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-fovorite-local-storage-Gtj3cdPy.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/index-QmwTDp-n.css">
 </head>
 <body class="body main">
 <header
@@ -64,11 +63,15 @@
                 </nav>
                 <div class="header__right-wrap">
                     <div class="header__social">
-                        <a href="https://www.instagram.com/">
+                        <a
+                          href="https://www.instagram.com/"
+                          aria-label="Instagram">
                             <svg class="header__social-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-instagram"></use>
                             </svg>            </a>
-                        <a href="https://www.facebook.com/">
+                        <a
+                          href="https://www.facebook.com/"
+                          aria-label="Facebook">
                             <svg class="header__social-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-facebook"></use>
                             </svg>            </a>
@@ -76,7 +79,9 @@
                     <form
                       action="#!"
                       class="header__search-form search-form">
-                        <button class="search-form__btn ">
+                        <button
+                          type="button"
+                          class="search-form__btn">
                             <svg class="search-form__btn-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-search"></use>
                             </svg>            </button>
@@ -86,20 +91,24 @@
                           placeholder="Search">
                     </form>
                     <div class="header__actions">
-                        <a
-                          href="./favorite.html"
-                          class="header__actions-btn header__favorite-btn"
-                          aria-label="Add to favorites">
-                            <svg class="header__actions-icon"  >
-                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
-                            </svg>            </a>
-                        <a
-                          href="./cart.html"
-                          class="header__actions-btn header__card-btn"
-                          aria-label="Open cart">
-                            <svg class="header__actions-icon"  >
-                                <use href="/Seedra/sprite.svg#icon-cart"></use>
-                            </svg>            </a>
+                        <div class="header__actions-btn-wrap">
+                            <a
+                              href="./favorite.html"
+                              class="header__actions-btn header__favorite-btn"
+                              aria-label="Open favorite">
+                                <svg class="header__actions-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                                </svg>                </a>
+                        </div>
+                        <div class="header__actions-btn-wrap">
+                            <a
+                              href="./cart.html"
+                              class="header__actions-btn header__cart-btn"
+                              aria-label="Open cart">
+                                <svg class="header__actions-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>                </a>
+                        </div>
                     </div>
                     <button
                       class="header__burger-btn"
@@ -128,7 +137,7 @@
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
-                    <button class="burger__category-btn js-close-burger">
+                    <button class="burger__category-btn" data-burger-close>
                         <span class="burger__category-text">All vegetables</span>
                     </button>
                 </li>
@@ -141,12 +150,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Bundles-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a  href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a  href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Bundles-2
                             </a>
                         </li>
@@ -161,12 +170,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Herb-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Herb-2
                             </a>
                         </li>
@@ -181,17 +190,17 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Cucumber
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Onion
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Garlic
                             </a>
                         </li>
@@ -206,17 +215,17 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Fruit-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Fruit-2
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 fruit-3
                             </a>
                         </li>
@@ -231,12 +240,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Supply-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Supply-2
                             </a>
                         </li>
@@ -251,7 +260,7 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Flower-1
                             </a>
                         </li>
@@ -262,7 +271,7 @@
         <hr class="burger__line">
         <nav class="burger__container">
             <ul class="burger__menu">
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./all-products.html"
                       class="burger__menu-link">
@@ -273,7 +282,7 @@
                             </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./about-seedra.html"
                       class="burger__menu-link">
@@ -284,7 +293,7 @@
                              </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./our-blog.html"
                       class="burger__menu-link">
@@ -295,7 +304,7 @@
                              </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./contacts.html"
                       class="burger__menu-link">
@@ -313,13 +322,13 @@
             <div class="burger__social">
                 <a
                   href="https://www.instagram.com/"
-                  class="js-close-burger">
+                  data-burger-close>
                     <svg class="burger__social-icon"  >
                         <use href="/Seedra/sprite.svg#icon-instagram"></use>
                     </svg>            </a>
                 <a
                   href="https://www.facebook.com/"
-                  class="js-close-burger">
+                  data-burger-close>
                     <svg class="burger__social-icon"  >
                         <use href="/Seedra/sprite.svg#icon-facebook"></use>
                     </svg>            </a>
@@ -331,13 +340,13 @@
         <div class="container">
             <div class="hero__wrap" data-product-id="card-hero">
                 <picture class="hero__bg">
-                    <source srcset="/Seedra/assets/bg-BpGCqVao.webp" media="(min-width:769px)" type="image/webp">
-                    <source srcset="/Seedra/assets/bg-ELmzALH2.jpg" media="(min-width:769px)">
+                    <source srcset="/Seedra/assets/bg-D3TLEV3x.webp" media="(min-width:769px)" type="image/webp">
+                    <source srcset="/Seedra/assets/bg-qMFV-meO.png" media="(min-width:769px)">
                 
-                    <source srcset="/Seedra/assets/bg_2-CA8p_PcF.webp" media="(max-width:768px)" type="image/webp">
-                    <source srcset="/Seedra/assets/bg_2-BidJ5IVq.jpg" media="(max-width:768px)">
+                    <source srcset="/Seedra/assets/bg_2-Fxps8CRg.webp" media="(max-width:768px)" type="image/webp">
+                    <source srcset="/Seedra/assets/bg_2-BG5H2L2N.png" media="(max-width:768px)">
                 
-                    <img src="/Seedra/assets/bg-ELmzALH2.jpg" alt="img" loading="lazy">
+                    <img src="/Seedra/assets/bg-qMFV-meO.png" alt="img" loading="lazy">
                 </picture>
                 <div class="hero__inner">
                     <div class="hero__content">
@@ -742,7 +751,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-1">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -795,7 +804,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-2">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -848,7 +857,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-3">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -901,7 +910,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-4">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -954,7 +963,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-5">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1007,7 +1016,7 @@
                       href="./one-product.html"
                       class="products-prev__card swiper-slide card"
                       data-product-id="card-6">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1066,9 +1075,8 @@
                 <h2 class="blog-prev__title title">
                     Our blog.
                 </h2>
-                <a href="#!" class="blog-prev__header-btn btn_white">Go to our blog</a>
+                <a href="./our-blog.html" class="blog-prev__header-btn btn_white">Go to our blog</a>
             </div>
-            
             <div class="blog-prev__swiper swiper">
                 <div class="blog-prev__wrap swiper-wrapper">
                     <div class="blog-prev__card news-card_tall news-card_light-green swiper-slide news-card">

@@ -20,12 +20,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/all-products-DOJkDVYN.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/burger-accordion-CglSLtZ3.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-Zgyisi_Q.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-C67ONCVO.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-local-storage-Ddky1xda.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-srNemLSE.css">
+  <script type="module" crossorigin src="/Seedra/assets/all-products-LRUK39ay.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-DE482--l.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-CiKdKoZj.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-B-uysvjV.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-fovorite-local-storage-Gtj3cdPy.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-Cq1S9Obo.css">
 </head>
 <body class="all-products">
 <header
@@ -59,11 +59,15 @@
                 </nav>
                 <div class="header__right-wrap">
                     <div class="header__social">
-                        <a href="https://www.instagram.com/">
+                        <a
+                          href="https://www.instagram.com/"
+                          aria-label="Instagram">
                             <svg class="header__social-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-instagram"></use>
                             </svg>            </a>
-                        <a href="https://www.facebook.com/">
+                        <a
+                          href="https://www.facebook.com/"
+                          aria-label="Facebook">
                             <svg class="header__social-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-facebook"></use>
                             </svg>            </a>
@@ -71,7 +75,9 @@
                     <form
                       action="#!"
                       class="header__search-form search-form">
-                        <button class="search-form__btn ">
+                        <button
+                          type="button"
+                          class="search-form__btn">
                             <svg class="search-form__btn-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-search"></use>
                             </svg>            </button>
@@ -81,20 +87,24 @@
                           placeholder="Search">
                     </form>
                     <div class="header__actions">
-                        <a
-                          href="./favorite.html"
-                          class="header__actions-btn header__favorite-btn"
-                          aria-label="Add to favorites">
-                            <svg class="header__actions-icon"  >
-                                <use href="/Seedra/sprite.svg#icon-favorite"></use>
-                            </svg>            </a>
-                        <a
-                          href="./cart.html"
-                          class="header__actions-btn header__card-btn"
-                          aria-label="Open cart">
-                            <svg class="header__actions-icon"  >
-                                <use href="/Seedra/sprite.svg#icon-cart"></use>
-                            </svg>            </a>
+                        <div class="header__actions-btn-wrap">
+                            <a
+                              href="./favorite.html"
+                              class="header__actions-btn header__favorite-btn"
+                              aria-label="Open favorite">
+                                <svg class="header__actions-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-favorite"></use>
+                                </svg>                </a>
+                        </div>
+                        <div class="header__actions-btn-wrap">
+                            <a
+                              href="./cart.html"
+                              class="header__actions-btn header__cart-btn"
+                              aria-label="Open cart">
+                                <svg class="header__actions-icon"  >
+                                    <use href="/Seedra/sprite.svg#icon-cart"></use>
+                                </svg>                </a>
+                        </div>
                     </div>
                     <button
                       class="header__burger-btn"
@@ -123,7 +133,7 @@
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
-                    <button class="burger__category-btn js-close-burger">
+                    <button class="burger__category-btn" data-burger-close>
                         <span class="burger__category-text">All vegetables</span>
                     </button>
                 </li>
@@ -136,12 +146,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Bundles-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a  href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a  href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Bundles-2
                             </a>
                         </li>
@@ -156,12 +166,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Herb-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Herb-2
                             </a>
                         </li>
@@ -176,17 +186,17 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Cucumber
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Onion
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Garlic
                             </a>
                         </li>
@@ -201,17 +211,17 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Fruit-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Fruit-2
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 fruit-3
                             </a>
                         </li>
@@ -226,12 +236,12 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Supply-1
                             </a>
                         </li>
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Supply-2
                             </a>
                         </li>
@@ -246,7 +256,7 @@
                         </svg>                </button>
                     <ul class="burger__subcategory">
                         <li class="burger__subcategory-item">
-                            <a href="#!" class="burger__subcategory-btn js-close-burger">
+                            <a href="#!" class="burger__subcategory-btn" data-burger-close>
                                 Flower-1
                             </a>
                         </li>
@@ -257,7 +267,7 @@
         <hr class="burger__line">
         <nav class="burger__container">
             <ul class="burger__menu">
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./all-products.html"
                       class="burger__menu-link">
@@ -268,7 +278,7 @@
                             </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./about-seedra.html"
                       class="burger__menu-link">
@@ -279,7 +289,7 @@
                              </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./our-blog.html"
                       class="burger__menu-link">
@@ -290,7 +300,7 @@
                              </svg>                    </div>
                     </a>
                 </li>
-                <li class="burger__menu-item js-close-burger">
+                <li class="burger__menu-item" data-burger-close>
                     <a
                       href="./contacts.html"
                       class="burger__menu-link">
@@ -308,13 +318,13 @@
             <div class="burger__social">
                 <a
                   href="https://www.instagram.com/"
-                  class="js-close-burger">
+                  data-burger-close>
                     <svg class="burger__social-icon"  >
                         <use href="/Seedra/sprite.svg#icon-instagram"></use>
                     </svg>            </a>
                 <a
                   href="https://www.facebook.com/"
-                  class="js-close-burger">
+                  data-burger-close>
                     <svg class="burger__social-icon"  >
                         <use href="/Seedra/sprite.svg#icon-facebook"></use>
                     </svg>            </a>
@@ -387,23 +397,23 @@
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="seedType"
-                                          value="hybrid">Hybrid</label>
+                                          value="hybrid"><span>Hybrid</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="seedType"
-                                          value="pollinated">Open Pollinated</label>
+                                          value="pollinated"><span>Open Pollinated</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="seedType"
-                                          value="organic">Organic Seeds, Plants, and
-                                            Supplies</label>
+                                          value="organic"><span>Organic Seeds, Plants, and
+                                            Supplies</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="seedType"
-                                          value="pelleted">Pelleted See</label>
+                                          value="pelleted"><span>Pelleted See</span></label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -425,12 +435,12 @@
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="featureType"
-                                          value="one">One</label>
+                                          value="one"><span>One</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="featureType"
-                                          value="two">Two</label>
+                                          value="two"><span>Two</span></label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -452,12 +462,12 @@
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="growingType"
-                                          value="fast">Fast</label>
+                                          value="fast"><span>Fast</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="growingType"
-                                          value="slow">slow</label>
+                                          value="slow"><span>slow</span></label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -524,12 +534,12 @@
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="useType"
-                                          value="warm">Warm</label>
+                                          value="warm"><span>Warm</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="useType"
-                                          value="cold">Cold</label>
+                                          value="cold"><span>Cold</span></label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -551,12 +561,12 @@
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="characteristicType"
-                                          value="one">One</label>
+                                          value="one"><span>One</span></label>
                                         <label class="filter-form__checkbox-label"><input
                                           type="checkbox"
                                           class="filter-form__checkbox-input"
                                           name="characteristicType"
-                                          value="two">Two</label>
+                                          value="two"><span>Two</span></label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -923,23 +933,23 @@
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="seedType"
-                                      value="hybrid">Hybrid</label>
+                                      value="hybrid"><span>Hybrid</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="seedType"
-                                      value="pollinated">Open Pollinated</label>
+                                      value="pollinated"><span>Open Pollinated</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="seedType"
-                                      value="organic">Organic Seeds, Plants, and
-                                        Supplies</label>
+                                      value="organic"><span>Organic Seeds, Plants, and
+                                        Supplies</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="seedType"
-                                      value="pelleted">Pelleted See</label>
+                                      value="pelleted"><span>Pelleted See</span></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -961,12 +971,12 @@
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="featureType"
-                                      value="one">One</label>
+                                      value="one"><span>One</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="featureType"
-                                      value="two">Two</label>
+                                      value="two"><span>Two</span></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -988,12 +998,12 @@
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="growingType"
-                                      value="fast">Fast</label>
+                                      value="fast"><span>Fast</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="growingType"
-                                      value="slow">slow</label>
+                                      value="slow"><span>slow</span></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -1060,12 +1070,12 @@
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="useType"
-                                      value="warm">Warm</label>
+                                      value="warm"><span>Warm</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="useType"
-                                      value="cold">Cold</label>
+                                      value="cold"><span>Cold</span></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -1087,12 +1097,12 @@
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="characteristicType"
-                                      value="one">One</label>
+                                      value="one"><span>One</span></label>
                                     <label class="filter-form__checkbox-label"><input
                                       type="checkbox"
                                       class="filter-form__checkbox-input"
                                       name="characteristicType"
-                                      value="two">Two</label>
+                                      value="two"><span>Two</span></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -1102,7 +1112,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-1">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1155,7 +1165,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-2">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1208,7 +1218,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-3">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1261,7 +1271,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-4">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1314,7 +1324,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-5">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1367,7 +1377,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-6">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1420,7 +1430,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-7">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1473,7 +1483,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-8">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>
@@ -1526,7 +1536,7 @@
                       href="./one-product.html"
                       class="product-area__card swiper-slide card"
                       data-product-id="card-9">
-                        <button class="card__favorite">
+                        <button class="card__favorite-btn" data-product-favorite>
                             <svg class="card__favorite-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-favorite"></use>
                             </svg>    </button>

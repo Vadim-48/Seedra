@@ -24,14 +24,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     burger();
     burgerAccordion();
 
+    // await Promise.all([
+    //     loadOneProductFirebase("card-hero", "product-5"),
+    //     loadProductsFirebase("card-1", "product-1"),
+    //     loadProductsFirebase("card-2", "product-2"),
+    //     loadProductsFirebase("card-3", "product-3"),
+    //     loadProductsFirebase("card-4", "product-4"),
+    //     loadProductsFirebase("card-5", "product-5"),
+    //     loadProductsFirebase("card-6", "product-6"),
+    // ]);
+
+    const productsToLoad = [
+        { id: "card-1", path: "product-1" },
+        { id: "card-2", path: "product-2" },
+        { id: "card-3", path: "product-3" },
+        { id: "card-4", path: "product-4" },
+        { id: "card-5", path: "product-5" },
+        { id: "card-6", path: "product-6" },
+    ];
     await Promise.all([
         loadOneProductFirebase("card-hero", "product-5"),
-        loadProductsFirebase("card-1", "product-1"),
-        loadProductsFirebase("card-2", "product-2"),
-        loadProductsFirebase("card-3", "product-3"),
-        loadProductsFirebase("card-4", "product-4"),
-        loadProductsFirebase("card-5", "product-5"),
-        loadProductsFirebase("card-6", "product-6"),
+
+        ...productsToLoad.map(p => loadProductsFirebase(p.id, p.path)),
     ]);
 
 

@@ -11,8 +11,6 @@ function calcCards(length) {
         cardsNumberEl.textContent = length + " item";
     } else cardsNumberEl.textContent = length + " items";
 
-    updateCartIcon();
-    updateFavoriteIcon();
 }
 
 export async function loadFavoriteCards() {
@@ -30,8 +28,6 @@ export async function loadFavoriteCards() {
 
     for (let i = 0; i < cadsFavoriteList.length; i++) {
         const productId = cadsFavoriteList[i];
-        // const productData = productsMap[productId];
-        // if (!productData) continue;
 
         const cloneCard = card.cloneNode(true);
         cloneCard.dataset.productId = productId;
@@ -61,5 +57,6 @@ export async function loadFavoriteCards() {
         cadsFavoriteList = cadsFavoriteList.filter((item) => item !== idFromDom);
         localStorage.setItem('favorite', JSON.stringify(cadsFavoriteList));
         calcCards(cadsFavoriteList.length);
+        updateFavoriteIcon();
     });
 }

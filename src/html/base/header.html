@@ -24,13 +24,17 @@
     </nav>
     <div class="header__right-wrap">
         <div class="header__social">
-            <a href="{{> links/instagram}}">
+            <a
+              href="{{> links/instagram}}"
+              aria-label="Instagram">
                 {{> components/svg
                 className="header__social-icon"
                 id="instagram"
                 }}
             </a>
-            <a href="{{> links/facebook}}">
+            <a
+              href="{{> links/facebook}}"
+              aria-label="Facebook">
                 {{> components/svg
                 className="header__social-icon"
                 id="facebook"
@@ -40,7 +44,9 @@
         <form
           action="#!"
           class="header__search-form search-form">
-            <button class="search-form__btn ">
+            <button
+              type="button"
+              class="search-form__btn">
                 {{> components/svg
                 className="search-form__btn-icon"
                 id="search"
@@ -52,24 +58,28 @@
               placeholder="Search">
         </form>
         <div class="header__actions">
-            <a
-              href="./favorite.html"
-              class="header__actions-btn header__favorite-btn"
-              aria-label="Add to favorites">
-                {{> components/svg
-                className="header__actions-icon"
-                id="favorite"
-                }}
-            </a>
-            <a
-              href="./cart.html"
-              class="header__actions-btn header__card-btn"
-              aria-label="Open cart">
-                {{> components/svg
-                className="header__actions-icon"
-                id="cart"
-                }}
-            </a>
+            <div class="header__actions-btn-wrap">
+                <a
+                  href="./favorite.html"
+                  class="header__actions-btn header__favorite-btn"
+                  aria-label="Open favorite">
+                    {{> components/svg
+                    className="header__actions-icon"
+                    id="favorite"
+                    }}
+                </a>
+            </div>
+            <div class="header__actions-btn-wrap">
+                <a
+                  href="./cart.html"
+                  class="header__actions-btn header__cart-btn"
+                  aria-label="Open cart">
+                    {{> components/svg
+                    className="header__actions-icon"
+                    id="cart"
+                    }}
+                </a>
+            </div>
         </div>
         <button
           class="header__burger-btn"

@@ -30,10 +30,10 @@
             }
         }
 
-        &:active {
+        &:active, &:focus-within {
             box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
 
-            & .search-filter__search-input {
+            & .toolbar__search-input {
                 color: var(--text-primary);
 
                 &::placeholder {
@@ -93,6 +93,22 @@
         margin-right: 8px;
         @include media.max-width(sm) {
             display: none;
+        }
+        transition: box-shadow .3s ease, color .3s ease;
+        &:focus-visible {
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            & .form-summary__delivery-arrow{
+                color: var(--green-brand);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+        &:active{
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            color: var(--green-brand);
         }
     }
 

@@ -23,7 +23,7 @@
                 id="visa"
                 }}
                 {{> components/svg
-                className="payment-form__cards-list-icon"
+                className="payment-form__cards-list-icon active"
                 id="masterCard"
                 }}
                 {{> components/svg
@@ -41,8 +41,8 @@
                   name="card-number"
                   inputmode="numeric"
                   placeholder="0000 0000 0000 0000"
-                  maxlength="19"
-                  class="payment-form__input">
+                  class="payment-form__input"
+                  data-payment-card>
                 <span
                   data-text-error
                   class="payment-form__text-error"></span>
@@ -56,22 +56,22 @@
               name="expiry-date"
               placeholder="MM/YY"
               inputmode="numeric"
-              maxlength="5"
-              class="payment-form__input">
+              class="payment-form__input"
+              data-payment-date>
             <span
               data-text-error
               class="payment-form__text-error"></span>
         </label>
         <label
           class="payment-form__label">
-            CCV
+            CVV
             <input
               type="text"
               name="ccv"
               placeholder="***"
               inputmode="numeric"
-              maxlength="3"
-              class="payment-form__input">
+              class="payment-form__input"
+              data-payment-cvv>
             <span
               data-text-error
               class="payment-form__text-error"></span>
@@ -80,13 +80,13 @@
     <hr class="payment-info__line">
     <div class="payment-info__total">
         <span class="payment-info__total-label">Total amount</span>
-        <span class="payment-info__total-price">$0</span>
+        <span class="payment-info__total-price" data-final-price>$0</span>
     </div>
     <button
       type="submit"
       form="payment-form"
       class="payment-info__btn btn_green">
-        <span class="payment-info__btn_price">$0</span>
+        <span class="payment-info__btn_price" data-final-price>$0</span>
         <div class="payment-info__btn-label-wrap">
             <span class="payment-info__btn-label">Continue</span>
             {{> components/svg

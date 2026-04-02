@@ -32,6 +32,32 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        &:focus-visible{
+            & span{
+                color: var(--hover);
+            }
+            & .filter-form__group-arrow use {
+                color: var(--hover);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                & span{
+                    color: var(--hover);
+                }
+                & .filter-form__group-arrow use {
+                    color: var(--hover);
+                }
+            }
+        }
+        &:active{
+            & span{
+                color: var(--green-brand);
+            }
+            & .filter-form__group-arrow use {
+                color: var(--green-brand);
+            }
+        }
     }
 
     &__group-title {
@@ -40,6 +66,7 @@
         line-height: 1.78;
         letter-spacing: -0.04em;
         color: var(--text-primary);
+        transition: color 0.2s ease;
     }
 
     &__group-body-wrap {
@@ -52,6 +79,10 @@
         overflow: hidden;
         margin-left: -15px;
         padding-left: 15px;
+        //display: flex;
+        //flex-direction: column;
+        //justify-content: center;
+
     }
     &__checkbox-label {
         font-size: 14px;
@@ -59,7 +90,10 @@
         color: var(--text-secondary);
         display: flex;
         align-items: center;
+        //align-items: flex-start;
         gap: 9px;
+        transition: color 0.3s ease;
+        cursor: pointer;
 
         &:not(:first-of-type) {
             margin-top: 13px;
@@ -72,6 +106,27 @@
         &:last-of-type {
             padding-bottom: 10px;
         }
+
+        &:focus-visible {
+            color: var(--hover);
+            & .filter-form__checkbox-input{
+                border-color: var(--hover);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                color: var(--hover);
+                & .filter-form__checkbox-input{
+                    border-color: var(--hover);
+                }
+            }
+        }
+        &:active{
+            color: var(--green-brand);
+            & .filter-form__checkbox-input{
+                border-color: var(--green-brand);
+            }
+        }
     }
     &__checkbox-input {
         appearance: none;
@@ -81,6 +136,7 @@
         height: 20px;
         position: relative;
         cursor: pointer;
+        transition: border-color 0.3s ease;
 
         &:checked {
             background: var(--invisible-green);
@@ -98,6 +154,7 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
+
     }
 
     &__group-line {
@@ -113,6 +170,7 @@
 
         & use {
             color: var(--text-secondary);
+            transition: color 0.3s ease;
         }
     }
 
@@ -144,6 +202,15 @@
         width: 95px;
         height: 46px;
         padding: 0 13px;
+        transition: box-shadow 0.3s ease;
+        &:focus-visible, &:active, &:focus-within {
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+            }
+        }
     }
     &__text_above{
         position: absolute;

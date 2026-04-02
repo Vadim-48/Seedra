@@ -5,6 +5,8 @@ import {
     updateCartIcon,
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
+import {innitFinalPrice} from "@/js/modules/cart/innit-final-price.js";
+import {loadCardsCheckout} from "@/js/modules/cart/innit-cart-checkout.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -14,5 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     updateCartIcon();
     updateFavoriteIcon();
+    innitFinalPrice();
+
+    await Promise.all([
+        loadCardsCheckout(),
+    ]);
 
 });

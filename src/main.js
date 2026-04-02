@@ -13,6 +13,10 @@ import { initBlogPreviewSwiper } from "./js/modules/main/blog-prev-swiper.js";
 import { initFeedbackSwiper } from "./js/modules/main/feedback-swiper.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {addFavoriteLocalStorage} from "@/js/modules/add-fovorite-local-storage.js";
+import {
+    updateCartIcon,
+    updateFavoriteIcon
+} from "@/js/modules/update-header-icons.js";
 
 document.addEventListener("DOMContentLoaded", async() => {
 
@@ -52,5 +56,13 @@ document.addEventListener("DOMContentLoaded", async() => {
     initBlogPreviewSwiper();
     initFeedbackSwiper();
 
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'cart') {
+            updateCartIcon();
+        }
+        if (event.key === 'favorite') {
+            updateFavoriteIcon();
+        }
+    });
 });
 

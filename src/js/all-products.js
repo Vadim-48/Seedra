@@ -7,11 +7,14 @@ import {
 } from "@/js/modules/menu-category.js";
 import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
-import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
+// import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
 import {initRangeSlider} from "@/js/modules/all-products/range-slider.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {addFavoriteLocalStorage} from "@/js/modules/add-fovorite-local-storage.js";
-import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
+import {
+    updateCartIcon,
+    updateFavoriteIcon
+} from "@/js/modules/update-header-icons.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -38,8 +41,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
         ...productsToLoad.map(p => loadProductsFirebase(p.id, p.path)),
     ]);
+
     addCartLocalStorage();
     addFavoriteLocalStorage();
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'cart') {
+            updateCartIcon();
+        }
+        if (event.key === 'favorite') {
+            updateFavoriteIcon();
+        }
+    });
 
     initRangeSlider();
 });

@@ -89,6 +89,9 @@
         border-radius: 4px;
         width: 106px;
         height: 106px;
+        &:first-child{
+            display: none;
+        }
     }
 
     &__line{
@@ -105,6 +108,7 @@
         display: flex;
         align-items: center;
         margin-top: 18px;
+        min-height: 40px;
     }
     &__chose-text{
         font-size: 14px;
@@ -170,13 +174,5 @@
                 grid-column: span 2;
             }
         }
-        &__gallery-wrap{
-            @include media.max-width(sm) {
-               display: none;
-            }
-        }
-        //&__foot{
-        //    display: block;
-        //}
     }
 }

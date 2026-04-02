@@ -15,5 +15,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     updateCartIcon();
     updateFavoriteIcon();
-
 });

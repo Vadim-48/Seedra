@@ -10,16 +10,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     burger();
     burgerAccordion();
+    updateCartIcon();
+    updateFavoriteIcon();
 
-    loadFavoriteCards();
-
-    window.addEventListener('storage', (event) => {
-        if (event.key === 'cart') {
-            updateCartIcon();
-        }
-        if (event.key === 'favorite') {
-            updateFavoriteIcon();
-        }
-    });
+    await Promise.all([
+        loadFavoriteCards(),
+    ]);
 
 });

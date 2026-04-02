@@ -105,6 +105,25 @@
         &.error::placeholder{
             color: var(--danger);
         }
+        transition: box-shadow .3s ease, color .3s ease;
+        &:focus-visible {
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            & .form-summary__delivery-arrow{
+                color: var(--green-brand);
+            }
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+                & .form-summary__delivery-arrow{
+                    color: var(--green-brand);
+                }
+            }
+        }
+        &:active{
+            box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
+            color: var(--green-brand);
+        }
     }
 
     &__form-btn {

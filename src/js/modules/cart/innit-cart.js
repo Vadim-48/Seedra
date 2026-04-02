@@ -1,10 +1,7 @@
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
 
-import {
-    updateFavoriteIcon,
-    updateCartIcon,
-} from "@/js/modules/update-header-icons.js";
+import {updateCartIcon} from "@/js/modules/update-header-icons.js";
 
 function calcTotal() {
     const cartRawData = localStorage.getItem("cart");
@@ -48,9 +45,6 @@ function calcTotal() {
                 localStorage.setItem('finalPrice', JSON.stringify(finalPrice));
             }
         }
-
-    updateCartIcon();
-    updateFavoriteIcon();
 }
 
 window.addEventListener("deliveryChange", (e) => {
@@ -100,7 +94,7 @@ export async function loadCards() {
         const amountProduct = cloneCard.querySelector('.amount__number-item');
         amountProduct.textContent =cadsStorageArr[i].packCount;
 
-        console.log("sfdg", cadsStorageArr[i].packCount);
+        // console.log("sfdg", cadsStorageArr[i].packCount);
 
         const amount = parseInt(amountProduct.textContent);
         const price = parseFloat(innerPrice.textContent.replace("$", ""));
@@ -122,6 +116,7 @@ export async function loadCards() {
         cadsStorageArr = cadsStorageArr.filter((item) => item.productId !== idFromDom);
         localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
         calcTotal();
+        updateCartIcon();
     })
 }
 

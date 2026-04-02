@@ -1,6 +1,6 @@
 export function updateCartIcon() {
     const cartRawData = localStorage.getItem("cart");
-    const cartIcon = document.querySelector(".header__card-btn use");
+    const cartIcon = document.querySelector(".header__cart-btn use");
     if (!cartIcon) return;
     let cadsStorageArr = JSON.parse(cartRawData) || [];
     const currentHref = cartIcon.getAttribute('href');

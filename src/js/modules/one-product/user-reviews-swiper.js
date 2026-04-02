@@ -8,7 +8,7 @@ const initSwiper = () => {
         slidesPerView: 1.1,
         spaceBetween: 15,
         loop: true,
-        // loopedSlides: 3,
+        loopedSlides: 3,
     });
 };
 
@@ -29,7 +29,8 @@ const check = () => {
     }
 };
 
+
 export const initUserReviewsSwiper = () => {
     check();
     breakpoint.addEventListener('change', check);
-};
+}

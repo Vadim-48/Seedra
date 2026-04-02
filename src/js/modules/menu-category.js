@@ -1,5 +1,6 @@
 export const initMenuCategoryScroll = () => {
     const el = document.querySelector('.category__btn-list-wrap');
+    if (!el) return;
 
     let isDown = false;
     let startX;
@@ -33,30 +34,41 @@ export const initMenuCategoryScroll = () => {
 
 export const initCategoryDropdown = () => {
     const menuCategoryEl = document.querySelector('[data-menu-category]');
+    if (!menuCategoryEl) return;
+
     const btnList = menuCategoryEl.querySelectorAll('.category__btn');
     const dropdownListEl = menuCategoryEl.querySelectorAll('.category-dropdown');
 
     btnList.forEach((btn, index) => {
         btn.addEventListener("click", (e) => {
-            const isOpen = dropdownListEl[index].classList.contains('open');
+            e.stopPropagation();
 
-            dropdownListEl.forEach(el => {
-                el.classList.remove('open');
-            })
-            if (!isOpen) {dropdownListEl[index].classList.add('open'); }
-        })
-    })
+            const targetDropdown = dropdownListEl[index];
+            if (!targetDropdown) return;
+
+            const isOpen = targetDropdown.classList.contains('open');
+
+            btnList.forEach(b => b.classList.remove('open'));
+            dropdownListEl.forEach(el => el.classList.remove('open'));
+
+            if (!isOpen) {
+                targetDropdown.classList.add('open');
+                btn.classList.add('open');
+            }
+        });
+    });
 
     document.addEventListener("click", (e) => {
-        if (!menuCategoryEl.contains(e.target)) {
-            dropdownListEl.forEach(el => {
-                el.classList.remove('open');
-            })
+        const isClickInside = e.target.closest('[data-menu-category]') || e.target.closest('.category-dropdown');
+
+        if (!isClickInside) {
+            btnList.forEach(b => b.classList.remove('open'));
+            dropdownListEl.forEach(el => el.classList.remove('open'));
         }
-    })
+    });
+
     window.addEventListener("resize", () => {
-        dropdownListEl.forEach(el => {
-            el.classList.remove('open');
-        })
-    })
+        btnList.forEach(b => b.classList.remove('open'));
+        dropdownListEl.forEach(el => el.classList.remove('open'));
+    });
 }

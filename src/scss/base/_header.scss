@@ -112,7 +112,7 @@
         height: 24px;
     }
 
-    &__actions-btn{
+    &__actions-btn-wrap{
         border: 1px solid  var(--light-grey-stroke);
         border-radius: 100%;
         width: 40px;
@@ -120,15 +120,32 @@
         display: contents;
         align-items: center;
         justify-content: center;
+        transition: opacity .3s ease;
         @include media.max-width(sm) {
             display: flex;
         }
+
+    }
+    &__actions-btn{
+        transition: opacity .3s ease;
+        &:focus-visible {
+            opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                opacity: 0.7;
+            }
+        }
+        &:active{
+            opacity: 1;
+        }
+
     }
     &__favorite-btn{
         //--favorite-stroke: var(--green-brand);
         //--favorite-fill: var(--green-brand);
     }
-    &__card-btn{
+    &__cart-btn{
         color: var(--green-brand);
     }
     &__burger-btn{
@@ -218,6 +235,29 @@
     display: flex;
     align-items: center;
     padding: 13px 24px;
+    transition: color .3s ease, box-shadow .3s ease;
+
+    &:focus-visible {
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:active) {
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+        }
+    }
+
+    &:active, &:focus-within {
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+
+        & .search-form__search {
+            color: var(--text-primary);
+
+            &::placeholder {
+                color: var(--text-primary);
+            }
+        }
+    }
     &__btn {
 
     }

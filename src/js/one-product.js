@@ -1,20 +1,23 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 
-import {loadHeroProductsFirebase} from "@/js/modules/one-product/hero-firebase.js";
+import {loadOneProductFirebase} from "@/js/modules/one-product/innit-one-product-firebase.js";
 import {innitAmountPack} from "@/js/modules/one-product/amount-pack.js";
 import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
 import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
-import {loadReviewFirebase} from "@/js/modules/reviews-firebase.js";
-import {allReviewsImg, totalStars} from "@/js/modules/one-product/user-reviews-firebase.js";
 import {initUserReviewsSwiper} from "@/js/modules/one-product/user-reviews-swiper.js";
 import {initRelatedSwiper} from "@/js/modules/one-product/related-swiper.js";
 import {initVideoPlayers} from "@/js/modules/one-product/video-play.js";
 import {initAccordion} from "@/js/modules/one-product/accordion.js";
 import {initFormValidate} from "@/js/modules/one-product/validate.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
-import {addFavoriteLocalStorage} from "@/js/modules/add-fovorite-local-storage.js";
-
+import {
+    addFavoriteLocalStorage
+} from "@/js/modules/add-fovorite-local-storage.js";
+import {
+    updateCartIcon,
+    updateFavoriteIcon
+} from "@/js/modules/update-header-icons.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -22,15 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     burgerAccordion();
 
     await Promise.all([
-        loadHeroProductsFirebase("card-hero", "product-5"),
-
-        loadReviewFirebase("card-review-1", "review-1"),
-        loadReviewFirebase("card-review-2", "review-2"),
-        loadReviewFirebase("card-review-3", "review-3"),
-
-        totalStars("data-rating-all", "allStars"),
-        allReviewsImg("data-reviews-all-img", "allReviews"),
-
+        loadOneProductFirebase("card-hero", "product-5"),
         loadProductsFirebase("card-1", "product-1"),
         loadProductsFirebase("card-2", "product-2"),
         loadProductsFirebase("card-3", "product-3"),
@@ -38,6 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadProductsFirebase("card-5", "product-5"),
         loadProductsFirebase("card-6", "product-6"),
     ]);
+
 
     innitAmountPack();
 
@@ -55,7 +51,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     addCartLocalStorage();
     addFavoriteLocalStorage();
+
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'cart') {
+            updateCartIcon();
+        }
+        if (event.key === 'favorite') {
+            updateFavoriteIcon();
+        }
+    });
 });
+
+
 
 
 

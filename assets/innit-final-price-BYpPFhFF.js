@@ -1,0 +1,1 @@
+import{f as n}from"./format-money-tbJjc-cd.js";function r(){const e=JSON.parse(localStorage.getItem("finalPrice")),t=document.querySelectorAll("[data-final-price]");t&&t.forEach(i=>{i.textContent=n(e)})}export{r as i};

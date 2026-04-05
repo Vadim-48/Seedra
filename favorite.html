@@ -20,11 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/favorite-CrAZr99g.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-CeQ3R-KY.js">
+  <script type="module" crossorigin src="/Seedra/assets/favorite-DtaFG1Vt.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D1XDUbcN.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-Dv7tlh15.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/favorite-B-zijicF.css">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-CyFFBMke.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/favorite-LgebNuiE.css">
 </head>
 <body class="favorite">
 <header
@@ -134,11 +134,12 @@
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
-                    <button
+                    <a
                       class="burger__category-btn"
+                      href="./all-products.html"
                       data-burger-close>
                         <span class="burger__category-text">All vegetables</span>
-                    </button>
+                    </a>
                 </li>
                 <li class="burger__category-item">
                     <button
@@ -435,28 +436,31 @@
                         <p></p>
                     </div>
                     <div class="your-favorite__list-body">
-                        <div class="your-favorite__favorite-item favorite-item">
-                            <div class="favorite-item__product">
-                                <div class="favorite-item__photo-wrap">
-                                    <button class="favorite-item__btn-del">
-                                        <span></span><span></span>
-                                    </button>
-                                    <picture class="favorite-item__photo">
-                                        <img
-                                          src=""
-                                          data-product-photo
-                                          alt="">
-                                    </picture>
+                        <template class="your-favorite__list-body_template" id="favorite-item">
+                            <div class="your-favorite__favorite-item favorite-item">
+                                <div class="favorite-item__product">
+                                    <div class="favorite-item__photo-wrap">
+                                        <button class="favorite-item__btn-del">
+                                            <span></span><span></span>
+                                        </button>
+                                        <picture class="favorite-item__photo">
+                                            <img
+                                              src=""
+                                              data-product-photo
+                                              alt="">
+                                        </picture>
+                                    </div>
+                                    <p
+                                      class="favorite-item__title"
+                                      data-product-title></p>
                                 </div>
-                                <p
-                                  class="favorite-item__title"
-                                  data-product-title></p>
+                                <span
+                                  class="favorite-item__value"
+                                  data-product-price>$0</span>
+                                <button type="button" class="favorite-item__btn btn_green" data-btn-add>Add to cart</button>
                             </div>
-                            <span
-                              class="favorite-item__value"
-                              data-product-price>$0</span>
-                            <button type="button" class="favorite-item__btn btn_green" data-btn-add>Add to cart</button>
-                        </div>
+                        </template>
+            
                     </div>
                 </div>
                 <a

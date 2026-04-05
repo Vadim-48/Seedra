@@ -20,10 +20,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/cart-DpIOzJqW.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-CeQ3R-KY.js">
+  <script type="module" crossorigin src="/Seedra/assets/cart-CeQ9osxg.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D1XDUbcN.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/cart-CX8Gg4ZQ.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/cart-BIAKQO34.css">
 </head>
 <body class="cart">
 <header
@@ -133,11 +133,12 @@
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
-                    <button
+                    <a
                       class="burger__category-btn"
+                      href="./all-products.html"
                       data-burger-close>
                         <span class="burger__category-text">All vegetables</span>
-                    </button>
+                    </a>
                 </li>
                 <li class="burger__category-item">
                     <button
@@ -436,51 +437,53 @@
                             <p class="cart-content__list-header_total">TOTAL</p>
                         </div>
                         <div class="cart-content__list-body">
-                            <div class="cart-content__cart-item cart-item">
-                                <div class="cart-item__product">
-                                    <div class="cart-item__photo-wrap">
-                                        <button class="cart-item__btn-del">
-                                            <span></span><span></span>
-                                        </button>
-                                        <picture class="cart-item__photo">
-                                            <img
-                                              src="/Seedra/assets/test-BHSMFlJs.png"
-                                              data-product-photo
-                                              alt="">
-                                        </picture>
-                                    </div>
-                                    <p
-                                      class="cart-item__title"
-                                      data-product-title></p>
-                                </div>
-                                <div class="cart-item__row">
-                                    <span class="cart-item__label">AMOUNT</span>
-                                    <div class="cart-item__amount amount__number">
-                                        <button class="amount__number-remove">
-                                            <svg class="amount__number-icon"  >
-                                                <use href="/Seedra/sprite.svg#icon-minus"></use>
-                                            </svg>    </button>
-                                        <div class="amount__number-inner">
-                                            <span class="amount__number-item">2</span>
+                            <template class="cart-content__list-body_template" id="cart-item-template">
+                                <div class="cart-content__cart-item cart-item">
+                                    <div class="cart-item__product">
+                                        <div class="cart-item__photo-wrap">
+                                            <button class="cart-item__btn-del">
+                                                <span></span><span></span>
+                                            </button>
+                                            <picture class="cart-item__photo">
+                                                <img
+                                                  src="/Seedra/assets/test-BHSMFlJs.png"
+                                                  data-product-photo
+                                                  alt="">
+                                            </picture>
                                         </div>
-                                        <button class="amount__number-add">
-                                            <svg class="amount__number-icon"  >
-                                                <use href="/Seedra/sprite.svg#icon-plus"></use>
-                                            </svg>    </button>
-                                    </div>                    </div>
-                                <div class="cart-item__row">
-                                    <span class="cart-item__label">PRICE</span>
-                                    <span
-                                      class="cart-item__value"
-                                      data-product-price>$0</span>
+                                        <p
+                                          class="cart-item__title"
+                                          data-product-title></p>
+                                    </div>
+                                    <div class="cart-item__row">
+                                        <span class="cart-item__label">AMOUNT</span>
+                                        <div class="cart-item__amount amount__number">
+                                            <button class="amount__number-remove">
+                                                <svg class="amount__number-icon"  >
+                                                    <use href="/Seedra/sprite.svg#icon-minus"></use>
+                                                </svg>    </button>
+                                            <div class="amount__number-inner">
+                                                <span class="amount__number-item">2</span>
+                                            </div>
+                                            <button class="amount__number-add">
+                                                <svg class="amount__number-icon"  >
+                                                    <use href="/Seedra/sprite.svg#icon-plus"></use>
+                                                </svg>    </button>
+                                        </div>                        </div>
+                                    <div class="cart-item__row">
+                                        <span class="cart-item__label">PRICE</span>
+                                        <span
+                                          class="cart-item__value"
+                                          data-product-price>$0</span>
+                                    </div>
+                                    <div class="cart-item__row">
+                                        <span class="cart-item__label">TOTAL</span>
+                                        <span
+                                          class="cart-item__value"
+                                          data-product-total-price>$0</span>
+                                    </div>
                                 </div>
-                                <div class="cart-item__row">
-                                    <span class="cart-item__label">TOTAL</span>
-                                    <span
-                                      class="cart-item__value"
-                                      data-product-total-price>$0</span>
-                                </div>
-                            </div>
+                            </template>
                         </div>
                     </div>
                     <a

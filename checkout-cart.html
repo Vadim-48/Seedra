@@ -20,11 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/checkout-cart-BmF5Ts4t.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-CeQ3R-KY.js">
+  <script type="module" crossorigin src="/Seedra/assets/checkout-cart-BuADSHL6.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D1XDUbcN.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/innit-final-price-BYpPFhFF.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/checkout-cart-ClG85bnK.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/checkout-cart-DO7p_Jx0.css">
 </head>
 <body class="checkout-cart">
 <header
@@ -134,11 +134,12 @@
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
-                    <button
+                    <a
                       class="burger__category-btn"
+                      href="./all-products.html"
                       data-burger-close>
                         <span class="burger__category-text">All vegetables</span>
-                    </button>
+                    </a>
                 </li>
                 <li class="burger__category-item">
                     <button
@@ -532,11 +533,13 @@
                 <div class="checkout__info-cart info-cart">
                     <h3 class="info-cart__title">Your cart</h3>
                     <div class="info-cart__list">
-                        <div class="info-cart__list-item">
-                            <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
-                                Hybrid Seeds for Indoor and Outdoor Planting</p>
-                            <p class="info-cart__list-item-price">$0</p>
-                        </div>
+                        <template class="info-cart__list_template" id="list-item">
+                            <div class="info-cart__list-item">
+                                <p class="info-cart__list-item-title">SEEDRA Corn - Bodacious
+                                    Hybrid Seeds for Indoor and Outdoor Planting</p>
+                                <p class="info-cart__list-item-price">$0</p>
+                            </div>
+                        </template>
                     </div>
                     <div class="info-cart__total">
                         <span class="info-cart__total-label">Total amount</span>

@@ -1,25 +1,31 @@
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
 
-export async function loadReviewFirebase(dataReviewId, productId) {
+export async function loadReviewFirebase(productId) {
     const reviewsSnapshot = await getDocs(collection(db, "reviews"));
     const reviewsMap = {};
     reviewsSnapshot.forEach((doc) => {
         reviewsMap[doc.id] = doc.data();
     })
 
-    const reviewsList = document.querySelector(`[data-review-id="${dataReviewId}"]`);
+    const reviewsWrap = document.querySelector("[data-reviews-wrap]");
+    const templateWrap = document.querySelector("#reviews-template");
+    const templateFragment = templateWrap.content.cloneNode(true);
+    const cloneCard = templateFragment.querySelector(".card-review");
+
+    // const reviewsList = document.querySelector(`[data-review-id="${dataReviewId}"]`);
     const reviewsItem = reviewsMap[productId];
 
-    const innerDate = reviewsList.querySelector('[data-review-date]');
-    const innerDateExtended = reviewsList.querySelector('[data-review-date-extended]');
-    const innerName = reviewsList.querySelector('[data-review-name]');
-    const innerPhoto = reviewsList.querySelector('[data-review-photo]');
-    const innerGallery = reviewsList.querySelector('[data-review-gallery]');
-    const innerImgList = reviewsList.querySelectorAll('[data-review-img]');
-    const innerText = reviewsList.querySelector('[data-review-text]');
-    const innerPackSize = reviewsList.querySelector('[data-review-pack-size]');
-    const innerVerified = reviewsList.querySelector('[data-review-verified]');
+
+    const innerDate = cloneCard.querySelector('[data-review-date]');
+    const innerDateExtended = cloneCard.querySelector('[data-review-date-extended]');
+    const innerName = cloneCard.querySelector('[data-review-name]');
+    const innerPhoto = cloneCard.querySelector('[data-review-photo]');
+    const innerGallery = cloneCard.querySelector('[data-review-gallery]');
+    const innerImgList = cloneCard.querySelectorAll('[data-review-img]');
+    const innerText = cloneCard.querySelector('[data-review-text]');
+    const innerPackSize = cloneCard.querySelector('[data-review-pack-size]');
+    const innerVerified = cloneCard.querySelector('[data-review-verified]');
 
     if (reviewsItem.date && innerDate) innerDate.textContent = reviewsItem.date;
     if (reviewsItem.dateExtended && innerDateExtended) innerDateExtended.textContent = reviewsItem.dateExtended;
@@ -39,7 +45,7 @@ export async function loadReviewFirebase(dataReviewId, productId) {
         });
     }
 
-    const stars = reviewsList.querySelectorAll('[data-rating] svg use');
+    const stars = cloneCard.querySelectorAll('[data-rating] svg use');
     const fullStar = Math.floor(reviewsItem.star);
     const halfStar = reviewsItem.star - fullStar;
     for (let i = 0; i < stars.length; i++) {
@@ -50,4 +56,6 @@ export async function loadReviewFirebase(dataReviewId, productId) {
             break;
         }
     }
+
+    reviewsWrap.appendChild(cloneCard);
 }

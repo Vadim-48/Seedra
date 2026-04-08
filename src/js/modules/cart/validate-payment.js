@@ -1,86 +1,97 @@
+import Cleave from 'cleave.js/dist/cleave-esm.js';
+import cardValidator from 'card-validator';
+
 export const initPaymentFormValidate = () => {
     const form = document.getElementById('payment-form');
     if (!form) return;
 
-    const inputList = form.querySelectorAll('[data-payment-card], [data-payment-date], [data-payment-cvv]');
+    const cardInput = form.querySelector('[data-payment-card]');
+    const dateInput = form.querySelector('[data-payment-date]');
+    const cvvInput = form.querySelector('[data-payment-cvv]');
+    const cardIcons = form.querySelectorAll('[data-card-type]');
+    const submitBtn = document.querySelector('.payment-info__btn');
 
-    inputList.forEach((item) => {
-        const textError = item.closest('label').querySelector('[data-text-error]');
+    const validateField = (input, result) => {
+        const label = input.closest('label');
+        const errSpan = label ? label.querySelector('[data-text-error]') : null;
 
-        item.addEventListener('input', (e) => {
-            if (textError) textError.textContent = '';
-            item.classList.remove('error');
+        if (!result.isValid) {
+            input.classList.add('error');
+            if (errSpan) errSpan.textContent = 'Try again';
+            return false;
+        } else {
+            input.classList.remove('error');
+            if (errSpan) errSpan.textContent = '';
+            return true;
+        }
+    };
 
-            let value = e.target.value;
-
-            if (item.hasAttribute('data-payment-card')) {
-                value = value.replace(/\D/g, '');
-                value = value.substring(0, 16);
-                e.target.value = value.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+    const cleaveCard = new Cleave(cardInput, {
+        creditCard: true,
+        onCreditCardTypeChanged: (type) => {
+            if (type !== 'unknown') {
+                cardIcons.forEach(icon => {
+                    const iconType = icon.getAttribute('data-card-type');
+                    icon.classList.toggle('active', iconType === type);
+                });
             }
+        }
+    });
 
-            if (item.hasAttribute('data-payment-date')) {
-                value = value.replace(/[^\d/]/g, '');
-                value = value.substring(0, 5);
+    new Cleave(dateInput, {
+        date: true,
+        datePattern: ['m', 'y']
+    });
 
-                if (value.length === 2 && !value.includes('/') && e.inputType !== 'deleteContentBackward') {
-                    value += '/';
-                }
-                e.target.value = value;
-            }
+    new Cleave(cvvInput, {
+        numericOnly: true,
+        blocks: [3]
+    });
 
-            if (item.hasAttribute('data-payment-cvv')) {
-                value = value.replace(/\D/g, '');
-                e.target.value = value.substring(0, 3);
-            }
+    cardIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            cardIcons.forEach(i => i.classList.remove('active'));
+            icon.classList.add('active');
+
+            cleaveCard.setRawValue('');
+            dateInput.value = '';
+            cvvInput.value = '';
+
+            [cardInput, dateInput, cvvInput].forEach(input => {
+                input.classList.remove('error');
+                const errSpan = input.closest('label')?.querySelector('[data-text-error]');
+                if (errSpan) errSpan.textContent = '';
+            });
         });
     });
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (submitBtn) {
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
 
-        let errorFound = false;
+            const activeIcon = form.querySelector('[data-card-type].active');
+            const activeType = activeIcon?.getAttribute('data-card-type');
 
-        inputList.forEach((item) => {
-            const textError = item.closest('label').querySelector('[data-text-error]');
-            const value = item.value.trim();
-
-            if (textError) textError.textContent = '';
-            item.classList.remove('error');
-
-            if (item.hasAttribute('data-payment-card')) {
-                const rawCardValue = value.replace(/\s+/g, '');
-                const cardRegex = /^\d{16}$/;
-
-                if (!cardRegex.test(rawCardValue)) {
-                    if (textError) textError.textContent = 'Try again';
-                    item.classList.add('error');
-                    errorFound = true;
-                }
+            if (activeType === 'applepay' || activeType === 'paypal') {
+                window.location.href = './payment.html';
+                return;
             }
 
-            if (item.hasAttribute('data-payment-date')) {
-                const dateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+            const isCardValid = validateField(cardInput, cardValidator.number(cardInput.value));
+            const isDateValid = validateField(dateInput, cardValidator.expirationDate(dateInput.value));
+            const isCvvValid = validateField(cvvInput, cardValidator.cvv(cvvInput.value));
 
-                if (!dateRegex.test(value)) {
-                    if (textError) textError.textContent = 'Try again';
-                    item.classList.add('error');
-                    errorFound = true;
-                }
-            }
-
-            if (item.hasAttribute('data-payment-cvv')) {
-                const cvvRegex = /^\d{3}$/;
-                if (!cvvRegex.test(value)) {
-                    if (textError) textError.textContent = 'Try again';
-                    item.classList.add('error');
-                    errorFound = true;
-                }
+            if (isCardValid && isDateValid && isCvvValid) {
+                window.location.href = './payment.html';
             }
         });
+    }
 
-        if (!errorFound) {
-            window.location.href = './payment.html';
-        }
+    [cardInput, dateInput, cvvInput].forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('error');
+            const errSpan = input.closest('label')?.querySelector('[data-text-error]');
+            if (errSpan) errSpan.textContent = '';
+        });
     });
 };

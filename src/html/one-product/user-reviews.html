@@ -138,17 +138,16 @@
             </div>
         </div>
     </div>
-    <div class="user-reviews__card-template-wrap">
-        <div class="user-reviews__card-review-wrap">
-        {{> components/card-review_extended
-        className="user-reviews__card-review"
-        dataId="card-review"
-        }}
-        </div>
-    </div>
-    <div class="user-reviews__swiper-wrap">
+    <div class="user-reviews__card-review-wrap">
         <div class="user-reviews__swiper swiper">
-            <div class="user-reviews__swiper-wrapper swiper-wrapper">
+            <div class="user-reviews__swiper-wrapper swiper-wrapper" data-reviews-wrap>
+                <template
+                  class="user-reviews__swiper-wrapper_template"
+                  id="reviews-template">
+                    {{> components/card-review_extended
+                    className="user-reviews__card-review swiper-slide"
+                    }}
+                </template>
             </div>
         </div>
     </div>

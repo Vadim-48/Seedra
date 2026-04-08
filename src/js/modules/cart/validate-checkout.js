@@ -1,11 +1,9 @@
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 
 export const initFormValidate = () => {
     const form = document.getElementById('checkout-form');
     if (!form) return;
     const inputList = form.querySelectorAll('input');
-    // const phoneUtil = lpn.PhoneNumberUtil.getInstance();
-    // const PNF = lpn.PhoneNumberFormat;
 
     function validateFullNumber(inputNumber) {
         try {
@@ -22,10 +20,41 @@ export const initFormValidate = () => {
 
     inputList.forEach((item) => {
         const textError = item.closest('label').querySelector('[data-text-error]');
-        item.addEventListener('input', () => {
+        item.addEventListener('input', (e) => {
             if (textError) {
                 textError.textContent = '';
                 item.classList.remove('error');
+            }
+            if (item.type === 'tel') {
+                let value = item.value;
+                if (value.length > 0 && !value.startsWith('+')) {
+                    value = '+' + value.replace(/[^\d]/g, '');
+                }
+                const formatted = new AsYouType().input(value);
+                item.value = (formatted === '+') ? '' : formatted;
+
+                // const cleanValue = item.value.replace(/[^\d]/g, '');
+                // const phoneNumber = parsePhoneNumberFromString(item.value);
+                const phoneNumber = parsePhoneNumberFromString(item.value);
+                const digitsOnly = item.value.replace(/[^\d]/g, '');
+
+                if (phoneNumber && digitsOnly.length > 4) {
+                    if (!phoneNumber.isPossible()) {
+                        if (textError) textError.textContent = 'Try again';
+                        item.classList.add('error');
+                    }
+                }
+                // if (phoneNumber) {
+                //     if (cleanValue.length > 10) {
+                //         if (!phoneNumber.isValid()) {
+                //             if (textError) textError.textContent = 'Try again';
+                //             item.classList.add('error');
+                //         } else {
+                //             if (textError) textError.textContent = '';
+                //             item.classList.remove('error');
+                //         }
+                //     }
+                // }
             }
         });
     });

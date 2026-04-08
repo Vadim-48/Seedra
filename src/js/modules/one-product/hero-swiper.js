@@ -11,20 +11,22 @@ export const initHeroSwiper = () => {
         spaceBetween: 10,
         slidesPerView: 6,
         loop: true,
+        // loopedSlides: loopedAmount,
+        slideToClickedSlide: true,
         // loop: thumbsSlides > 6,
         watchSlidesProgress: true,
+        grabCursor: true,
+
         breakpoints: {
-            1024: {
+            768: {
                 spaceBetween: 10,
                 slidesPerView: 6,
-            },
-            650: {
-                spaceBetween: 6,
-                slidesPerView: 10,
+                loop: true,
             },
             550: {
                 spaceBetween: 10,
-                slidesPerView: 8,
+                slidesPerView: 9,
+                loop: thumbsSlides > 7,
             },
         },
     });
@@ -34,6 +36,7 @@ export const initHeroSwiper = () => {
         spaceBetween: 5,
         centeredSlides: false,
         loop: true,
+        grabCursor: true,
         thumbs: {
             swiper: heroProductThumbsSwiper,
         },

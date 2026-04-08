@@ -9,6 +9,7 @@ const initSwiper = () => {
         spaceBetween: 15,
         loop: true,
         loopedSlides: 3,
+        grabCursor: true,
     });
 };
 

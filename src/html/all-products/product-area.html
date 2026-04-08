@@ -4,60 +4,13 @@
         className="product-area__filter-form"
         }}
     </aside>
-    <div class="product-area__list">
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-1"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-2"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-3"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-4"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-5"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-6"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-7"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-8"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
-        {{> components/card-product
-        className="product-area__card swiper-slide"
-        dataId="card-9"
-        hrefLink="./one-product.html"
-        altImg="product Seedra"
-        }}
+    <div class="product-area__list" data-product-cards-wrap data-cards-wrap>
+        <template class="product-area__list_template" id="product-template">
+            {{> components/card-product
+            className="product-area__card"
+            hrefLink="./one-product.html"
+            altImg="product Seedra"
+            }}
+        </template>
     </div>
 </div>

@@ -4,6 +4,7 @@ import {
     updateFavoriteIcon,
     updateCartIcon,
 } from "@/js/modules/update-header-icons.js";
+import {formatMoney} from "@/js/modules/format-money.js";
 
 function calcCards(length) {
     const cardsNumberEl = document.querySelector("[data-total-items]");
@@ -21,7 +22,7 @@ export async function loadFavoriteCards() {
     })
 
     const cardsBody = document.querySelector(".your-favorite__list-body");
-    const card = document.querySelector(".favorite-item");
+    const templateWrapper = document.querySelector("#favorite-item");
     const favoriteRawData = localStorage.getItem("favorite");
     let cadsFavoriteList = JSON.parse(favoriteRawData) || [];
     calcCards(cadsFavoriteList.length);
@@ -29,8 +30,11 @@ export async function loadFavoriteCards() {
     for (let i = 0; i < cadsFavoriteList.length; i++) {
         const productId = cadsFavoriteList[i];
 
-        const cloneCard = card.cloneNode(true);
+        const templateItem = templateWrapper.content.cloneNode(true);
+        const cloneCard = templateItem.querySelector(".favorite-item");
         cloneCard.dataset.productId = productId;
+        cloneCard.dataset.productId = productId;
+
 
         const innerPhoto = cloneCard.querySelector('[data-product-photo]');
         const innerTitle = cloneCard.querySelector("[data-product-title]");
@@ -39,7 +43,7 @@ export async function loadFavoriteCards() {
         if (productsMap[productId].photo && innerPhoto) innerPhoto.src = productsMap[productId].photo;
         if (productsMap[productId].name && innerTitle) innerTitle.textContent = productsMap[productId].name;
         if (productsMap[productId].price != null && innerPrice != null) {
-            innerPrice.textContent = "$" + Number(productsMap[productId].price).toFixed(2)
+            innerPrice.textContent =formatMoney(productsMap[productId].price)
         }
 
         cardsBody.appendChild(cloneCard);

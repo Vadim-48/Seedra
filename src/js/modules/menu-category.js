@@ -1,3 +1,5 @@
+// import { disablePageScroll, enablePageScroll, addScrollableSelector } from 'scroll-lock';
+
 export const initMenuCategoryScroll = () => {
     const el = document.querySelector('.category__btn-list-wrap');
     if (!el) return;
@@ -38,6 +40,15 @@ export const initCategoryDropdown = () => {
 
     const btnList = menuCategoryEl.querySelectorAll('.category__btn');
     const dropdownListEl = menuCategoryEl.querySelectorAll('.category-dropdown');
+    const dropdownWrap = document.querySelector('.category__dropdown-list');
+
+    // addScrollableSelector('.category-dropdown__content');
+
+    const closeAll = () => {
+        btnList.forEach(b => b.classList.remove('open'));
+        dropdownListEl.forEach(el => el.classList.remove('open'));
+        // enablePageScroll();
+    };
 
     btnList.forEach((btn, index) => {
         btn.addEventListener("click", (e) => {
@@ -54,21 +65,34 @@ export const initCategoryDropdown = () => {
             if (!isOpen) {
                 targetDropdown.classList.add('open');
                 btn.classList.add('open');
+                // disablePageScroll();
+            } else {
+                // enablePageScroll();
             }
         });
     });
 
+    dropdownWrap?.addEventListener('click', (e) => {
+        const clickEl = e.target.closest("button");
+        if (clickEl) {
+            closeAll();
+        }
+
+    })
+
     document.addEventListener("click", (e) => {
-        const isClickInside = e.target.closest('[data-menu-category]') || e.target.closest('.category-dropdown');
+        // const isClickInside = e.target.closest('[data-menu-category]') || e.target.closest('.category-dropdown');
+        const isClickInside =
+            e.target.closest('[data-menu-category]') ||
+            e.target.closest('.category-dropdown') ||
+            e.target.closest('.toolbar__sort-wrap');
 
         if (!isClickInside) {
-            btnList.forEach(b => b.classList.remove('open'));
-            dropdownListEl.forEach(el => el.classList.remove('open'));
+            closeAll();
         }
     });
 
     window.addEventListener("resize", () => {
-        btnList.forEach(b => b.classList.remove('open'));
-        dropdownListEl.forEach(el => el.classList.remove('open'));
+        closeAll();
     });
 }

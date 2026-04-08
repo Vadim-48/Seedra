@@ -117,14 +117,6 @@
         transition: max-height 0.3s ease;
     }
 
-    &__subcategory-item{
-        &:first-child{
-            margin-top: 17px;
-        }
-        &:not(:first-child) {
-            margin-top: 14px;
-        }
-    }
 
     &__subcategory-btn {
         font-weight: 300;
@@ -132,6 +124,12 @@
         line-height: 1.75;
         color: var(--text-secondary);
         transition: color .3s ease, opacity .3s ease;
+        &:first-child{
+            margin-top: 17px;
+        }
+        &:nth-child(n+2){
+            margin-top: 14px;
+        }
         &:focus-visible {
             color: var(--green-brand);
             opacity: 0.7;

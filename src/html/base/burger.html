@@ -1,13 +1,15 @@
 <div class="burger__bg"></div>
-<div class="burger" data-scroll-lock-scrollable>
+<div
+  class="burger"
+  data-scroll-lock-scrollable>
     <div class="burger__container">
         <form
           action="#"
           class="burger__search-form search-form">
             <button class="search-form__btn">
                 {{> components/svg
-                    className="search-form__btn-icon"
-                    id="search"
+                className="search-form__btn-icon"
+                id="search"
                 }}
             </button>
             <input
@@ -19,30 +21,37 @@
     <div class="burger__container">
         <ul class="burger__category">
             <li class="burger__category-item">
-                <button class="burger__category-btn" data-burger-close>
+                <a
+                  class="burger__category-btn"
+                  href="{{>links/nav_all-products}}"
+                  data-burger-close>
                     <span class="burger__category-text">All vegetables</span>
-                </button>
+                </a>
             </li>
             <li class="burger__category-item">
                 <button
                   class="burger__category-btn">
                     <span class="burger__category-text">Bundles</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Bundles-1
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a  href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Bundles-2
-                        </a>
-                    </li>
+                    {{> components/menu-category-li
+                    tag="a"
+                    dataAtr="data-burger-close"
+                    href="./all-products.html"
+                    className="burger__subcategory-btn"
+                    sortItems=(json '[
+                    {"text": "Bundles 1", "dataValue": "bundle-1"},
+                    {"text": "Bundles 2", "dataValue": "bundle-2"},
+                    {"text": "Bundles 3", "dataValue": "bundle-3"},
+                    {"text": "Bundles 4", "dataValue": "bundle-4"},
+                    {"text": "Bundles 5", "dataValue": "bundle-5"},
+                    {"text": "Bundles 6", "dataValue": "bundle-6"}
+                    ]')
+                    }}
                 </ul>
             </li>
             <li class="burger__category-item">
@@ -50,21 +59,25 @@
                   class="burger__category-btn">
                     <span class="burger__category-text">Herbs</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Herb-1
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Herb-2
-                        </a>
-                    </li>
+                    {{> components/menu-category-li
+                    tag="a"
+                    dataAtr="data-burger-close"
+                    href="./all-products.html"
+                    className="burger__subcategory-btn"
+                    sortItems=(json '[
+                    {"text": "Angelica", "dataValue": "angelica"},
+                    {"text": "Anise", "dataValue": "anise"},
+                    {"text": "Anise Hyssop", "dataValue": "anise-hyssop"},
+                    {"text": "Asclepias", "dataValue": "asclepias"},
+                    {"text": "Basil", "dataValue": "basil"},
+                    {"text": "Bee Balm", "dataValue": "bee-balm"}
+                    ]')
+                    }}
                 </ul>
             </li>
             <li class="burger__category-item">
@@ -72,26 +85,22 @@
                   class="burger__category-btn">
                     <span class="burger__category-text">Vegetables</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Cucumber
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Onion
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Garlic
-                        </a>
-                    </li>
+                    {{> components/menu-category-li
+                    tag="a"
+                    dataAtr="data-burger-close"
+                    href="./all-products.html"
+                    className="burger__subcategory-btn"
+                    sortItems=(json '[
+                    {"text": "Cucumber", "dataValue": "cucumber"},
+                    {"text": "Onion", "dataValue": "onion"},
+                    {"text": "Garlic", "dataValue": "garlic"}
+                    ]')
+                    }}
                 </ul>
             </li>
             <li class="burger__category-item">
@@ -99,26 +108,25 @@
                   class="burger__category-btn">
                     <span class="burger__category-text">Fruits</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Fruit-1
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Fruit-2
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            fruit-3
-                        </a>
-                    </li>
+                    {{> components/menu-category-li
+                    tag="a"
+                    dataAtr="data-burger-close"
+                    href="./all-products.html"
+                    className="burger__subcategory-btn"
+                    sortItems=(json '[
+                    {"text": "Fruit 1", "dataValue": "fruit-1"},
+                    {"text": "Fruit 2", "dataValue": "fruit-2"},
+                    {"text": "Fruit 3", "dataValue": "fruit-3"},
+                    {"text": "Fruit 4", "dataValue": "fruit-4"},
+                    {"text": "Fruit 5", "dataValue": "fruit-5"},
+                    {"text": "Fruit 6", "dataValue": "fruit-6"}
+                    ]')
+                    }}
                 </ul>
             </li>
             <li class="burger__category-item">
@@ -126,21 +134,25 @@
                   class="burger__category-btn">
                     <span class="burger__category-text">Supplies</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Supply-1
-                        </a>
-                    </li>
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Supply-2
-                        </a>
-                    </li>
+                    {{> components/menu-category-li
+                    tag="a"
+                    dataAtr="data-burger-close"
+                    href="./all-products.html"
+                    className="burger__subcategory-btn"
+                    sortItems=(json '[
+                    {"text": "Supply 1", "dataValue": "supply-1"},
+                    {"text": "Supply 2", "dataValue": "supply-2"},
+                    {"text": "Supply 3", "dataValue": "supply-3"},
+                    {"text": "Supply 4", "dataValue": "supply-4"},
+                    {"text": "Supply 5", "dataValue": "supply-5"},
+                    {"text": "Supply 6", "dataValue": "supply-6"}
+                    ]')
+                    }}
                 </ul>
             </li>
             <li class="burger__category-item">
@@ -148,15 +160,25 @@
                   class="burger__category-btn">
                     <span class="burger__category-text">Flowers</span>
                     {{> components/svg
-                        className="burger__category-icon"
-                        id="arrow-bottom"
+                    className="burger__category-icon"
+                    id="arrow-bottom"
                     }}
                 </button>
                 <ul class="burger__subcategory">
-                    <li class="burger__subcategory-item">
-                        <a href="#!" class="burger__subcategory-btn" data-burger-close>
-                            Flower-1
-                        </a>
+                        {{> components/menu-category-li
+                        tag="a"
+                        dataAtr="data-burger-close"
+                        href="./all-products.html"
+                        className="burger__subcategory-btn"
+                        sortItems=(json '[
+                        {"text": "Flower 1", "dataValue": "flower-1"},
+                        {"text": "Flower 2", "dataValue": "flower-2"},
+                        {"text": "Flower 3", "dataValue": "flower-3"},
+                        {"text": "Flower 4", "dataValue": "flower-4"},
+                        {"text": "Flower 5", "dataValue": "flower-5"},
+                        {"text": "Flower 6", "dataValue": "flower-6"}
+                        ]')
+                        }}
                     </li>
                 </ul>
             </li>
@@ -165,54 +187,62 @@
     <hr class="burger__line">
     <nav class="burger__container">
         <ul class="burger__menu">
-            <li class="burger__menu-item" data-burger-close>
+            <li
+              class="burger__menu-item"
+              data-burger-close>
                 <a
                   href="{{> links/nav_all-products}}"
                   class="burger__menu-link">
                     <span class="burger__menu-text">All products</span>
                     <div class="burger__menu-wrap">
                         {{> components/svg
-                            className="burger__menu-icon"
-                            id="arrow-right"
+                        className="burger__menu-icon"
+                        id="arrow-right"
                         }}
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item" data-burger-close>
+            <li
+              class="burger__menu-item"
+              data-burger-close>
                 <a
                   href="{{> links/nav_about-seedra}}"
                   class="burger__menu-link">
                     <span class="burger__menu-text">About Seedra</span>
                     <div class="burger__menu-wrap">
-                         {{> components/svg
-                            className="burger__menu-icon"
-                            id="arrow-right"
+                        {{> components/svg
+                        className="burger__menu-icon"
+                        id="arrow-right"
                         }}
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item" data-burger-close>
+            <li
+              class="burger__menu-item"
+              data-burger-close>
                 <a
                   href="{{> links/nav_our-blog}}"
                   class="burger__menu-link">
                     <span class="burger__menu-text">Our blog</span>
                     <div class="burger__menu-wrap">
-                         {{> components/svg
-                            className="burger__menu-icon"
-                            id="arrow-right"
+                        {{> components/svg
+                        className="burger__menu-icon"
+                        id="arrow-right"
                         }}
                     </div>
                 </a>
             </li>
-            <li class="burger__menu-item" data-burger-close>
+            <li
+              class="burger__menu-item"
+              data-burger-close>
                 <a
                   href="{{> links/nav_contacts}}"
                   class="burger__menu-link">
                     <span class="burger__menu-text">Contacts</span>
                     <div class="burger__menu-wrap">
-                         {{> components/svg
-                            className="burger__menu-icon"
-                            id="arrow-right"
+                        {{> components/svg
+                        className="burger__menu-icon"
+                        id="arrow-right"
                         }}
                     </div>
                 </a>
@@ -226,16 +256,16 @@
               href="{{> links/instagram}}"
               data-burger-close>
                 {{> components/svg
-                    className="burger__social-icon"
-                    id="instagram"
+                className="burger__social-icon"
+                id="instagram"
                 }}
             </a>
             <a
               href="{{> links/facebook}}"
               data-burger-close>
                 {{> components/svg
-                    className="burger__social-icon"
-                    id="facebook"
+                className="burger__social-icon"
+                id="facebook"
                 }}
             </a>
         </div>

@@ -1,8 +1,9 @@
 @use "@/scss/mixins/media" as media;
 
 .contact-us {
-    padding-top: 31px;
+    //padding-top: 31px;
     width: 100%;
+    margin-top: 31px;
 
     &__wrap {
         position: relative;

@@ -1,14 +1,23 @@
 import {collection, getDocs} from "firebase/firestore";
+// import {collection, getDocs, getDoc, doc} from "firebase/firestore";
 import {
     where,
     getAggregateFromServer,
     average,
-    query,
+    query, count,
 } from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
+import {formatMoney} from "@/js/modules/format-money.js";
 
 
-export async function loadOneProductFirebase(dataCard, productId) {
+export async function loadOneProductFirebase() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("_productId");
+    if (!productId) {
+        window.location.href = "./index.html";
+        return;
+    }
+
     const productsSnapshot = await getDocs(collection(db, "products"));
     const productsMap = {};
     productsSnapshot.forEach((doc) => {
@@ -17,17 +26,43 @@ export async function loadOneProductFirebase(dataCard, productId) {
     const product = productsMap[productId];
 
     const cardList = document.querySelector(`[data-product-id]`);
-    cardList.dataset.productFirebase = productId;
+    cardList.dataset.productId = productId;
+
+    const breadcrumbWrap = document.querySelector('[data-breadcrumb-wrap]');
+    const innerBreadcrumbCategory = breadcrumbWrap.querySelector('[data-breadcrumb-category]');
+    const innerBreadcrumbType = breadcrumbWrap.querySelector('[data-breadcrumb-type]');
+    const innerBreadcrumbName = breadcrumbWrap.querySelector('[data-breadcrumb-name]');
+
+    if (product.type && innerBreadcrumbType) {
+        innerBreadcrumbType.textContent = product.type.replace('-', ' ');
+        innerBreadcrumbType.dataset.breadcrumbType = product.type;
+    }
+    if (product.category && innerBreadcrumbCategory) {
+        innerBreadcrumbCategory.textContent = product.category;
+        innerBreadcrumbCategory.dataset.breadcrumbCategory = product.category;
+    }
+    if (product.shortName && innerBreadcrumbName) innerBreadcrumbName.textContent = product.shortName;
+
 
     const innerTitle = cardList.querySelector('[data-product-name]');
     const innerPrice = cardList.querySelector('[data-product-price]');
     const innerOldPrice = cardList.querySelector('[data-product-old-price]');
     const innerFirePrice = cardList.querySelector('[data-product-fire-price]');
+    const innerIsAvalible = cardList.querySelector('[data-product-status]');
+    const innerCategory = cardList.querySelector('[data-product-category] span');
+    const innerCategoryIcon = cardList.querySelector('[data-product-category] use');
 
     if (product.name && innerTitle) innerTitle.textContent = product.name;
-    if (product.price != null && innerPrice != null) innerPrice.textContent = "$" + product.price.toFixed(2);
+    if (product.price != null && innerPrice != null) innerPrice.textContent = formatMoney(product.price);
     if (product.firePrice && innerFirePrice) innerFirePrice.style.display = "block";
-    if (product.oldPrice != null && innerOldPrice != null) innerOldPrice.textContent = "$" + product.oldPrice.toFixed(2);
+    if (product.oldPrice != null && innerOldPrice != null) innerOldPrice.textContent = formatMoney(product.oldPrice);
+    if (product.available && innerIsAvalible) innerIsAvalible.classList.add('is-available');
+    if (product.category && innerCategory) {
+        innerCategory.textContent = product.category;
+        let categoryHref = innerCategoryIcon.href.baseVal;
+        categoryHref = categoryHref.replace('all', `${product.category}`);
+        innerCategoryIcon.href.baseVal = categoryHref;
+    }
 
     const innerPhotoList = cardList.querySelectorAll('[data-product-photo]');
     const innerThumbsList = cardList.querySelectorAll('[data-product-thumb]');
@@ -48,8 +83,10 @@ export async function loadOneProductFirebase(dataCard, productId) {
         el.dataset.videoId = product.video.id;
     })
 
-    const reviewCardWrap = document.querySelector('.user-reviews__swiper-wrapper');
-    const reviewCardTemplate = document.querySelector('.user-reviews__card-template-wrap .user-reviews__card-review-wrap');
+    const reviewCardWrap = document.querySelector('[data-reviews-wrap]');
+    const templateWrap = document.querySelector("#reviews-template");
+
+    // const reviewCardTemplate = document.querySelector('.user-reviews__card-template-wrap .user-reviews__card-review-wrap');
     const subCollectionProducts = collection(db, "products", productId, "reviews");
     const subSnapshot = await getDocs(subCollectionProducts);
 
@@ -60,7 +97,9 @@ export async function loadOneProductFirebase(dataCard, productId) {
         if (countReviews > 5) {
             return
         }
-        const cloneReviewCard = reviewCardTemplate.cloneNode(true);
+
+        const templateFragment = templateWrap.content.cloneNode(true);
+        const cloneReviewCard = templateFragment.querySelector(".card-review");
         cloneReviewCard.classList.add('swiper-slide');
 
         const innerReviewTitle = cloneReviewCard.querySelector('[data-review-name]');
@@ -74,7 +113,13 @@ export async function loadOneProductFirebase(dataCard, productId) {
         if (innerReviewUserPhoto && data.photo) innerReviewUserPhoto.src = data.photo;
         if (innerReviewDate && data.dateExtended) innerReviewDate.textContent = data.dateExtended;
         if (innerReviewText && data.text) innerReviewText.textContent = data.text;
-        if (innerReviewPacks && data.packSize) innerReviewPacks.textContent = data.packSize;
+        if (innerReviewPacks && data.packSize) {
+            if (data.packSize == 1) {
+                innerReviewPacks.textContent = data.packSize + " pack";
+            }
+            innerReviewPacks.textContent = data.packSize + " packs";
+
+        }
         if (innerReviewVerified && data.verified) innerReviewVerified.style.display = "flex";
 
         if (data.reviewImg) {
@@ -82,8 +127,6 @@ export async function loadOneProductFirebase(dataCard, productId) {
             reviewsImgWrap.style.display = "flex";
 
             const reviewsPicture = cloneReviewCard.querySelector('.card-review__review-img');
-
-
             data.reviewImg.forEach(img => {
                 const reviewsPictureTemplate = reviewsPicture.cloneNode(true);
                 const reviewsImgTemplate = reviewsPictureTemplate.querySelector('img');
@@ -91,7 +134,6 @@ export async function loadOneProductFirebase(dataCard, productId) {
                 reviewsImgWrap.appendChild(reviewsPictureTemplate);
             })
         }
-
 
         const stars = cloneReviewCard.querySelectorAll('[data-rating] svg use');
         const fullStar = Math.floor(data.star);
@@ -108,8 +150,16 @@ export async function loadOneProductFirebase(dataCard, productId) {
         reviewCardWrap.appendChild(cloneReviewCard);
     })
 
+
+    const innerTotalStar = document.querySelector('[data-stars-summary-number]');
+    const snapshotReviews = await getAggregateFromServer(subCollectionProducts, {
+        averageStars: average('star'),
+        totalReviews: count(),
+    });
+
+    innerTotalStar.textContent = (snapshotReviews.data().averageStars).toFixed(1);
     const innerReviewsHumberList = document.querySelectorAll('[data-reviews-number]');
-    const productReviewsLength = subSnapshot.size;
+    const productReviewsLength = snapshotReviews.data().totalReviews;
     innerReviewsHumberList.forEach(item => {
         if (item && productReviewsLength) {
             if (productReviewsLength === 1) {
@@ -120,17 +170,10 @@ export async function loadOneProductFirebase(dataCard, productId) {
         }
     });
 
-
-    const innerTotalStar = document.querySelector('[data-stars-summary-number]');
-    const snapshot = await getAggregateFromServer(subCollectionProducts, {
-        averageStars: average('star'),
-    });
-    innerTotalStar.textContent = snapshot.data().averageStars;
-
     const allStarsWrap = document.querySelector('[data-rating-all]');
     const stars = allStarsWrap.querySelectorAll('[data-rating] use');
-    const fullStar = Math.floor(snapshot.data().averageStars);
-    const halfStar = snapshot.data().averageStars - fullStar;
+    const fullStar = Math.floor(snapshotReviews.data().averageStars);
+    const halfStar = snapshotReviews.data().averageStars - fullStar;
     for (let i = 0; i < stars.length; i++) {
         if (fullStar > i) {
             stars[i].setAttribute('href', './sprite.svg#icon-star');
@@ -156,7 +199,7 @@ export async function loadOneProductFirebase(dataCard, productId) {
         starsListEl.push(allStarsWrap.querySelector(`[data-stars-${i}-number]`));
         progressListEl.push(allStarsWrap.querySelector(`[data-stars-${i}-progress]`));
     }
-    let j = 0;
+    // let j = 0;
     for (let i = 0; i < 5; i++) {
         progressListEl[i].value = countStars[i];
         progressListEl[i].max = productReviewsLength;
@@ -175,7 +218,9 @@ export async function loadOneProductFirebase(dataCard, productId) {
     let countReviewsGalleryPicture = 1;
     reviewsImgListData.forEach(img => {
         img.forEach(item => {
-            if (countReviewsGalleryPicture > 4) {return}
+            if (countReviewsGalleryPicture > 4) {
+                return
+            }
             const reviewsElTemplate = reviewsGalleryPicture.cloneNode(true);
             const reviewsGalleryImg = reviewsElTemplate.querySelector('img');
             reviewsGalleryImg.src = item;
@@ -183,6 +228,4 @@ export async function loadOneProductFirebase(dataCard, productId) {
             ++countReviewsGalleryPicture;
         })
     })
-
-    console.log(reviewsImgListData);
 }

@@ -104,6 +104,9 @@
         height: 46px;
         margin: 0 0 3px 0;
         display: none;
+        &.is-visible{
+            display: block;
+        }
         @include media.max-width(sm) {
             width: 35px;
             height: 35px;
@@ -113,12 +116,8 @@
     &__price {
         margin-left: 16px;
         font-weight: 600;
-        //font-size: 42px;
         @include adaptive.value(font-size, 42, 32);
         line-height: 1.29;
-        //&::before{
-        //    content: '$';
-        //}
         @include media.max-width(sm) {
             margin-left: 5px;
             line-height: 1.06;
@@ -134,10 +133,6 @@
         line-height: 2.45;
         color: var(--text-secondary);
         text-decoration: line-through;
-        //display: none;
-        //&::before{
-        //    content: '$';
-        //}
         @include media.max-width(sm) {
             margin-left: 14px;
         }
@@ -189,17 +184,3 @@
     }
 }
 
-//@media (max-width: 330px) {
-//    .hero {
-//        &__btn {
-//            &_add {
-//                width: 122px;
-//                height: 47px;
-//            }
-//            &_discover {
-//                width: 103px;
-//                height: 47px;
-//            }
-//        }
-//    }
-//}

@@ -1,4 +1,9 @@
-import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
+import {
+    disablePageScroll,
+    enablePageScroll,
+    clearQueueScrollLocks
+} from 'scroll-lock';
+// import {menuCategoryFilter} from "@/js/modules/menu-category-filter.js";
 
 export function burger() {
     const burgerBtn = document.querySelector(".header__burger-btn");
@@ -7,7 +12,7 @@ export function burger() {
 
     if (!burgerBtn || !burgerMenu) return;
 
-    const closeBurger = () =>{
+    const closeBurger = () => {
         burgerBtn.classList.remove("active");
         burgerMenu.classList.remove("active");
         burgerBg?.classList.remove("active");
@@ -31,9 +36,31 @@ export function burger() {
         }
     };
 
-    burgerMenu.addEventListener("click", (e) => {
+    burgerMenu.addEventListener("click", async (e) => {
+        const filterBtn = e.target.closest('[data-burger-close]');
+
         if (e.target.closest('[data-burger-close]')) {
-            closeBurger();
+
+            // const category = filterBtn.dataset.categoryFilter;
+            const type = filterBtn.dataset.typeFilter;
+            const originalHref = filterBtn.href;
+            if (type) {
+                e.preventDefault();
+                const queries = {
+                    // _chosenCategory: category,
+                    _chosenType: type,
+                }
+
+                const params = new URLSearchParams(queries);
+                let separator;
+                if (originalHref.includes('?')) {
+                    separator = '&'
+                } else {
+                    separator = '?'
+                }
+                closeBurger();
+                window.location.href = originalHref + separator + params;
+            } else {closeBurger();}
         }
     });
 
@@ -41,6 +68,6 @@ export function burger() {
     burgerBg?.addEventListener("click", closeBurger);
 
     window.addEventListener("resize", () => {
-            closeBurger();
+        closeBurger();
     })
 }

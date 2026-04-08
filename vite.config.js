@@ -1,4 +1,5 @@
 import {defineConfig} from 'vite'
+// import basicSsl from '@vitejs/plugin-basic-ssl'
 import path from 'path'
 import {resolve} from 'path'
 import {globSync} from 'glob'
@@ -36,6 +37,7 @@ export default defineConfig({
     },
 
     plugins: [
+        // basicSsl(),
         {
             name: 'dev-pages-rewrite',
             configureServer(server) {
@@ -75,6 +77,16 @@ export default defineConfig({
 
         handlebars({
             partialDirectory: path.resolve(__dirname, 'src/html'),
+            helpers: {
+                split: (str) => {
+                    if (typeof str === 'string') {
+                        return str.split(',').map(item => item.trim());
+                    }
+                    return [];
+                },
+                first: (arr) => (Array.isArray(arr) ? arr[0] : arr),
+                json: (str) => JSON.parse(str),
+            }
         }),
 
         viteImagemin({ //  WebP
@@ -97,6 +109,7 @@ export default defineConfig({
     ],
 
     server: {
+        // https: true,
         watch: {
             // include: ['src/html/**/*.html', 'src/**/*.html'],
             ignored: ['**/*.webp']

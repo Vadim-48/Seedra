@@ -1,4 +1,4 @@
-<div class="toolbar {{className}}">
+<div class="{{className}} toolbar">
     <form
       action="#"
       autocomplete="off"
@@ -24,20 +24,30 @@
             }}
         </button>
     </form>
-    <button
-      class="toolbar__sort-btn"
-      type="button">
-        <div class="toolbar__sort-inner">
+    <div class="toolbar__sort-wrap">
+        <button
+          class="toolbar__sort-btn"
+          type="button">
+            <div class="toolbar__sort-inner">
             <span class="toolbar__sort-text">
                 Sort by
             </span>
             <span class="toolbar__sort-item">
-                Recently
+                {{first sortItems}}
             </span>
+            </div>
+            {{> components/svg
+            className="toolbar__sort-icon"
+            id="arrow-bottom"
+            }}
+        </button>
+
+        <div class="toolbar-dropdown">
+            <ul class="toolbar-dropdown__list">
+                {{#each sortItems}}
+                <li class="toolbar-dropdown__list-item" data-sort>{{this}}</li>
+                {{/each}}
+            </ul>
         </div>
-        {{> components/svg
-        className="toolbar__sort-icon"
-        id="arrow-bottom"
-        }}
-    </button>
+    </div>
 </div>

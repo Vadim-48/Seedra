@@ -44,6 +44,7 @@ const initOneNewsSwiper = () => {
         watchOverflow: false,
         observer: true,
         observeParents: true,
+        grabCursor: true,
         breakpoints: {
             450: {
                 slidesPerView: 1.4,

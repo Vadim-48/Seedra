@@ -1,21 +1,26 @@
 .amount {
-    &__number {
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 11px;
+    border: 1px solid var(--light-grey-stroke);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    //min-width: 44px;
+
+    &__number-btn {
+        //margin-top: 4px;
         display: flex;
         align-items: center;
-        gap: 6px;
-        padding: 6px 14px;
-    }
-
-    &__number-add {
-        margin-top: 4px;
     }
 
     &__number-inner {
         background: var(--invisible-green);
         padding-inline: 11px;
         border-radius: 6px;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        //justify-content: center;
     }
 
     &__number-item {
@@ -24,11 +29,14 @@
         line-height: 1.78;
         letter-spacing: -0.04em;
         color: var(--green-brand);
-
-    }
-
-    &__number-remove {
-        margin-top: 4px;
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum";
+        white-space: nowrap;
+        //min-width: 17px;
+        width: 26px;
+        display: inline-block;
+        text-align: center;
+        user-select: none;
     }
 
     &__number-icon {

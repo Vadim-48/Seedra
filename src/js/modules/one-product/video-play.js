@@ -6,7 +6,10 @@ const DEFAULT_PLAYER_VARS = {
     playsinline: 1,
     controls: 1,
     rel: 0,
-    modestbranding: 1
+    modestbranding: 1,
+    enablejsapi: 1,
+    origin: window.location.origin,
+    // origin: window.location.protocol + '//' + window.location.host,
 };
 
 function loadYouTubeAPI(callback) {
@@ -65,10 +68,14 @@ export function initVideoPlayers({ selector = '[data-video-file]', autoplay = tr
             const playIcon = wrapper.querySelector('.video__play-icon');
             if (playIcon) playIcon.style.display = 'none';
 
-            const player = players[index];
-            if (player) {
+            const player = players.find(p => p.getIframe().id === playerElement.id);
+            if (player && typeof player.playVideo === 'function') {
                 player.playVideo();
             }
+            // const player = players[index];
+            // if (player) {
+            //     player.playVideo();
+            // }
         });
     });
 }

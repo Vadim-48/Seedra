@@ -37,20 +37,24 @@
 </header>
 <main>
     <section class="intro">
-        <div class="container">
+        <div class="intro__container container">
             {{> components/intro
             title="Welcome to our blog"
-            text="Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden"
+            text="Here you can find a lot of interesting and useful information
+            that you need in gardening and creating a beautiful garden"
             }}
         </div>
     </section>
     <section class="filter-blog">
-        <div class="container">
-            {{> components/toolbar}}
+        <div class="filter-blog__container container">
+            {{> components/toolbar
+            className="filter-blog__toolbar"
+            sortItems=(split "Recently, Older")
+            }}
         </div>
     </section>
     <section class="blog">
-        <div class="container">
+        <div class="blog__container container">
             {{> our-blog/blog}}
         </div>
     </section>
@@ -58,7 +62,7 @@
 <footer
   class="footer"
   id="footer">
-    <div class="container">
+    <div class="footer__container container">
         {{> base/footer}}
     </div>
 </footer>

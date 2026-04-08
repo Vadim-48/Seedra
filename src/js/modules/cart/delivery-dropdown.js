@@ -2,7 +2,7 @@ export const innitDeliveryDropdown = () => {
     const btnWrap = document.querySelector('.form-summary__delivery');
     const btnDelivery = btnWrap.querySelector('.form-summary__delivery-select');
     const btnValue = btnWrap.querySelector('.form-summary__delivery-value');
-    const dropdownItem = btnWrap.querySelectorAll('.form-summary__delivery-dropdown span');
+    const dropdownItem = btnWrap.querySelectorAll('.form-summary__delivery-dropdown-item');
 
     btnDelivery.addEventListener('click', (e) => {
         btnWrap.classList.toggle('open');
@@ -10,7 +10,8 @@ export const innitDeliveryDropdown = () => {
 
     dropdownItem.forEach(item => {
         item.addEventListener('click', () => {
-            btnValue.textContent = item.textContent;
+            // btnValue.textContent = item.textContent;
+            btnValue.textContent = item.querySelector('span').textContent;
             btnWrap.classList.remove('open');
 
             const event = new CustomEvent('deliveryChange', {

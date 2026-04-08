@@ -37,30 +37,28 @@
 </header>
 <main>
     <section class="search-bar">
-        <div class="container">
-            {{> all-products/search-bar}}
+        <div class="search-bar__container container">
+            {{> components/toolbar
+            className="filter-blog__toolbar"
+            sortItems=(split "Most expensive, Less expensive")
+            }}
         </div>
     </section>
     <section class="menu-category">
-        <div class="container">
+        <div class="menu-category__container container">
             {{> components/menu-category}}
         </div>
     </section>
     <section class="product-area">
-        <div class="container">
+        <div class="product-area__container container">
             {{> all-products/product-area}}
-        </div>
-    </section>
-    <section class="">
-        <div class="container">
-
         </div>
     </section>
 </main>
 <footer
   class="footer"
   id="footer">
-    <div class="container">
+    <div class="footer__container container">
         {{> base/footer}}
     </div>
 </footer>

@@ -17,10 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await Promise.all([
         loadCards(),
+
     ]);
-
     innitAmountPrice();
-
 });
 
 

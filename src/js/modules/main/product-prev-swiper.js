@@ -2,26 +2,32 @@ let productsSwiper = null;
 
 const breakpoint = window.matchMedia('(max-width: 576px)');
 
-const initProductsSwiper = () => {
+export const initProductsSwiper = () => {
+    const swiperContainer = document.querySelector('.products-prev__swiper');
+    const slides = swiperContainer.querySelectorAll('.swiper-slide');
+    const count = slides.length;
+
     productsSwiper = new Swiper('.products-prev__swiper', {
-        slidesPerView: 1.1,
+        slidesPerView: count === 1 ? 1 : 1.1,
+        // slidesPerView: 1.1,
         spaceBetween: 20,
-        loop: true,
+        // loop: true,
+        loop: count > 2,
         observer: true,
         observeParents: true,
         watchOverflow: true,
         breakpoints: {
             400: {
-                slidesPerView: 1.3,
+                slidesPerView: count === 1 ? 1 : 1.3,
             },
             470: {
-                slidesPerView: 1.5,
+                slidesPerView: count === 1 ? 1 : 1.5,
             },
         }
     });
 };
 
-const destroyAll = () => {
+export const destroyAll = () => {
     productsSwiper?.destroy(true, true);
     productsSwiper = null;
 };
@@ -30,7 +36,7 @@ const check = () => {
     if (!window.Swiper) return;
 
     if (breakpoint.matches) {
-        if (!productsSwiper && document.querySelector('.products-prev__swiper')) {
+        if (!productsSwiper) {
             initProductsSwiper();
         }
     } else {

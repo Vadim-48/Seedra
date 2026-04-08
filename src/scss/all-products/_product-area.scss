@@ -32,6 +32,8 @@
     }
 
     &__card {
+        width: 100%;
+        min-width: 0;
         & .card__old-price {
             display: none;
         }

@@ -8,6 +8,7 @@
         }
     }
     &__breadcrumb-item{
+        text-transform: capitalize;
         font-weight: 300;
         font-size: 16px;
         line-height: 1.75;
@@ -19,6 +20,9 @@
             line-height: 1.78;
             letter-spacing: -0.04em;
             color: var(--text-primary);
+            pointer-events: none;
+            cursor: default;
+            text-decoration: none;
         }
         &:not(:first-child){
             margin-left: 14px;
@@ -154,6 +158,10 @@
     &__status{
         background: var(--invisible-green);
         padding: 8px 18px;
+        display: none;
+        &.is-available{
+            display: flex;
+        }
     }
     &__status-icon{
         width: 24px;
@@ -173,6 +181,7 @@
         height: 32px;
     }
     &__category-text{
+        text-transform: uppercase;
         font-size: 14px;
         line-height: 1.78;
         color: var(--text-primary);
@@ -243,6 +252,18 @@
     &__favorite{
         width: 24px;
         height: 24px;
+        transition: opacity .3s ease;
+        &:focus-visible {
+            opacity: 0.6;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                opacity: 0.6;
+            }
+        }
+        &:active{
+            opacity: 1;
+        }
     }
 
     &__btn {
@@ -295,6 +316,7 @@
         display: flex;
         align-items: center;
         transition: border 0.3s ease;
+        cursor: pointer;
         &:not(:first-child){
             margin-top: 8px;
         }
@@ -339,7 +361,7 @@
         }
     }
 
-    &__label {
+    &__option-inner {
         padding-left: 17px;
         width: 100%;
         display: flex;

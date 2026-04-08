@@ -10,29 +10,34 @@
         <div class="your-favorite__list-header">
             <p class="your-favorite__list-header_product">PRODUCT DETAILS</p>
             <p class="your-favorite__list-header_price">PRICE</p>
+            <p></p>
         </div>
         <div class="your-favorite__list-body">
-            <div class="your-favorite__favorite-item favorite-item">
-                <div class="favorite-item__product">
-                    <div class="favorite-item__photo-wrap">
-                        <button class="favorite-item__btn-del">
-                            <span></span><span></span>
-                        </button>
-                        <picture class="favorite-item__photo">
-                            <img
-                              src="/src/image/test.png"
-                              data-product-photo
-                              alt="">
-                        </picture>
+            <template class="your-favorite__list-body_template" id="favorite-item">
+                <div class="your-favorite__favorite-item favorite-item">
+                    <div class="favorite-item__product">
+                        <div class="favorite-item__photo-wrap">
+                            <button class="favorite-item__btn-del">
+                                <span></span><span></span>
+                            </button>
+                            <picture class="favorite-item__photo">
+                                <img
+                                  src=""
+                                  data-product-photo
+                                  alt="">
+                            </picture>
+                        </div>
+                        <p
+                          class="favorite-item__title"
+                          data-product-title></p>
                     </div>
-                    <p
-                      class="favorite-item__title"
-                      data-product-title></p>
+                    <span
+                      class="favorite-item__value"
+                      data-product-price>$0</span>
+                    <button type="button" class="favorite-item__btn btn_green" data-btn-add>Add to cart</button>
                 </div>
-                <span
-                  class="favorite-item__value"
-                  data-product-price>$0</span>
-            </div>
+            </template>
+
         </div>
     </div>
     <a

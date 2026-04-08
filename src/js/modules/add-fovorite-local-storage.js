@@ -5,8 +5,8 @@ import {
 
 function markFavorite(card) {
     let cadsFavoriteData = JSON.parse(localStorage.getItem('favorite')) || [];
-    const firebaseProductId = card.dataset.productFirebase;
-    const currentProductData = cadsFavoriteData.find(item => item === firebaseProductId);
+    const productId = card.dataset.productId;
+    const currentProductData = cadsFavoriteData.find(item => item === productId);
     const btnFavoriteIcon = card.querySelector("[data-product-favorite] svg use");
 
     if (!btnFavoriteIcon) {
@@ -46,7 +46,7 @@ export function addFavoriteLocalStorage() {
             event.preventDefault();
             let cadsFavoriteData = JSON.parse(localStorage.getItem('favorite')) || [];
 
-            const productId = card.dataset.productFirebase;
+            const productId = card.dataset.productId;
             // console.log(productId);
 
             const exists = cadsFavoriteData.find(item => item === productId);

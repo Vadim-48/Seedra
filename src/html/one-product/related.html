@@ -3,43 +3,14 @@
 </div>
 <div class="related__swiper-container container">
     <div class="related__swiper swiper">
-        <div class="swiper-wrapper">
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-1"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-2"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-3"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-4"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-5"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
-            {{> components/card-product
-            className="related__card swiper-slide"
-            dataId="card-6"
-            hrefLink="./one-product.html"
-            altImg="product Seedra"
-            }}
+        <div class="related__swiper-wrapper swiper-wrapper" data-product-cards-wrap>
+            <template class="related__template" id="product-template">
+                {{> components/card-product
+                className="related__card swiper-slide"
+                hrefLink="./one-product.html"
+                altImg="product Seedra"
+                }}
+            </template>
         </div>
     </div>
 </div>

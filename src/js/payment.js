@@ -5,7 +5,7 @@ import {
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
 import {initPaymentFormValidate} from "@/js/modules/cart/validate-payment.js";
-import {changePaymentCard} from "@/js/modules/cart/change-payment-card.js";
+// import {changePaymentCard} from "@/js/modules/cart/change-payment-card.js";
 import {innitFinalPrice} from "@/js/modules/cart/innit-final-price.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     burger();
     burgerAccordion();
     initPaymentFormValidate();
-    changePaymentCard();
+    // changePaymentCard();
 
     updateCartIcon();
     updateFavoriteIcon();

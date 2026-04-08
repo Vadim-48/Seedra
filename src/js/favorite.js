@@ -5,6 +5,7 @@ import {
     updateCartIcon,
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
+import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -16,5 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
         loadFavoriteCards(),
     ]);
+    addCartLocalStorage();
 
 });

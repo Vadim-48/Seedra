@@ -5,37 +5,37 @@
         <div class="category__btn-list">
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-1"
+            id="category-all"
             text="ALL"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-2"
+            id="category-bundles"
             text="BUNDLES"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-3"
+            id="category-herbs"
             text="HERBS"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-4"
-            text="VEGETABLES"
+            id="category-vegetables"
+            text="VEGATABLES"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-5"
+            id="category-fruits"
             text="FRUITS"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-6"
+            id="category-supplies"
             text="SUPPLIES"
             }}
             {{> components/btn-category
             className="category__btn"
-            id="btn-category-7"
+            id="category-flowers"
             text="FLOWERS"
             }}
         </div>
@@ -46,15 +46,48 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">All</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/bundles }}
-                    {{> components/category-dropdown/herbs }}
-                    {{> components/category-dropdown/vegetables }}
-                    {{> components/category-dropdown/fruits }}
-                    {{> components/category-dropdown/supplies }}
-                    {{> components/category-dropdown/flowers }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Bundles 1", "dataValue": "bundle-1"},
+                    {"text": "Bundles 2", "dataValue": "bundle-2"},
+                    {"text": "Bundles 3", "dataValue": "bundle-3"},
+                    {"text": "Bundles 4", "dataValue": "bundle-4"},
+                    {"text": "Bundles 5", "dataValue": "bundle-5"},
+                    {"text": "Bundles 6", "dataValue": "bundle-6"},
+                    {"text": "Angelica", "dataValue": "angelica"},
+                    {"text": "Anise", "dataValue": "anise"},
+                    {"text": "Anise Hyssop", "dataValue": "anise-hyssop"},
+                    {"text": "Asclepias", "dataValue": "asclepias"},
+                    {"text": "Basil", "dataValue": "basil"},
+                    {"text": "Bee Balm", "dataValue": "bee-balm"},
+                    {"text": "Cucumber", "dataValue": "cucumber"},
+                    {"text": "Onion", "dataValue": "onion"},
+                    {"text": "Garlic", "dataValue": "garlic"},
+                    {"text": "Fruit 1", "dataValue": "fruit-1"},
+                    {"text": "Fruit 2", "dataValue": "fruit-2"},
+                    {"text": "Fruit 3", "dataValue": "fruit-3"},
+                    {"text": "Fruit 4", "dataValue": "fruit-4"},
+                    {"text": "Fruit 5", "dataValue": "fruit-5"},
+                    {"text": "Fruit 6", "dataValue": "fruit-6"},
+                    {"text": "Supply 1", "dataValue": "supply-1"},
+                    {"text": "Supply 2", "dataValue": "supply-2"},
+                    {"text": "Supply 3", "dataValue": "supply-3"},
+                    {"text": "Supply 4", "dataValue": "supply-4"},
+                    {"text": "Supply 5", "dataValue": "supply-5"},
+                    {"text": "Supply 6", "dataValue": "supply-6"},
+                    {"text": "Flower 1", "dataValue": "flower-1"},
+                    {"text": "Flower 2", "dataValue": "flower-2"},
+                    {"text": "Flower 3", "dataValue": "flower-3"},
+                    {"text": "Flower 4", "dataValue": "flower-4"},
+                    {"text": "Flower 5", "dataValue": "flower-5"},
+                    {"text": "Flower 6", "dataValue": "flower-6"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all
+                <button class="category-dropdown__view-all" data-category-filter="all">View all
                 </button>
             </div>
 
@@ -64,10 +97,21 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">Bundles</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/bundles }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Bundles 1", "dataValue": "bundle-1"},
+                    {"text": "Bundles 2", "dataValue": "bundle-2"},
+                    {"text": "Bundles 3", "dataValue": "bundle-3"},
+                    {"text": "Bundles 4", "dataValue": "bundle-4"},
+                    {"text": "Bundles 5", "dataValue": "bundle-5"},
+                    {"text": "Bundles 6", "dataValue": "bundle-6"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all Bundles
+                <button class="category-dropdown__view-all" data-category-filter="bundles">View all Bundles
                 </button>
             </div>
         </div>
@@ -76,10 +120,21 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">Herbs</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/herbs }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Angelica", "dataValue": "angelica"},
+                    {"text": "Anise", "dataValue": "anise"},
+                    {"text": "Anise Hyssop", "dataValue": "anise-hyssop"},
+                    {"text": "Asclepias", "dataValue": "asclepias"},
+                    {"text": "Basil", "dataValue": "basil"},
+                    {"text": "Bee Balm", "dataValue": "bee-balm"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all Herbs
+                <button class="category-dropdown__view-all" data-category-filter="herbs">View all Herbs
                 </button>
             </div>
         </div>
@@ -89,10 +144,18 @@
                 <h2 class="category-dropdown__title sub-title">
                     Vegetables</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/vegetables }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Cucumber", "dataValue": "cucumber"},
+                    {"text": "Onion", "dataValue": "onion"},
+                    {"text": "Garlic", "dataValue": "garlic"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all
+                <button class="category-dropdown__view-all" data-category-filter="vegetables">View all
                     Vegetables
                 </button>
             </div>
@@ -102,10 +165,21 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">Fruits</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/fruits }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Fruit 1", "dataValue": "fruit-1"},
+                    {"text": "Fruit 2", "dataValue": "fruit-2"},
+                    {"text": "Fruit 3", "dataValue": "fruit-3"},
+                    {"text": "Fruit 4", "dataValue": "fruit-4"},
+                    {"text": "Fruit 5", "dataValue": "fruit-5"},
+                    {"text": "Fruit 6", "dataValue": "fruit-6"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all Fruits
+                <button class="category-dropdown__view-all" data-category-filter="fruits">View all Fruits
                 </button>
             </div>
         </div>
@@ -114,10 +188,21 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">Supplies</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/supplies }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Supply 1", "dataValue": "supply-1"},
+                    {"text": "Supply 2", "dataValue": "supply-2"},
+                    {"text": "Supply 3", "dataValue": "supply-3"},
+                    {"text": "Supply 4", "dataValue": "supply-4"},
+                    {"text": "Supply 5", "dataValue": "supply-5"},
+                    {"text": "Supply 6", "dataValue": "supply-6"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all
+                <button class="category-dropdown__view-all" data-category-filter="supplies">View all
                     Supplies
                 </button>
             </div>
@@ -127,10 +212,21 @@
                 <div class="category-dropdown__arrow_front"></div>
                 <h2 class="category-dropdown__title sub-title">Flowers</h2>
                 <ul class="category-dropdown__list">
-                    {{> components/category-dropdown/flowers }}
+                    {{> components/menu-category-li
+                    tag="button"
+                    className="category-dropdown__item"
+                    sortItems=(json '[
+                    {"text": "Flower 1", "dataValue": "flower-1"},
+                    {"text": "Flower 2", "dataValue": "flower-2"},
+                    {"text": "Flower 3", "dataValue": "flower-3"},
+                    {"text": "Flower 4", "dataValue": "flower-4"},
+                    {"text": "Flower 5", "dataValue": "flower-5"},
+                    {"text": "Flower 6", "dataValue": "flower-6"}
+                    ]')
+                    }}
                 </ul>
                 <hr class="category-dropdown__line">
-                <button class="category-dropdown__view-all">View all Flowers
+                <button class="category-dropdown__view-all" data-category-filter="flowers">View all Flowers
                 </button>
             </div>
         </div>

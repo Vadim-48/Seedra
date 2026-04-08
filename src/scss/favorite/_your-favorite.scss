@@ -45,12 +45,15 @@
     &__list {
         padding: 0 50px;
         display: grid;
-        grid-template-columns: 1fr  minmax(80px, max-content);
+        grid-template-columns: 1fr max-content max-content;
         align-items: center;
         gap: 20px 20px;
         margin-top: 24px;
         @include media.max-width(md) {
             padding: 0 20px;
+        }
+        @include media.max-width(xs) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
@@ -66,6 +69,9 @@
         &_price{
             justify-self: center;
         }
+        @include media.max-width(xs) {
+            display: none;
+        }
     }
 
     &__list-body{
@@ -74,9 +80,6 @@
 
     &__favorite-item {
         display: contents;
-        &:first-child {
-            display: none;
-        }
     }
     &__btn{
         color: var(--text-secondary);
@@ -99,6 +102,9 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        @include media.max-width(xs) {
+            grid-column: span 2;
+        }
     }
     &__photo-wrap{
         position: relative;
@@ -153,5 +159,15 @@
         line-height: 1.39;
         letter-spacing: -0.04em;
         color: var(--text-primary);
+        display: block;
+        @include media.max-width(sm) {
+            justify-self: start;
+        }
+    }
+    &__btn{
+        width: 120px;
+        @include media.max-width(sm) {
+            justify-self: end;
+        }
     }
 }

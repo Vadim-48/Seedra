@@ -10,6 +10,7 @@ const initBlogSwiper = () => {
         observer: true,
         observeParents: true,
         watchOverflow: true,
+        grabCursor: true,
         breakpoints: {
             450: {
                 slidesPerView: 1.3,

@@ -80,6 +80,27 @@
         height: 14px;
     }
 
+    &__sort-wrap {
+        position: relative;
+
+        &.is-sort-open {
+
+            & .toolbar__sort-item{
+                color: var(--green-brand);
+            }
+            & .toolbar__sort-icon {
+                color: var(--green-brand);
+            }
+            & .toolbar-dropdown {
+                display: block;
+            }
+        }
+
+        @include media.max-width(sm) {
+            display: none;
+        }
+    }
+
     &__sort-btn {
         border: 1px solid var(--light-grey-stroke);
         border-radius: 71px;
@@ -91,22 +112,24 @@
         justify-content: space-between;
         padding-inline: 25px;
         margin-right: 8px;
-        @include media.max-width(sm) {
-            display: none;
-        }
+
         transition: box-shadow .3s ease, color .3s ease;
+
         &:focus-visible {
             box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
-            & .form-summary__delivery-arrow{
+
+            & .form-summary__delivery-arrow {
                 color: var(--green-brand);
             }
         }
+
         @media (hover: hover) and (pointer: fine) {
             &:hover:not(:active) {
                 box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
             }
         }
-        &:active{
+
+        &:active {
             box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
             color: var(--green-brand);
         }
@@ -136,5 +159,45 @@
     &__sort-icon {
         width: 14px;
         height: 14px;
+    }
+}
+
+.toolbar-dropdown {
+    display: none;
+    background: var(--white);
+    position: absolute;
+    z-index: 9;
+    width: calc(100% - 8px);
+    top: 65px;
+    padding: 12px 25px;
+    left: 0;
+    border: 1px solid var(--light-grey-stroke);
+    border-radius: 10px;
+
+    &__list-item {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.56;
+        letter-spacing: -0.04em;
+        cursor: pointer;
+        color: var(--text-primary);
+        &:nth-child(n+2){
+            margin-top: 10px;
+        }
+        transition: color .3s ease, opacity .3s ease;
+        &:focus-visible {
+            color: var(--green-brand);
+            opacity: 0.7;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                color: var(--green-brand);
+                opacity: 0.7;
+            }
+        }
+        &:active{
+            opacity: 1;
+            color: var(--green-brand);
+        }
     }
 }

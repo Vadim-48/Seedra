@@ -163,12 +163,12 @@ export function innitAmountPrice() {
         const removeAmount = e.target.closest('.amount__number-remove');
 
         if (addAmount) {
-            const amountEl = addAmount.closest('.amount__number').querySelector('.amount__number-item');
+            const amountEl = addAmount.closest('.amount').querySelector('.amount__number-item');
             amountEl.textContent = Number(amountEl.textContent) + 1;
         }
 
         if (removeAmount) {
-            const amountEl = removeAmount.closest('.amount__number').querySelector('.amount__number-item');
+            const amountEl = removeAmount.closest('.amount').querySelector('.amount__number-item');
             let count = Number(amountEl.textContent);
             if (count > 1) amountEl.textContent = count - 1;
         }

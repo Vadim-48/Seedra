@@ -8,6 +8,7 @@ import {db} from "@/firebase/firebase.js";
 import {formatMoney} from "@/js/modules/format-money.js";
 
 let productsMap = null;
+
 async function getProducts() {
     if (productsMap) return productsMap;
 
@@ -19,9 +20,10 @@ async function getProducts() {
     return productsMap;
 }
 
+let fragmentCardsList = document.createDocumentFragment();
 
 export async function loadProductsFirebase(productId) {
-
+// async function loadCardFirebase(productId) {
     const dataMap = await getProducts();
     const product = dataMap[productId];
     const subCollectionProducts = collection(db, "products", productId, "reviews");
@@ -68,5 +70,29 @@ export async function loadProductsFirebase(productId) {
             star.setAttribute('href', './sprite.svg#icon-star-half');
         }
     });
-    productCardsWrap.appendChild(cloneProductCard);
+    // productCardsWrap.appendChild(cloneProductCard);
+    fragmentCardsList.appendChild(cloneProductCard);
+}
+
+let originalCards = [];
+
+export function loadProductCardsList() {
+
+    const cardsWrapper = document.querySelector("[data-product-cards-wrap]");
+    if (!cardsWrapper) return [];
+    const urlParams = new URLSearchParams(window.location.search);
+    if (originalCards.length > 0) {
+        return originalCards;
+    }
+
+    if (!urlParams.has("_chosenType")) {
+        cardsWrapper.appendChild(fragmentCardsList);
+    }
+
+    originalCards = Array.from(cardsWrapper.querySelectorAll("[data-product-id]"));
+    if (originalCards.length === 0 && fragmentCardsList.children.length > 0) {
+        originalCards = Array.from(fragmentCardsList.querySelectorAll("[data-product-id]"));
+    }
+
+    return originalCards;
 }

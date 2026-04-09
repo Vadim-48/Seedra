@@ -3,6 +3,9 @@ import {
     updateCartIcon,
 } from "@/js/modules/update-header-icons.js";
 
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css";
+
 function markFavorite(card) {
     let cadsFavoriteData = JSON.parse(localStorage.getItem('favorite')) || [];
     const productId = card.dataset.productId;
@@ -53,9 +56,26 @@ export function addFavoriteLocalStorage() {
             if (!exists) {
                 cadsFavoriteData.push(productId);
                 localStorage.setItem('favorite', JSON.stringify(cadsFavoriteData));
+
+                Toastify({
+                    text: "Product added to favorite",
+                    duration: 2000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "#28a745" }
+                }).showToast();
+
             } else {
                 cadsFavoriteData = cadsFavoriteData.filter(item => item !== exists);
                 localStorage.setItem('favorite', JSON.stringify(cadsFavoriteData));
+
+                Toastify({
+                    text: "Product delete from favorite",
+                    duration: 2000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "#dc3545" }
+                }).showToast();
             }
             markFavorite(card);
         })

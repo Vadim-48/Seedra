@@ -32,28 +32,34 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        &:focus-visible{
-            & span{
+
+        &:focus-visible {
+            & span {
                 color: var(--hover);
             }
+
             & .filter-form__group-arrow use {
                 color: var(--hover);
             }
         }
+
         @media (hover: hover) and (pointer: fine) {
             &:hover:not(:active) {
-                & span{
+                & span {
                     color: var(--hover);
                 }
+
                 & .filter-form__group-arrow use {
                     color: var(--hover);
                 }
             }
         }
-        &:active{
-            & span{
+
+        &:active {
+            & span {
                 color: var(--green-brand);
             }
+
             & .filter-form__group-arrow use {
                 color: var(--green-brand);
             }
@@ -84,6 +90,7 @@
         //justify-content: center;
 
     }
+
     &__checkbox-label {
         font-size: 14px;
         line-height: 1.78;
@@ -109,25 +116,31 @@
 
         &:focus-visible {
             color: var(--hover);
-            & .filter-form__checkbox-input{
+
+            & .filter-form__checkbox-input {
                 border-color: var(--hover);
             }
         }
+
         @media (hover: hover) and (pointer: fine) {
             &:hover:not(:active) {
                 color: var(--hover);
-                & .filter-form__checkbox-input{
+
+                & .filter-form__checkbox-input {
                     border-color: var(--hover);
                 }
             }
         }
-        &:active{
+
+        &:active {
             color: var(--green-brand);
-            & .filter-form__checkbox-input{
+
+            & .filter-form__checkbox-input {
                 border-color: var(--green-brand);
             }
         }
     }
+
     &__checkbox-input {
         appearance: none;
         border: 1px solid var(--light-grey-stroke);
@@ -180,6 +193,7 @@
         background: var(--light-grey-stroke);
         margin-top: 7px;
     }
+
     &__price-wrap {
         margin-top: 40px;
         width: 90%;
@@ -203,16 +217,19 @@
         height: 46px;
         padding: 0 13px;
         transition: box-shadow 0.3s ease;
+
         &:focus-visible, &:active, &:focus-within {
             box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         }
+
         @media (hover: hover) and (pointer: fine) {
             &:hover:not(:active) {
                 box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
             }
         }
     }
-    &__text_above{
+
+    &__text_above {
         position: absolute;
         top: -28px;
         left: 0;
@@ -221,6 +238,7 @@
         text-align: center;
         color: var(--text-secondary);
     }
+
     &__price-text {
         font-weight: 300;
         font-size: 16px;
@@ -231,35 +249,46 @@
 
     &__price-input {
         border: none;
+
         &::placeholder {
             color: var(--text-secondary);
         }
     }
 
     &__price-line {
-        background:  var(--text-secondary);
+        background: var(--text-secondary);
         height: 2px;
         width: 18px;
     }
-    &__price-slider{
+
+    &__price-slider {
         margin-top: 25px;
         background: var(--light-grey-stroke);
         border-radius: 59px;
         height: 5px;
 
-        & .noUi-connect{
-            background: var(--green-brand);
+        &.noUi-base {
+            cursor: pointer;
         }
-        & .noUi-handle{
+
+        & .noUi-connect {
+            background: var(--green-brand);
+
+        }
+
+        & .noUi-handle {
             border-radius: 100%;
             border: 1px solid var(--green-brand);
             box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.25);
             width: 14px;
             height: 14px;
+            cursor: pointer;
         }
-        & .noUi-handle::after, .noUi-handle::before{
+
+        & .noUi-handle::after, .noUi-handle::before {
             display: none;
         }
+
         & .noUi-handle {
             right: -8px;
         }

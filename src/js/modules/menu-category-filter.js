@@ -5,8 +5,8 @@ import {
     initProductsSwiper
 } from "@/js/modules/main/product-prev-swiper.js";
 import {
-    saveOriginalCads
-} from "@/js/modules/all-products/save-original-cards.js";
+    loadProductCardsList
+} from "@/js/modules/product-firebase.js";
 
 
 export async function menuCategoryFilter() {
@@ -18,7 +18,7 @@ export async function menuCategoryFilter() {
     if (!cardsWrapper || !menuDropdownWrap) return;
 
     const collectionProducts = collection(db, "products");
-    const originalList = saveOriginalCads();
+    const originalList = loadProductCardsList();
 
 
     const isSwiperPage = !!document.querySelector('.products-prev__swiper');

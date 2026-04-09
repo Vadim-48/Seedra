@@ -6,7 +6,7 @@ import {
 } from "@/js/modules/one-product/innit-one-product-firebase.js";
 import {innitAmountPack} from "@/js/modules/one-product/amount-pack.js";
 import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
-import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
+import {loadProductCardsList,loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {
     initUserReviewsSwiper
 } from "@/js/modules/one-product/user-reviews-swiper.js";
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ...productsToLoad.map(p => loadProductsFirebase(p.path)),
     ]);
 
-
+    loadProductCardsList();
     innitAmountPack();
 
     initHeroSwiper();

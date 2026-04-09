@@ -5,14 +5,14 @@ import {
     initCategoryDropdown,
 } from "@/js/modules/menu-category.js";
 
-import {loadProductsFirebase} from "./js/modules/product-firebase.js";
+import {loadProductCardsList,loadProductsFirebase} from "./js/modules/product-firebase.js";
 import {loadReviewFirebase} from "./js/modules/reviews-firebase.js";
 
 import {initProductsPrevSwiper} from "./js/modules/main/product-prev-swiper.js";
 import {initBlogPreviewSwiper} from "./js/modules/main/blog-prev-swiper.js";
 import {
     initFeedbackSwiper,
-    feedbackSwiper
+    // feedbackSwiper
 } from "./js/modules/main/feedback-swiper.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ...productsToLoad.map(p => loadProductsFirebase(p.path)),
         ...reviewsToLoad.map(r => loadReviewFirebase(r.path)),
     ]);
+    loadProductCardsList();
     await menuCategoryFilter();
 
     addCartLocalStorage();

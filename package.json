@@ -45,6 +45,7 @@
     "lazy-viewport-loader": "^1.0.2",
     "libphonenumber-js": "^1.12.41",
     "nouislider": "^15.8.1",
-    "scroll-lock": "^2.1.5"
+    "scroll-lock": "^2.1.5",
+    "toastify-js": "^1.12.0"
   }
 }

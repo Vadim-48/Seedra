@@ -2,6 +2,7 @@ import {
     updateFavoriteIcon,
     updateCartIcon,
 } from "@/js/modules/update-header-icons.js";
+import Toastify from "toastify-js";
 
 function markProduct(product) {
 
@@ -28,9 +29,6 @@ function markProduct(product) {
 export function addCartLocalStorage() {
 
     const cardProduct = document.querySelectorAll("[data-product-id]");
-    // let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
-    // let cadsStorageArr =  [];
-    // localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
 
     cardProduct.forEach(product => {
         const btn = product.querySelector("[data-btn-add]");
@@ -52,13 +50,26 @@ export function addCartLocalStorage() {
             const existProduct = cadsStorageArr.find(item => item.productId === productId);
             if (existProduct) {
                 existProduct.packCount = packCount;
+                Toastify({
+                    text: `Change product pack to ${packCount}`,
+                    duration: 2000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "#98cc11" }
+                }).showToast();
             } else {
                 const productToSave = {
                     productId: productId,
                     packCount: packCount,
                 };
                 cadsStorageArr.push(productToSave);
-
+                Toastify({
+                    text: "Product added to cart",
+                    duration: 2000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "#28a745" }
+                }).showToast();
             }
             localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
             markProduct(product);

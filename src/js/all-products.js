@@ -1,13 +1,16 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
-import {initFilterDropdown} from "@/js/modules/all-products/filter-dropdown.js";
+// import {initFilterDropdown} from "@/js/modules/all-products/filter-dropdown.js";
 import {
     initMenuCategoryScroll,
     initCategoryDropdown,
 } from "@/js/modules/menu-category.js";
 import {initAccordionForm} from "@/js/modules/all-products/accordion-form.js";
-import {loadProductsFirebase} from "@/js/modules/product-firebase.js";
-// import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
+import {
+    loadProductCardsList,
+    loadProductsFirebase
+} from "@/js/modules/product-firebase.js";
+import {initCardFilter} from "@/js/modules/all-products/card-filter.js";
 import {initRangeSlider} from "@/js/modules/all-products/range-slider.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {
@@ -20,12 +23,6 @@ import {
 import {menuCategoryFilter} from "@/js/modules/menu-category-filter.js";
 import {innitProductClick} from "@/js/modules/product-click.js";
 import {initSort} from "@/js/modules/innit-sort.js";
-import {
-    saveOriginalCads
-} from "@/js/modules/all-products/save-original-cards.js";
-import {collection, getDocs} from "firebase/firestore";
-import {db} from "@/firebase/firebase.js";
-
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -36,12 +33,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     // initFilterDropdown();
     initCategoryDropdown();
     initAccordionForm();
-
-    // const productsSnapshot = await getDocs(collection(db, "products"));
-    // const productsMap = {};
-    // productsSnapshot.forEach((doc) => {
-    //     productsMap[doc.id] = doc.data();
-    // })
 
     const productsToLoad = [
         {path: "product-1"},
@@ -58,9 +49,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
         ...productsToLoad.map(p => loadProductsFirebase(p.path)),
     ]);
-    saveOriginalCads();
+
+    loadProductCardsList();
 
     await menuCategoryFilter();
+    await initCardFilter();
 
     addCartLocalStorage();
     addFavoriteLocalStorage();

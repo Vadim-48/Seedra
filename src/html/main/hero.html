@@ -1,11 +1,14 @@
-<div class="hero__wrap" data-product-id="card-hero">
+<div
+  class="hero__wrap"
+  data-product-id="card-hero"
+  data-product-card-hero>
     {{> components/picture
-        className="hero__bg"
-        alt="img"
-        desktop="/src/image/main/hero/bg.png"
-        desktopWebp="/src/image/main/hero/bg.webp"
-        mobile="/src/image/main/hero/bg_2.png"
-        mobileWebp="/src/image/main/hero/bg_2.webp"
+    className="hero__bg"
+    alt="img"
+    desktop="/src/image/main/hero/bg.png"
+    desktopWebp="/src/image/main/hero/bg.webp"
+    mobile="/src/image/main/hero/bg_2.png"
+    mobileWebp="/src/image/main/hero/bg_2.webp"
     }}
     <div class="hero__inner">
         <div class="hero__content">
@@ -20,9 +23,9 @@
             </p>
             <div class="hero__price-row">
                 {{> components/svg
-                    className="hero__price-img"
-                    id="fire"
-                    dataAttribute="data-product-fire-price"
+                className="hero__price-img"
+                id="fire"
+                dataAttribute="data-product-fire-price"
                 }}
                 <span
                   class="hero__price"
@@ -32,11 +35,14 @@
                   data-product-old-price></span>
             </div>
             <div class="hero__btn-row">
-                <button class="hero__btn hero__btn_add btn_green" data-btn-add>
+                <button
+                  class="hero__btn hero__btn_add btn_green"
+                  data-btn-add>
                     Add to card
                 </button>
                 <a
                   href="./one-product.html"
+                  data-product-card-discover
                   class="hero__btn hero__btn_discover btn_white">Discover</a>
             </div>
         </div>

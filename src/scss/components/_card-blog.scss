@@ -18,9 +18,11 @@
 
     &_wide{
         grid-row: span 2;
+        min-height: 600px;
 
         @include media.max-width(sm) {
             grid-row: span 1;
+            min-height: 400px;
         }
         & .news-card__content{
             padding: 24px 0 0 24px;
@@ -97,6 +99,9 @@
         margin-top: 14px;
     }
     &__photo{
+        //z-index: 2;
+        //user-select: none;
+        pointer-events: none;
         &_square{
             height: 100%;
             aspect-ratio: 1;

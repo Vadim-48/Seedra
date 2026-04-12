@@ -23,9 +23,14 @@ import {
 import {menuCategoryFilter} from "@/js/modules/menu-category-filter.js";
 import {innitProductClick} from "@/js/modules/product-click.js";
 import {initSort} from "@/js/modules/innit-sort.js";
+import {innitSearchTitle} from "@/js/modules/search-title.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-
+    const form = document.querySelectorAll('[data-disabled]');
+    form.forEach((item) => {
+        item.style.pointerEvents = 'none';
+        item.style.opacity = '0.5';
+    })
 
     burger();
     burgerAccordion();
@@ -52,11 +57,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     loadProductCardsList();
 
+    initRangeSlider();
+    innitProductClick();
+    initSort();
     await menuCategoryFilter();
     await initCardFilter();
-
     addCartLocalStorage();
     addFavoriteLocalStorage();
+    innitSearchTitle();
+
+    form.forEach((item) => {
+        item.style.pointerEvents = 'auto';
+        item.style.opacity = '1';
+    })
+
+
     window.addEventListener('storage', (event) => {
         if (event.key === 'cart') {
             updateCartIcon();
@@ -65,8 +80,29 @@ document.addEventListener("DOMContentLoaded", async () => {
             updateFavoriteIcon();
         }
     });
-
-    initRangeSlider();
-    innitProductClick();
-    initSort();
 });
+
+const openFilterBtn = document.querySelector('.toolbar__filter-btn');
+const filterDropdown = document.querySelector('[data-cards-filer]');
+openFilterBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    openFilterBtn.classList.toggle('open');
+    filterDropdown.classList.toggle('open');
+})
+
+document.addEventListener("click",(e) => {
+    const isClickInside = filterDropdown.contains(e.target);
+    const isClickOnBtn = openFilterBtn.contains(e.target);
+
+    if (!isClickInside && !isClickOnBtn) {
+        openFilterBtn.classList.remove('open');
+        filterDropdown.classList.remove('open');
+    }
+})
+
+window.addEventListener("resize", () => {
+    openFilterBtn.classList.remove('open');
+    filterDropdown.classList.remove('open');
+})
+
+//----------------------

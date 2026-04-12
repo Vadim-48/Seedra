@@ -19,6 +19,29 @@
     --second-family: #{vars.$second-family};
 }
 
+//html {
+//    scrollbar-width: thin;
+//    scrollbar-color: #2F9E44 #EEF6EF;
+//}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background:  #EEF6EF;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2F9E44;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1F7A33;
+}
+
 body{
     font-family: var(--font-family);
     color: var(--text-primary);

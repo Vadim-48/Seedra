@@ -20,6 +20,7 @@ export async function menuCategoryFilter() {
     const collectionProducts = collection(db, "products");
     const originalList = loadProductCardsList();
 
+    // cardsWrapper.appendChild(originalList);
 
     const isSwiperPage = !!document.querySelector('.products-prev__swiper');
     const refreshSwiperIfNeeded = () => {

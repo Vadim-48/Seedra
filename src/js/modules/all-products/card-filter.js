@@ -1,149 +1,84 @@
 import {collection, getDocs} from "firebase/firestore";
-import {query, where,and,or} from "firebase/firestore";
+import {query, where, and, or} from "firebase/firestore";
 import {db} from "@/firebase/firebase.js";
+import {loadProductCardsList} from "@/js/modules/product-firebase.js";
+
+
 
 
 export async function initCardFilter() {
-    const inputFilterWrap = document.querySelectorAll("#cards-filter");
-    // const inputList = document.querySelectorAll(".filter-form input");
-    const cardsWrap = document.querySelector("[data-product-cards-wrap]");
+    const inputFilterFormWrap = document.querySelectorAll("[data-cards-filer]");
+    const cardsWrap = document.querySelector("[data-cards-wrap]");
     const cardsList = cardsWrap.querySelectorAll('[data-product-id]');
-
+    const saveCardsList = loadProductCardsList();
     const collectionProducts = collection(db, "products");
-    let seedTypeCheck = [];
-    let featureTypeCheck = [];
-    let growingTypeCheck = [];
-    let useTypeCheck = [];
-    let characteristicTypeCheck = ['seedType', 'featureType', 'growingType', 'useType'];
 
-    // const q = query(collectionProducts,
-    // where('seedType', 'in', ['hybrid', 'pollinated']),
-    // where('featureType', 'in', ['one', 'two']),
-    // where('growingType', 'in', ['fast','slow']),
-    // where('useType', 'in', ['cold', 'warm']),
-    // where('characteristicType', 'in', ['one', 'two']),
-    // where('category', 'in', ['bundles']),
-    // where('price', '>', 1),
-    // where('price', '<', 100),
-    // where(characteristicTypeCheck, 'array-contains-any',  ['hybrid', 'pollinated'])
-    // );
-    const q = query(collectionProducts,
-        and(where('seedType', 'in', ['hybrid', 'pollinated']),
-            where('featureType', 'in', ['one', 'two']),
-            where('growingType', 'in', ['fast', 'slow']),
-            where('useType', 'in', ['cold', 'warm']),
-            // where('characteristicType', 'in', ['one', 'two']),
-            // where('category', 'in', ['bundles']),
-            // where('price', '>', 1),
-            // where('price', '<', 100),
-            )
-        // where(characteristicTypeCheck, 'array-contains-any',  ['hybrid', 'pollinated'])
-    );
+    inputFilterFormWrap.forEach((form) => {
+        const priceSlider = form.querySelector(".filter-form__price-slider");
+        priceSlider.noUiSlider.on('change', async function (){
+            await filterFunction();
+        })
 
-    // const productData = {
-    //     featureType: 'one',
-    //     growingType: 'fast',
-    //     useType: 'cold',
-    //     characteristicType: 'one',
-    //     // Спеціальне поле для пошуку:
-    //     filterString: 'one_fast_cold_one'
-    // };
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        // doc.id — це ID документа, doc.data() — самі дані
-        console.log(doc.id, " => ", doc.data());
-    });
+        form.addEventListener("change", async (e) => {
+            await filterFunction();
+        })
+
+        async function filterFunction() {
+            cardsWrap.innerHTML = '';
+
+            const seedTypeCheck = Array.from(form.querySelectorAll("input[name='seedType']:checked")).map(el => el.value);
+            const featureTypeCheck = Array.from(form.querySelectorAll("input[name='featureType']:checked")).map(el => el.value);
+            const growingTypeCheck = Array.from(form.querySelectorAll("input[name='growingType']:checked")).map(el => el.value);
+            const useTypeCheck = Array.from(form.querySelectorAll("input[name='useType']:checked")).map(el => el.value);
+            const characteristicTypeCheck = Array.from(form.querySelectorAll("input[name='characteristicType']:checked")).map(el => el.value);
+            const minPrice = Number(form.querySelector('input[data-price-min]').value);
+            const maxPrice = Number(form.querySelector('input[data-price-max]').value);
+
+            let seedFilter = collectionProducts;
+            let featureFilter = collectionProducts;
+            let growingFilter = collectionProducts;
+            let useFilter = collectionProducts;
+            let characteristicFilter = collectionProducts;
+            let priceFilter = collectionProducts;
+
+            if (seedTypeCheck.length > 0) seedFilter = query(collectionProducts, where('seedType', 'in', seedTypeCheck));
+            if (featureTypeCheck.length > 0) featureFilter = query(collectionProducts, where('featureType', 'in', featureTypeCheck));
+            if (growingTypeCheck.length > 0) growingFilter = query(collectionProducts, where('growingType', 'in', growingTypeCheck));
+            if (useTypeCheck.length > 0) useFilter = query(collectionProducts, where('useType', 'in', useTypeCheck));
+            if (characteristicTypeCheck.length > 0) characteristicFilter = query(collectionProducts, where('characteristicType', 'in', characteristicTypeCheck));
+            if (!isNaN(minPrice) && !isNaN(maxPrice)) {
+                priceFilter = query(collectionProducts,
+                    where('price', '>=', minPrice),
+                    where('price', '<=', maxPrice),
+                );
+            }
+
+            const [seedRes, featureRes, growingRes, useRes, charRes, priceRes] = await Promise.all([
+                getDocs(seedFilter),
+                getDocs(featureFilter),
+                getDocs(growingFilter),
+                getDocs(useFilter),
+                getDocs(characteristicFilter),
+                getDocs(priceFilter),
+            ]);
+
+            const seedArr = seedRes.docs.map(doc => (doc.id));
+            const featureArr = featureRes.docs.map(doc => (doc.id));
+            const growingArr = growingRes.docs.map(doc => (doc.id));
+            const useArr = useRes.docs.map(doc => (doc.id));
+            const charArr = charRes.docs.map(doc => (doc.id));
+            const priceArr = priceRes.docs.map(doc => (doc.id));
+            const typeArray = [seedArr, featureArr, growingArr, useArr, charArr, priceArr];
+
+            const resultFilter = typeArray.reduce((acc, current) => {
+                const currentSet = new Set(current);
+                return acc.filter(item => currentSet.has(item));
+            });
+            saveCardsList.forEach(card => {
+                if (resultFilter.includes(card.dataset.productId)) {
+                    cardsWrap.appendChild(card);
+                }
+            });
+        }
+    })
 }
-
-// let checkboxNameList = [...inputList]
-//     .map(el => el.name)
-//     .filter(el => el !== "")
-// checkboxNameList = [...new Set(checkboxNameList)]
-// console.log("fddfsd", checkboxNameList);
-//
-// inputList.forEach(input => {
-//     input.addEventListener("input", async (e) => {
-//         const inputChecked = [...inputList]
-//             .filter(el => el.checked)
-//             .map(el => el.value);
-//         console.log("inputChecked", inputChecked);
-//
-//         const productsFirebase = collection(db, "products");
-//         let docsObj = {};
-//
-//         for (const name of checkboxNameList) {
-//             docsObj[name] = [];
-//             const q = query(productsFirebase, where(name, "in", inputChecked));
-//             const querySnapshot = await getDocs(q);
-//             querySnapshot.forEach(doc => {
-//                 docsObj[name].push(doc.id);
-//             });
-//         }
-//         console.log("allDocs", docsObj);
-
-// const filter = query(productsFirebase, where('seedType', 'in', inputChecked),
-//     where('featureType', 'in', inputChecked),
-//     where('growingType', 'in', inputChecked),
-//     where('useType', 'in', inputChecked),
-//     where('characteristicType', 'in', inputChecked));
-// const querySnapshot = await getDocs(filter);
-// querySnapshot.forEach((doc) => {
-//     console.log(doc.id, ' => ', doc.data());
-// });
-
-
-// cardsList.forEach((el) => {
-//     if (allDocs.includes(el.dataset.productFirebase)) {
-//         el.style.display = "grid";
-//     } else {
-//         el.style.display = "none";
-//     }
-// });
-
-//     })
-// })
-
-
-// const formInputListEl = document.querySelectorAll("input");
-// const cardListEl = document.querySelectorAll('[data-product-id]');
-//     const cardsListEl = document.querySelectorAll('[data-product-firebase]');
-//
-//     cardsListEl.forEach((el) => {
-//         console.log("fddfsd", el.dataset.productFirebase);
-//     })
-//
-//
-//     formInputListEl.forEach(input => {
-//         input.addEventListener("input", async () => {
-//             let inputCheckboxList = [...formInputListEl]
-//                 .map(el => el.name)
-//                 .filter(el => el !== "")
-//
-//             inputCheckboxList = [...new Set(inputCheckboxList)];
-//
-//             console.log("fddddd", inputCheckboxList);
-//
-//             const inputCheckedListEl = [...formInputListEl]
-//                 .filter(el => el.checked)
-//                 .map(el => el.value)
-//             console.log(inputCheckedListEl);
-//
-//
-//             const productsFirebase = collection(db, "products");
-//             const q = query(productsFirebase, where("seedType", "in", inputCheckedListEl));
-//             const querySnapshot = await getDocs(q);
-//             const filterListId = querySnapshot.docs.map(el => el.id);
-//             console.log(filterListId);
-//
-//             cardsListEl.forEach((el) => {
-//                 if (filterListId.includes(el.dataset.productFirebase)) {
-//                     el.style.display = "grid";
-//                 } else {
-//                     el.style.display = "none";
-//                 }
-//             });
-//
-//         });
-//
-//     });
-// }

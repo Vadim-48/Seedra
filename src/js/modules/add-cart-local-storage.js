@@ -3,6 +3,7 @@ import {
     updateCartIcon,
 } from "@/js/modules/update-header-icons.js";
 import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
 
 function markProduct(product) {
 

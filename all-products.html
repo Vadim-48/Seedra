@@ -20,18 +20,17 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/all-products-BIiOq32v.js"></script>
+  <script type="module" crossorigin src="/Seedra/assets/all-products--I3XUYXe.js"></script>
   <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-C3SRI9kz.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-DTEkvZdh.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-CSDvkMK0.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/_commonjsHelpers-CqkleIqs.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/toastify-DYBvf9sf.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-click-CCXwJLbB.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-filter-TojhTAtJ.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-DKijXWrW.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/innit-sort-DYxr_fmA.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/toastify-FSCL7V4_.css">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-xMxhb9AH.css">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-exCYpcVh.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-click-B-Tr8PRo.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-filter-DWA4P2LZ.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/search-title-CuxmnX6y.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/add-cart-local-storage-FSCL7V4_.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-C0CVPJ0u.css">
 </head>
 <body class="all-products">
 <header
@@ -388,7 +387,7 @@
 <main>
     <section class="search-bar">
         <div class="search-bar__container container">
-            <div class="filter-blog__toolbar toolbar">
+            <div class="filter-blog__toolbar toolbar" data-disabled>
                 <form
                   action="#"
                   autocomplete="off"
@@ -433,13 +432,215 @@
                         </ul>
                     </div>
                 </div>
-            </div>        </div>
+            </div>            <form
+              action="#"
+              name="ask-form"
+              data-cards-filer
+              data-disabled
+              method="POST"
+              autocomplete="off"
+              class="filter-form search-bar__filter-form">
+                <div class="filter-form__arrow"></div>
+                <h1 class="filter-form__title">FILTERS</h1>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group active"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Seed type </span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="seedType"
+                              value="hybrid"><span>Hybrid</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="seedType"
+                              value="pollinated"><span>Open Pollinated</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="seedType"
+                              value="organic"><span>Organic Seeds, Plants, and
+                                Supplies</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="seedType"
+                              value="pelleted"><span>Pelleted See</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Featured</span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="featureType"
+                              value="one"><span>One</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="featureType"
+                              value="two"><span>Two</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Growing Conditions</span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="growingType"
+                              value="fast"><span>Fast</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="growingType"
+                              value="slow"><span>slow</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Price</span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <div class="filter-form__price-wrap">
+                                <div class="filter-form__price">
+                                    <label class="filter-form__price-label">
+                                        <span class="filter-form__text_above">From</span>
+                                        <span class="filter-form__price-text">$</span>
+                                        <input
+                                          type="number"
+                                          min="1"
+                                          max="1000"
+                                          placeholder="1"
+                                          class="filter-form__price-input"
+                                          data-price-min></label>
+                                    <div class="filter-form__price-line"></div>
+                                    <label class="filter-form__price-label">
+                                        <span class="filter-form__text_above">To</span>
+                                        <span class="filter-form__price-text">$</span>
+                                        <input
+                                          type="number"
+                                          min="1"
+                                          max="1000"
+                                          placeholder="1000"
+                                          class="filter-form__price-input"
+                                          data-price-max></label>
+                                </div>
+                                <div
+                                  data-range-slider
+                                  class="filter-form__price-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Use</span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="useType"
+                              value="warm"><span>Warm</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="useType"
+                              value="cold"><span>Cold</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="filter-form__line">
+                <fieldset
+                  class="filter-form__group"
+                  data-accordion>
+                    <button
+                      class="filter-form__group-btn"
+                      type="button">
+                        <span class="filter-form__group-title">Additional Characteristic</span>
+                        <svg class="filter-form__group-arrow"  >
+                            <use href="/Seedra/sprite.svg#icon-arrow-bottom"></use>
+                        </svg>        </button>
+                    <div class="filter-form__group-body-wrap">
+                        <div class="filter-form__group-body">
+                            <hr class="filter-form__group-line">
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="characteristicType"
+                              value="one"><span>One</span></label>
+                            <label class="filter-form__checkbox-label"><input
+                              type="checkbox"
+                              class="filter-form__checkbox-input"
+                              name="characteristicType"
+                              value="two"><span>Two</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>        </div>
     </section>
     <section class="menu-category">
         <div class="menu-category__container container">
             <div
               class=" category"
-              data-menu-category>
+              data-menu-category
+              data-disabled>
                 <div class="category__btn-list-wrap">
                     <div class="category__btn-list">
                         <button class="category__btn">
@@ -769,10 +970,12 @@
                     <form
                       action="#"
                       name="ask-form"
-                      id="cards-filter"
+                      data-cards-filer
+                      data-disabled
                       method="POST"
                       autocomplete="off"
                       class="filter-form product-area__filter-form">
+                        <div class="filter-form__arrow"></div>
                         <h1 class="filter-form__title">FILTERS</h1>
                         <hr class="filter-form__line">
                         <fieldset

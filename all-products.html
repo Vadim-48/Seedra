@@ -20,17 +20,17 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/all-products--I3XUYXe.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-C3SRI9kz.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-CSDvkMK0.js">
+  <script type="module" crossorigin src="/Seedra/assets/all-products-Cjj7diLx.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D_MaYHkm.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/_commonjsHelpers-CqkleIqs.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-exCYpcVh.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-click-B-Tr8PRo.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-filter-DWA4P2LZ.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/search-title-CuxmnX6y.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/add-cart-local-storage-D9MNgnd9.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/product-click-BKrTWzyH.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/menu-category-filter-g84-A0yo.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/toolbar-dropdown-1RKqxEeL.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/global-search-BGDs-rSD.js">
   <link rel="stylesheet" crossorigin href="/Seedra/assets/add-cart-local-storage-FSCL7V4_.css">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-C0CVPJ0u.css">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/all-products-L-0FvwK4.css">
 </head>
 <body class="all-products">
 <header
@@ -78,20 +78,29 @@
                             </svg>            </a>
                     </div>
                     <form
-                      action="#!"
-                      class="header__search-form search-form">
+                      role="search"
+                      data-global-search
+                      autocomplete="off"
+                      class="header__global-search global-search">
                         <button
-                          type="button"
-                          class="search-form__btn">
-                            <svg class="search-form__btn-icon"  >
+                          type="submit"
+                          class="global-search__btn">
+                            <svg class="global-search__btn-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-search"></use>
-                            </svg>            </button>
+                            </svg>    </button>
                         <input
                           type="search"
-                          class="search-form__search"
+                          class="global-search__search"
                           placeholder="Search">
-                    </form>
-                    <div class="header__actions">
+                        <div class="global-search__dropdown-wrap">
+                            <div class="global-search__dropdown">
+                                <template class="global-search__dropdown-template">
+                                    <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                                    <span class="global-search__dropdown-not-found">Not found</span>
+                                </template>
+                            </div>
+                        </div>
+                    </form>        <div class="header__actions">
                         <div class="header__actions-btn-wrap">
                             <a
                               href="./favorite.html"
@@ -125,18 +134,29 @@
       data-scroll-lock-scrollable>
         <div class="burger__container">
             <form
-              action="#"
-              class="burger__search-form search-form">
-                <button class="search-form__btn">
-                    <svg class="search-form__btn-icon"  >
+              role="search"
+              data-global-search
+              autocomplete="off"
+              class="burger__global-search global-search">
+                <button
+                  type="submit"
+                  class="global-search__btn">
+                    <svg class="global-search__btn-icon"  >
                         <use href="/Seedra/sprite.svg#icon-search"></use>
-                    </svg>            </button>
+                    </svg>    </button>
                 <input
                   type="search"
-                  class="search-form__search"
+                  class="global-search__search"
                   placeholder="Search">
-            </form>
-        </div>
+                <div class="global-search__dropdown-wrap">
+                    <div class="global-search__dropdown">
+                        <template class="global-search__dropdown-template">
+                            <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                            <span class="global-search__dropdown-not-found">Not found</span>
+                        </template>
+                    </div>
+                </div>
+            </form>    </div>
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
@@ -144,7 +164,7 @@
                       class="burger__category-btn"
                       href="./all-products.html"
                       data-burger-close>
-                        <span class="burger__category-text">All vegetables</span>
+                        <span class="burger__category-text">All seedra</span>
                     </a>
                 </li>
                 <li class="burger__category-item">
@@ -387,13 +407,17 @@
 <main>
     <section class="search-bar">
         <div class="search-bar__container container">
-            <div class="filter-blog__toolbar toolbar" data-disabled>
+            <div
+              class="filter-blog__toolbar toolbar"
+              data-disabled>
                 <form
-                  action="#"
                   autocomplete="off"
+                  role="search"
                   class="toolbar__search-form"
                   data-search-form>
-                    <button class="toolbar__search-btn">
+                    <button
+                      class="toolbar__search-btn"
+                      type="submit">
                         <svg class="toolbar__search-icon"  >
                             <use href="/Seedra/sprite.svg#icon-search"></use>
                         </svg>        </button>
@@ -403,6 +427,7 @@
                       class="toolbar__search-input"
                       placeholder="Search">
                     <button
+                      data-toolbar-btn
                       class="toolbar__filter-btn"
                       type="button">
                         <svg class="toolbar__filter-icon"  >
@@ -417,7 +442,7 @@
                         <span class="toolbar__sort-text">
                             Sort by
                         </span>
-                        <span class="toolbar__sort-item">
+                            <span class="toolbar__sort-item">
                             Most expensive
                         </span>
                         </div>
@@ -427,15 +452,21 @@
             
                     <div class="toolbar-dropdown">
                         <ul class="toolbar-dropdown__list">
-                            <li class="toolbar-dropdown__list-item" data-sort>Most expensive</li>
-                            <li class="toolbar-dropdown__list-item" data-sort>Less expensive</li>
+                            <li
+                              class="toolbar-dropdown__list-item"
+                              data-sort>Most expensive
+                            </li>
+                            <li
+                              class="toolbar-dropdown__list-item"
+                              data-sort>Less expensive
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>            <form
               action="#"
               name="ask-form"
-              data-cards-filer
+              data-cards-filter
               data-disabled
               method="POST"
               autocomplete="off"
@@ -970,7 +1001,7 @@
                     <form
                       action="#"
                       name="ask-form"
-                      data-cards-filer
+                      data-cards-filter
                       data-disabled
                       method="POST"
                       autocomplete="off"

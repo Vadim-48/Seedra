@@ -20,10 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/our-blog-CkklunO3.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-C3SRI9kz.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/search-title-CuxmnX6y.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/our-blog-Bhjn1hk9.css">
+  <script type="module" crossorigin src="/Seedra/assets/our-blog-C9Txe-OK.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D_MaYHkm.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/toolbar-dropdown-1RKqxEeL.js">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/global-search-BGDs-rSD.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/our-blog-2AnjdZm7.css">
 </head>
 <body class="our-blog">
 <header
@@ -71,20 +72,29 @@
                             </svg>            </a>
                     </div>
                     <form
-                      action="#!"
-                      class="header__search-form search-form">
+                      role="search"
+                      data-global-search
+                      autocomplete="off"
+                      class="header__global-search global-search">
                         <button
-                          type="button"
-                          class="search-form__btn">
-                            <svg class="search-form__btn-icon"  >
+                          type="submit"
+                          class="global-search__btn">
+                            <svg class="global-search__btn-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-search"></use>
-                            </svg>            </button>
+                            </svg>    </button>
                         <input
                           type="search"
-                          class="search-form__search"
+                          class="global-search__search"
                           placeholder="Search">
-                    </form>
-                    <div class="header__actions">
+                        <div class="global-search__dropdown-wrap">
+                            <div class="global-search__dropdown">
+                                <template class="global-search__dropdown-template">
+                                    <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                                    <span class="global-search__dropdown-not-found">Not found</span>
+                                </template>
+                            </div>
+                        </div>
+                    </form>        <div class="header__actions">
                         <div class="header__actions-btn-wrap">
                             <a
                               href="./favorite.html"
@@ -118,18 +128,29 @@
       data-scroll-lock-scrollable>
         <div class="burger__container">
             <form
-              action="#"
-              class="burger__search-form search-form">
-                <button class="search-form__btn">
-                    <svg class="search-form__btn-icon"  >
+              role="search"
+              data-global-search
+              autocomplete="off"
+              class="burger__global-search global-search">
+                <button
+                  type="submit"
+                  class="global-search__btn">
+                    <svg class="global-search__btn-icon"  >
                         <use href="/Seedra/sprite.svg#icon-search"></use>
-                    </svg>            </button>
+                    </svg>    </button>
                 <input
                   type="search"
-                  class="search-form__search"
+                  class="global-search__search"
                   placeholder="Search">
-            </form>
-        </div>
+                <div class="global-search__dropdown-wrap">
+                    <div class="global-search__dropdown">
+                        <template class="global-search__dropdown-template">
+                            <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                            <span class="global-search__dropdown-not-found">Not found</span>
+                        </template>
+                    </div>
+                </div>
+            </form>    </div>
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
@@ -137,7 +158,7 @@
                       class="burger__category-btn"
                       href="./all-products.html"
                       data-burger-close>
-                        <span class="burger__category-text">All vegetables</span>
+                        <span class="burger__category-text">All seedra</span>
                     </a>
                 </li>
                 <li class="burger__category-item">
@@ -403,13 +424,17 @@
     </section>
     <section class="filter-blog">
         <div class="filter-blog__container container">
-            <div class="filter-blog__toolbar toolbar" data-disabled>
+            <div
+              class="filter-blog__toolbar toolbar"
+              data-disabled>
                 <form
-                  action="#"
                   autocomplete="off"
+                  role="search"
                   class="toolbar__search-form"
                   data-search-form>
-                    <button class="toolbar__search-btn">
+                    <button
+                      class="toolbar__search-btn"
+                      type="submit">
                         <svg class="toolbar__search-icon"  >
                             <use href="/Seedra/sprite.svg#icon-search"></use>
                         </svg>        </button>
@@ -419,6 +444,7 @@
                       class="toolbar__search-input"
                       placeholder="Search">
                     <button
+                      data-toolbar-btn
                       class="toolbar__filter-btn"
                       type="button">
                         <svg class="toolbar__filter-icon"  >
@@ -433,7 +459,7 @@
                         <span class="toolbar__sort-text">
                             Sort by
                         </span>
-                        <span class="toolbar__sort-item">
+                            <span class="toolbar__sort-item">
                             Recently
                         </span>
                         </div>
@@ -443,8 +469,14 @@
             
                     <div class="toolbar-dropdown">
                         <ul class="toolbar-dropdown__list">
-                            <li class="toolbar-dropdown__list-item" data-sort>Recently</li>
-                            <li class="toolbar-dropdown__list-item" data-sort>Older</li>
+                            <li
+                              class="toolbar-dropdown__list-item"
+                              data-sort>Recently
+                            </li>
+                            <li
+                              class="toolbar-dropdown__list-item"
+                              data-sort>Older
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -499,10 +531,10 @@
                     </div>
                     <picture class="news-card__photo_rectangle news-card__photo">
                         <source
-                          srcset="/Seedra/assets/girl-strawberries-CRl9LR1o.webp"
+                          srcset="/Seedra/assets/girl-strawberries-BT5GlgxP.webp"
                           type="image/webp">
                         <img
-                          src="/Seedra/assets/girl-strawberries-BftHWMD8.png"
+                          src="/Seedra/assets/girl-strawberries-DAM3v08s.png"
                           alt=""
                           loading="lazy">
                     </picture>
@@ -632,12 +664,12 @@
                           href="card-news.html"
                           class="news-card__btn btn_white">Read</a>
                     </div>
-                    <picture class="news-card__photo_rectangle-high news-card__photo_outside-right news-card__photo">
+                    <picture class="news-card__photo_rectangle news-card__photo">
                         <source
-                          srcset="/Seedra/assets/girl-holding-cactus-Gto-cbEG.webp"
+                          srcset="/Seedra/assets/girl-holding-cactus-CBxxQ8Om.webp"
                           type="image/webp">
                         <img
-                          src="/Seedra/assets/girl-holding-cactus-DGz5UW2m.png"
+                          src="/Seedra/assets/girl-holding-cactus-CAuLNTXh.png"
                           alt=""
                           loading="lazy">
                     </picture>
@@ -659,7 +691,7 @@
                           href="card-news.html"
                           class="news-card__btn btn_white">Read</a>
                     </div>
-                    <picture class="news-card__photo_rectangle-in-wide news-card__photo">
+                    <picture class="news-card__photo_square news-card__photo">
                         <source
                           srcset="/Seedra/assets/grape-CUEl681V.webp"
                           type="image/webp">
@@ -686,12 +718,12 @@
                           href="card-news.html"
                           class="news-card__btn btn_white">Read</a>
                     </div>
-                    <picture class="news-card__photo_rectangle-high news-card__photo">
+                    <picture class="news-card__photo_rectangle news-card__photo">
                         <source
-                          srcset="/Seedra/assets/girl-in-hat-BoMOLn1m.webp"
+                          srcset="/Seedra/assets/girl-in-hat-dDc657q0.webp"
                           type="image/webp">
                         <img
-                          src="/Seedra/assets/girl-in-hat-DE1eF5UJ.png"
+                          src="/Seedra/assets/girl-in-hat-BkQh7Tz3.png"
                           alt=""
                           loading="lazy">
                     </picture>

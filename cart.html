@@ -20,11 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet">
     <title>Seedra</title>
-  <script type="module" crossorigin src="/Seedra/assets/cart-HXLNragj.js"></script>
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-C3SRI9kz.js">
-  <link rel="modulepreload" crossorigin href="/Seedra/assets/firebase-CSDvkMK0.js">
+  <script type="module" crossorigin src="/Seedra/assets/cart-B1i3BRCW.js"></script>
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/update-header-icons-D_MaYHkm.js">
   <link rel="modulepreload" crossorigin href="/Seedra/assets/format-money-tbJjc-cd.js">
-  <link rel="stylesheet" crossorigin href="/Seedra/assets/cart-C4pVC58U.css">
+  <link rel="modulepreload" crossorigin href="/Seedra/assets/global-search-BGDs-rSD.js">
+  <link rel="stylesheet" crossorigin href="/Seedra/assets/cart-BHKQeQR5.css">
 </head>
 <body class="cart">
 <header
@@ -72,20 +72,29 @@
                             </svg>            </a>
                     </div>
                     <form
-                      action="#!"
-                      class="header__search-form search-form">
+                      role="search"
+                      data-global-search
+                      autocomplete="off"
+                      class="header__global-search global-search">
                         <button
-                          type="button"
-                          class="search-form__btn">
-                            <svg class="search-form__btn-icon"  >
+                          type="submit"
+                          class="global-search__btn">
+                            <svg class="global-search__btn-icon"  >
                                 <use href="/Seedra/sprite.svg#icon-search"></use>
-                            </svg>            </button>
+                            </svg>    </button>
                         <input
                           type="search"
-                          class="search-form__search"
+                          class="global-search__search"
                           placeholder="Search">
-                    </form>
-                    <div class="header__actions">
+                        <div class="global-search__dropdown-wrap">
+                            <div class="global-search__dropdown">
+                                <template class="global-search__dropdown-template">
+                                    <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                                    <span class="global-search__dropdown-not-found">Not found</span>
+                                </template>
+                            </div>
+                        </div>
+                    </form>        <div class="header__actions">
                         <div class="header__actions-btn-wrap">
                             <a
                               href="./favorite.html"
@@ -119,18 +128,29 @@
       data-scroll-lock-scrollable>
         <div class="burger__container">
             <form
-              action="#"
-              class="burger__search-form search-form">
-                <button class="search-form__btn">
-                    <svg class="search-form__btn-icon"  >
+              role="search"
+              data-global-search
+              autocomplete="off"
+              class="burger__global-search global-search">
+                <button
+                  type="submit"
+                  class="global-search__btn">
+                    <svg class="global-search__btn-icon"  >
                         <use href="/Seedra/sprite.svg#icon-search"></use>
-                    </svg>            </button>
+                    </svg>    </button>
                 <input
                   type="search"
-                  class="search-form__search"
+                  class="global-search__search"
                   placeholder="Search">
-            </form>
-        </div>
+                <div class="global-search__dropdown-wrap">
+                    <div class="global-search__dropdown">
+                        <template class="global-search__dropdown-template">
+                            <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                            <span class="global-search__dropdown-not-found">Not found</span>
+                        </template>
+                    </div>
+                </div>
+            </form>    </div>
         <div class="burger__container">
             <ul class="burger__category">
                 <li class="burger__category-item">
@@ -138,7 +158,7 @@
                       class="burger__category-btn"
                       href="./all-products.html"
                       data-burger-close>
-                        <span class="burger__category-text">All vegetables</span>
+                        <span class="burger__category-text">All seedra</span>
                     </a>
                 </li>
                 <li class="burger__category-item">

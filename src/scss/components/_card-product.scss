@@ -115,6 +115,10 @@
         letter-spacing: -0.04em;
         color: var(--text-primary);
         margin-top: 4px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         @include media.max-width(xs) {
             margin: 4px 0 0 16px;
         }

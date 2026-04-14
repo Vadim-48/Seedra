@@ -14,7 +14,7 @@ export async function loadOneProductFirebase() {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("_productId");
     if (!productId) {
-        window.location.href = "./index.html";
+        window.location.href = "../../../../index.html";
         return;
     }
 
@@ -99,6 +99,10 @@ export async function loadOneProductFirebase() {
         }
 
         const templateFragment = templateWrap.content.cloneNode(true);
+
+        const reviewsGalleryTemplate = templateFragment.querySelector('[data-template-gallery]');
+        const templateFragmentPhoto = reviewsGalleryTemplate.content.querySelector('.card-review__link');
+
         const cloneReviewCard = templateFragment.querySelector(".card-review");
         cloneReviewCard.classList.add('swiper-slide');
 
@@ -126,12 +130,21 @@ export async function loadOneProductFirebase() {
             const reviewsImgWrap = cloneReviewCard.querySelector('[data-review-gallery]');
             reviewsImgWrap.style.display = "flex";
 
-            const reviewsPicture = cloneReviewCard.querySelector('.card-review__review-img');
+            // const reviewsPictureTemplate = cloneReviewCard.querySelector('[data-template-review]');
+            // const reviewsPicture = templateFragmentPhoto.cloneNode(true);
+            // const reviewsPicture = cloneReviewCard.querySelector('.card-review__review-img');
+
             data.reviewImg.forEach(img => {
-                const reviewsPictureTemplate = reviewsPicture.cloneNode(true);
+                const reviewsPictureTemplate = templateFragmentPhoto.cloneNode(true);
                 const reviewsImgTemplate = reviewsPictureTemplate.querySelector('img');
+                const reviewsImgLinkTemplate = reviewsPictureTemplate.querySelector('a');
+
+                reviewsPictureTemplate.dataset.fancybox =`${product.shortName.toLowerCase().replaceAll(/\s+/g, '-')}-review`;
+                reviewsPictureTemplate.href = img;
+                reviewsPictureTemplate.dataset.caption =product.shortName + " - photo by " + data.name  ;
                 reviewsImgTemplate.src = img;
                 reviewsImgWrap.appendChild(reviewsPictureTemplate);
+
             })
         }
 
@@ -212,8 +225,10 @@ export async function loadOneProductFirebase() {
     snapshotReviewsImg.forEach((doc) => {
         reviewsImgListData.push(doc.data().reviewImg);
     });
-    const reviewsGalleryWrap = document.querySelector('[data-photos-video]');
-    const reviewsGalleryPicture = reviewsGalleryWrap.querySelector('[data-reviews-img]');
+    const reviewsGalleryWrap = document.querySelector('[data-gallery-wrap]');
+    const templateGalleryWrap = reviewsGalleryWrap.querySelector('[data-gallery-template]');
+    const fragmentGalleryPhotoWrap = templateGalleryWrap.content.querySelector('.reviews-gallery__photo-link');
+    // const reviewsGalleryPicture = reviewsGalleryWrap.querySelector('[data-reviews-img]');
 
     let countReviewsGalleryPicture = 1;
     reviewsImgListData.forEach(img => {
@@ -221,10 +236,14 @@ export async function loadOneProductFirebase() {
             if (countReviewsGalleryPicture > 4) {
                 return
             }
-            const reviewsElTemplate = reviewsGalleryPicture.cloneNode(true);
-            const reviewsGalleryImg = reviewsElTemplate.querySelector('img');
-            reviewsGalleryImg.src = item;
-            reviewsGalleryWrap.appendChild(reviewsElTemplate);
+            const cloneGalleryPhotoWrap = fragmentGalleryPhotoWrap.cloneNode(true);
+            const cloneGalleryImg =cloneGalleryPhotoWrap.querySelector('[data-product-photo]');
+            cloneGalleryPhotoWrap.dataset.fancybox = "reviews-gallery";
+            cloneGalleryPhotoWrap.href = item;
+            cloneGalleryPhotoWrap.dataset.caption ="Customer photo — " + product.shortName;
+
+            cloneGalleryImg.src = item;
+            reviewsGalleryWrap.appendChild(cloneGalleryPhotoWrap);
             ++countReviewsGalleryPicture;
         })
     })

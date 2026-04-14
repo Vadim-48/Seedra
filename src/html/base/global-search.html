@@ -1,0 +1,26 @@
+<form
+  role="search"
+  data-global-search
+  autocomplete="off"
+  class="{{className}} global-search">
+    <button
+      type="submit"
+      class="global-search__btn">
+        {{> components/svg
+        className="global-search__btn-icon"
+        id="search"
+        }}
+    </button>
+    <input
+      type="search"
+      class="global-search__search"
+      placeholder="Search">
+    <div class="global-search__dropdown-wrap">
+        <div class="global-search__dropdown">
+            <template class="global-search__dropdown-template">
+                <a href="./one-product.html" class="global-search__dropdown-item"></a>
+                <span class="global-search__dropdown-not-found">Not found</span>
+            </template>
+        </div>
+    </div>
+</form>

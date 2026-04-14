@@ -4,13 +4,12 @@ export function innitSearchTitle() {
     const cardsList = cardsWrapper.querySelectorAll('.card, .news-card');
 
     searchInput.addEventListener('input', (e) => {
-        // if (e.target.value === '') {
-        //     return
-        // }
+        e.preventDefault();
         filterCards(e.target.value);
     })
 
     searchInput.addEventListener('search', (e) => {
+        e.preventDefault();
         filterCards(e.target.value);
     })
 

@@ -74,7 +74,7 @@ export function addFavoriteLocalStorage() {
                     duration: 2000,
                     gravity: "top",
                     position: "right",
-                    style: { background: "#dc3545" }
+                    style: { background: "#eea141" }
                 }).showToast();
             }
             markFavorite(card);

@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@fancyapps/ui": "^6.1.13",
     "card-validator": "^10.0.4",
     "cleave.js": "^1.6.0",
     "firebase": "^12.7.0",

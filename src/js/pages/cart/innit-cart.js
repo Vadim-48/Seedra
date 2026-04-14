@@ -183,11 +183,14 @@ export function innitAmountPrice() {
 
         totalPriceEL.textContent = formatMoney(totalPrice);
 
-        let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
+
         const productCard = e.target.closest('[data-product-id]');
+        if (!productCard) return;
         const productId = productCard.dataset.productId;
+        let cadsStorageArr = JSON.parse(localStorage.getItem('cart')) || [];
 
         const findProduct = cadsStorageArr.find(e => e.productId === productId);
+        if (!findProduct) return;
         findProduct.packCount = amount;
         localStorage.setItem('cart', JSON.stringify(cadsStorageArr));
         calcTotal();

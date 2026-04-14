@@ -3,20 +3,9 @@
   class="burger"
   data-scroll-lock-scrollable>
     <div class="burger__container">
-        <form
-          action="#"
-          class="burger__search-form search-form">
-            <button class="search-form__btn">
-                {{> components/svg
-                className="search-form__btn-icon"
-                id="search"
-                }}
-            </button>
-            <input
-              type="search"
-              class="search-form__search"
-              placeholder="Search">
-        </form>
+        {{> base/global-search
+        className="burger__global-search"
+        }}
     </div>
     <div class="burger__container">
         <ul class="burger__category">
@@ -25,7 +14,7 @@
                   class="burger__category-btn"
                   href="{{>links/nav_all-products}}"
                   data-burger-close>
-                    <span class="burger__category-text">All vegetables</span>
+                    <span class="burger__category-text">All seedra</span>
                 </a>
             </li>
             <li class="burger__category-item">

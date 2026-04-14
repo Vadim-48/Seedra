@@ -3,7 +3,7 @@ import {where, query, collection, getDocs} from "firebase/firestore";
 import {
     destroyAll,
     initProductsSwiper
-} from "@/js/modules/main/product-prev-swiper.js";
+} from "@/js/pages/main/product-prev-swiper.js";
 import {
     loadProductCardsList
 } from "@/js/modules/product-firebase.js";

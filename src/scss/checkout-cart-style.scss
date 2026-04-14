@@ -1,5 +1,6 @@
 @use "@/scss/base/reset";
 @use "@/scss/base/base";
+@use "@/scss/base/global-search";
 @use "@/scss/base/header";
 @use "@/scss/base/burger";
 
@@ -9,6 +10,5 @@
 
 @use "@/scss/cart/checkout-cart";
 @use "@/scss/cart/checkout";
-//@use "@/scss/contacts/contact-us";
 
 @use "@/scss/base/footer";

@@ -5,9 +5,10 @@ import {
     updateCartIcon,
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
-import {initSort} from "@/js/modules/innit-sort.js";
+import {initSortContent} from "@/js/modules/innit-sort-content.js";
 import {innitSearchTitle} from "@/js/modules/search-title.js";
-
+import {innitToolbarDropdown} from "@/js/modules/toolbar-dropdown.js";
+import {innitGlobalSearch} from "@/js/modules/global-search.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -16,7 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     updateCartIcon();
     updateFavoriteIcon();
-    initSort();
+    initSortContent();
     innitSearchTitle();
+    innitToolbarDropdown();
+    await innitGlobalSearch();
 });
 

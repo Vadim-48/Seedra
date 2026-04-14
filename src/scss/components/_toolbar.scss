@@ -3,6 +3,7 @@
 .toolbar {
     display: flex;
     gap: 20px;
+    position: relative;
 
     &__search-form {
         border: 1px solid var(--light-grey-stroke);
@@ -82,6 +83,10 @@
 
     &__sort-wrap {
         position: relative;
+        flex-shrink: 0;
+        height: 64px;
+        width: 23.2%;
+        margin-right: 8px;
 
         &.is-sort-open {
 
@@ -95,25 +100,38 @@
                 display: block;
             }
         }
-
+        &.is-dropdown-open{
+            @include media.max-width(sm) {
+                display: flex;
+            }
+        }
         @include media.max-width(sm) {
             display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            z-index: 2;
         }
     }
 
     &__sort-btn {
         border: 1px solid var(--light-grey-stroke);
         border-radius: 71px;
-        height: 64px;
-        width: 23.2%;
+        height: 100%;
+        width: 100%;
+        //height: 64px;
+        //width: 23.2%;
         min-width: 200px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-inline: 25px;
-        margin-right: 8px;
-
+        background: var(--white);
         transition: box-shadow .3s ease, color .3s ease;
+        @include media.max-width(sm) {
+            height: 53px;
+            margin: 0;
+        }
 
         &:focus-visible {
             box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.25);
@@ -139,7 +157,6 @@
         text-align: start;
         display: flex;
         flex-direction: column;
-
     }
 
     &__sort-text {
@@ -173,6 +190,10 @@
     left: 0;
     border: 1px solid var(--light-grey-stroke);
     border-radius: 10px;
+    @include media.max-width(sm) {
+        top: 52px;
+        width: 100%;
+    }
 
     &__list-item {
         font-weight: 500;

@@ -1,4 +1,4 @@
-import { stopAllVideos } from "@/js/modules/one-product/video-play.js";
+import { stopAllVideos } from "@/js/pages/one-product/video-play.js";
 
 let heroProductSwiper = null;
 let heroProductThumbsSwiper = null;

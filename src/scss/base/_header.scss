@@ -92,9 +92,7 @@
         }
     }
 
-    &__search-form {
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 71px;
+    &__global-search{
         width: 285px;
         @include media.max-width(sm) {
             display: none;

@@ -1,3 +1,4 @@
+@use "@/scss/mixins/media" as media;
 .burger {
     position: fixed;
     z-index: 40;
@@ -39,11 +40,12 @@
     &__container{
         padding: 0 16px 0 23px;
     }
-    &__search-form {
+    &__global-search {
         display: none;
-        border: 1px solid var(--light-grey-stroke);
-        border-radius: 71px;
         width: 241px;
+        @include media.max-width(sm) {
+            display: flex;
+        }
     }
 
     &__category {
@@ -192,6 +194,9 @@
         margin-top: 14px;
         display: none;
         gap: 13px;
+        @include media.max-width(sm) {
+            display: flex;
+        }
     }
 
     &__social-icon {
@@ -213,19 +218,4 @@
     }
 }
 
-@media (max-width: 850px) {
-    .burger {
-        &__social {
-            display: flex;
-        }
-    }
-}
-
-@media (max-width: 650px) {
-    .burger {
-        &__search-form {
-            display: flex;
-        }
-    }
-}
 

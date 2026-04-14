@@ -3,17 +3,17 @@ import {burgerAccordion} from "@/js/modules/burger-accordion.js";
 
 import {
     loadOneProductFirebase
-} from "@/js/modules/one-product/innit-one-product-firebase.js";
-import {innitAmountPack} from "@/js/modules/one-product/amount-pack.js";
-import {initHeroSwiper} from "@/js/modules/one-product/hero-swiper.js";
+} from "@/js/pages/one-product/innit-one-product-firebase.js";
+import {innitAmountPack} from "@/js/pages/one-product/amount-pack.js";
+import {initHeroSwiper} from "@/js/pages/one-product/hero-swiper.js";
 import {loadProductCardsList,loadProductsFirebase} from "@/js/modules/product-firebase.js";
 import {
     initUserReviewsSwiper
-} from "@/js/modules/one-product/user-reviews-swiper.js";
-import {initRelatedSwiper} from "@/js/modules/one-product/related-swiper.js";
-import {initVideoPlayers} from "@/js/modules/one-product/video-play.js";
-import {initAccordion} from "@/js/modules/one-product/accordion.js";
-import {initFormValidate} from "@/js/modules/one-product/validate.js";
+} from "@/js/pages/one-product/user-reviews-swiper.js";
+import {initRelatedSwiper} from "@/js/pages/one-product/related-swiper.js";
+import {initVideoPlayers} from "@/js/pages/one-product/video-play.js";
+import {initAccordion} from "@/js/pages/one-product/accordion.js";
+import {initFormValidate} from "@/js/pages/one-product/validate.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {
     addFavoriteLocalStorage
@@ -25,7 +25,9 @@ import {
 import {innitProductClick} from "@/js/modules/product-click.js";
 import {
     innitBreadcrumbClick
-} from "@/js/modules/one-product/breadcrumb-click.js";
+} from "@/js/pages/one-product/breadcrumb-click.js";
+import {innitGlobalSearch} from "@/js/modules/global-search.js";
+import {innitFancybox} from "@/js/modules/fancybox.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ];
     await Promise.all([
         loadOneProductFirebase(),
+        innitGlobalSearch(),
 
         ...productsToLoad.map(p => loadProductsFirebase(p.path)),
     ]);
@@ -65,6 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     addCartLocalStorage();
     addFavoriteLocalStorage();
     innitProductClick();
+
+    innitFancybox();
 
     window.addEventListener('storage', (event) => {
         if (event.key === 'cart') {

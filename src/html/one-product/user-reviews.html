@@ -125,22 +125,31 @@
             </div>
             <div
               class="reviews-gallery__gallery"
-              data-photos-video>
-                <picture
-                  class="reviews-gallery__photo"
-                  data-reviews-img>
-                    <img
-                      src=""
-                      alt="reviews-img"
-                      loading="lazy"
-                      data-product-photo>
-                </picture>
+              data-gallery-wrap>
+                <template class="reviews-gallery__gallery-template" data-gallery-template>
+                    <a
+                      href=""
+                      data-fancybox=""
+                      class="reviews-gallery__photo-link">
+                        <picture
+                          class="reviews-gallery__photo"
+                          data-reviews-img>
+                            <img
+                              src=""
+                              alt="reviews-img"
+                              loading="lazy"
+                              data-product-photo>
+                        </picture>
+                    </a>
+                </template>
             </div>
         </div>
     </div>
     <div class="user-reviews__card-review-wrap">
         <div class="user-reviews__swiper swiper">
-            <div class="user-reviews__swiper-wrapper swiper-wrapper" data-reviews-wrap>
+            <div
+              class="user-reviews__swiper-wrapper swiper-wrapper"
+              data-reviews-wrap>
                 <template
                   class="user-reviews__swiper-wrapper_template"
                   id="reviews-template">

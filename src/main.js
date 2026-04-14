@@ -8,12 +8,12 @@ import {
 import {loadProductCardsList,loadProductsFirebase} from "./js/modules/product-firebase.js";
 import {loadReviewFirebase} from "./js/modules/reviews-firebase.js";
 
-import {initProductsPrevSwiper} from "./js/modules/main/product-prev-swiper.js";
-import {initBlogPreviewSwiper} from "./js/modules/main/blog-prev-swiper.js";
+import {initProductsPrevSwiper} from "./js/pages/main/product-prev-swiper.js";
+import {initBlogPreviewSwiper} from "./js/pages/main/blog-prev-swiper.js";
 import {
     initFeedbackSwiper,
     // feedbackSwiper
-} from "./js/modules/main/feedback-swiper.js";
+} from "./js/pages/main/feedback-swiper.js";
 import {addCartLocalStorage} from "@/js/modules/add-cart-local-storage.js";
 import {
     addFavoriteLocalStorage
@@ -23,7 +23,7 @@ import {
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
 import {menuCategoryFilter} from "@/js/modules/menu-category-filter.js";
-import {loadHeroFirebase} from "@/js/modules/main/load-hero-firebase.js";
+import {loadHeroFirebase} from "@/js/pages/main/load-hero-firebase.js";
 import {innitProductClick} from "@/js/modules/product-click.js";
 
 document.addEventListener("DOMContentLoaded", async () => {

@@ -1,10 +1,14 @@
-<div class="{{className}} toolbar" data-disabled>
+<div
+  class="{{className}} toolbar"
+  data-disabled>
     <form
-      action="#"
       autocomplete="off"
+      role="search"
       class="toolbar__search-form"
       data-search-form>
-        <button class="toolbar__search-btn">
+        <button
+          class="toolbar__search-btn"
+          type="submit">
             {{> components/svg
             className="toolbar__search-icon"
             id="search"
@@ -16,6 +20,7 @@
           class="toolbar__search-input"
           placeholder="Search">
         <button
+          data-toolbar-btn
           class="toolbar__filter-btn"
           type="button">
             {{> components/svg
@@ -32,7 +37,7 @@
             <span class="toolbar__sort-text">
                 Sort by
             </span>
-            <span class="toolbar__sort-item">
+                <span class="toolbar__sort-item">
                 {{first sortItems}}
             </span>
             </div>
@@ -45,7 +50,10 @@
         <div class="toolbar-dropdown">
             <ul class="toolbar-dropdown__list">
                 {{#each sortItems}}
-                <li class="toolbar-dropdown__list-item" data-sort>{{this}}</li>
+                <li
+                  class="toolbar-dropdown__list-item"
+                  data-sort>{{this}}
+                </li>
                 {{/each}}
             </ul>
         </div>

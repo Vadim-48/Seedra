@@ -28,13 +28,21 @@
         <div
           class="card-review__gallery"
           data-review-gallery>
-            <picture class="card-review__review-img">
-                <img
-                  src=""
-                  alt=""
-                  loading="lazy"
-                  data-review-img>
-            </picture>
+            <template class="card-review__gallery-template" data-template-gallery>
+                <a
+                  href=""
+                  data-fancybox=""
+                  class="card-review__link"
+                  data-review-link>
+                    <picture class="card-review__review-img">
+                        <img
+                          src=""
+                          alt=""
+                          loading="lazy"
+                          data-review-img>
+                    </picture>
+                </a>
+            </template>
         </div>
     </div>
     <div class="card-review__foot">

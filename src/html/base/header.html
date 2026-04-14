@@ -41,22 +41,9 @@
                 }}
             </a>
         </div>
-        <form
-          action="#!"
-          class="header__search-form search-form">
-            <button
-              type="button"
-              class="search-form__btn">
-                {{> components/svg
-                className="search-form__btn-icon"
-                id="search"
-                }}
-            </button>
-            <input
-              type="search"
-              class="search-form__search"
-              placeholder="Search">
-        </form>
+        {{> base/global-search
+        className="header__global-search"
+        }}
         <div class="header__actions">
             <div class="header__actions-btn-wrap">
                 <a

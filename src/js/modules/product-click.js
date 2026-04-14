@@ -36,8 +36,4 @@ export function innitProductClick() {
             window.location.href = baseElUrl + "?" + params;
         })
     })
-
-
-
-
 }

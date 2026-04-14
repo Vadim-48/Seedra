@@ -273,10 +273,6 @@
         aspect-ratio: 1;
         flex-shrink: 0;
 
-        &:first-child {
-            display: none;
-        }
-
         @include media.max-width(sm) {
             width: 100px;
         }

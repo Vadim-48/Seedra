@@ -1,12 +1,13 @@
 import {burger} from "@/js/modules/burger.js";
 import {burgerAccordion} from "@/js/modules/burger-accordion.js";
-import {initFormValidate} from "@/js/modules/cart/validate-checkout.js";
+import {initFormValidate} from "@/js/pages/cart/validate-checkout.js";
 import {
     updateCartIcon,
     updateFavoriteIcon
 } from "@/js/modules/update-header-icons.js";
-import {innitFinalPrice} from "@/js/modules/cart/innit-final-price.js";
-import {loadCardsCheckout} from "@/js/modules/cart/innit-cart-checkout.js";
+import {innitFinalPrice} from "@/js/pages/cart/innit-final-price.js";
+import {loadCardsCheckout} from "@/js/pages/cart/innit-cart-checkout.js";
+import {innitGlobalSearch} from "@/js/modules/global-search.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     innitFinalPrice();
 
     await Promise.all([
+        innitGlobalSearch(),
         loadCardsCheckout(),
     ]);
 

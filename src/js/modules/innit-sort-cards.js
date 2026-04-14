@@ -1,4 +1,4 @@
-export const initSort = () => {
+export const initSortCards = () => {
     const toolbarWrap = document.querySelector(".toolbar__sort-wrap");
     if (!toolbarWrap) return;
     const toolbarBtn = toolbarWrap.querySelector(".toolbar__sort-btn");
@@ -40,34 +40,17 @@ export const initSort = () => {
 
         const cardsList = sortWrap.querySelectorAll("[data-sort-card]");
         const sortRule = toolbarWrap.querySelector(".toolbar__sort-item").textContent.trim();
-        // const parseDate = (dateStr) => {
-        //     if (!dateStr) return new Date(0);
-        //     const [day, month, year] = dateStr.split('.');
-        //     return new Date(year, month - 1, day);
-        // };
-        console.log(sortRule);
-        console.log('[' + sortRule + ']');
+
 
         const sortFunct = Array.from(cardsList)
             .sort((a, b) => {
-                // const dateTextA = a.querySelector(".news-card__date-text")?.textContent;
-                // const dateTextB = b.querySelector(".news-card__date-text")?.textContent;
                 const priceTextA = a.querySelector(".card__price")?.textContent|| "0";
                 const priceTextB = b.querySelector(".card__price")?.textContent|| "0";
 
-                // const dateA = parseDate(dateTextA);
-                // const dateB = parseDate(dateTextB);
-                // const priceA = priceTextA.replaceAll(/[^\d.]/g, "");
-                // const priceB = priceTextB.replaceAll(/[^\d.]/g, "");
 
                 const priceA = priceTextA.replace(',', '.').replace(/[^\d.]/g, '');
                 const priceB = priceTextB.replace(',', '.').replace(/[^\d.]/g, '');
-                // if (sortRule === "Recently") {
-                //     return new Date(dateA) - new Date(dateB);
-                // }
-                // if (sortRule === "Older") {
-                //     return new Date(dateB) - new Date(dateA);
-                // }
+
                 if (sortRule === "Most expensive") {
                     return priceB - priceA;
 
@@ -78,12 +61,9 @@ export const initSort = () => {
                 return 0;
             })
 
-        // sortWrap.innerHTML='';
         sortFunct.forEach((element, index) => {
             sortWrap.appendChild(element);
-            console.log('sd', element.querySelector('[data-product-price]').textContent);
         })
-        // console.log('sd', sortFunct);
     }
 }
 

@@ -8,7 +8,7 @@ export const initProductsSwiper = () => {
     const count = slides.length;
 
     productsSwiper = new Swiper('.products-prev__swiper', {
-        slidesPerView: count === 1 ? 1 : 1.1,
+        slidesPerView: count === 1 ? 1 : 1.08,
         // slidesPerView: 1.1,
         spaceBetween: 20,
         // loop: true,

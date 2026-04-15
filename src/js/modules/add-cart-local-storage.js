@@ -49,6 +49,16 @@ export function addCartLocalStorage() {
 
             const productId = product.dataset.productId;
             const existProduct = cadsStorageArr.find(item => item.productId === productId);
+            if (existProduct && !packCountEl) {
+                Toastify({
+                    text: `Product is already in the cart`,
+                    duration: 2000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "#98cc11" }
+                }).showToast();
+                return
+            }
             if (existProduct) {
                 existProduct.packCount = packCount;
                 Toastify({
@@ -56,7 +66,7 @@ export function addCartLocalStorage() {
                     duration: 2000,
                     gravity: "top",
                     position: "right",
-                    style: { background: "#98cc11" }
+                    style: {background: "#98cc11"}
                 }).showToast();
             } else {
                 const productToSave = {
@@ -69,7 +79,7 @@ export function addCartLocalStorage() {
                     duration: 2000,
                     gravity: "top",
                     position: "right",
-                    style: { background: "#28a745" }
+                    style: {background: "#28a745"}
                 }).showToast();
             }
             localStorage.setItem('cart', JSON.stringify(cadsStorageArr));

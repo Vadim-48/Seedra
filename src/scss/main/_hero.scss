@@ -56,22 +56,18 @@
         }
         @include media.max-width(xs) {
             margin-top: -6%;
-            padding: 2% 0.5% 14.4% 4%;
+            padding: 2% 2% 14.4% 4%;
         }
     }
 
     &__title {
         margin-top: 7%;
         order: 3;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
         @include media.max-width(sm) {
             margin-top: 0;
         }
         @include media.max-width(xs) {
-            margin-top: 2%;
+            margin-top: 1%;
         }
     }
 
@@ -82,10 +78,6 @@
         margin-top: 2%;
         width: 85%;
         order: 3;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
         @include media.max-width(sm) {
             width: 90%;
         }

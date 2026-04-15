@@ -56,8 +56,8 @@
     }
     &__card{
         @include media.max-width(xs) {
-            width: 319px;
-            //padding: 26px 11px 11px 11px;
+            //width: 319px;
+            padding: 26px 11px 18px 11px;
         }
     }
 }

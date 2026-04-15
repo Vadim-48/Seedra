@@ -2,6 +2,18 @@
 .our-blog{
     & .intro{
         margin-top: 32px;
+        & .main-title {
+            line-height: 1.13;
+        }
+    }
+    & .toolbar__sort-wrap{
+        //right: 110px;
+        @include media.max-width(sm) {
+            width: auto;
+            margin-right: 0;
+            z-index: 10;
+        }
+
     }
     & .filter-blog {
         margin-top: 17px;

@@ -5,7 +5,6 @@
     height: 100%;
     position: relative;
     min-height: 300px;
-    //padding: 23px 14px 8px 26px;
 
     @include media.max-width(sm) {
         min-width: auto;
@@ -13,7 +12,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 17px 33px 8px 20px;
+        //padding: 17px 33px 8px 20px;
+        padding: 22px 33px 8px 20px;
     }
     @include media.max-width(sm) {
         min-height: 400px;
@@ -105,8 +105,11 @@
             right: 0%;
         }
         & .news-card__photo_round{
-            bottom: -18%;
-            right: -2%;
+            @include media.max-width(md) {
+                bottom: -22%;
+                right: -5%;
+            }
+
         }
     }
 
@@ -179,7 +182,7 @@
             aspect-ratio: 303 / 431;
 
             @include media.max-width(sm) {
-                aspect-ratio: 201 / 260;
+                aspect-ratio: 174 / 225;
             }
         }
 

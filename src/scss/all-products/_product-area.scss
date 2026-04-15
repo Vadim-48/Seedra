@@ -1,6 +1,9 @@
 @use "@/scss/mixins/media" as media;
 .product-area {
     margin-top: 25px;
+    @include media.max-width(sm) {
+        margin-top: 17px;
+    }
 
     &__wrap {
         display: grid;
